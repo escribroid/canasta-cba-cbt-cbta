@@ -11,7 +11,7 @@ fetch(url_cba)
 
   let view_cba = document.querySelector(".view_cba");
 
-view_cba.innerHTML = "<p>Canasta Basica Alimentaria durante " + data_cba.data[98][0] + " de: " + data_cba.data[98][1] + " y familia TIPO: " + data_cba.data[98][1]*3.09 + "</p>";
+view_cba.innerHTML = "<p>Canasta Alimentaria " + data_cba.data[98][0] + " de: " + data_cba.data[98][1] + " y familia TIPO: " + data_cba.data[98][1]*3.09 + "</p>";
   
 })
 .catch(error => console.log(error));
@@ -27,7 +27,7 @@ fetch(url_cbt)
 
   let view_cbt = document.querySelector(".view_cbt");
 
-  view_cbt.innerHTML = "<p>Canasta Basica Total durante " + data_cbt.data[98][0] + " de: " + data_cbt.data[98][1] + " y familia TIPO: " + data_cbt.data[98][1]*3.09 + "</p>";
+  // view_cbt.innerHTML = "<p>Canasta Total " + data_cbt.data[98][0] + " de: " + data_cbt.data[98][1] + " y familia TIPO: " + data_cbt.data[98][1]*3.09 + "</p>";
   
 })
 .catch(error => console.log(error));
