@@ -1,0 +1,21 @@
+.row {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
+
+
+
+
+.view_cba {
+  border: 2px solid #ddd;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 50%;
+  color: black;
+}
