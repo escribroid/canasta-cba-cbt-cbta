@@ -9,16 +9,13 @@ fetch(url_cba)
         console.log(data_cba.count);
         console.log(data_cba.data[98]);
 
+        let mes = data_cba.data[98][0].split("-")[1];
+        let cba = Math.trunc(data_cba.data[98][1] * 3.09);
         let view_cba = document.querySelector(".view_cba");
 
+
         view_cba.innerHTML =
-            "<p>Canasta Alimentaria " +
-            data_cba.data[98][0] +
-            " de: " +
-            data_cba.data[98][1] +
-            " y familia TIPO: " +
-            data_cba.data[98][1] * 3.09 +
-            "</p>";
+            `<p>Canasta Alimentaria del mes ${mes} y familia TIPO: ${cba}</p>`;
     })
     .catch((error) => console.log(error));
 
@@ -29,9 +26,12 @@ fetch(url_cbt)
         console.log(data_cbt.count);
         console.log(data_cbt.data[98]);
 
+        let mes = data_cbt.data[98][0].split("-")[1];
+        let cbt = Math.trunc(data_cbt.data[98][1] * 3.09);
         let view_cbt = document.querySelector(".view_cbt");
 
-        // view_cbt.innerHTML = "<p>Canasta Total " + data_cbt.data[98][0] + " de: " + data_cbt.data[98][1] + " y familia TIPO: " + data_cbt.data[98][1]*3.09 + "</p>";
+        view_cbt.innerHTML =
+            `<p>Canasta Total del mes ${mes} y familia TIPO: ${cbt}</p>`;
     })
     .catch((error) => console.log(error));
 
@@ -61,8 +61,8 @@ const tabla_equivalentes = {
     "76-120": { mujer: 0.63, varon: 0.74 },
 };
 
-tabla_equivalentes["18-29"][0];
-console.log("18-29", tabla_equivalentes["18-29"][0]);
+tabla_equivalentes["18-29"].mujer;
+console.log("18-29 mujer", tabla_equivalentes["18-29"].mujer);
 
-tabla_equivalentes["130"].varon;
-console.log("130", tabla_equivalentes["130"].varon);
+tabla_equivalentes["76-120"].varon;
+console.log("76-120 varon", tabla_equivalentes["76-120"].varon);

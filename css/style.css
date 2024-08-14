@@ -60,3 +60,14 @@ nav ul li {
     text-align: center;
     align-items: center;
 }
+
+.view_cbt {
+    display: flex;
+    border: 2px solid #ddd;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 90%;
+    color: aliceblue;
+    text-align: center;
+    align-items: center;
+}
