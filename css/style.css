@@ -1,48 +1,46 @@
 body {
-  font-size: 2rem;
+    background-color: #000;
+    font-size: 2rem;
+    color: aliceblue;
+
 }
 
 header {
-  display: flex;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  align-items: center;
-  justify-content: space-between;
-  
+    display: flex;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 nav {
-  display: flex;
-  width: 68%;
-  justify-content: flex-end;
+    display: flex;
+    width: 68%;
+    justify-content: flex-end;
 }
 
 nav ul {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 nav ul li {
-  font-size: 2rem;
+    font-size: 2rem;
 }
-
-
-
-
 
 
 
 .logo {
-  width: 30%;
-  font-size: 2rem;
+    width: 30%;
+    font-size: 2rem;
 }
 
 .row {
@@ -52,15 +50,13 @@ nav ul li {
     justify-content: space-around;
 }
 
-
-
 .view_cba {
-  display: flex;
-  border: 2px solid #ddd;
-  margin-bottom: 20px;
-  padding: 10px;
-  width: 90%;
-  color: black;
-  text-align: center;
-  align-items: center;
+    display: flex;
+    border: 2px solid #ddd;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 90%;
+    color: aliceblue;
+    text-align: center;
+    align-items: center;
 }
