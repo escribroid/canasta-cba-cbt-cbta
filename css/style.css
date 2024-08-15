@@ -15,6 +15,11 @@ header {
     justify-content: space-between;
 }
 
+footer {
+    background-color: #333;
+    color: white;
+}
+
 main {
     display: flex;
     flex-direction: column;
