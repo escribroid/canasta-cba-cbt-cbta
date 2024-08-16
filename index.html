@@ -46,11 +46,11 @@
             <h1>Canastas</h1>
             <br />
             <h2>CBA</h2>
-            <div class="view_cba"></div>
+            <!-- <div class="view_cba"></div> -->
             <br />
 
             <h2>CBT</h2>
-            <div class="view_cbt"></div>
+            <!-- <div class="view_cbt"></div> -->
         </main>
 
         <!-- ACCORDION -->
@@ -65,13 +65,13 @@
                         aria-expanded="false"
                         aria-controls="flush-collapseOne"
                     >
-                        Accordion Item #1
+                        CBA
                     </button>
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        Placeholder content for this accordion, which is intended to demonstrate the
-                        <code>.accordion-flush</code> class. This is the first item's accordion body.
+                    <div class="accordion-body d-flex justify-content-center">
+                        <div class="view_cba"></div>
+
                     </div>
                 </div>
             </div>
@@ -85,14 +85,13 @@
                         aria-expanded="false"
                         aria-controls="flush-collapseTwo"
                     >
-                        Accordion Item #2
+                        CBT
                     </button>
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        Placeholder content for this accordion, which is intended to demonstrate the
-                        <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
-                        this being filled with some actual content.
+                    <div class="accordion-body d-flex justify-content-center">
+                        <div class="view_cbt"></div>
+
                     </div>
                 </div>
             </div>
@@ -106,7 +105,7 @@
                         aria-expanded="false"
                         aria-controls="flush-collapseThree"
                     >
-                        Accordion Item #3
+                        CBTA (cbt + alquiler)
                     </button>
                 </h2>
                 <div
@@ -115,7 +114,34 @@
                     data-bs-parent="#accordionFlushExample"
                 >
                     <div class="accordion-body">
-                        Placeholder content for this accordion, which is intended to demonstrate the
+                        CBTA content for this accordion, which is intended to demonstrate the
+                        <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
+                        exciting happening here in terms of content, but just filling up the space to make it look, at
+                        least at first glance, a bit more representative of how this would look in a real-world
+                        application.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseFour"
+                    >
+                        IPC
+                    </button>
+                </h2>
+                <div
+                    id="flush-collapseFour"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                >
+                    <div class="accordion-body">
+                        IPC content for this accordion, which is intended to demonstrate the
                         <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
                         exciting happening here in terms of content, but just filling up the space to make it look, at
                         least at first glance, a bit more representative of how this would look in a real-world
@@ -157,7 +183,7 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"
         ></script>
-        <script src="./js/app.js"></script>
+        <script type="module" src="./js/app.js"></script>
         <script src="./js/mod-tooltips.js"></script>
         <script type="module" src="./js/main.js"></script>
 

@@ -8,7 +8,7 @@ body {
 header {
     display: flex;
     background-color: #333;
-    color: white;
+    color: aliceblue;
     text-align: center;
     padding: 10px;
     align-items: center;
@@ -17,7 +17,8 @@ header {
 
 footer {
     background-color: #333;
-    color: white;
+    color: aliceblue;
+    text-align: center;
 }
 
 main {
@@ -41,7 +42,31 @@ nav ul li {
     font-size: 2rem;
 }
 
+.accordion {
+    --bs-accordion-bg: #302222; 
+    border-radius: 10px;
+}
 
+.accordion-flush .accordion-item .accordion-button, .accordion-flush .accordion-item .accordion-button.collapsed {
+    border-radius: 10px;
+    background: #333;
+    color: aliceblue;
+    font-size: 1.6rem;
+}
+
+.accordion-flush .accordion-item {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 10px;
+}
+
+.accordion-button {   
+    justify-content: center;  
+}
+
+.accordion-item {
+    border-radius: 10px;
+}
 
 .logo {
     width: 30%;
@@ -58,7 +83,6 @@ nav ul li {
 .view_cba {
     display: flex;
     border: 2px solid #ddd;
-    margin-bottom: 20px;
     padding: 10px;
     width: 90%;
     color: aliceblue;
@@ -69,7 +93,6 @@ nav ul li {
 .view_cbt {
     display: flex;
     border: 2px solid #ddd;
-    margin-bottom: 20px;
     padding: 10px;
     width: 90%;
     color: aliceblue;
