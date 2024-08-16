@@ -51,7 +51,7 @@ nav ul li {
     border-radius: 10px;
     background: #333;
     color: aliceblue;
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 
 .accordion-flush .accordion-item {
@@ -88,14 +88,7 @@ nav ul li {
     color: aliceblue;
     text-align: center;
     align-items: center;
+    font-size: 2rem;
 }
 
-.view_cbt {
-    display: flex;
-    border: 2px solid #ddd;
-    padding: 10px;
-    width: 96%;
-    color: aliceblue;
-    text-align: center;
-    align-items: center;
-}
+

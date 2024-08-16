@@ -6,14 +6,14 @@ function calcular_cba() {
     let mes = indices_manuales.mes_cba_cbt_manual;
     let cba = Math.trunc(indices_manuales.cba_manual * 3.09);
     let view_cba = document.querySelector(".view_cba");
-    view_cba.innerHTML = `<p>Canasta Alimentaria de ${mes}: $${cba}</p>`;
+    view_cba.innerHTML = `<p>Canasta Alimentaria: $${cba}</p>`;
 }
 
 function calcular_cbt() {
     let mes = indices_manuales.mes_cba_cbt_manual;
     let cbt = Math.trunc(indices_manuales.cbt_manual * 3.09);
     let view_cbt = document.querySelector(".view_cbt");
-    view_cbt.innerHTML = `<p>Canasta Total de ${mes}: $${cbt}</p>`;
+    view_cbt.innerHTML = `<p>Canasta Total: $${cbt}</p>`;
 }
 
 function calcular_cbta(personas, edad) {
@@ -21,7 +21,7 @@ function calcular_cbta(personas, edad) {
     let cbt = Math.trunc(indices_manuales.cbt_manual * 3.09);
     let cbta = cbt + indices_manuales.alquilerProm3amb;
     let view_cbta = document.querySelector(".view_cbta");
-    view_cbta.innerHTML = `<p>Canasta Total de ${mes} + Alquiler 3 ambientes: $${cbta}</p>`;
+    view_cbta.innerHTML = `<p>Canasta Total + Alquiler 3 ambientes: $${cbta}</p>`;
 }
 
 calcular_cba();
