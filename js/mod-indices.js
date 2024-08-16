@@ -5,7 +5,7 @@ const mes_cba_cbt_manual = 7;
 const alquilerProm2amb = 313839;
 const alquilerProm3amb = alquilerProm2amb*(7/5); 
 const mesAlquilerManual = 7;
-
+const ipc_manual = 4.03;
 
 const indices_manuales = {
   cba_manual,

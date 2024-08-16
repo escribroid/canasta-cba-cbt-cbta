@@ -80,11 +80,11 @@ nav ul li {
     justify-content: space-around;
 }
 
-.view_cba {
+.view_cba, .view_cbt, .view_cbta {
     display: flex;
     border: 2px solid #ddd;
     padding: 10px;
-    width: 90%;
+    width: 96%;
     color: aliceblue;
     text-align: center;
     align-items: center;
@@ -94,7 +94,7 @@ nav ul li {
     display: flex;
     border: 2px solid #ddd;
     padding: 10px;
-    width: 90%;
+    width: 96%;
     color: aliceblue;
     text-align: center;
     align-items: center;
