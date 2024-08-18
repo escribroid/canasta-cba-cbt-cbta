@@ -1,25 +1,9 @@
-:root {
-    color: aliceblue;
-    font-size: 10px;
-    font-family: var(--font-primary);
-}
 body {
     background-color: #000;
     color: aliceblue;
     margin: 0 10px;
     font-family: var(--font-primary);
-
-}
-
-header {
-    display: flex;
-    background-color: #000;
-    color: aliceblue;
-    /* text-align: center; */
-    padding: 10px 0;
-    align-items: flex-start;
-    /* justify-content: space-between; */
-    flex-direction: column;
+    font-size: 1.8rem;
 }
 
 footer {
@@ -30,11 +14,10 @@ footer {
 
 main {
     display: flex;
-    color: aliceblue;
     flex-direction: column;
 }
 
-nav {
+/* nav {
     display: flex;
     width: 68%;
     justify-content: flex-start;
@@ -42,26 +25,24 @@ nav {
 
 nav ul {
     display: flex;
-    /* flex-direction: row; */
 }
 
 nav ul li {
     display: flex;
     font-size: var(--font-size-16);
     padding: 0 10px 0 0;
-}
-
-
+} */
 
 .accordion {
-    --bs-accordion-bg: #302222; 
+    --bs-accordion-bg: #302222;
     border-radius: 10px;
 }
 
-.accordion-flush .accordion-item .accordion-button, .accordion-flush .accordion-item .accordion-button.collapsed {
+.accordion-flush .accordion-item .accordion-button,
+.accordion-flush .accordion-item .accordion-button.collapsed {
     border-radius: 10px;
     background: #333;
-    color: aliceblue;
+    color: var(--font-color-medium);
     font-size: var(--font-size-16);
 }
 
@@ -71,8 +52,8 @@ nav ul li {
     border-radius: 10px;
 }
 
-.accordion-button {   
-    justify-content: center;  
+.accordion-button {
+    justify-content: center;
 }
 
 .accordion-item {
@@ -85,12 +66,13 @@ nav ul li {
 }
 
 .card p {
-    color:bisque;
+    color: bisque;
 }
 
 .logo {
-    width: 35%;
     font-size: var(--font-size-28);
+    font-family: var(--font-logo);
+    letter-spacing: 2px;
 }
 
 .row {
@@ -100,16 +82,14 @@ nav ul li {
     justify-content: space-around;
 }
 
-.view_cba, .view_cbt, .view_cbta {
+.view_cba,
+.view_cbt,
+.view_cbta {
     display: flex;
-    /* border: 1px solid #ddd; */
     border-radius: 10px;
     padding: 10px;
     width: 96%;
     color: aliceblue;
     text-align: center;
     align-items: center;
-    font-size: var(--font-size-16);
 }
-
-
