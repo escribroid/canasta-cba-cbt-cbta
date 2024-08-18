@@ -1,0 +1,121 @@
+/* Global variables - Design system */
+:root {
+    /* Palette */
+    --color-black: rgb(0, 0, 0);
+    --color-background: rgb(24, 24, 24);
+    --color-body: rgb(24, 24, 24);
+    --color-gris-dark: rgb(55, 55, 55);
+    --color-gris: rgb(128, 128, 128);
+    --color-gris-cement: rgb(182, 182, 182);
+    --color-gris-claro: rgb(233, 233, 233);
+
+    --color-violeta: rgb(184, 97, 224);
+    --color-violeta-800: rgb(184, 97, 224, 0.8);
+    --color-violeta-500: rgb(184, 97, 224, 0.5);
+    --color-violeta-300: rgb(184, 97, 224, 0.3);
+
+    --color-mora: rgb(113, 113, 226);
+    --color-mora-800: rgb(113, 113, 226, 0.8);
+    --color-mora-500: rgb(113, 113, 226, 0.5);
+    --color-mora-300: rgb(113, 113, 226, 0.3);
+    --font-color-mora-dark: rgb(36, 36, 68);
+
+    --color-verde: rgb(31, 193, 174);
+    --color-verde-800: rgb(31, 193, 174, 0.8);
+    --color-verde-500: rgb(31, 193, 174, 0.5);
+    --color-verde-300: rgb(31, 193, 174, 0.3);
+    --color-verde-100: rgb(31, 193, 174, 0.1);
+
+    --color-coquenicot: rgb(255, 56, 0);
+    --color-coquenicot-800: rgb(255, 56, 0, 0.8);
+    --color-coquenicot-500: rgb(255, 56, 0, 0.5);
+    --color-coquenicot-300: rgb(255, 56, 0, 0.3);
+
+    --gradient: linear-gradient(to right, rgb(184, 97, 224), rgb(113, 113, 226));
+    --gradient-invert: linear-gradient(to right, rgb(113, 113, 226), rgb(184, 97, 224));
+
+    /* Typography */
+    --font-primary: system-ui, /* Apple font */ -apple-system, BlinkMacSystemFont, /* Windows font */ "Segoe UI",
+        "Helvetica", Arial, /* Linux font */ "Open Sans", "Ubuntu", "Noto Sans", /* Android font */ "Roboto",
+        "SamsungOne", "Lato", "Montserrat", sans-serif, /* Apple emojis */ "Apple Color Emoji",
+        /* Windows emojis */ "Segoe UI Emoji", "Segoe UI Symbol", /* Linux emojis */ "Noto Color Emoji",
+        "EmojiOne Color", "Symbola";
+
+    --font-secondary: "Helvetica Neue", "Verdana", "Tahoma", "Open Sans", sans-serif;
+
+    --font-mono: "SFMono-Regular", /* macOS y iOS */ "Menlo", /* Respaldo en macOS (OS X) */ "Consolas",
+        /* Windows */ "Roboto Mono", /* Android */ "Ubuntu Mono", /* Distribuciones de Ubuntu */ "Liberation Mono",
+        /* Linux */ "Courier New", /* Respaldo genérico */ monospace; /* Fuente genérica monoespaciada */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-secondary);
+    }
+
+    /* Font-weights */
+    --font-weight-300-light: 300;
+    --font-weight-400-regular: 400;
+    --font-weight-500-medium: 500;
+    --font-weight-700-bold: 700;
+    --font-weight-800-extrabold: 800;
+    --font-weight-900-black: 900;
+
+    /* Font-sizes */
+    --font-size-48: 4.8rem;
+    --font-size-44: 4.4rem;
+    --font-size-40: 4rem;
+    --font-size-32: 3.2rem;
+    --font-size-28: 2.8rem;
+    --font-size-24: 2.4rem;
+    --font-size-20: 2rem;
+    --font-size-18: 1.8rem;
+    --font-size-16: 1.6rem;
+    --font-size-14: 1.4rem;
+    --font-size-12: 1.2rem;
+    --font-size-10: 1rem;
+    --font-size-8: 0.8rem;
+
+    /* Headings font-sizes */
+    h1 {
+        font-size: var(--font-size-28);
+    }
+    h2 {
+        font-size: var(--font-size-24);
+    }
+    h3 {
+        font-size: var(--font-size-20);
+    }
+    h4 {
+        font-size: var(--font-size-18);
+    }
+    h5 {
+        font-size: var(--font-size-16);
+    }
+    h6 {
+        font-size: var(--font-size-14);
+    }
+    p {
+        font-size: var(--font-size-16);
+    }
+
+    /* Font-colors */
+    --font-color-light: rgb(243, 243, 243);
+    --font-color-dark: rgb(24, 24, 24);
+
+    /* Spacings */
+    --spacing-128: 12.8rem;
+    --spacing-68: 6.8rem;
+    --spacing-36: 3.6rem;
+    --spacing-28: 2.8rem;
+    --spacing-24: 2.4rem;
+    --spacing-20: 2rem;
+    --spacing-16: 1.6rem;
+    --spacing-12: 1.2rem;
+    --spacing-10: 1rem;
+    --spacing-8: 0.8rem;
+    --spacing-4: 0.4rem;
+}
