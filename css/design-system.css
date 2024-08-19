@@ -37,11 +37,11 @@
 
     /* Typography */
     --font-logo: "Tahoma", sans-serif;
-    --font-primary: system-ui, /* Apple font */ -apple-system, BlinkMacSystemFont, /* Windows font */ "Segoe UI",
+    --font-primary: /* Apple font */ system-ui, -apple-system, BlinkMacSystemFont, /* Windows font */ "Segoe UI",
         "Helvetica", Arial, /* Linux font */ "Open Sans", "Ubuntu", "Noto Sans", /* Android font */ "Roboto",
         "SamsungOne", "Lato", "Montserrat", sans-serif, /* Apple emojis */ "Apple Color Emoji",
         /* Windows emojis */ "Segoe UI Emoji", "Segoe UI Symbol", /* Linux emojis */ "Noto Color Emoji",
-        "EmojiOne Color", "Symbola";
+        "EmojiOne Color", "Symbola", /* Android emojis */ "EmojiOne", 'Noto Color Emoji';
 
     --font-secondary: "Helvetica Neue", "Verdana", "Tahoma", "Open Sans", sans-serif;
 
@@ -93,8 +93,10 @@
     --spacing-8: 0.8rem;
     --spacing-4: 0.4rem;
 }
+/* End :Root Design system */
+
 /* =============================================================================
-   Base styles */
+   Fonts Display, headings, titles */
 h1,
 h2,
 h3,
@@ -104,12 +106,15 @@ h6 {
     font-family: var(--font-primary);
 }
 
+/* Fonts Body, paragraphs, labels */
+body,
 p,
 div,
 span {
     font-family: var(--font-secondary);
     font-size: var(--font-size-18);
 }
+
 /* Headings font-sizes */
 h1 {
     font-size: var(--font-size-24);

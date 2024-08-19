@@ -17,25 +17,11 @@ main {
     flex-direction: column;
 }
 
-/* nav {
-    display: flex;
-    width: 68%;
-    justify-content: flex-start;
-}
 
-nav ul {
-    display: flex;
-}
-
-nav ul li {
-    display: flex;
-    font-size: var(--font-size-16);
-    padding: 0 10px 0 0;
-} */
 
 .accordion {
     --bs-accordion-bg: #302222;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .accordion-flush .accordion-item .accordion-button,
@@ -49,7 +35,7 @@ nav ul li {
 .accordion-flush .accordion-item {
     border-right: 0;
     border-left: 0;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .accordion-button {
@@ -57,22 +43,35 @@ nav ul li {
 }
 
 .accordion-item {
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .card {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     margin-bottom: 20px;
+    background-color: rgb(27 9 66);
 }
 
 .card p {
     color: bisque;
 }
 
+.card_cba_value {
+    color: rgb(211 193 255);
+    margin-left: 10px;
+    font-weight: var(--font-weight-700-bold);
+}
+
 .logo {
     font-size: var(--font-size-28);
     font-family: var(--font-logo);
     letter-spacing: 2px;
+}
+
+.logo-img {
+    width: 26px;
+    margin-right: 10px;
+
 }
 
 .row {
@@ -86,8 +85,8 @@ nav ul li {
 .view_cbt,
 .view_cbta {
     display: flex;
-    border-radius: 10px;
-    padding: 10px;
+    /* border-radius: 10px; */
+    padding: 10px 0;
     width: 96%;
     color: aliceblue;
     text-align: center;
