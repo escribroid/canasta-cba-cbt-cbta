@@ -17,8 +17,6 @@ main {
     flex-direction: column;
 }
 
-
-
 .accordion {
     --bs-accordion-bg: #302222;
     /* border-radius: 10px; */
@@ -26,7 +24,7 @@ main {
 
 .accordion-flush .accordion-item .accordion-button,
 .accordion-flush .accordion-item .accordion-button.collapsed {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background: #333;
     color: var(--font-color-medium);
     font-size: var(--font-size-16);
@@ -62,6 +60,9 @@ main {
     font-weight: var(--font-weight-700-bold);
 }
 
+.card-header {
+}
+
 .logo {
     font-size: var(--font-size-28);
     font-family: var(--font-logo);
@@ -71,7 +72,6 @@ main {
 .logo-img {
     width: 26px;
     margin-right: 10px;
-
 }
 
 .row {
@@ -84,11 +84,8 @@ main {
 .view_cba,
 .view_cbt,
 .view_cbta {
-    display: flex;
     /* border-radius: 10px; */
-    padding: 10px 0;
-    width: 96%;
+    width: 95%;
     color: aliceblue;
     text-align: center;
-    align-items: center;
 }
