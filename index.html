@@ -75,61 +75,56 @@
             <div class="card w-100">
                 <div class="card-header">
                     <h2>Canasta Básica Alimentaria</h2>
-                    | Con Casa Propia
+                    <div class="card_subtitle">
+                        ||| Con Casa Propia
+                        <div class="view_cba"></div>
+                    </div>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <div class="view_cba"></div>
-                    </li>
-
-                    <li class="list-group-item">
-                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <!-- Accordion Tipo de familia -->
+                        <div class="accordion accordion-flush" id="accordionFlush-1">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button
                                         class="accordion-button collapsed"
                                         type="button"
                                         data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseOne"
+                                        data-bs-target="#flush-collapse-1"
                                         aria-expanded="false"
-                                        aria-controls="flush-collapseOne"
+                                        aria-controls="flush-collapse-1"
                                     >
-                                        Ver familia 4 integrantes con edades
+                                        Familia tipo de 4 integrantes, edades:
                                     </button>
                                 </h2>
                                 <div
-                                    id="flush-collapseOne"
+                                    id="flush-collapse-1"
                                     class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample"
+                                    data-bs-parent="#accordionFlush-1"
                                 >
                                     <div class="accordion-body">
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">#</th>
-                                                    <th scope="col">Familia</th>
+                                                    <th scope="col">Familiar</th>
                                                     <th scope="col">Edad</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody class="table-group-divider">
                                                 <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Varon</td>
+                                                    <th scope="row">Varon</th>
                                                     <td>30</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mujer</td>
+                                                    <th scope="row">Mujer</th>
                                                     <td>30</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Niño</td>
+                                                    <th scope="row">Niño</th>
                                                     <td>10</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Niña</td>
+                                                    <th scope="row">Niña</th>
                                                     <td>8</td>
                                                 </tr>
                                             </tbody>
@@ -147,32 +142,133 @@
             <div class="card w-100">
                 <div class="card-header">
                     <h2>Canasta Basica Total</h2>
-                    | Con Casa Propia
+                    <div class="card_subtitle">
+                        ||| Con Casa Propia
+                        <div class="view_cbt"></div>
+                    </div>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item linea_indigencia">CBT - Linea pobreza | Casa propia</li>
-
                     <li class="list-group-item">
-                        <div class="view_cbt"></div>
-                        <p>Familia 4 personas: Varon de 30, Mujer de 30, Niña de 10 y Niño de 6 años.</p>
+                        <!-- Accordion Tipo de familia -->
+                        <div class="accordion accordion-flush" id="accordionFlush-2">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button collapsed"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse-2"
+                                        aria-expanded="false"
+                                        aria-controls="flush-collapse-2"
+                                    >
+                                        Familia tipo de 4 integrantes, edades:
+                                    </button>
+                                </h2>
+                                <div
+                                    id="flush-collapse-2"
+                                    class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlush-2"
+                                >
+                                    <div class="accordion-body">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Familiar</th>
+                                                    <th scope="col">Edad</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <tr>
+                                                    <th scope="row">Varon</th>
+                                                    <td>30</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Mujer</th>
+                                                    <td>30</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Niño</th>
+                                                    <td>10</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Niña</th>
+                                                    <td>8</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li class="list-group-item linea_pobreza"></li>
                 </ul>
             </div>
 
             <!-- Card 3 Canasta Basica Total + Alquiler -->
-
             <div class="card w-100">
                 <div class="card-header">
-                    <h2>Canasta Basica Total</h2>
-                    | Alquilando 3 ambientes
+                    <h2>Canasta Basica Total Alquilando</h2>
+                    <div class="card_subtitle">
+                        ||| Un 3 ambientes
+                        <div class="view_cbt_alquiler_3amb"></div>
+                    </div>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <div class="view_cbt_alquiler_3amb"></div>
-                        <p>Familia 4 personas: Varon de 30, Mujer de 30, Niña de 10 y Niño de 6 años.</p>
+                        <!-- Accordion Tipo de familia -->
+                        <div class="accordion accordion-flush" id="accordionFlush-3">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button collapsed"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse-3"
+                                        aria-expanded="false"
+                                        aria-controls="flush-collapse-3"
+                                    >
+                                        Familia tipo de 4 integrantes, edades:
+                                    </button>
+                                </h2>
+                                <div
+                                    id="flush-collapse-3"
+                                    class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlush-3"
+                                >
+                                    <div class="accordion-body">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Familiar</th>
+                                                    <th scope="col">Edad</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <tr>
+                                                    <th scope="row">Varon</th>
+                                                    <td>30</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Mujer</th>
+                                                    <td>30</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Niño</th>
+                                                    <td>10</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Niña</th>
+                                                    <td>8</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
-                    <li class="list-group-item linea_pobreza"></li>
+                    <li class="list-group-item linea_pobreza_alquilando"></li>
                 </ul>
             </div>
 
@@ -189,7 +285,7 @@
             </div>
 
             <!-- ACCORDION -->
-            <div class="accordion accordion-flush" id="accordionFlushExample">
+            <!-- <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button
@@ -266,7 +362,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- END ACCORDION -->
 
             <!-- TOOLTIPS -->

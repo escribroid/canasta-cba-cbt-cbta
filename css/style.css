@@ -12,6 +12,14 @@ footer {
     text-align: center;
 }
 
+h1 {
+    /* color: #872341; */
+}
+
+h2 {
+    color: #f05941;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -47,7 +55,7 @@ main {
 .card {
     /* border-radius: 10px; */
     margin-bottom: 20px;
-    background-color: #22092C;
+    background-color: #22092c;
 }
 
 .card p {
@@ -63,13 +71,15 @@ main {
 .card-header {
 }
 
-h1 {
-    /* color: #872341; */
+.card_subtitle {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
-h2 {
-        color: #F05941;
-
+.linea_pobreza,
+.linea_indigencia, .linea_pobreza_alquilando {
+    font-size: var(--font-size-14);
 }
 
 .logo {
@@ -94,9 +104,7 @@ h2 {
 
 .view_cba,
 .view_cbt,
-.view_cbta {
-    /* border-radius: 10px; */
-    width: 95%;
+.view_cbta,
+.view_cbt_alquiler_3amb {
     color: aliceblue;
-    text-align: center;
 }

@@ -11,34 +11,36 @@ let cbt_alquiler_3amb = cbt + indices_manuales.alquilerProm3amb;
 
 function calcular_cba() {
     let view_cba = document.querySelector(".view_cba");
-    view_cba.innerHTML = `CBA:  <span class="card_cba_value">  $${cba} </span>`;
+    view_cba.innerHTML = `<span class="card_cba_value">  $${cba} </span>`;
 }
 
 function calcular_cbt() {
     let view_cbt = document.querySelector(".view_cbt");
-    view_cbt.innerHTML = `CBT: <span class="card_cba_value">  $${cbt} </span>`;
+    view_cbt.innerHTML = `<span class="card_cba_value">  $${cbt} </span>`;
 }
 
 function calcular_cbt_y_alquiler(personas, edad) {
     let view_cbt_alquiler_3amb = document.querySelector(".view_cbt_alquiler_3amb");
-    view_cbt_alquiler_3amb.innerHTML = `CBT + Alquiler 3 ambientes: <span class="card_cba_value">  $${cbt_alquiler_3amb} </span>`;
+    view_cbt_alquiler_3amb.innerHTML = `<span class="card_cba_value">  $${cbt_alquiler_3amb} </span>`;
     let view_cbt_alquiler_2amb = document.querySelector(".view_cbt_alquiler_2amb");
-    view_cbt_alquiler_2amb.innerHTML = `CBT + Alquiler 2 ambientes: <span class="card_cba_value">  $${cbt_alquiler_2amb} </span>`;
+    view_cbt_alquiler_2amb.innerHTML = `<span class="card_cba_value">  $${cbt_alquiler_2amb} </span>`;
 }
 
 function linea_indigencia() {
     let linea_indigencia = document.querySelector(".linea_indigencia");
-    linea_indigencia.innerHTML = `indigentes con Casa Propia, menos de: <span >  $${cba} </span>`;
+    linea_indigencia.innerHTML = `⌂ Indigentes con Casa Propia, si ganan menos de: $${cba}`;
 }
 
 function linea_pobreza() {
     let linea_pobreza = document.querySelector(".linea_pobreza");
-    linea_pobreza.innerHTML = `pobres con Casa Propia, menos de: <span >  $${cbt} </span>`;
+    linea_pobreza.innerHTML = `⌂ Pobres con Casa Propia, si ganan menos de: $${cbt}`;
 }
+
+"☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓←→↔↖↗↘↙↺↻⇔⇕⇖⇗⇘⇙⇧⇩⇪⇫⇬⇭⇮⇯⇰⇱⇲⇳⇴⇵⇶⇷⇸⇹⇺⇻⇼⇽⇾⇿⌂⌃⌄⌅⌆⌇⌈⌉⌊⌋⌌⌍⌎⌏⌐�OPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;':"
 
 function linea_pobreza_alquilando() {
     let linea_pobreza_alquilando = document.querySelector(".linea_pobreza_alquilando");
-    linea_pobreza_alquilando.innerHTML = `pobres Sin Casa Propia, ALQUILANDO, menos de: <span >  $${cbt_alquiler_3amb} </span>`;
+    linea_pobreza_alquilando.innerHTML = `○ Pobres Sin Casa Propia, ALQUILANDO, si ganan menos de:   $${cbt_alquiler_3amb} `;
 }
 
 calcular_cba();
