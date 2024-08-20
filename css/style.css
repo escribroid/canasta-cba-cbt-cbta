@@ -47,11 +47,11 @@ main {
 .card {
     /* border-radius: 10px; */
     margin-bottom: 20px;
-    background-color: rgb(27 9 66);
+    background-color: #22092C;
 }
 
 .card p {
-    color: bisque;
+    color: aliceblue;
 }
 
 .card_cba_value {
@@ -63,10 +63,21 @@ main {
 .card-header {
 }
 
+h1 {
+    /* color: #872341; */
+}
+
+h2 {
+        color: #F05941;
+
+}
+
 .logo {
     font-size: var(--font-size-28);
     font-family: var(--font-logo);
     letter-spacing: 2px;
+    font-weight: var(--font-weight-700-bold);
+    /* color: #F05941; */
 }
 
 .logo-img {

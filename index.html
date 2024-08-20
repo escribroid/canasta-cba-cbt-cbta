@@ -3,10 +3,17 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="Canasta Basica Alimentaria y Canasta Basica Total" />
+        <meta
+            name="keywords"
+            content="CBA, CBT, IPC, Canasta Basica Alimentaria, Canasta Basica Total, Canasta Basica Total mas Alquiler, Canasta Basica Alimentaria mas Alquiler, Linea de pobreza, linea de indigencia, linea de clase media"
+        />
+        <meta name="author" content="escribroid" />
+
         <title>CBA CBT CBTA</title>
         <!-- CSS -->
         <link rel="stylesheet" href="./css/reset.css" />
-
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -62,15 +69,19 @@
         <main>
             <h1>Canastas Alimentaria y Total</h1>
             <h2>Julio 2024</h2>
-            <br>
+            <br />
 
-            <h2>Canasta Basica Alimentaria</h2>
-            <!-- Card 1 -->
+            <!-- Card 1 Canasta Básica Alimentaria -->
             <div class="card w-100">
                 <div class="card-header">
-                    <div class="view_cba"></div>
+                    <h2>Canasta Básica Alimentaria</h2>
+                    | Con Casa Propia
                 </div>
                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="view_cba"></div>
+                    </li>
+
                     <li class="list-group-item">
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
@@ -128,40 +139,50 @@
                             </div>
                         </div>
                     </li>
+                    <li class="list-group-item linea_indigencia"></li>
                 </ul>
             </div>
 
-            <h2>Canasta Basica Total</h2>
-            <!-- Card 2 -->
+            <!-- Card 2 Canasta Básica Total -->
             <div class="card w-100">
-                <div class="card-header">CBT - Linea pobreza | Casa propia</div>
+                <div class="card-header">
+                    <h2>Canasta Basica Total</h2>
+                    | Con Casa Propia
+                </div>
                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item linea_indigencia">CBT - Linea pobreza | Casa propia</li>
+
                     <li class="list-group-item">
                         <div class="view_cbt"></div>
                         <p>Familia 4 personas: Varon de 30, Mujer de 30, Niña de 10 y Niño de 6 años.</p>
                     </li>
+                    <li class="list-group-item linea_pobreza"></li>
                 </ul>
             </div>
 
-            <!-- Card 3 -->
-            <h2>Canasta Basica Total + Alquiler</h2>
+            <!-- Card 3 Canasta Basica Total + Alquiler -->
+
             <div class="card w-100">
-                <div class="card-header">CBT - Linea pobreza | Alquilando</div>
+                <div class="card-header">
+                    <h2>Canasta Basica Total</h2>
+                    | Alquilando 3 ambientes
+                </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <div class="view_cbta"></div>
+                        <div class="view_cbt_alquiler_3amb"></div>
                         <p>Familia 4 personas: Varon de 30, Mujer de 30, Niña de 10 y Niño de 6 años.</p>
                     </li>
+                    <li class="list-group-item linea_pobreza"></li>
                 </ul>
             </div>
 
-            <!-- Card 4 -->
+            <!-- Card 4 Tu Canasta -->
             <h2>Tu Canasta</h2>
             <div class="card w-100">
                 <div class="card-header">CBT - Linea pobreza | Alquilando</div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <div class="view_cbta"></div>
+                        <div class="view_cbt_alquiler_2amb"></div>
                         <p>Familia 4 personas: Varon de 30, Mujer de 30, Niña de 10 y Niño de 6 años.</p>
                     </li>
                 </ul>

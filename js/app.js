@@ -2,31 +2,51 @@ import indices_manuales from "./mod-indices.js";
 
 console.log("in", indices_manuales.cbt_manual);
 
+let cba = Math.trunc(indices_manuales.cba_manual * 3.09);
+let cbt = Math.trunc(indices_manuales.cbt_manual * 3.09);
+let mes = indices_manuales.mes_cba_cbt_manual;
+let cbt_alquiler_2amb = cbt + indices_manuales.alquilerProm2amb;
+let cbt_alquiler_3amb = cbt + indices_manuales.alquilerProm3amb;
+
+
 function calcular_cba() {
-    let mes = indices_manuales.mes_cba_cbt_manual;
-    let cba = Math.trunc(indices_manuales.cba_manual * 3.09);
     let view_cba = document.querySelector(".view_cba");
     view_cba.innerHTML = `CBA:  <span class="card_cba_value">  $${cba} </span>`;
 }
 
 function calcular_cbt() {
-    let mes = indices_manuales.mes_cba_cbt_manual;
-    let cbt = Math.trunc(indices_manuales.cbt_manual * 3.09);
     let view_cbt = document.querySelector(".view_cbt");
     view_cbt.innerHTML = `CBT: <span class="card_cba_value">  $${cbt} </span>`;
 }
 
-function calcular_cbta(personas, edad) {
-    let mes = indices_manuales.mes_cba_cbt_manual;
-    let cbt = Math.trunc(indices_manuales.cbt_manual * 3.09);
-    let cbta = cbt + indices_manuales.alquilerProm3amb;
-    let view_cbta = document.querySelector(".view_cbta");
-    view_cbta.innerHTML = `CBT + Alquiler 3 ambientes: <span class="card_cba_value">  $${cbta} </span>`;
+function calcular_cbt_y_alquiler(personas, edad) {
+    let view_cbt_alquiler_3amb = document.querySelector(".view_cbt_alquiler_3amb");
+    view_cbt_alquiler_3amb.innerHTML = `CBT + Alquiler 3 ambientes: <span class="card_cba_value">  $${cbt_alquiler_3amb} </span>`;
+    let view_cbt_alquiler_2amb = document.querySelector(".view_cbt_alquiler_2amb");
+    view_cbt_alquiler_2amb.innerHTML = `CBT + Alquiler 2 ambientes: <span class="card_cba_value">  $${cbt_alquiler_2amb} </span>`;
+}
+
+function linea_indigencia() {
+    let linea_indigencia = document.querySelector(".linea_indigencia");
+    linea_indigencia.innerHTML = `indigentes con Casa Propia, menos de: <span >  $${cba} </span>`;
+}
+
+function linea_pobreza() {
+    let linea_pobreza = document.querySelector(".linea_pobreza");
+    linea_pobreza.innerHTML = `pobres con Casa Propia, menos de: <span >  $${cbt} </span>`;
+}
+
+function linea_pobreza_alquilando() {
+    let linea_pobreza_alquilando = document.querySelector(".linea_pobreza_alquilando");
+    linea_pobreza_alquilando.innerHTML = `pobres Sin Casa Propia, ALQUILANDO, menos de: <span >  $${cbt_alquiler_3amb} </span>`;
 }
 
 calcular_cba();
 calcular_cbt();
-calcular_cbta();
+calcular_cbt_y_alquiler();
+linea_indigencia();
+linea_pobreza();
+linea_pobreza_alquilando();
 
 // tabla equivalencias personas
 const tabla_equivalentes = {
