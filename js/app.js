@@ -28,19 +28,18 @@ function calcular_cbt_y_alquiler(personas, edad) {
 
 function linea_indigencia() {
     let linea_indigencia = document.querySelector(".linea_indigencia");
-    linea_indigencia.innerHTML = `⌂ Indigentes con Casa Propia, si ganan menos de: $${cba}`;
+    linea_indigencia.innerHTML = `» Son indigentes con Casa Propia, si los ingresos al mes menores a: $${cba}`;
 }
 
 function linea_pobreza() {
     let linea_pobreza = document.querySelector(".linea_pobreza");
-    linea_pobreza.innerHTML = `⌂ Pobres con Casa Propia, si ganan menos de: $${cbt}`;
+    linea_pobreza.innerHTML = `» Son Pobres con Casa Propia, si los ingresos al mes menores a: $${cbt}`;
 }
 
-"☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓←→↔↖↗↘↙↺↻⇔⇕⇖⇗⇘⇙⇧⇩⇪⇫⇬⇭⇮⇯⇰⇱⇲⇳⇴⇵⇶⇷⇸⇹⇺⇻⇼⇽⇾⇿⌂⌃⌄⌅⌆⌇⌈⌉⌊⌋⌌⌍⌎⌏⌐�OPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;':"
 
 function linea_pobreza_alquilando() {
     let linea_pobreza_alquilando = document.querySelector(".linea_pobreza_alquilando");
-    linea_pobreza_alquilando.innerHTML = `○ Pobres Sin Casa Propia, ALQUILANDO, si ganan menos de:   $${cbt_alquiler_3amb} `;
+    linea_pobreza_alquilando.innerHTML = `» Son Pobres Sin Casa Propia, ALQUILANDO, si los ingresos al mes menores a:   $${cbt_alquiler_3amb} `;
 }
 
 calcular_cba();

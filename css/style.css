@@ -17,7 +17,7 @@ h1 {
 }
 
 h2 {
-    color: #f05941;
+    color: #FF4F00;
 }
 
 main {
@@ -44,6 +44,10 @@ main {
     /* border-radius: 10px; */
 }
 
+.accordion-body {
+    padding: 0;
+}
+
 .accordion-button {
     justify-content: center;
 }
@@ -55,7 +59,7 @@ main {
 .card {
     /* border-radius: 10px; */
     margin-bottom: 20px;
-    background-color: #22092c;
+    background-color: #222222;
 }
 
 .card p {
@@ -100,6 +104,10 @@ main {
     margin: auto;
     display: flex;
     justify-content: space-around;
+}
+
+.table {
+    font-size: 14px;
 }
 
 .view_cba,
