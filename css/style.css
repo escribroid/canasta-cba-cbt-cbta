@@ -111,6 +111,10 @@ main {
     justify-content: space-around;
 }
 
+.subtitle {
+    text-align: center;
+}
+
 .table {
     font-size: 14px;
 }
