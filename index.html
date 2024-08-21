@@ -11,7 +11,7 @@
         />
         <meta name="author" content="escribroid" />
 
-        <title>CBA CBT CBTA</title>
+        <title>CANASTAS</title>
         <!-- CSS -->
         <link rel="stylesheet" href="./css/reset.css" />
         <link
@@ -82,6 +82,28 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <div>Ingresar Familiares:</div>
+
+                        <form id="person-form">
+                            <fieldset>
+                                <div class="person-form-group">
+                                    <label for="person-type">Tipo:</label>
+                                    <select id="person-type" name="type" class="person-form-select">
+                                        <option value="Mujer">Mujer</option>
+                                        <option value="Varon">Varon</option>
+                                    </select>
+                                </div>
+                                <div class="person-form-group">
+                                    <label for="age">Edad:</label>
+                                    <input type="number" id="age" name="age" class="person-form-input" required />
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                        </form>
+
+                        <h3>Tu Canasta Real:</h3>
+                        <ul id="person-list"></ul>
+
+                        <br />
                         <table class="table">
                             <thead>
                                 <tr>

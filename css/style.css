@@ -6,6 +6,11 @@ body {
     font-size: 1.8rem;
 }
 
+fieldset {
+    display: flex;
+    justify-content: space-around;
+}
+
 footer {
     background-color: #000;
     color: aliceblue;
@@ -102,6 +107,20 @@ main {
 .logo-img {
     width: 26px;
     margin-right: 10px;
+}
+
+.person-form-group {
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+}
+
+.person-form-input {
+    height: 30px;
+}
+.person-form-select {
+    height: 30px;
+    margin-top: 0px;
 }
 
 .row {

@@ -73,3 +73,25 @@ const tabla_equivalentes = {
     "edad_61-75": { mujer: 0.67, varon: 0.83 },
     "edad_76-99": { mujer: 0.63, varon: 0.74 },
 };
+
+/* Agregar personas a la tabla */
+document.getElementById("person-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Obtener los valores del formulario
+    const age = document.getElementById("age").value;
+
+    // Obtener el valor seleccionado del select
+    const selectElement = document.getElementById("person-type");
+    const person_type = selectElement.value;
+
+    // Crear un elemento de lista para mostrar la persona
+    const li = document.createElement("li");
+    li.textContent = `${person_type} (Edad: ${age})`;
+
+    // Agregar el elemento a la lista
+    document.getElementById("person-list").appendChild(li);
+
+    // Limpiar el formulario
+    document.getElementById("person-form").reset();
+});

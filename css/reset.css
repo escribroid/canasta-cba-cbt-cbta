@@ -11,7 +11,7 @@ html {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
-    border: 0;
+    /* border: 0; */
     font: inherit;
     vertical-align: baseline;
 }
@@ -121,8 +121,8 @@ a {
     text-decoration: none;
 }
 abbr[title] {
-    border-bottom: none; /* 1 */
-    text-decoration: underline; /* 2 */
+    border-bottom: none; 
+    text-decoration: underline; 
 }
 b,
 strong {
@@ -144,25 +144,24 @@ body {
 }
 button,
 input {
-    /* 1 */
     overflow: visible;
 }
 code,
 kbd,
 samp {
-    font-family: monospace, monospace; /* 1 */
+    font-family: 'Courier New', Courier, monospace; 
 }
 img {
     width: 100%;
     border-style: none;
 }
 legend {
-    box-sizing: border-box; /* 1 */
-    color: inherit; /* 2 */
-    display: table; /* 1 */
-    max-width: 100%; /* 1 */
-    padding: 0; /* 3 */
-    white-space: normal; /* 1 */
+    box-sizing: border-box; 
+    color: inherit; 
+    display: table; 
+    max-width: 100%; 
+    padding: 0; 
+    white-space: normal; 
 }
 ol,
 ul {

@@ -1,6 +1,9 @@
 /* Global variables - Design system */
 
 :root {
+    /* Base font-size */
+    font-size: 10px;
+
     /* Palette */
     --color-black: rgb(0, 0, 0);
     --color-background: rgb(24, 24, 24);
