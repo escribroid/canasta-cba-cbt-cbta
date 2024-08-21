@@ -81,16 +81,30 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     // Obtener los valores del formulario
     const age = document.getElementById("age").value;
 
+    if (parseInt(age) < 0) {
+        age = document.getElementById("age").value = age * -1;
+    }
+
     // Obtener el valor seleccionado del select
     const selectElement = document.getElementById("person-type");
     const person_type = selectElement.value;
 
     // Crear un elemento de lista para mostrar la persona
-    const li = document.createElement("li");
-    li.textContent = `${person_type} (Edad: ${age})`;
+    // const li = document.createElement("li");
+    // li.textContent = `${person_type}  |  Edad: ${age}`;
+
+    const th_type = document.createElement("th");
+    th_type.textContent = `${person_type}`;
+
+
+    const td_age = document.createElement("td");
+    td_age.textContent = `${age}`;
+
 
     // Agregar el elemento a la lista
-    document.getElementById("person-list").appendChild(li);
+    document.getElementById("person-list").appendChild(th_type);
+    document.getElementById("person-list").appendChild(td_age);
+
 
     // Limpiar el formulario
     document.getElementById("person-form").reset();

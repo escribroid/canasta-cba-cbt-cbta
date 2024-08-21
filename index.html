@@ -90,6 +90,8 @@
                                     <select id="person-type" name="type" class="person-form-select">
                                         <option value="Mujer">Mujer</option>
                                         <option value="Varon">Varon</option>
+                                        <option value="Niña">Niña</option>
+                                        <option value="Niño">Niño</option>
                                     </select>
                                 </div>
                                 <div class="person-form-group">
@@ -97,13 +99,13 @@
                                     <input type="number" id="age" name="age" class="person-form-input" required />
                                 </div>
                             </fieldset>
-                            <button type="submit" class="btn btn-primary">Agregar</button>
+                            <button type="submit" class="btn btn-primary m-3">Agregar</button>
                         </form>
 
-                        <h3>Tu Canasta Real:</h3>
-                        <ul id="person-list"></ul>
 
-                        <br />
+                        <h3>Tu Canasta Real:</h3>
+                        <!-- <ul id="person-list"></ul> -->
+
                         <table class="table">
                             <thead>
                                 <tr>
@@ -113,17 +115,15 @@
                                 </tr>
                             </thead>
                             <tbody class="table-group-divider">
-                                <tr>
-                                    <th scope="row">Varon</th>
-                                    <td>35</td>
-                                    <td>papa</td>
+                                <tr id="person-list">
+                                    <!-- <th class="th_type" scope="row">Varon</th>
+                                    <td class="td_age">35</td> -->
                                 </tr>
                             </tbody>
                         </table>
-                        <span class="btn btn-danger">08</span>
 
-                        <div>Persona 1:</div>
-                        <span>Edad</span>
+
+                        
                     </li>
                     <li class="list-group-item">AA</li>
                     <li class="list-group-item">AA</li>
