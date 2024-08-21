@@ -117,6 +117,8 @@ main {
 
 .table {
     font-size: 14px;
+    margin: 0 auto;
+    width: 75%;
 }
 
 .view_cba,

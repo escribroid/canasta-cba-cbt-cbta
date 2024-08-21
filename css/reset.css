@@ -123,7 +123,6 @@ a {
 abbr[title] {
     border-bottom: none; /* 1 */
     text-decoration: underline; /* 2 */
-    text-decoration: underline dotted; /* 2 */
 }
 b,
 strong {
@@ -138,7 +137,6 @@ blockquote:after,
 q:before,
 q:after {
     content: "";
-    content: none;
 }
 body {
     line-height: 1.15;
@@ -169,7 +167,6 @@ legend {
 ol,
 ul {
     list-style: none;
-    list-style-type: none;
 }
 progress {
     vertical-align: baseline;
