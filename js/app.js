@@ -138,6 +138,11 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedAge.textContent = text;
             ageInput.value = value;
 
+            console.log("ageInput", ageInput.value);
+            console.log("selectedAge", value);
+            
+            
+
             ageOptions.classList.remove('open');
         });
     });
