@@ -180,3 +180,47 @@ select {
 .view_cbt_alquiler_3amb {
     color: aliceblue;
 }
+
+
+
+
+.custom-select-container {
+    position: relative;
+    width: 200px;
+    font-family: Arial, sans-serif;
+}
+
+.selected-age {
+    background-color: #372c2c;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    height: 30px;
+}
+
+.age-options {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: rgb(58, 27, 27);
+    max-height: 200px;
+    overflow-y: auto; /* Añade scroll si hay muchas opciones */
+    z-index: 100;
+}
+
+.age-option {
+    padding: 2.5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.age-option:hover {
+    background-color: #f0f0f0;
+}
+
+.open {
+    display: block; /* Muestra el menú cuando está abierto */
+}
+

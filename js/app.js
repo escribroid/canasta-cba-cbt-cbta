@@ -113,3 +113,40 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     // Limpiar el formulario
     document.getElementById("person-form").reset();
 });
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const selectedAge = document.getElementById('selected-age');
+    const ageOptions = document.getElementById('age-options');
+    const ageInput = document.getElementById('age');
+
+    // Mostrar/ocultar las opciones al hacer clic
+    selectedAge.addEventListener('click', function() {
+        ageOptions.classList.toggle('open');
+    });
+
+    // Manejar la selección de una opción
+    document.querySelectorAll('.age-option').forEach(option => {
+        option.addEventListener('click', function() {
+            const value = this.getAttribute('data-value');
+            const text = this.textContent;
+
+            selectedAge.textContent = text;
+            ageInput.value = value;
+
+            ageOptions.classList.remove('open');
+        });
+    });
+
+    // Cerrar el menú si se hace clic fuera de él
+    document.addEventListener('click', function(e) {
+        if (!selectedAge.contains(e.target) && !ageOptions.contains(e.target)) {
+            ageOptions.classList.remove('open');
+        }
+    });
+});
+
