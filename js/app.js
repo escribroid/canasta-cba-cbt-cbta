@@ -79,8 +79,8 @@ let count = 0;
 /* Agregar personas a la tabla */
 document.getElementById("person-form").addEventListener("submit", function (e) {
     e.preventDefault();
-    count = count +1;
-    
+    count = count + 1;
+
     // Obtener los valores del formulario
     const age = document.getElementById("age").value;
 

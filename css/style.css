@@ -38,9 +38,29 @@ main {
     flex-direction: column;
 }
 
+option {
+    text-align: center; /* Centra el texto de cada opción */
+    font-family: var(--font-mono);
+    width: 50px;
+
+}
+
+.select-container {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 50px; /* Asegura que ocupe todo el ancho disponible */
+}
+
 select {
     background-color: #333;
     font-family: var(--font-mono);
+    text-align: center; /* Centra el texto horizontalmente */
+    text-align-last: center; /* Centra el texto en la opción seleccionada */
+    display: flex;
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Asegura que el texto esté centrado horizontalmente en algunos navegadores */
+    width: 15ch;
 }
 
 .accordion {
@@ -131,10 +151,8 @@ select {
     flex-direction: column;
 }
 
-.person-form-input {
-    height: 30px;
-}
-.person-form-select {
+
+.person-form-select, .person-select-age {
     height: 30px;
     margin-top: 0px;
 }
