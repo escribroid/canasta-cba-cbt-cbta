@@ -26,6 +26,13 @@ h2 {
     color: #FF4F00;
 }
 
+#person-form {
+    border: 1px solid #FF4F00;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+}
+
 main {
     display: flex;
     flex-direction: column;

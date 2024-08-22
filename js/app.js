@@ -74,10 +74,13 @@ const tabla_equivalentes = {
     "edad_76-99": { mujer: 0.63, varon: 0.74 },
 };
 
+let count = 0;
+
 /* Agregar personas a la tabla */
 document.getElementById("person-form").addEventListener("submit", function (e) {
     e.preventDefault();
-
+    count = count +1;
+    
     // Obtener los valores del formulario
     const age = document.getElementById("age").value;
 
@@ -93,18 +96,19 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     // const li = document.createElement("li");
     // li.textContent = `${person_type}  |  Edad: ${age}`;
 
+    const tr_person = document.createElement("tr");
+    tr_person.id = `person-list-row${count}`;
+
     const th_type = document.createElement("th");
     th_type.textContent = `${person_type}`;
-
 
     const td_age = document.createElement("td");
     td_age.textContent = `${age}`;
 
-
     // Agregar el elemento a la lista
-    document.getElementById("person-list").appendChild(th_type);
-    document.getElementById("person-list").appendChild(td_age);
-
+    document.getElementById("person-list").appendChild(tr_person);
+    document.getElementById(`person-list-row${count}`).appendChild(th_type);
+    document.getElementById(`person-list-row${count}`).appendChild(td_age);
 
     // Limpiar el formulario
     document.getElementById("person-form").reset();

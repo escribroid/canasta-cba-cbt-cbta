@@ -73,20 +73,20 @@
             <!-- Card 1 Canasta Básica Alimentaria -->
             <div class="card w-100">
                 <div class="card-header">
-                    <h2>Tu Canasta en Realidad</h2>
+                    <h2>Tu Canasta Socio-economica</h2>
                     <div class="card_subtitle">
-                        ||| Con Casa Propia
+                        ||
                         <div class=""></div>
                     </div>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <div>Ingresar Familiares:</div>
-
                         <form id="person-form">
+                            <h3>Ingresar Familiares:</h3>
+
                             <fieldset>
                                 <div class="person-form-group">
-                                    <label for="person-type">Tipo:</label>
+                                    <label for="person-type">Integrante:</label>
                                     <select id="person-type" name="type" class="person-form-select">
                                         <option value="Mujer">Mujer</option>
                                         <option value="Varon">Varon</option>
@@ -96,12 +96,38 @@
                                 </div>
                                 <div class="person-form-group">
                                     <label for="age">Edad:</label>
+
+                                    <select name="age" id="">
+                                        <option value="edad_0">0 años</option>
+                                        <option value="edad_1">1 años</option>
+                                        <option value="edad_2">2 años</option>
+                                        <option value="edad_3">3 años</option>
+                                        <option value="edad_4">4 años</option>
+                                        <option value="edad_5">5 años</option>
+                                        <option value="edad_6">6 años</option>
+                                        <option value="edad_7">7 años</option>
+                                        <option value="edad_8">8 años</option>
+                                        <option value="edad_9">9 años</option>
+                                        <option value="edad_10">10 años</option>
+                                        <option value="edad_11">11 años</option>
+                                        <option value="edad_12">12 años</option>
+                                        <option value="edad_13">13 años</option>
+                                        <option value="edad_14">14 años</option>
+                                        <option value="edad_15">15 años</option>
+                                        <option value="edad_16">16 años</option>
+                                        <option value="edad_17">17 años</option>
+                                        <option value="edad_18-29">18 a 29</option>
+                                        <option value="edad_30-45">30 a 45</option>
+                                        <option value="edad_46-60">46 a 60</option>
+                                        <option value="edad_61-75">61 a 75</option>
+                                        <option value="edad_76-99">76 a 130</option>
+                                    </select>
+
                                     <input type="number" id="age" name="age" class="person-form-input" required />
                                 </div>
                             </fieldset>
                             <button type="submit" class="btn btn-primary m-3">Agregar</button>
                         </form>
-
 
                         <h3>Tu Canasta Real:</h3>
                         <!-- <ul id="person-list"></ul> -->
@@ -114,16 +140,8 @@
                                     <th scope="col">Tag (opcional)</th>
                                 </tr>
                             </thead>
-                            <tbody class="table-group-divider">
-                                <tr id="person-list">
-                                    <!-- <th class="th_type" scope="row">Varon</th>
-                                    <td class="td_age">35</td> -->
-                                </tr>
-                            </tbody>
+                            <tbody id="person-list" class="table-group-divider"></tbody>
                         </table>
-
-
-                        
                     </li>
                     <li class="list-group-item">AA</li>
                     <li class="list-group-item">AA</li>
