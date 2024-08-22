@@ -38,6 +38,11 @@ main {
     flex-direction: column;
 }
 
+select {
+    background-color: #333;
+    font-family: var(--font-mono);
+}
+
 .accordion {
     --bs-accordion-bg: #302222;
     /* border-radius: 10px; */
@@ -67,6 +72,10 @@ main {
 
 .accordion-item {
     /* border-radius: 10px; */
+}
+
+.aclaracion_edades {
+    font-size: var(--font-size-12);
 }
 
 .card {

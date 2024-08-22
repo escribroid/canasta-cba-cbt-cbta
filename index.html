@@ -86,44 +86,116 @@
 
                             <fieldset>
                                 <div class="person-form-group">
-                                    <label for="person-type">Integrante:</label>
+                                    <label for="person-type">Genero:</label>
                                     <select id="person-type" name="type" class="person-form-select">
-                                        <option value="Mujer">Mujer</option>
-                                        <option value="Varon">Varon</option>
-                                        <option value="Niña">Niña</option>
-                                        <option value="Niño">Niño</option>
+                                        <option value="Mujer">Femenina</option>
+                                        <option value="Varon">Masculino</option>
                                     </select>
                                 </div>
                                 <div class="person-form-group">
                                     <label for="age">Edad:</label>
-
-                                    <select name="age" id="">
-                                        <option value="edad_0">0 años</option>
-                                        <option value="edad_1">1 años</option>
-                                        <option value="edad_2">2 años</option>
-                                        <option value="edad_3">3 años</option>
-                                        <option value="edad_4">4 años</option>
-                                        <option value="edad_5">5 años</option>
-                                        <option value="edad_6">6 años</option>
-                                        <option value="edad_7">7 años</option>
-                                        <option value="edad_8">8 años</option>
-                                        <option value="edad_9">9 años</option>
-                                        <option value="edad_10">10 años</option>
-                                        <option value="edad_11">11 años</option>
-                                        <option value="edad_12">12 años</option>
-                                        <option value="edad_13">13 años</option>
-                                        <option value="edad_14">14 años</option>
-                                        <option value="edad_15">15 años</option>
-                                        <option value="edad_16">16 años</option>
-                                        <option value="edad_17">17 años</option>
-                                        <option value="edad_18-29">18 a 29</option>
-                                        <option value="edad_30-45">30 a 45</option>
-                                        <option value="edad_46-60">46 a 60</option>
-                                        <option value="edad_61-75">61 a 75</option>
-                                        <option value="edad_76-99">76 a 130</option>
+                                    <select name="age" id="age" class="person-form-input" required>
+                                        <option value="0">0 años</option>
+                                        <option value="1">1 años</option>
+                                        <option value="2">2 años</option>
+                                        <option value="3">3 años</option>
+                                        <option value="4">4 años</option>
+                                        <option value="5">5 años</option>
+                                        <option value="6">6 años</option>
+                                        <option value="7">7 años</option>
+                                        <option value="8">8 años</option>
+                                        <option value="9">9 años</option>
+                                        <option value="10">10 años</option>
+                                        <option value="11">11 años</option>
+                                        <option value="12">12 años</option>
+                                        <option value="13">13 años</option>
+                                        <option value="14">14 años</option>
+                                        <option value="15">15 años</option>
+                                        <option value="16">16 años</option>
+                                        <option value="17">17 años</option>
+                                        <option value="18">18 años</option>
+                                        <option value="19">19 años</option>
+                                        <option value="20">20 años</option>
+                                        <option value="21">21 años</option>
+                                        <option value="22">22 años</option>
+                                        <option value="23">23 años</option>
+                                        <option value="24">24 años</option>
+                                        <option value="25">25 años</option>
+                                        <option value="26">26 años</option>
+                                        <option value="27">27 años</option>
+                                        <option value="28">28 años</option>
+                                        <option value="29">29 años</option>
+                                        <option value="30">30 años</option>
+                                        <option value="31">31 años</option>
+                                        <option value="32">32 años</option>
+                                        <option value="33">33 años</option>
+                                        <option value="34">34 años</option>
+                                        <option value="35">35 años</option>
+                                        <option value="36">36 años</option>
+                                        <option value="37">37 años</option>
+                                        <option value="38">38 años</option>
+                                        <option value="39">39 años</option>
+                                        <option value="40">40 años</option>
+                                        <option value="41">41 años</option>
+                                        <option value="42">42 años</option>
+                                        <option value="43">43 años</option>
+                                        <option value="44">44 años</option>
+                                        <option value="45">45 años</option>
+                                        <option value="46">46 años</option>
+                                        <option value="47">47 años</option>
+                                        <option value="48">48 años</option>
+                                        <option value="49">49 años</option>
+                                        <option value="50">50 años</option>
+                                        <option value="51">51 años</option>
+                                        <option value="52">52 años</option>
+                                        <option value="53">53 años</option>
+                                        <option value="54">54 años</option>
+                                        <option value="55">55 años</option>
+                                        <option value="56">56 años</option>
+                                        <option value="57">57 años</option>
+                                        <option value="58">58 años</option>
+                                        <option value="59">59 años</option>
+                                        <option value="60">60 años</option>
+                                        <option value="61">61 años</option>
+                                        <option value="62">62 años</option>
+                                        <option value="63">63 años</option>
+                                        <option value="64">64 años</option>
+                                        <option value="65">65 años</option>
+                                        <option value="66">66 años</option>
+                                        <option value="67">67 años</option>
+                                        <option value="68">68 años</option>
+                                        <option value="69">69 años</option>
+                                        <option value="70">70 años</option>
+                                        <option value="71">71 años</option>
+                                        <option value="72">72 años</option>
+                                        <option value="73">73 años</option>
+                                        <option value="74">74 años</option>
+                                        <option value="75">75 años</option>
+                                        <option value="76">76 años</option>
+                                        <option value="77">77 años</option>
+                                        <option value="78">78 años</option>
+                                        <option value="79">79 años</option>
+                                        <option value="80">80 años</option>
+                                        <option value="81">81 años</option>
+                                        <option value="82">82 años</option>
+                                        <option value="83">83 años</option>
+                                        <option value="84">84 años</option>
+                                        <option value="85">85 años</option>
+                                        <option value="86">86 años</option>
+                                        <option value="87">87 años</option>
+                                        <option value="88">88 años</option>
+                                        <option value="89">89 años</option>
+                                        <option value="90">90 años</option>
+                                        <option value="91">91 años</option>
+                                        <option value="92">92 años</option>
+                                        <option value="93">93 años</option>
+                                        <option value="94">94 años</option>
+                                        <option value="95">95 años</option>
+                                        <option value="96">96 años</option>
+                                        <option value="97">97 años</option>
+                                        <option value="98">98 años</option>
+                                        <option value="99">99 años</option>
                                     </select>
-
-                                    <input type="number" id="age" name="age" class="person-form-input" required />
                                 </div>
                             </fieldset>
                             <button type="submit" class="btn btn-primary m-3">Agregar</button>
@@ -143,8 +215,10 @@
                             <tbody id="person-list" class="table-group-divider"></tbody>
                         </table>
                     </li>
-                    <li class="list-group-item">AA</li>
-                    <li class="list-group-item">AA</li>
+                    <li class="list-group-item aclaracion_edades">
+                        * Para indec, los rangos de edad de "18 a 29" años tienen el mismo peso en la canasta, y los de
+                        "30 a 45", "46 a 60", "61 a 75" y "76 a 99" respectivamente.
+                    </li>
                 </ul>
             </div>
 
