@@ -26,13 +26,6 @@ h2 {
     color: #FF4F00;
 }
 
-#person-form {
-    border: 1px solid #FF4F00;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 5px;
-}
-
 main {
     display: flex;
     flex-direction: column;
@@ -61,6 +54,14 @@ select {
     align-items: center; /* Centra el texto verticalmente */
     justify-content: center; /* Asegura que el texto esté centrado horizontalmente en algunos navegadores */
     width: 15ch;
+}
+
+#person-form {
+    border: 1px solid #FF4F00;
+    border-radius: 10px;
+    margin: 5px;
+    position: relative;
+    padding: 5px;
 }
 
 .accordion {
@@ -195,8 +196,6 @@ select {
 
 .custom-select-container {
     background-color: #333;
-    width: 130px;
-    position: relative;
     font-family: Arial, sans-serif;
 }
 
@@ -206,9 +205,9 @@ select {
     border: 1px solid #ccc;
     cursor: pointer;
     /* text-align: center; */
-    width: 130px;
+    width: 100%;
     height: 30px;
-    font-size: var(--font-size-14);
+    font-size: var(--font-size-16);
     justify-content: center;
     align-items: center;
 }
@@ -221,6 +220,7 @@ select {
     max-height: 200px;
     overflow-y: auto; /* Añade scroll si hay muchas opciones */
     scrollbar-width: none; /* Oculta la barra de desplazamiento en Firefox */
+    width: 100%;
 
     z-index: 100;
     border-radius: 10px;
@@ -229,9 +229,12 @@ select {
 .age-option {
     padding: 10px;
     text-align: center;
+    font-size: var(--font-size-16);
+
     cursor: pointer;
     border-bottom: 1px solid #ccc;
-    width: 130px;
+    width: 100%;
+
 
 }
 
@@ -240,6 +243,12 @@ select {
 }
 
 .open {
-    display: block; /* Muestra el menú cuando está abierto */
+    top: 0;
+    display: block;
+    /* position: absolute; */
+    right: 0;
+    /* left: 0; */
+    /* width: 100%; */
+    flex-direction: column;
 }
 
