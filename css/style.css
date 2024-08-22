@@ -182,42 +182,61 @@ select {
 }
 
 
-
+select {
+    background-color: #333;
+    font-family: var(--font-mono);
+    text-align: center; /* Centra el texto horizontalmente */
+    text-align-last: center; /* Centra el texto en la opción seleccionada */
+    display: flex;
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Asegura que el texto esté centrado horizontalmente en algunos navegadores */
+    width: 15ch;
+}
 
 .custom-select-container {
+    background-color: #333;
+    width: 130px;
     position: relative;
-    width: 200px;
     font-family: Arial, sans-serif;
 }
 
 .selected-age {
-    background-color: #372c2c;
-    padding: 10px;
+    display: flex;
+    background-color: #333;
     border: 1px solid #ccc;
     cursor: pointer;
-    text-align: center;
+    /* text-align: center; */
+    width: 130px;
     height: 30px;
+    font-size: var(--font-size-14);
+    justify-content: center;
+    align-items: center;
 }
 
 .age-options {
     display: none; /* Oculto por defecto */
     position: absolute;
-    width: 100%;
     border: 1px solid #ccc;
-    background-color: rgb(58, 27, 27);
+    background-color: #333;
     max-height: 200px;
     overflow-y: auto; /* Añade scroll si hay muchas opciones */
+    scrollbar-width: none; /* Oculta la barra de desplazamiento en Firefox */
+
     z-index: 100;
+    border-radius: 10px;
 }
 
 .age-option {
-    padding: 2.5px;
+    padding: 10px;
     text-align: center;
     cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    width: 130px;
+
 }
 
 .age-option:hover {
-    background-color: #f0f0f0;
+    background-color: #62709a;
 }
 
 .open {
