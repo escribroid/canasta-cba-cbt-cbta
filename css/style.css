@@ -3,7 +3,7 @@ body {
     color: aliceblue;
     margin: 0 10px;
     font-family: var(--font-primary);
-    font-size: 1.8rem;
+    font-size: var(--font-size-18);
 }
 
 fieldset {
@@ -33,7 +33,6 @@ main {
 
 option {
     text-align: center; /* Centra el texto de cada opción */
-    font-family: var(--font-mono);
     width: 50px;
 }
 
@@ -46,7 +45,6 @@ option {
 
 select {
     background-color: #333;
-    font-family: var(--font-mono);
     text-align: center; /* Centra el texto horizontalmente */
     text-align-last: center; /* Centra el texto en la opción seleccionada */
     display: flex;
@@ -70,7 +68,6 @@ select {
 
 .accordion-flush .accordion-item .accordion-button,
 .accordion-flush .accordion-item .accordion-button.collapsed {
-    /* border-radius: 10px; */
     background: #333;
     color: var(--font-color-medium);
     font-size: var(--font-size-16);
@@ -79,7 +76,6 @@ select {
 .accordion-flush .accordion-item {
     border-right: 0;
     border-left: 0;
-    /* border-radius: 10px; */
 }
 
 .accordion-body {
@@ -91,7 +87,6 @@ select {
 }
 
 .accordion-item {
-    /* border-radius: 10px; */
 }
 
 .aclaracion_edades {
@@ -99,7 +94,6 @@ select {
 }
 
 .card {
-    /* border-radius: 10px; */
     margin-bottom: 20px;
     background-color: #222222;
 }
@@ -170,9 +164,9 @@ select {
 }
 
 .table {
-    font-size: 14px;
+    font-size: var(--font-size-16);
     margin: 0 auto;
-    width: 75%;
+    width: 80%;
 }
 
 .view_cba,
@@ -184,7 +178,6 @@ select {
 
 select {
     background-color: #333;
-    font-family: var(--font-mono);
     text-align: center; /* Centra el texto horizontalmente */
     text-align-last: center; /* Centra el texto en la opción seleccionada */
     display: flex;
@@ -193,9 +186,10 @@ select {
     width: 15ch;
 }
 
+/* Select custom ############################### */
 .custom-select-container {
     background-color: #333;
-    font-family: Arial, sans-serif;
+    z-index: 10; /* Asegura que esté por encima del overlay */
 }
 
 .selected-age {
@@ -205,28 +199,29 @@ select {
     cursor: pointer;
     /* text-align: center; */
     width: 100%;
-    height: 30px;
+    height: 35px;
     font-size: var(--font-size-18);
     justify-content: center;
     align-items: center;
     border-radius: 3px;
+    z-index: 11; /* Asegura que esté por encima del overlay */
 }
 
 .age-options {
     display: none; /* Oculto por defecto */
     position: absolute;
-    border: 1px solid #ccc;
+    border: 1px solid #ff4f00;
     background-color: #333;
-    max-height: 250px;
+    max-height: 400px;
     overflow-y: auto; /* Añade scroll si hay muchas opciones */
     scrollbar-width: none; /* Oculta la barra de desplazamiento en Firefox */
     width: 100%;
-    z-index: 100;
+    z-index: 12; /* Asegura que esté por encima del overlay */
     border-radius: 10px;
 }
 
 .age-option {
-    padding: 12px;
+    padding: 15px;
     text-align: center;
     font-size: var(--font-size-20);
     cursor: pointer;
@@ -239,7 +234,18 @@ select {
 }
 
 .open {
-    top: 0;
     display: block;
+    top: 0;
     right: 0;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
+    z-index: 9; /* Debajo de las opciones desplegadas */
 }

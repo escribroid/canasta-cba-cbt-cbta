@@ -114,25 +114,22 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     document.getElementById("person-form").reset();
 });
 
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const selectedAge = document.getElementById('selected-age');
-    const ageOptions = document.getElementById('age-options');
-    const ageInput = document.getElementById('age');
+document.addEventListener("DOMContentLoaded", function () {
+    const selectedAge = document.getElementById("selected-age");
+    const ageOptions = document.getElementById("age-options");
+    const ageInput = document.getElementById("age");
+    const overlay = document.getElementById("overlay");
 
     // Mostrar/ocultar las opciones al hacer clic
-    selectedAge.addEventListener('click', function() {
-        ageOptions.classList.toggle('open');
+    selectedAge.addEventListener("click", function () {
+        ageOptions.classList.toggle("open");
+        overlay.style.display = ageOptions.classList.contains("open") ? "block" : "none";
     });
 
     // Manejar la selección de una opción
-    document.querySelectorAll('.age-option').forEach(option => {
-        option.addEventListener('click', function() {
-            const value = this.getAttribute('data-value');
+    document.querySelectorAll(".age-option").forEach((option) => {
+        option.addEventListener("click", function () {
+            const value = this.getAttribute("data-value");
             const text = this.textContent;
 
             selectedAge.textContent = text;
@@ -140,18 +137,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
             console.log("ageInput", ageInput.value);
             console.log("selectedAge", value);
-            
-            
 
-            ageOptions.classList.remove('open');
+            ageOptions.classList.remove("open");
+            overlay.style.display = "none";
         });
     });
 
     // Cerrar el menú si se hace clic fuera de él
-    document.addEventListener('click', function(e) {
+    document.addEventListener("click", function (e) {
         if (!selectedAge.contains(e.target) && !ageOptions.contains(e.target)) {
-            ageOptions.classList.remove('open');
+            ageOptions.classList.remove("open");
+            overlay.style.display = "none";
         }
     });
-});
 
+    // Cerrar el menú si se hace clic en el overlay
+    overlay.addEventListener('click', function() {
+        ageOptions.classList.remove('open');
+        overlay.style.display = 'none';
+    });
+});
