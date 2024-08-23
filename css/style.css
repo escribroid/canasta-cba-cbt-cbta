@@ -42,8 +42,6 @@ main {
     flex-direction: column;
 }
 
-
-
 #person-form {
     border: 1px solid #ff4f00;
     border-radius: 10px;
@@ -180,14 +178,13 @@ main {
     color: aliceblue;
 }
 
-
-
 /* Select custom ############################### */
 .custom-select-container {
     background-color: #333;
 }
 
-.selected-gender, .selected-age  {
+.selected-gender,
+.selected-age {
     display: flex;
     background-color: #333;
     border: 1px solid #ccc;
@@ -199,10 +196,11 @@ main {
     align-items: center;
     border-radius: 3px;
     z-index: 11; /* Asegura que esté por encima del overlay */
-    font-family: 'Segoe UI Symbol', 'Noto Sans Symbols', Arial, sans-serif;
+    font-family: "Noto Sans Symbols", "Segoe UI Symbol", "DejaVu Sans", Arial, sans-serif;
 }
 
-.gender-options, .age-options  {
+.gender-options,
+.age-options {
     display: none; /* Oculto por defecto */
     position: absolute;
     border: 1px solid #ff4f00;
@@ -215,7 +213,8 @@ main {
     border-radius: 10px;
 }
 
-.gender-option, .age-option  {
+.gender-option,
+.age-option {
     padding: 15px;
     text-align: center;
     font-size: var(--font-size-20);
@@ -224,21 +223,23 @@ main {
     width: 100%;
 }
 
-.age-option:active, .gender-option:active {
+.age-option:active,
+.gender-option:active {
     background-color: #1d9f19;
 }
 
-.age-option::selection, .gender-option::selection {
+.age-option::selection,
+.gender-option::selection {
     background-color: #1d9f19;
 }
 
-
-.age-option:hover, .gender-option:hover {
+.age-option:hover,
+.gender-option:hover {
     background-color: #62709a;
 }
 
 .age-option.selected {
-    background-color: #007BFF; /* Color azul para la opción seleccionada */
+    background-color: #007bff; /* Color azul para la opción seleccionada */
     color: white; /* Cambiar el color del texto */
 }
 
@@ -264,6 +265,6 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); 
-    z-index: 5; 
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
 }
