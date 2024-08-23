@@ -82,6 +82,8 @@ main {
     font-size: var(--font-size-12);
 }
 
+
+
 .btn-add-person {
     display: flex;
     height: 35px;
@@ -99,6 +101,7 @@ main {
 }
 
 .card {
+    justify-content: center;
     margin-bottom: 20px;
     background-color: #222222;
 }
@@ -183,6 +186,12 @@ main {
 }
 
 /* Select custom ############################### */
+.arrow-down {
+    transform: rotate(90deg);
+    position: absolute;
+    right: 10px;
+}
+
 .custom-select-container {
     background-color: #333;
 }
@@ -196,11 +205,12 @@ main {
     width: 100%;
     height: 35px;
     font-size: var(--font-size-18);
-    justify-content: center;
     align-items: center;
     border-radius: 3px;
     z-index: 11; /* Asegura que esté por encima del overlay */
     font-family: "Noto Sans Symbols", "Segoe UI Symbol", "DejaVu Sans", Arial, sans-serif;
+    padding-left: 10px;
+    position: relative;
 }
 
 .gender-options,
