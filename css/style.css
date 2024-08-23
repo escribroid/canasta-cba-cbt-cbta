@@ -192,6 +192,7 @@ main {
     align-items: center;
     border-radius: 3px;
     z-index: 11; /* Asegura que esté por encima del overlay */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .gender-options, .age-options  {
