@@ -1,5 +1,4 @@
 html {
-    transition: all 0.5s ease-in-out;
 }
 
 body {
@@ -13,6 +12,8 @@ body {
 fieldset {
     display: flex;
     justify-content: space-around;
+    gap: 10px;
+    align-items: center;
 }
 
 footer {
@@ -75,6 +76,17 @@ main {
 
 .aclaracion_edades {
     font-size: var(--font-size-12);
+}
+
+.btn-submit {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 35px;
+    font-size: var(--font-size-40);
+    font-weight: bold;
+    border-radius: 5px;
+    color: rgb(244 226 167);
 }
 
 .card {
@@ -206,7 +218,6 @@ main {
 
 .age-option:active, .gender-option:active {
     background-color: #1d9f19;
-    transition: all 2s ease-in-out;
 }
 
 .age-option::selection, .gender-option::selection {
@@ -216,6 +227,20 @@ main {
 
 .age-option:hover, .gender-option:hover {
     background-color: #62709a;
+}
+
+.age-option.selected {
+    background-color: #007BFF; /* Color azul para la opción seleccionada */
+    color: white; /* Cambiar el color del texto */
+}
+
+.message_error_age {
+    display: none;
+    background-color: rgb(73, 51, 51);
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    color: white;
 }
 
 .open {
@@ -231,6 +256,6 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
-    z-index: 9; /* Debajo de las opciones desplegadas */
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 5; 
 }

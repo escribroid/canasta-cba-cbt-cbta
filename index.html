@@ -81,7 +81,7 @@
                 <div class="card-header">
                     <h2>Tu Canasta Socio-economica</h2>
                     <div class="card_subtitle">
-                        ||
+                        |||
                         <div class=""></div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                             <fieldset>
                                 <div class="person-form-group">
                                     <div class="custom-select-container">
-                                        <div id="selected-gender" class="selected-gender">Género</div>
+                                        <div id="selected-gender" class="selected-gender">Género &nbsp; &#11167;</div>
                                         <div id="gender-options" class="gender-options">
                                             <div data-value="Femenina" class="gender-option">Femenina</div>
                                             <div data-value="Masculino" class="gender-option">Masculino</div>
@@ -111,7 +111,7 @@
                                 <div class="person-form-group">
                                     <!-- Custom select -->
                                     <div class="custom-select-container">
-                                        <div id="selected-age" class="selected-age">Edad</div>
+                                        <div id="selected-age" class="selected-age">Edad &nbsp; &#11167;</div>
                                         <div id="age-options" class="age-options">
                                             <div data-value="0" class="age-option">0 años</div>
                                             <div data-value="1" class="age-option">1 años</div>
@@ -215,16 +215,34 @@
                                             <div data-value="99" class="age-option">99 o más</div>
                                         </div>
                                         <input type="hidden" name="age" id="age" required />
-                                        <div id="overlay" class="overlay"></div>
+                                        <!-- message error -->
+                                         <div id="message_error_age" class="message_error_age"></div>
                                         <!-- Overlay for the age options ++++++++++++++++++++++++-->
-                                    </div>
+                                        <div id="overlay-age" class="overlay"></div>
+                                        <div id="overlay-gender" class="overlay"></div>
+
+                                      </div>
                                 </div>
+                                <button type="submit" class="btn-submit m-3"> + </button>
+                                
                             </fieldset>
-                            <button type="submit" class="btn btn-primary m-3">Agregar</button>
+
+                            <h3>Tu Canasta Real:</h3>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col">Edad</th>
+                                        <th scope="col">Parcial</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="person-list" class="table-group-divider"></tbody>
+                            </table>
+                        
                         </form>
 
-                        <h3>Tu Canasta Real:</h3>
-                        <!-- <ul id="person-list"></ul> -->
+                        <!-- <h3>Tu Canasta Real:</h3>
 
                         <table class="table">
                             <thead>
@@ -235,7 +253,7 @@
                                 </tr>
                             </thead>
                             <tbody id="person-list" class="table-group-divider"></tbody>
-                        </table>
+                        </table> -->
                     </li>
                     <li class="list-group-item aclaracion_edades"></li>
                 </ul>
