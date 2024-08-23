@@ -92,12 +92,21 @@
 
                             <fieldset>
                                 <div class="person-form-group">
-                                    <div class="select-container">
+                                    <div class="custom-select-container">
+                                        <div id="selected-gender" class="selected-gender">Género</div>
+                                        <div id="gender-options" class="gender-options">
+                                            <div data-value="Femenina" class="gender-option">Femenina</div>
+                                            <div data-value="Masculino" class="gender-option">Masculino</div>
+                                        </div>
+                                        <input type="hidden" name="gender" id="gender" required />
+                                    </div>
+
+                                    <!-- <div class="select-container">
                                         <select id="person-type" name="type" class="person-form-select">
                                             <option value="Femenina">Femenina</option>
                                             <option value="Masculino">Masculino</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="person-form-group">
                                     <!-- Custom select -->

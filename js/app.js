@@ -89,7 +89,7 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     }
 
     // Obtener el valor seleccionado del select
-    const selectElement = document.getElementById("person-type");
+    const selectElement = document.getElementById("gender");
     const person_type = selectElement.value;
 
     // Crear un elemento de lista para mostrar la persona
@@ -114,17 +114,32 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     document.getElementById("person-form").reset();
 });
 
+
+// Form Selects Custom
 document.addEventListener("DOMContentLoaded", function () {
     const selectedAge = document.getElementById("selected-age");
     const ageOptions = document.getElementById("age-options");
     const ageInput = document.getElementById("age");
+
     const overlay = document.getElementById("overlay");
+
+    const selectedGender = document.getElementById("selected-gender");
+    const genderOptions = document.getElementById("gender-options");
+    const genderInput = document.getElementById("gender");
+
 
     // Mostrar/ocultar las opciones al hacer clic
     selectedAge.addEventListener("click", function () {
         ageOptions.classList.toggle("open");
         overlay.style.display = ageOptions.classList.contains("open") ? "block" : "none";
+
+        
     });
+
+    selectedGender.addEventListener("click", function () {
+        genderOptions.classList.toggle("open");
+        overlay.style.display = genderOptions.classList.contains("open") ? "block" : "none";
+    })
 
     // Manejar la selección de una opción
     document.querySelectorAll(".age-option").forEach((option) => {
@@ -143,10 +158,29 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    document.querySelectorAll(".gender-option").forEach((option) => { option.addEventListener("click", function () {
+        const value = this.getAttribute("data-value");
+        const text = this.textContent;
+
+        selectedGender.textContent = text;
+        genderInput.value = value;
+
+        console.log("genderInput", genderInput.value);
+        console.log("selectedGender", value);
+
+        genderOptions.classList.remove("open");
+        overlay.style.display = "none";
+    })})
+
     // Cerrar el menú si se hace clic fuera de él
     document.addEventListener("click", function (e) {
         if (!selectedAge.contains(e.target) && !ageOptions.contains(e.target)) {
             ageOptions.classList.remove("open");
+            overlay.style.display = "none";
+        }
+
+        if (!selectedGender.contains(e.target) && !genderOptions.contains(e.target)) {
+            genderOptions.classList.remove("open");
             overlay.style.display = "none";
         }
     });
@@ -154,6 +188,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Cerrar el menú si se hace clic en el overlay
     overlay.addEventListener('click', function() {
         ageOptions.classList.remove('open');
+        overlay.style.display = 'none';
+
+        genderOptions.classList.remove('open');
         overlay.style.display = 'none';
     });
 });
