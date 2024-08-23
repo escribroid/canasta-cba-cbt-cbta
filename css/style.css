@@ -46,7 +46,6 @@ main {
     border: 1px solid #ff4f00;
     border-radius: 10px;
     margin: 5px;
-    position: relative;
     padding: 5px;
 }
 
@@ -190,6 +189,8 @@ main {
     transform: rotate(90deg);
     position: absolute;
     right: 10px;
+    font-size: 1.6rem;
+    color: #ff4f00;
 }
 
 .custom-select-container {
@@ -268,7 +269,7 @@ main {
 
 .open {
     display: block;
-    top: 0;
+    top: -100%;
     right: 0;
 }
 
