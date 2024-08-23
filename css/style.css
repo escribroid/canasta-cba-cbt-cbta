@@ -82,16 +82,20 @@ main {
     font-size: var(--font-size-12);
 }
 
-.btn-submit {
+.btn-add-person {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
     height: 35px;
-    font-size: var(--font-size-40);
+    font-size: 4rem;
     font-weight: bold;
     border-radius: 5px;
     color: rgb(244 226 167);
+    border: 0px solid #ff4f00;
+    background-color: #333;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0px;
+    vertical-align: middle;
 }
 
 .card {
