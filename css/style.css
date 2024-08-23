@@ -20,12 +20,14 @@ footer {
     background-color: #000;
     color: aliceblue;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 h1 {
     /* color: #872341; */
     text-align: center;
     width: 24ch;
+    text-align: center;
 }
 
 h2 {
@@ -34,7 +36,7 @@ h2 {
 
 header {
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 main {
@@ -81,17 +83,15 @@ main {
     font-size: var(--font-size-12);
 }
 
-
-
 .btn-add-person {
     display: flex;
-    height: 35px;
-    font-size: 4rem;
+    width: 35px;
+    font-size: 3rem;
     font-weight: bold;
     border-radius: 5px;
     color: rgb(244 226 167);
     border: 0px solid #ff4f00;
-    background-color: #333;
+    background-color: #212529;
     justify-content: center;
     align-items: center;
     margin: 0;
@@ -99,9 +99,13 @@ main {
     vertical-align: middle;
 }
 
+.btn-add-person:hover {
+    transform: scale(1.2);
+}
+
 .card {
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-color: #222222;
 }
 
@@ -124,6 +128,14 @@ main {
     width: 100%;
     justify-content: space-between;
     color: rgb(255 255 255);
+}
+
+.icon-svg-add {
+    fill: #ff4f00;
+}
+
+.icon-svg-add:hover {
+    fill: #554f00;
 }
 
 .linea_pobreza,
@@ -151,7 +163,7 @@ main {
 
 .person-form-group {
     display: flex;
-    width: 45%;
+    width: 9ch;
     flex-direction: column;
 }
 
@@ -186,10 +198,11 @@ main {
 
 /* Select custom ############################### */
 .arrow-down {
-    transform: rotate(90deg);
+    transform: rotate(90deg) scaley(1.3);
     position: absolute;
     right: 10px;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+    font-weight: bold;
     color: #ff4f00;
 }
 
@@ -220,7 +233,7 @@ main {
     position: absolute;
     border: 1px solid #ff4f00;
     background-color: #333;
-    max-height: 400px;
+    max-height: 450px;
     overflow-y: auto; /* Añade scroll si hay muchas opciones */
     scrollbar-width: none; /* Oculta la barra de desplazamiento en Firefox */
     width: 100%;
@@ -269,7 +282,7 @@ main {
 
 .open {
     display: block;
-    top: -100%;
+    top: 0;
     right: 0;
 }
 
