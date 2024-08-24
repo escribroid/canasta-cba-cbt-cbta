@@ -1,8 +1,7 @@
 import indices_manuales from "./mod-indices.js";
-import tabla_equivalentes from './mod-canasta-custom.js';
+import tabla_equivalentes from "./mod-canasta-custom.js";
 
-console.log("tabla_equivalentes[0].mujer", tabla_equivalentes[0].mujer);
-
+//console.log("tabla_equivalentes[0].mujer", tabla_equivalentes[0].mujer);
 // console.log("in", indices_manuales.cbt_manual);
 
 const cba_unformat = Math.trunc(indices_manuales.cba_manual * 3.09);
@@ -13,10 +12,11 @@ const cbt_alquiler_3amb_unformat = cbt_unformat + indices_manuales.alquilerProm3
 
 // Formatear el número con separador de miles
 const cba = cba_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
-console.log("cba", cba);
 const cbt = cbt_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
 const cbt_alquiler_2amb = cbt_alquiler_2amb_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
 const cbt_alquiler_3amb = cbt_alquiler_3amb_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
+
+//console.log("cba", cba);
 
 // Calculos cba, cbt, cbt_alquiler_2amb, cbt_alquiler_3amb
 function calcular_cba() {
@@ -57,8 +57,6 @@ calcular_cbt_y_alquiler();
 linea_indigencia();
 linea_pobreza();
 linea_pobreza_alquilando();
-
-
 
 // Form Selects Custom ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 document.addEventListener("DOMContentLoaded", function () {
@@ -145,10 +143,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
 /* TABLA CANASTA PERSONALIZADA +++++++++++++++++++++++++++++++++++++++++++ */
 let count = 0;
+let sumaTotal = 0;
+
 /* Agregar personas a la tabla */
 document.getElementById("person-form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -161,15 +159,13 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
         age = document.getElementById("age").value = age * -1;
     }
 
-    console.log('age', age);
-    
+    console.log("age", age);
 
     // Obtener el valor seleccionado del select
     const selectElement = document.getElementById("gender");
     const person_type = selectElement.value;
 
-    console.log('person_type', person_type);
-    
+    console.log("person_type", person_type);
 
     // Crear un elemento de lista para mostrar la persona
     // const li = document.createElement("li");
@@ -199,19 +195,17 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     // Limpiar el formulario
     document.getElementById("person-form").reset();
 
-    const age_lowercase = age.toLowerCase();
+    const age_lowercase = age.toString();
     const person_type_lowercase = person_type.toLowerCase();
+    console.log("person_type_lowercase-", person_type_lowercase);
 
-    console.log("age_lowercase", age_lowercase); 
-    console.log("person_type_lowercase", person_type_lowercase); 
+    let sumando = tabla_equivalentes[`${age_lowercase}`][`${person_type_lowercase}`] * cbt_unformat;
 
+    sumaTotal = sumaTotal + sumando;
 
+    console.log("sumando-", sumando);
 
+    console.log("sumaTotal-", sumaTotal);
 
-
-
+    console.log("cba_unformat-", cba_unformat);
 });
-
-
-
-

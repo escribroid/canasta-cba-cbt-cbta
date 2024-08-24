@@ -267,7 +267,7 @@ main {
 .age-option {
     border-bottom: 0.1rem solid #ccc;
     cursor: pointer;
-    font-size: var(--font-size-22);
+    font-size: var(--font-size-24);
     padding: 2rem;
     text-align: center;
     width: 100%;
