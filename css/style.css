@@ -6,7 +6,7 @@ body {
     color: aliceblue;
     margin: 0 10px;
     font-family: var(--font-primary);
-    font-size: var(--font-size-18);
+    font-size: var(--font-size-22);
 }
 
 fieldset {
@@ -35,8 +35,7 @@ h2 {
 }
 
 header {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 20px 0 20px 0;
 }
 
 main {
@@ -60,7 +59,7 @@ main {
 .accordion-flush .accordion-item .accordion-button.collapsed {
     background: #333;
     color: var(--font-color-medium);
-    font-size: var(--font-size-16);
+    font-size: var(--font-size-18);
 }
 
 .accordion-flush .accordion-item {
@@ -80,7 +79,7 @@ main {
 }
 
 .aclaracion_edades {
-    font-size: var(--font-size-12);
+    font-size: var(--font-size-14);
 }
 
 .btn-add-person {
@@ -141,7 +140,7 @@ main {
 .linea_pobreza,
 .linea_indigencia,
 .linea_pobreza_alquilando {
-    font-size: var(--font-size-14);
+    font-size: var(--font-size-16);
 }
 
 .list-group-item {
@@ -149,7 +148,7 @@ main {
 }
 
 .logo {
-    font-size: var(--font-size-28);
+    font-size: var(--font-size-36);
     font-family: var(--font-logo);
     letter-spacing: 2px;
     font-weight: var(--font-weight-700-bold);
@@ -157,7 +156,7 @@ main {
 }
 
 .logo-img {
-    width: 26px;
+    width: 3.6rem;
     margin-right: 10px;
 }
 
@@ -184,7 +183,7 @@ main {
 }
 
 .table {
-    font-size: var(--font-size-16);
+    font-size: var(--font-size-20);
     margin: 0 auto;
     width: 80%;
 }
@@ -200,8 +199,8 @@ main {
 .arrow-down {
     transform: rotate(90deg) scaley(1.3);
     position: absolute;
-    right: 10px;
-    font-size: 1.3rem;
+    right: 5px;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #ff4f00;
 }
@@ -218,7 +217,7 @@ main {
     cursor: pointer;
     width: 100%;
     height: 35px;
-    font-size: var(--font-size-18);
+    font-size: var(--font-size-20);
     align-items: center;
     border-radius: 3px;
     z-index: 11; /* Asegura que esté por encima del overlay */
@@ -229,15 +228,15 @@ main {
 
 .gender-options,
 .age-options {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: absolute;
     border: 1px solid #ff4f00;
     background-color: #333;
     max-height: 450px;
-    overflow-y: auto; /* Añade scroll si hay muchas opciones */
-    scrollbar-width: none; /* Oculta la barra de desplazamiento en Firefox */
+    overflow-y: auto;
+    scrollbar-width: none;
     width: 100%;
-    z-index: 12; /* Asegura que esté por encima del overlay */
+    z-index: 12;
     border-radius: 10px;
 }
 
@@ -245,7 +244,7 @@ main {
 .age-option {
     padding: 15px;
     text-align: center;
-    font-size: var(--font-size-20);
+    font-size: var(--font-size-22);
     cursor: pointer;
     border-bottom: 1px solid #ccc;
     width: 100%;
@@ -267,8 +266,8 @@ main {
 }
 
 .age-option.selected {
-    background-color: #007bff; /* Color azul para la opción seleccionada */
-    color: white; /* Cambiar el color del texto */
+    background-color: #007bff;
+    color: white;
 }
 
 .message_error_age {
