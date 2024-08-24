@@ -4,7 +4,7 @@ html {
 body {
     background-color: #000;
     color: aliceblue;
-    margin: 0 10px;
+    margin: 0 1rem;
     font-family: var(--font-primary);
     font-size: var(--font-size-22);
 }
@@ -12,15 +12,16 @@ body {
 fieldset {
     display: flex;
     justify-content: space-around;
-    gap: 10px;
+    gap: 1rem;
     align-items: center;
+    margin: 0 0 1.5rem 0;
 }
 
 footer {
     background-color: #000;
     color: aliceblue;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 2rem;
 }
 
 h1 {
@@ -35,7 +36,7 @@ h2 {
 }
 
 header {
-    margin: 20px 0 20px 0;
+    margin: 2rem 0 2rem 0;
 }
 
 main {
@@ -44,10 +45,10 @@ main {
 }
 
 #person-form {
-    border: 1px solid #ff4f00;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 5px;
+    border: 0 solid #ff4f00;
+    border-radius: 1rem;
+    margin: 0;
+    padding: 0;
 }
 
 .accordion {
@@ -73,9 +74,12 @@ main {
 
 .accordion-button {
     justify-content: center;
+    /* padding: 15px 0px; */
+    margin: 0;
 }
 
 .accordion-item {
+    padding: 0;
 }
 
 .aclaracion_edades {
@@ -84,17 +88,17 @@ main {
 
 .btn-add-person {
     display: flex;
-    width: 35px;
+    width: 3.5rem;
     font-size: 3rem;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     color: rgb(244 226 167);
-    border: 0px solid #ff4f00;
+    border: 0 solid #ff4f00;
     background-color: #212529;
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 0px;
+    padding: 0;
     vertical-align: middle;
 }
 
@@ -104,7 +108,7 @@ main {
 
 .card {
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 2rem;
     background-color: #222222;
 }
 
@@ -115,11 +119,15 @@ main {
 .card_cba_value {
     color: rgb(211 193 255);
     color: rgb(255 181 158);
-    margin-left: 10px;
+    margin-left: 1rem;
     font-weight: var(--font-weight-700-bold);
 }
 
 .card-header {
+    padding: 1rem;
+}
+
+.card-header h2 {
 }
 
 .card_subtitle {
@@ -127,6 +135,7 @@ main {
     width: 100%;
     justify-content: space-between;
     color: rgb(255 255 255);
+    padding: 1rem 0 0 0;
 }
 
 .icon-svg-add {
@@ -143,21 +152,25 @@ main {
     font-size: var(--font-size-16);
 }
 
-.list-group-item {
-    padding: 2px 2px;
+.lineas_info {
+    padding: 1rem;
+}
+
+.list-group-item-acordion {
+    padding: 0.5rem 0;
 }
 
 .logo {
     font-size: var(--font-size-36);
     font-family: var(--font-logo);
-    letter-spacing: 2px;
+    letter-spacing: 0.2rem;
     font-weight: var(--font-weight-700-bold);
     /* color: #F05941; */
 }
 
 .logo-img {
     width: 3.6rem;
-    margin-right: 10px;
+    margin-right: 1rem;
 }
 
 .person-form-group {
@@ -168,7 +181,11 @@ main {
 
 .person-form-select,
 .person-select-age {
-    margin-top: 0px;
+    margin-top: 0;
+}
+
+.person-form-title {
+    margin: 1rem 0 1.5rem 1.5rem;
 }
 
 .row {
@@ -188,6 +205,10 @@ main {
     width: 80%;
 }
 
+.table-header {
+    text-align: center;
+}
+
 .view_cba,
 .view_cbt,
 .view_cbta,
@@ -199,7 +220,8 @@ main {
 .arrow-down {
     transform: rotate(90deg) scaley(1.3);
     position: absolute;
-    right: 5px;
+    right: 0.5rem;
+    top: 20%;
     font-size: 1.4rem;
     font-weight: bold;
     color: #ff4f00;
@@ -213,16 +235,15 @@ main {
 .selected-age {
     display: flex;
     background-color: #333;
-    border: 1px solid #ccc;
+    border: 0.1rem solid #ccc;
     cursor: pointer;
     width: 100%;
-    height: 35px;
+    height: 3.5rem;
     font-size: var(--font-size-20);
-    align-items: center;
-    border-radius: 3px;
+    border-radius: 0.3rem;
     z-index: 11; /* Asegura que esté por encima del overlay */
     font-family: "Noto Sans Symbols", "Segoe UI Symbol", "DejaVu Sans", Arial, sans-serif;
-    padding-left: 10px;
+    padding-left: 1rem;
     position: relative;
 }
 
@@ -230,23 +251,23 @@ main {
 .age-options {
     display: none;
     position: absolute;
-    border: 1px solid #ff4f00;
+    border: 0.1rem solid #ff4f00;
     background-color: #333;
-    max-height: 450px;
+    max-height: 45rem;
     overflow-y: auto;
     scrollbar-width: none;
     width: 100%;
     z-index: 12;
-    border-radius: 10px;
+    border-radius: 1rem;
 }
 
 .gender-option,
 .age-option {
-    padding: 15px;
+    padding: 1.5rem;
     text-align: center;
     font-size: var(--font-size-22);
     cursor: pointer;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 0.1rem solid #ccc;
     width: 100%;
 }
 
@@ -274,8 +295,8 @@ main {
     display: none;
     background-color: rgb(73, 51, 51);
     position: absolute;
-    width: 300px;
-    height: 150px;
+    width: 30rem;
+    height: 15rem;
     color: white;
 }
 
