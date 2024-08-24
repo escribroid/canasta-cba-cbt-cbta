@@ -241,7 +241,6 @@ main {
     padding-left: 1rem;
     width: 100%;
     z-index: 11;
-    /* position: relative; */
 }
 
 .gender-options,
@@ -250,13 +249,18 @@ main {
     border: 0.1rem solid #ff4f00;
     border-radius: 1rem;
     display: none;
-    max-height: 45rem;
+    max-height: 80%;
     overflow-y: auto;
     position: fixed;
-    top: 40%;
+    top: 10rem;
     scrollbar-width: none;
     width: 100%;
     z-index: 12;
+}
+
+.gender-options {
+    top: 45%;
+
 }
 
 .gender-option,
@@ -264,7 +268,7 @@ main {
     border-bottom: 0.1rem solid #ccc;
     cursor: pointer;
     font-size: var(--font-size-22);
-    padding: 1.5rem;
+    padding: 2rem;
     text-align: center;
     width: 100%;
 }

@@ -1,42 +1,53 @@
 import indices_manuales from "./mod-indices.js";
+import tabla_equivalentes from './mod-canasta-custom.js';
 
-console.log("in", indices_manuales.cbt_manual);
+console.log("tabla_equivalentes[0].mujer", tabla_equivalentes[0].mujer);
 
-let cba = Math.trunc(indices_manuales.cba_manual * 3.09);
-let cbt = Math.trunc(indices_manuales.cbt_manual * 3.09);
-let mes = indices_manuales.mes_cba_cbt_manual;
-let cbt_alquiler_2amb = cbt + indices_manuales.alquilerProm2amb;
-let cbt_alquiler_3amb = cbt + indices_manuales.alquilerProm3amb;
+// console.log("in", indices_manuales.cbt_manual);
 
+const cba_unformat = Math.trunc(indices_manuales.cba_manual * 3.09);
+const cbt_unformat = Math.trunc(indices_manuales.cbt_manual * 3.09);
+const mes = indices_manuales.mes_cba_cbt_manual;
+const cbt_alquiler_2amb_unformat = cbt_unformat + indices_manuales.alquilerProm2amb;
+const cbt_alquiler_3amb_unformat = cbt_unformat + indices_manuales.alquilerProm3amb;
+
+// Formatear el número con separador de miles
+const cba = cba_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
+console.log("cba", cba);
+const cbt = cbt_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
+const cbt_alquiler_2amb = cbt_alquiler_2amb_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
+const cbt_alquiler_3amb = cbt_alquiler_3amb_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
+
+// Calculos cba, cbt, cbt_alquiler_2amb, cbt_alquiler_3amb
 function calcular_cba() {
-    let view_cba = document.querySelector(".view_cba");
+    const view_cba = document.querySelector(".view_cba");
     view_cba.innerHTML = `<span class="card_cba_value">  $${cba} </span>`;
 }
 
 function calcular_cbt() {
-    let view_cbt = document.querySelector(".view_cbt");
+    const view_cbt = document.querySelector(".view_cbt");
     view_cbt.innerHTML = `<span class="card_cba_value">  $${cbt} </span>`;
 }
 
 function calcular_cbt_y_alquiler(personas, edad) {
-    let view_cbt_alquiler_3amb = document.querySelector(".view_cbt_alquiler_3amb");
+    const view_cbt_alquiler_3amb = document.querySelector(".view_cbt_alquiler_3amb");
     view_cbt_alquiler_3amb.innerHTML = `<span class="card_cba_value">  $${cbt_alquiler_3amb} </span>`;
     // let view_cbt_alquiler_2amb = document.querySelector(".view_cbt_alquiler_2amb");
     // view_cbt_alquiler_2amb.innerHTML = `<span class="card_cba_value">  $${cbt_alquiler_2amb} </span>`;
 }
 
 function linea_indigencia() {
-    let linea_indigencia = document.querySelector(".linea_indigencia");
+    const linea_indigencia = document.querySelector(".linea_indigencia");
     linea_indigencia.innerHTML = `<span class="linea_vineta">»</span> Indigentes con Casa Propia, ingresos por mes menores a: $${cba}`;
 }
 
 function linea_pobreza() {
-    let linea_pobreza = document.querySelector(".linea_pobreza");
+    const linea_pobreza = document.querySelector(".linea_pobreza");
     linea_pobreza.innerHTML = `» Pobres con Casa Propia, si ingreso por mes menor a: $${cbt}`;
 }
 
 function linea_pobreza_alquilando() {
-    let linea_pobreza_alquilando = document.querySelector(".linea_pobreza_alquilando");
+    const linea_pobreza_alquilando = document.querySelector(".linea_pobreza_alquilando");
     linea_pobreza_alquilando.innerHTML = `» Pobres Sin Casa Propia, ALQUILANDO, si ingreso por mes menor a:   $${cbt_alquiler_3amb} `;
 }
 
@@ -47,81 +58,9 @@ linea_indigencia();
 linea_pobreza();
 linea_pobreza_alquilando();
 
-// tabla equivalencias personas
-const tabla_equivalentes = {
-    edad_0: { mujer: 0.35, varon: 0.35 },
-    edad_1: { mujer: 0.37, varon: 0.37 },
-    edad_2: { mujer: 0.46, varon: 0.46 },
-    edad_3: { mujer: 0.51, varon: 0.51 },
-    edad_4: { mujer: 0.55, varon: 0.55 },
-    edad_5: { mujer: 0.6, varon: 0.6 },
-    edad_6: { mujer: 0.64, varon: 0.64 },
-    edad_7: { mujer: 0.66, varon: 0.66 },
-    edad_8: { mujer: 0.68, varon: 0.68 },
-    edad_9: { mujer: 0.69, varon: 0.69 },
-    edad_10: { mujer: 0.7, varon: 0.79 },
-    edad_11: { mujer: 0.72, varon: 0.82 },
-    edad_12: { mujer: 0.74, varon: 0.85 },
-    edad_13: { mujer: 0.76, varon: 0.9 },
-    edad_14: { mujer: 0.76, varon: 0.96 },
-    edad_15: { mujer: 0.77, varon: 1.0 },
-    edad_16: { mujer: 0.77, varon: 1.0 },
-    edad_17: { mujer: 0.77, varon: 1.04 },
-    "edad_18-29": { mujer: 0.76, varon: 1.02 },
-    "edad_30-45": { mujer: 0.76, varon: 1.0 },
-    "edad_46-60": { mujer: 0.76, varon: 1.0 },
-    "edad_61-75": { mujer: 0.67, varon: 0.83 },
-    "edad_76-99": { mujer: 0.63, varon: 0.74 },
-};
 
-let count = 0;
 
-/* Agregar personas a la tabla */
-document.getElementById("person-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    count = count + 1;
-
-    // Obtener los valores del formulario
-    const age = document.getElementById("age").value;
-
-    if (parseInt(age) < 0) {
-        age = document.getElementById("age").value = age * -1;
-    }
-
-    // Obtener el valor seleccionado del select
-    const selectElement = document.getElementById("gender");
-    const person_type = selectElement.value;
-
-    // Crear un elemento de lista para mostrar la persona
-    // const li = document.createElement("li");
-    // li.textContent = `${person_type}  |  Edad: ${age}`;
-
-    const tr_person = document.createElement("tr");
-    tr_person.id = `person-list-row${count}`;
-
-    const th_type = document.createElement("th");
-    th_type.textContent = `${person_type}`;
-
-    const td_age = document.createElement("td");
-    td_age.textContent = `${age}`;
-
-    console.log("td_age,", age);
-
-    if (age === "") {
-        document.getElementById("message_error_age").style.display = "block";
-        document.getElementById("message_error_age").innerHTML = "Debe ingresar una edad válida";
-    }
-
-    // Agregar el elemento a la lista
-    document.getElementById("person-list").appendChild(tr_person);
-    document.getElementById(`person-list-row${count}`).appendChild(th_type);
-    document.getElementById(`person-list-row${count}`).appendChild(td_age);
-
-    // Limpiar el formulario
-    document.getElementById("person-form").reset();
-});
-
-// Form Selects Custom
+// Form Selects Custom ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 document.addEventListener("DOMContentLoaded", function () {
     const selectedAge = document.getElementById("selected-age");
     const ageOptions = document.getElementById("age-options");
@@ -205,3 +144,74 @@ document.addEventListener("DOMContentLoaded", function () {
         overlayGender.style.display = "none";
     });
 });
+
+
+
+/* TABLA CANASTA PERSONALIZADA +++++++++++++++++++++++++++++++++++++++++++ */
+let count = 0;
+/* Agregar personas a la tabla */
+document.getElementById("person-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    count = count + 1;
+
+    // Obtener los valores del formulario
+    const age = document.getElementById("age").value;
+
+    if (parseInt(age) < 0) {
+        age = document.getElementById("age").value = age * -1;
+    }
+
+    console.log('age', age);
+    
+
+    // Obtener el valor seleccionado del select
+    const selectElement = document.getElementById("gender");
+    const person_type = selectElement.value;
+
+    console.log('person_type', person_type);
+    
+
+    // Crear un elemento de lista para mostrar la persona
+    // const li = document.createElement("li");
+    // li.textContent = `${person_type}  |  Edad: ${age}`;
+
+    const tr_person = document.createElement("tr");
+    tr_person.id = `person-list-row${count}`;
+
+    const th_type = document.createElement("th");
+    th_type.textContent = `${person_type}`;
+
+    const td_age = document.createElement("td");
+    td_age.textContent = `${age}`;
+
+    console.log("td_age,", age);
+
+    if (age === "") {
+        document.getElementById("message_error_age").style.display = "block";
+        document.getElementById("message_error_age").innerHTML = "Debe ingresar una edad válida";
+    }
+
+    // Agregar el elemento a la lista
+    document.getElementById("person-list").appendChild(tr_person);
+    document.getElementById(`person-list-row${count}`).appendChild(th_type);
+    document.getElementById(`person-list-row${count}`).appendChild(td_age);
+
+    // Limpiar el formulario
+    document.getElementById("person-form").reset();
+
+    const age_lowercase = age.toLowerCase();
+    const person_type_lowercase = person_type.toLowerCase();
+
+    console.log("age_lowercase", age_lowercase); 
+    console.log("person_type_lowercase", person_type_lowercase); 
+
+
+
+
+
+
+});
+
+
+
+
