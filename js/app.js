@@ -4,6 +4,9 @@ import tabla_equivalentes from "./mod-canasta-custom.js";
 //console.log("tabla_equivalentes[0].mujer", tabla_equivalentes[0].mujer);
 // console.log("in", indices_manuales.cbt_manual);
 
+const cba_equivalente = indices_manuales.cba_manual;
+const cbt_equivalente = indices_manuales.cbt_manual;
+
 const cba_unformat = Math.trunc(indices_manuales.cba_manual * 3.09);
 const cbt_unformat = Math.trunc(indices_manuales.cbt_manual * 3.09);
 const mes = indices_manuales.mes_cba_cbt_manual;
@@ -199,13 +202,15 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     const person_type_lowercase = person_type.toLowerCase();
     console.log("person_type_lowercase-", person_type_lowercase);
 
-    let sumando = tabla_equivalentes[`${age_lowercase}`][`${person_type_lowercase}`] * cbt_unformat;
+    let sumando = tabla_equivalentes[`${age_lowercase}`][`${person_type_lowercase}`] * cbt_equivalente;
+    console.log("cbt_unformat-", cbt_unformat);
 
     sumaTotal = sumaTotal + sumando;
 
+    document.getElementById("total-canasta").innerHTML = sumaTotal;
+
+
     console.log("sumando-", sumando);
-
     console.log("sumaTotal-", sumaTotal);
-
     console.log("cba_unformat-", cba_unformat);
 });

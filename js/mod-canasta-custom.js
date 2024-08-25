@@ -23,6 +23,7 @@ const tabla_equivalentes = {
     18: { femenina: 0.76, masculino: 1.02 },
     29: { femenina: 0.76, masculino: 1.02 },
     30: { femenina: 0.76, masculino: 1.0 },
+    35: { femenina: 0.76, masculino: 1.0 },
     45: { femenina: 0.76, masculino: 1.0 },
     46: { femenina: 0.76, masculino: 1.0 },
     60: { femenina: 0.76, masculino: 1.0 },
