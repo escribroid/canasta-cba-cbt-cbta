@@ -34,9 +34,3 @@ const tabla_equivalentes = {
 };
 
 export default tabla_equivalentes;
-
-// tabla_equivalentes[61].femenina;
-// tabla_equivalentes[61].masculino;
-
-// console.log("edad_61_75.mujer", tabla_equivalentes[61].femenina);
-// console.log("edad_61_75.varon", tabla_equivalentes[61].masculino);

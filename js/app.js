@@ -157,7 +157,7 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     count = count + 1;
 
     // Obtener los valores del formulario
-    const age = document.getElementById("age").value;
+    let age = document.getElementById("age").value;
 
     if (parseInt(age) < 0) {
         age = document.getElementById("age").value = age * -1;

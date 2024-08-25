@@ -38,29 +38,3 @@ fetch(url_cbt)
             `<p>Canasta Total del mes ${mes} y familia TIPO: ${cbt}</p>`;
     })
     .catch((error) => console.log(error));
-
-const tabla_equivalentes = {
-    "edad_0": { mujer: 0.35, varon: 0.35 },
-    "edad_1": { mujer: 0.37, varon: 0.37 },
-    "edad_2": { mujer: 0.46, varon: 0.46 },
-    "edad_3": { mujer: 0.51, varon: 0.51 },
-    "edad_4": { mujer: 0.55, varon: 0.55 },
-    "edad_5": { mujer: 0.6, varon: 0.6 },
-    "edad_6": { mujer: 0.64, varon: 0.64 },
-    "edad_7": { mujer: 0.66, varon: 0.66 },
-    "edad_8": { mujer: 0.68, varon: 0.68 },
-    "edad_9": { mujer: 0.69, varon: 0.69 },
-    "edad_10": { mujer: 0.7, varon: 0.79 },
-    "edad_11": { mujer: 0.72, varon: 0.82 },
-    "edad_12": { mujer: 0.74, varon: 0.85 },
-    "edad_13": { mujer: 0.76, varon: 0.9 },
-    "edad_14": { mujer: 0.76, varon: 0.96 },
-    "edad_15": { mujer: 0.77, varon: 1.0 },
-    "edad_16": { mujer: 0.77, varon: 1.0 },
-    "edad_17": { mujer: 0.77, varon: 1.04 },
-    "edad_18-29": { mujer: 0.76, varon: 1.02 },
-    "edad_30-45": { mujer: 0.76, varon: 1.0 },
-    "edad_46-60": { mujer: 0.76, varon: 1.0 },
-    "edad_61-75": { mujer: 0.67, varon: 0.83 },
-    "edad_76-99": { mujer: 0.63, varon: 0.74 },
-};
