@@ -149,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /* TABLA CANASTA PERSONALIZADA +++++++++++++++++++++++++++++++++++++++++++ */
 let count = 0;
 let sumaTotal = 0;
+let sumaArray = [];
 
 /* Agregar personas a la tabla */
 document.getElementById("person-form").addEventListener("submit", function (e) {
@@ -162,13 +163,13 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
         age = document.getElementById("age").value = age * -1;
     }
 
-    console.log("age", age);
+    //console.log("age", age);
 
     // Obtener el valor seleccionado del select
     const selectElement = document.getElementById("gender");
     const person_type = selectElement.value;
 
-    console.log("person_type", person_type);
+    //console.log("person_type", person_type);
 
     // Crear un elemento de lista para mostrar la persona
     // const li = document.createElement("li");
@@ -183,6 +184,8 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     const td_age = document.createElement("td");
     td_age.textContent = `${age}`;
 
+    const td_partial = document.createElement("td");
+
     console.log("td_age,", age);
 
     if (age === "") {
@@ -194,6 +197,7 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     document.getElementById("person-list").appendChild(tr_person);
     document.getElementById(`person-list-row${count}`).appendChild(th_type);
     document.getElementById(`person-list-row${count}`).appendChild(td_age);
+    document.getElementById(`person-list-row${count}`).appendChild(td_partial);
 
     // Limpiar el formulario
     document.getElementById("person-form").reset();
@@ -203,12 +207,34 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     console.log("person_type_lowercase-", person_type_lowercase);
 
     let sumando = tabla_equivalentes[`${age_lowercase}`][`${person_type_lowercase}`] * cbt_equivalente;
-    console.log("cbt_unformat-", cbt_unformat);
+    //console.log("cbt_unformat-", cbt_unformat);
 
-    sumaTotal = sumaTotal + sumando;
+    sumaArray.push(sumando);
 
-    document.getElementById("total-canasta").innerHTML = sumaTotal;
+    console.log("sumaArray-", sumaArray);
 
+    sumaTotal = 0;
+    for (let index = 0; index < sumaArray.length; index++) {
+        sumaTotal = sumaTotal + sumaArray[index];
+    }
+
+    td_partial.textContent = sumaArray[count - 1].toLocaleString("es-AR", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+    });
+
+    document.getElementById("total-canasta").innerHTML = sumaTotal.toLocaleString("es-AR", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+    });
+
+    document.querySelector(".view_cbt_personal").innerHTML = `<span class="card_cba_value">$ ${sumaTotal.toLocaleString(
+        "es-AR",
+        {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        }
+    )}</span>`;
 
     console.log("sumando-", sumando);
     console.log("sumaTotal-", sumaTotal);
