@@ -13,7 +13,7 @@ const mes = indices_manuales.mes_cba_cbt_manual;
 const cbt_alquiler_2amb_unformat = cbt_unformat + indices_manuales.alquilerProm2amb;
 const cbt_alquiler_3amb_unformat = cbt_unformat + indices_manuales.alquilerProm3amb;
 
-// Formatear el número con separador de miles
+// Formatear el número con separador de miles+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 const cba = cba_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
 const cbt = cbt_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
 const cbt_alquiler_2amb = cbt_alquiler_2amb_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
@@ -21,7 +21,7 @@ const cbt_alquiler_3amb = cbt_alquiler_3amb_unformat.toLocaleString("es-AR", { m
 
 //console.log("cba", cba);
 
-// Calculos cba, cbt, cbt_alquiler_2amb, cbt_alquiler_3amb
+// Calculos cba, cbt, cbt_alquiler_2amb, cbt_alquiler_3amb +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function calcular_cba() {
     const view_cba = document.querySelector(".view_cba");
     view_cba.innerHTML = `<span class="card_cba_value">  $${cba} </span>`;
@@ -61,182 +61,218 @@ linea_indigencia();
 linea_pobreza();
 linea_pobreza_alquilando();
 
-// Form Selects Custom ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-document.addEventListener("DOMContentLoaded", function () {
-    const selectedAge = document.getElementById("selected-age");
-    const ageOptions = document.getElementById("age-options");
-    const ageInput = document.getElementById("age");
+// Form Selects Custom +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function select_custom() {
+    document.addEventListener("DOMContentLoaded", function () {
+        const selectedAge = document.getElementById("selected-age");
+        const ageOptions = document.getElementById("age-options");
+        const ageInput = document.getElementById("age");
 
-    const overlayAge = document.getElementById("overlay-age");
-    const overlayGender = document.getElementById("overlay-gender");
+        const overlayAge = document.getElementById("overlay-age");
+        const overlayGender = document.getElementById("overlay-gender");
 
-    const selectedGender = document.getElementById("selected-gender");
-    const genderOptions = document.getElementById("gender-options");
-    const genderInput = document.getElementById("gender");
+        const selectedGender = document.getElementById("selected-gender");
+        const genderOptions = document.getElementById("gender-options");
+        const genderInput = document.getElementById("gender");
 
-    // Mostrar/ocultar las opciones al hacer clic
-    selectedAge.addEventListener("click", function () {
-        ageOptions.classList.toggle("open");
-        overlayAge.style.display = ageOptions.classList.contains("open") ? "block" : "none";
-    });
+        // Mostrar/ocultar las opciones al hacer clic
+        selectedAge.addEventListener("click", function () {
+            ageOptions.classList.toggle("open");
+            overlayAge.style.display = ageOptions.classList.contains("open") ? "block" : "none";
+        });
 
-    selectedGender.addEventListener("click", function () {
-        genderOptions.classList.toggle("open");
-        overlayGender.style.display = genderOptions.classList.contains("open") ? "block" : "none";
-    });
+        selectedGender.addEventListener("click", function () {
+            genderOptions.classList.toggle("open");
+            overlayGender.style.display = genderOptions.classList.contains("open") ? "block" : "none";
+        });
 
-    // Manejar la selección opción AGE
-    document.querySelectorAll(".age-option").forEach((option) => {
-        option.addEventListener("click", function () {
-            const value = this.getAttribute("data-value");
-            const text = this.textContent;
+        // Manejar la selección opción AGE
+        document.querySelectorAll(".age-option").forEach((option) => {
+            option.addEventListener("click", function () {
+                const value = this.getAttribute("data-value");
+                const text = this.textContent;
 
-            // Eliminar la clase 'selected' de todas las opciones
-            document.querySelectorAll(".age-option").forEach((option) => {
-                option.classList.remove("selected");
+                // Eliminar la clase 'selected' de todas las opciones
+                document.querySelectorAll(".age-option").forEach((option) => {
+                    option.classList.remove("selected");
+                });
+
+                // Añadir la clase 'selected' a la opción actual
+                this.classList.add("selected");
+
+                selectedAge.textContent = text;
+                ageInput.value = value;
+
+                ageOptions.classList.remove("open");
+                overlayAge.style.display = "none";
             });
+        });
 
-            // Añadir la clase 'selected' a la opción actual
-            this.classList.add("selected");
+        // Manejar la selección opción GENDER
+        document.querySelectorAll(".gender-option").forEach((option) => {
+            option.addEventListener("click", function () {
+                const value = this.getAttribute("data-value");
+                const text = this.textContent;
 
-            selectedAge.textContent = text;
-            ageInput.value = value;
+                selectedGender.textContent = text;
+                genderInput.value = value;
 
+                genderOptions.classList.remove("open");
+                overlayGender.style.display = "none";
+            });
+        });
+
+        // Cerrar el menú si se hace clic fuera de él
+        document.addEventListener("click", function (e) {
+            if (!selectedAge.contains(e.target) && !ageOptions.contains(e.target)) {
+                ageOptions.classList.remove("open");
+                overlayAge.style.display = "none";
+            }
+
+            if (!selectedGender.contains(e.target) && !genderOptions.contains(e.target)) {
+                genderOptions.classList.remove("open");
+                overlayGender.style.display = "none";
+            }
+        });
+
+        // Cerrar el menú si se hace clic en el overlay
+        overlayAge.addEventListener("click", function () {
             ageOptions.classList.remove("open");
             overlayAge.style.display = "none";
         });
-    });
 
-    // Manejar la selección opción GENDER
-    document.querySelectorAll(".gender-option").forEach((option) => {
-        option.addEventListener("click", function () {
-            const value = this.getAttribute("data-value");
-            const text = this.textContent;
-
-            selectedGender.textContent = text;
-            genderInput.value = value;
-
+        overlayGender.addEventListener("click", function () {
             genderOptions.classList.remove("open");
             overlayGender.style.display = "none";
         });
     });
+}
+select_custom();
 
-    // Cerrar el menú si se hace clic fuera de él
-    document.addEventListener("click", function (e) {
-        if (!selectedAge.contains(e.target) && !ageOptions.contains(e.target)) {
-            ageOptions.classList.remove("open");
-            overlayAge.style.display = "none";
-        }
-
-        if (!selectedGender.contains(e.target) && !genderOptions.contains(e.target)) {
-            genderOptions.classList.remove("open");
-            overlayGender.style.display = "none";
-        }
-    });
-
-    // Cerrar el menú si se hace clic en el overlay
-    overlayAge.addEventListener("click", function () {
-        ageOptions.classList.remove("open");
-        overlayAge.style.display = "none";
-    });
-
-    overlayGender.addEventListener("click", function () {
-        genderOptions.classList.remove("open");
-        overlayGender.style.display = "none";
-    });
-});
-
-/* TABLA CANASTA PERSONALIZADA +++++++++++++++++++++++++++++++++++++++++++ */
+/* TABLA CANASTA PERSONALIZADA ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 let count = 0;
 let sumaTotal = 0;
 let sumaArray = [];
 
-/* Agregar personas a la tabla */
-document.getElementById("person-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    count = count + 1;
+/* Agregar personas a la tabla +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+function add_person_sum_canasta() {
+    document.getElementById("person-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        count = count + 1;
 
-    // Obtener los valores del formulario
-    let age = document.getElementById("age").value;
+        // Obtener los valores del formulario
+        let age = document.getElementById("age").value;
 
-    if (parseInt(age) < 0) {
-        age = document.getElementById("age").value = age * -1;
-    }
+        if (parseInt(age) < 0) {
+            age = document.getElementById("age").value = age * -1;
+        }
 
-    //console.log("age", age);
+        console.log("age", age);
 
-    // Obtener el valor seleccionado del select
-    const selectElement = document.getElementById("gender");
-    const person_type = selectElement.value;
+        // Obtener el valor seleccionado del select
+        const selectElement = document.getElementById("gender");
+        const person_type = selectElement.value;
 
-    //console.log("person_type", person_type);
+        //console.log("person_type", person_type);
 
-    // Crear un elemento de lista para mostrar la persona
-    // const li = document.createElement("li");
-    // li.textContent = `${person_type}  |  Edad: ${age}`;
+        // Crear un elemento de lista para mostrar la persona
+        // const li = document.createElement("li");
+        // li.textContent = `${person_type}  |  Edad: ${age}`;
 
-    const tr_person = document.createElement("tr");
-    tr_person.id = `person-list-row${count}`;
+        const tr_person = document.createElement("tr");
+        tr_person.id = `person-list-row${count}`;
 
-    const th_type = document.createElement("th");
-    th_type.textContent = `${person_type}`;
+        const th_type = document.createElement("th");
+        th_type.textContent = `${person_type}`;
 
-    const td_age = document.createElement("td");
-    td_age.textContent = `${age}`;
+        const td_age = document.createElement("td");
+        td_age.textContent = `${age}`;
 
-    const td_partial = document.createElement("td");
+        const td_partial = document.createElement("td");
 
-    console.log("td_age,", age);
+        //console.log("td_age,", age);
 
-    if (age === "") {
-        document.getElementById("message_error_age").style.display = "block";
-        document.getElementById("message_error_age").innerHTML = "Debe ingresar una edad válida";
-    }
+        if (age === "") {
+            document.getElementById("message_error_age").style.display = "block";
+            document.getElementById("message_error_age").innerHTML = "Debe ingresar una edad válida";
+        }
 
-    // Agregar el elemento a la lista
-    document.getElementById("person-list").appendChild(tr_person);
-    document.getElementById(`person-list-row${count}`).appendChild(th_type);
-    document.getElementById(`person-list-row${count}`).appendChild(td_age);
-    document.getElementById(`person-list-row${count}`).appendChild(td_partial);
+        // Agregar el elemento a la lista
+        document.getElementById("person-list").appendChild(tr_person);
+        document.getElementById(`person-list-row${count}`).appendChild(th_type);
+        document.getElementById(`person-list-row${count}`).appendChild(td_age);
+        document.getElementById(`person-list-row${count}`).appendChild(td_partial);
 
-    // Limpiar el formulario
-    document.getElementById("person-form").reset();
+        // Limpiar el formulario
+        document.getElementById("person-form").reset();
 
-    const age_lowercase = age.toString();
-    const person_type_lowercase = person_type.toLowerCase();
-    console.log("person_type_lowercase-", person_type_lowercase);
+        const age_lowercase = age.toString();
+        const person_type_lowercase = person_type.toLowerCase();
+        console.log("person_type_lowercase-", person_type_lowercase);
 
-    let sumando = tabla_equivalentes[`${age_lowercase}`][`${person_type_lowercase}`] * cbt_equivalente;
-    //console.log("cbt_unformat-", cbt_unformat);
+        let sumando = tabla_equivalentes[`${age_lowercase}`][`${person_type_lowercase}`] * cbt_equivalente;
+        //console.log("cbt_unformat-", cbt_unformat);
 
-    sumaArray.push(sumando);
+        sumaArray.push(sumando);
 
-    console.log("sumaArray-", sumaArray);
+        console.log("sumaArray-", sumaArray);
 
-    sumaTotal = 0;
-    for (let index = 0; index < sumaArray.length; index++) {
-        sumaTotal = sumaTotal + sumaArray[index];
-    }
+        sumaTotal = 0;
+        for (let index = 0; index < sumaArray.length; index++) {
+            sumaTotal = sumaTotal + sumaArray[index];
+        }
 
-    td_partial.textContent = sumaArray[count - 1].toLocaleString("es-AR", {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-    });
-
-    document.getElementById("total-canasta").innerHTML = sumaTotal.toLocaleString("es-AR", {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-    });
-
-    document.querySelector(".view_cbt_personal").innerHTML = `<span class="card_cba_value">$ ${sumaTotal.toLocaleString(
-        "es-AR",
-        {
+        td_partial.textContent = sumaArray[count - 1].toLocaleString("es-AR", {
             minimumFractionDigits: 0,
             maximumFractionDigits: 0,
-        }
-    )}</span>`;
+        });
 
-    console.log("sumando-", sumando);
-    console.log("sumaTotal-", sumaTotal);
-    console.log("cba_unformat-", cba_unformat);
+        document.getElementById("total-canasta").innerHTML = sumaTotal.toLocaleString("es-AR", {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        });
+
+        document.querySelector(
+            ".view_cbt_personal"
+        ).innerHTML = `<span class="card_cba_value">$ ${sumaTotal.toLocaleString("es-AR", {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        })}</span>`;
+
+        console.log("sumando-", sumando);
+        console.log("sumaTotal-", sumaTotal);
+        console.log("cba_unformat-", cba_unformat);
+
+        // LOCAL STORAGE + ++++++++++
+        let local_edad = age;
+        console.log("local_edad--", local_edad);
+
+        localStorage.setItem("local_edad", JSON.stringify(local_edad));
+        let edad = JSON.parse(localStorage.getItem("local_edad"));
+
+        console.log("edad-", edad);
+
+        document.getElementById("localEdad_output").innerHTML = edad;
+
+        
+
+        // localStorage.setItem("person_list", JSON.stringify(person_list));
+
+        // let person_list = JSON.parse(localStorage.getItem("person_list")) || [];
+        // let person_list_item = {
+        //     age: age,
+        //     person_type: person_type,
+        //     sumando: sumando,
+        // };
+        // person_list.push(person_list_item);
+    });
+}
+
+add_person_sum_canasta();
+
+// Cargar el valor cuando la página se carga
+document.addEventListener("DOMContentLoaded", (event) => {
+    let edad = JSON.parse(localStorage.getItem("local_edad"));
+
+    document.getElementById("localEdad_output").innerHTML = edad;
 });
