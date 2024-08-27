@@ -5,24 +5,26 @@ body {
     background-color: rgb(26 17 15);
     color: aliceblue;
     font-family: var(--font-primary);
-    font-size: var(--font-size-22);
-    margin: 0 1rem;
+    font-size: var(--font-size-22_1-375);
+    margin: 0 var(--font-size-10_0-625);
     position: relative;
 }
 
 fieldset {
     align-items: center;
     display: flex;
-    gap: 1rem;
+    gap: 5px;
     justify-content: space-around;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 var(--font-size-14_0-875) 0;
+    justify-content: space-between;
 }
 
 footer {
     background-color: #000;
     color: aliceblue;
-    margin-bottom: 2rem;
+    margin-bottom: var(--font-size-10_0-625);
     text-align: center;
+    font-size: var(--font-size-16_1rem);
 }
 
 h1 {
@@ -36,7 +38,7 @@ h2 {
 }
 
 header {
-    margin: 2rem 0 2rem 0;
+    margin: var(--font-size-20_1-25) 0 var(--font-size-20_1-25) 0;
 }
 
 main {
@@ -46,7 +48,7 @@ main {
 
 #person-form {
     border: 0 solid #ff4f00;
-    border-radius: 1rem;
+    border-radius: var(--font-size-10_0-625);
     margin: 0;
     padding: 0;
 }
@@ -59,7 +61,7 @@ main {
 .accordion-flush .accordion-item .accordion-button.collapsed {
     background: #333;
     color: var(--font-color-medium);
-    font-size: var(--font-size-18);
+    font-size: var(--font-size-18_1-125);
 }
 
 .accordion-flush .accordion-item {
@@ -81,23 +83,23 @@ main {
 }
 
 .aclaracion_edades {
-    font-size: var(--font-size-14);
+    font-size: var(--font-size-14_0-875);
 }
 
 .btn-add-person {
     align-items: center;
     background-color: #212529;
     border: 0 solid #ff4f00;
-    border-radius: 0.5rem;
+    border-radius: var(--font-size-6_0-375);
     color: rgb(244 226 167);
     display: flex;
-    font-size: 3rem;
+    font-size: var(--font-size-30_1-875);
     font-weight: bold;
     justify-content: center;
     margin: 0;
     padding: 0;
     vertical-align: middle;
-    width: 5.5rem;
+    width: var(--font-size-42_2-625);
 }
 
 .btn-add-person:hover {
@@ -114,9 +116,9 @@ main {
     --bs-btn-close-disabled-opacity: 0.25;
     --bs-btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
     box-sizing: content-box;
-    font-size: 3rem;
-    width: 2.5em;
-    height: 2.5em;
+    font-size: var(--font-size-30_1-875);
+    width: 2em;
+    height: 2em;
     padding: 0.25em 0.25em;
     color: var(--bs-btn-close-color);
     background: transparent var(--bs-btn-close-bg) center/1em auto no-repeat;
@@ -128,7 +130,7 @@ main {
 .card {
     background-color: #222222;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--font-size-20_1-25);
 }
 
 .card p {
@@ -139,11 +141,11 @@ main {
     color: rgb(211 193 255);
     /* color: rgb(255 181 158); */
     font-weight: var(--font-weight-700-bold);
-    margin-left: 1rem;
+    margin-left: var(--font-size-10_0-625);
 }
 
 .card-header {
-    padding: 1rem;
+    padding: var(--font-size-10_0-625);
 }
 
 .card-header h2 {
@@ -153,27 +155,33 @@ main {
     color: rgb(255 255 255);
     display: inline-flex;
     justify-content: space-between;
-    padding: 1rem 0 0 0;
+    padding: var(--font-size-10_0-625) 0 0 0;
     width: 100%;
 }
 
 .dropdown-toggle::after {
-    display: none;    
+    display: none;
 }
 
 .dropdown-toggle::before {
     display: inline-block;
-    margin-left: .255em;
-    vertical-align: .255em;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
     content: "";
-    border-top: .3em solid;
-    border-right: .3em solid transparent;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
     border-bottom: 0;
-    border-left: .3em solid transparent;
+    border-left: 0.3em solid transparent;
 }
 
 .icon-svg-add {
     fill: #ff4f00;
+}
+
+.icon-svg-reset {
+    fill: #ff4f00;
+    background: black;
+    border: 0;
 }
 
 .icon-svg-add:hover {
@@ -183,29 +191,29 @@ main {
 .linea_pobreza,
 .linea_indigencia,
 .linea_pobreza_alquilando {
-    font-size: var(--font-size-16);
+    font-size: var(--font-size-16_1rem);
 }
 
 .lineas_info {
-    padding: 1rem;
+    padding: var(--font-size-10_0-625);
 }
 
 .list-group-item-acordion {
-    padding: 0.5rem 0;
+    padding: var(--font-size-6_0-375) 0;
 }
 
 .logo {
     display: flex;
     font-family: var(--font-logo);
-    font-size: var(--font-size-36);
+    font-size: var(--font-size-36_2-25);
     font-weight: var(--font-weight-700-bold);
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
     /* color: #F05941; */
 }
 
 .logo-img {
-    margin-right: 1rem;
-    width: 4rem;
+    margin-right: var(--font-size-10_0-625);
+    width: var(--font-size-40_2-5);
 }
 
 .navbar-nav {
@@ -223,6 +231,10 @@ main {
     list-style: none;
 }
 
+.navbar-toggler {
+    padding: 0;
+}
+
 .navbar-toggler-icon {
     width: 2em;
     height: 2em;
@@ -231,14 +243,14 @@ main {
 .offcanvas-header .btn-close {
     padding: calc(var(--bs-offcanvas-padding-y) * 0.5) calc(var(--bs-offcanvas-padding-x) * 0.5);
     margin-top: calc(0.5 * var(--bs-offcanvas-padding-y));
-    margin-right: calc(-0.9 * var(--bs-offcanvas-padding-x));
+    margin-right: calc(-0.1 * var(--bs-offcanvas-padding-x));
     margin-bottom: calc(-0.5 * var(--bs-offcanvas-padding-y));
 }
 
 .person-form-group {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 34%;
 }
 
 .person-form-select,
@@ -246,8 +258,15 @@ main {
     margin-top: 0;
 }
 
-.person-form-title {
-    margin: 1rem 0 1.5rem 1.5rem;
+.person-add-title {
+    margin: var(--font-size-10_0-625) 0 var(--font-size-14_0-875) var(--font-size-14_0-875);
+}
+
+.person-table-title {
+    margin: var(--font-size-10_0-625) 0 var(--font-size-14_0-875) 0;
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(82 70 26);
 }
 
 .row {
@@ -263,7 +282,7 @@ main {
 }
 
 .table {
-    font-size: var(--font-size-20);
+    font-size: var(--font-size-20_1-25);
     margin: 0 auto;
     width: 80%;
     text-align: center;
@@ -274,8 +293,13 @@ main {
 }
 
 .text-bg-dark {
-    color: #fff!important;
+    color: #fff !important;
     background-color: rgb(26 17 15) !important;
+}
+
+.version {
+    color: #fff;
+    width: 100%;
 }
 
 .view_cba,
@@ -285,14 +309,12 @@ main {
     color: aliceblue;
 }
 
-
-
 /* Select custom ###########+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#################### */
 .arrow-down {
     color: #ff4f00;
-    font-size: 1.4rem;
+    font-size: var(--font-size-14_0-875);
     font-weight: bold;
-    margin-right: 1.5rem;
+    margin-right: var(--font-size-14_0-875);
     transform: rotate(90deg) scaley(1.3);
 }
 
@@ -307,12 +329,12 @@ main {
     border-radius: 0.3rem;
     cursor: pointer;
     display: flex;
-    font-size: var(--font-size-20);
+    font-size: var(--font-size-20_1-25);
     font-family: "Noto Sans Symbols", "Segoe UI Symbol", "DejaVu Sans", Arial, sans-serif;
-    height: 4rem;
+    height: var(--font-size-40_2-5);
     justify-content: space-between;
     align-items: center;
-    padding-left: 1rem;
+    padding-left: var(--font-size-10_0-625);
     width: 100%;
     z-index: 11;
 }
@@ -321,12 +343,12 @@ main {
 .age-options {
     background-color: #333;
     border: 0.1rem solid #ff4f00;
-    border-radius: 1rem;
+    border-radius: var(--font-size-10_0-625);
     display: none;
     max-height: 80%;
     overflow-y: auto;
     position: fixed;
-    top: 10rem;
+    top: 6.25rem;
     margin-right: 5%;
     scrollbar-width: none;
     width: 90%;
@@ -341,8 +363,8 @@ main {
 .age-option {
     border-bottom: 0.1rem solid #ccc;
     cursor: pointer;
-    font-size: var(--font-size-24);
-    padding: 2rem;
+    font-size: var(--font-size-24_1-5);
+    padding: var(--font-size-20_1-25);
     text-align: center;
     width: 100%;
 }
@@ -361,9 +383,9 @@ main {
     background-color: rgb(73, 51, 51);
     color: white;
     display: none;
-    height: 15rem;
+    height: 6rem;
     /* position: absolute; */
-    width: 30rem;
+    width: var(--font-size-30_1-875);
 }
 
 .open {

@@ -147,6 +147,7 @@ function select_custom() {
         });
     });
 }
+
 select_custom();
 
 /* TABLA CANASTA PERSONALIZADA ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -154,10 +155,33 @@ let count = 0;
 let sumaTotal = 0;
 let sumaArray = [];
 
+const form = document.getElementById("person-form");
+const tableBody = document.getElementById("person-list");
+let personas_de_local = JSON.parse(localStorage.getItem("personas_de_local")) || [];
+
+//console.log("personas_de_local", personas_de_local);
+
+// Función para agregar persona a la tabla y al array de personas
+function addPersonToTable(gender, age, td_partial, sumaTotal) {
+    const row = document.createElement("tr");
+    row.innerHTML = `<td>${gender}</td><td>${age}</td><td>${td_partial}</td>`;
+    tableBody.appendChild(row);
+    document.getElementById("total-canasta").innerHTML = sumaTotal;
+    document.querySelector(".view_cbt_personal").innerHTML = `<span class="card_cba_value">$ ${sumaTotal}</span>`;
+}
+
+// Cargar personas desde localStorage al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    personas_de_local.forEach((person) =>
+        addPersonToTable(person.gender, person.age, person.td_partial, person.sumaTotal)
+    );
+});
+
 /* Agregar personas a la tabla +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 function add_person_sum_canasta() {
     document.getElementById("person-form").addEventListener("submit", function (e) {
         e.preventDefault();
+
         count = count + 1;
 
         // Obtener los valores del formulario
@@ -167,51 +191,28 @@ function add_person_sum_canasta() {
             age = document.getElementById("age").value = age * -1;
         }
 
-        console.log("age", age);
+        //console.log("age", age);
 
         // Obtener el valor seleccionado del select
-        const selectElement = document.getElementById("gender");
-        const person_type = selectElement.value;
+        const gender = document.getElementById("gender").value;
 
-        //console.log("person_type", person_type);
+        let td_partial = document.createElement("td");
 
-        // Crear un elemento de lista para mostrar la persona
-        // const li = document.createElement("li");
-        // li.textContent = `${person_type}  |  Edad: ${age}`;
+        //console.log("gender", gender);
 
-        const tr_person = document.createElement("tr");
-        tr_person.id = `person-list-row${count}`;
+        // if (age === "") {
+        //     document.getElementById("message_error_age").style.display = "block";
+        //     document.getElementById("message_error_age").innerHTML = "Debe ingresar una edad válida";
+        // }
 
-        const th_type = document.createElement("th");
-        th_type.textContent = `${person_type}`;
+        const age_toStr = age.toString();
+        const gender_lowercase = gender.toLowerCase();
+        console.log("gender_lowercase-", gender_lowercase);
 
-        const td_age = document.createElement("td");
-        td_age.textContent = `${age}`;
+        let sumando = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente;
 
-        const td_partial = document.createElement("td");
-
-        //console.log("td_age,", age);
-
-        if (age === "") {
-            document.getElementById("message_error_age").style.display = "block";
-            document.getElementById("message_error_age").innerHTML = "Debe ingresar una edad válida";
-        }
-
-        // Agregar el elemento a la lista
-        document.getElementById("person-list").appendChild(tr_person);
-        document.getElementById(`person-list-row${count}`).appendChild(th_type);
-        document.getElementById(`person-list-row${count}`).appendChild(td_age);
-        document.getElementById(`person-list-row${count}`).appendChild(td_partial);
-
-        // Limpiar el formulario
-        document.getElementById("person-form").reset();
-
-        const age_lowercase = age.toString();
-        const person_type_lowercase = person_type.toLowerCase();
-        console.log("person_type_lowercase-", person_type_lowercase);
-
-        let sumando = tabla_equivalentes[`${age_lowercase}`][`${person_type_lowercase}`] * cbt_equivalente;
-        //console.log("cbt_unformat-", cbt_unformat);
+        console.log("cbt_unformat-", cbt_unformat);
+        console.log("sumando-", sumando);
 
         sumaArray.push(sumando);
 
@@ -222,57 +223,41 @@ function add_person_sum_canasta() {
             sumaTotal = sumaTotal + sumaArray[index];
         }
 
-        td_partial.textContent = sumaArray[count - 1].toLocaleString("es-AR", {
+        td_partial = sumaArray[count - 1].toLocaleString("es-AR", {
             minimumFractionDigits: 0,
             maximumFractionDigits: 0,
         });
 
-        document.getElementById("total-canasta").innerHTML = sumaTotal.toLocaleString("es-AR", {
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0,
-        });
+        // LOCAL STORAGE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        const local_persona = {
+            age,
+            gender,
+            sumando,
+            td_partial,
+            sumaTotal,
+        };
 
-        document.querySelector(
-            ".view_cbt_personal"
-        ).innerHTML = `<span class="card_cba_value">$ ${sumaTotal.toLocaleString("es-AR", {
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0,
-        })}</span>`;
+        personas_de_local.push(local_persona);
 
-        console.log("sumando-", sumando);
-        console.log("sumaTotal-", sumaTotal);
-        console.log("cba_unformat-", cba_unformat);
+        localStorage.setItem("personas_de_local", JSON.stringify(personas_de_local));
 
-        // LOCAL STORAGE + ++++++++++
-        let local_edad = age;
-        console.log("local_edad--", local_edad);
+        // Agregar la persona a la tabla
+        addPersonToTable(gender, age, td_partial, sumaTotal);
 
-        localStorage.setItem("local_edad", JSON.stringify(local_edad));
-        let edad = JSON.parse(localStorage.getItem("local_edad"));
+        // Limpiar el formulario
+        document.getElementById("person-form").reset();
 
-        console.log("edad-", edad);
-
-        document.getElementById("localEdad_output").innerHTML = edad;
-
-        
-
-        // localStorage.setItem("person_list", JSON.stringify(person_list));
-
-        // let person_list = JSON.parse(localStorage.getItem("person_list")) || [];
-        // let person_list_item = {
-        //     age: age,
-        //     person_type: person_type,
-        //     sumando: sumando,
-        // };
-        // person_list.push(person_list_item);
+        //localStorage.removeItem('personas_de_local');
     });
 }
 
 add_person_sum_canasta();
 
-// Cargar el valor cuando la página se carga
-document.addEventListener("DOMContentLoaded", (event) => {
-    let edad = JSON.parse(localStorage.getItem("local_edad"));
-
-    document.getElementById("localEdad_output").innerHTML = edad;
+document.getElementById("btn-reset-person").addEventListener("click", () => {
+    //localStorage.removeItem('personas_de_local');
+    personas_de_local = [];
+    localStorage.setItem("personas_de_local", JSON.stringify(personas_de_local));
+    location.reload();
+    document.getElementById("person-form").reset();
+    document.getElementById("person-list").innerHTML = "";
 });

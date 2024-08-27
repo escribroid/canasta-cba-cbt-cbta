@@ -23,7 +23,6 @@ const tabla_equivalentes = {
     18: { femenina: 0.76, masculino: 1.02 },
     29: { femenina: 0.76, masculino: 1.02 },
     30: { femenina: 0.77, masculino: 1.0 },
-    35: { femenina: 0.77, masculino: 1.0 },
     45: { femenina: 0.77, masculino: 1.0 },
     46: { femenina: 0.76, masculino: 1.0 },
     60: { femenina: 0.76, masculino: 1.0 },
@@ -31,6 +30,10 @@ const tabla_equivalentes = {
     75: { femenina: 0.67, masculino: 0.83 },
     76: { femenina: 0.63, masculino: 0.74 },
     99: { femenina: 0.63, masculino: 0.74 },
+    35: { femenina: 0.77, masculino: 1.0 },
+    37: { femenina: 0.77, masculino: 1.0 },
+    38: { femenina: 0.77, masculino: 1.0 },
+    44: { femenina: 0.77, masculino: 1.0 },
 };
 
 export default tabla_equivalentes;
