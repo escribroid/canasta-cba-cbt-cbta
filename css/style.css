@@ -53,6 +53,10 @@ main {
     padding: 0;
 }
 
+#total_alquiler_in {
+    width: 11ch;
+}
+
 .accordion {
     /* --bs-accordion-bg: #302222; */
 }
@@ -314,7 +318,7 @@ main {
     color: #ff4f00;
     font-size: var(--font-size-14_0-875);
     font-weight: bold;
-    margin-right: var(--font-size-14_0-875);
+    margin-right: var(--font-size-8_0-5);
     transform: rotate(90deg) scaley(1.3);
 }
 

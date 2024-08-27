@@ -162,18 +162,19 @@ let personas_de_local = JSON.parse(localStorage.getItem("personas_de_local")) ||
 //console.log("personas_de_local", personas_de_local);
 
 // Función para agregar persona a la tabla y al array de personas
-function addPersonToTable(gender, age, td_partial, sumaTotal) {
+function addPersonToTable(gender, age, td_partial, sumaTotal, total_alquiler_in) {
     const row = document.createElement("tr");
     row.innerHTML = `<td>${gender}</td><td>${age}</td><td>${td_partial}</td>`;
     tableBody.appendChild(row);
     document.getElementById("total-canasta").innerHTML = sumaTotal;
     document.querySelector(".view_cbt_personal").innerHTML = `<span class="card_cba_value">$ ${sumaTotal}</span>`;
+    document.getElementById("total_alquiler_in").value = total_alquiler_in;
 }
 
 // Cargar personas desde localStorage al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
     personas_de_local.forEach((person) =>
-        addPersonToTable(person.gender, person.age, person.td_partial, person.sumaTotal)
+        addPersonToTable(person.gender, person.age, person.td_partial, person.sumaTotal, person.total_alquiler_in)
     );
 });
 
@@ -195,6 +196,10 @@ function add_person_sum_canasta() {
 
         // Obtener el valor seleccionado del select
         const gender = document.getElementById("gender").value;
+
+        const total_alquiler_in = document.getElementById("total_alquiler_in").value;
+
+        console.log("total_alquiler_in", typeof(total_alquiler_in));
 
         let td_partial = document.createElement("td");
 
@@ -222,6 +227,7 @@ function add_person_sum_canasta() {
         for (let index = 0; index < sumaArray.length; index++) {
             sumaTotal = sumaTotal + sumaArray[index];
         }
+        sumaTotal = sumaTotal + total_alquiler_in;
 
         td_partial = sumaArray[count - 1].toLocaleString("es-AR", {
             minimumFractionDigits: 0,
@@ -235,6 +241,7 @@ function add_person_sum_canasta() {
             sumando,
             td_partial,
             sumaTotal,
+            total_alquiler_in,
         };
 
         personas_de_local.push(local_persona);
@@ -242,7 +249,7 @@ function add_person_sum_canasta() {
         localStorage.setItem("personas_de_local", JSON.stringify(personas_de_local));
 
         // Agregar la persona a la tabla
-        addPersonToTable(gender, age, td_partial, sumaTotal);
+        addPersonToTable(gender, age, td_partial, sumaTotal, total_alquiler_in);
 
         // Limpiar el formulario
         document.getElementById("person-form").reset();
