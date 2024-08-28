@@ -169,13 +169,18 @@ function addPersonToTable(gender, age, td_partial, sumaTotal, total_alquiler_in)
     document.getElementById("total-canasta").innerHTML = sumaTotal;
     document.querySelector(".view_cbt_personal").innerHTML = `<span class="card_cba_value">$ ${sumaTotal}</span>`;
     document.getElementById("total_alquiler_in").value = total_alquiler_in;
+
+    console.log("personas_de_local1", typeof(total_alquiler_in));
 }
 
 // Cargar personas desde localStorage al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
-    personas_de_local.forEach((person) =>
-        addPersonToTable(person.gender, person.age, person.td_partial, person.sumaTotal, person.total_alquiler_in)
-    );
+    personas_de_local.forEach((person) => {
+        addPersonToTable(person.gender, person.age, person.td_partial, person.sumaTotal, person.total_alquiler_in);
+        console.log("person", person.total_alquiler_in);
+        //document.getElementById("total_alquiler_in").value === person.total_alquiler_in;
+    });
+    //console.log("personas_de_local2", personas_de_local.total_alquiler_in);
 });
 
 /* Agregar personas a la tabla +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -192,14 +197,12 @@ function add_person_sum_canasta() {
             age = document.getElementById("age").value = age * -1;
         }
 
-        //console.log("age", age);
-
         // Obtener el valor seleccionado del select
         const gender = document.getElementById("gender").value;
 
-        const total_alquiler_in = document.getElementById("total_alquiler_in").value;
+        const total_alquiler_in = parseFloat(document.getElementById("total_alquiler_in").value);
 
-        console.log("total_alquiler_in", typeof(total_alquiler_in));
+        console.log("total_alquiler_in", typeof total_alquiler_in);
 
         let td_partial = document.createElement("td");
 
@@ -209,6 +212,26 @@ function add_person_sum_canasta() {
         //     document.getElementById("message_error_age").style.display = "block";
         //     document.getElementById("message_error_age").innerHTML = "Debe ingresar una edad válida";
         // }
+
+        console.log("age1", typeof age);
+
+        if (age < 18) {
+            age = age;
+        } else if (age >= 18 && age <= 29) {
+            age = "18";
+        } else if (age >= 30 && age <= 45) {
+            age = "30";
+        } else if (age >= 46 && age <= 60) {
+            age = "46";
+        } else if (age >= 61 && age <= 75) {
+            age = "61";
+        } else if (age >= 76 && age <= 99) {
+            age = "76";
+        } else if (age >= 100) {
+            age = "99";
+        }
+
+        console.log("age2", typeof age);
 
         const age_toStr = age.toString();
         const gender_lowercase = gender.toLowerCase();
@@ -254,7 +277,7 @@ function add_person_sum_canasta() {
         // Limpiar el formulario
         document.getElementById("person-form").reset();
 
-        //localStorage.removeItem('personas_de_local');
+        //document.getElementById("total_alquiler_in").value = "perro";
     });
 }
 

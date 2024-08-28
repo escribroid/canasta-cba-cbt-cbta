@@ -288,13 +288,17 @@ main {
 .table {
     font-size: var(--font-size-20_1-25);
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
     text-align: center;
 }
 
 .table-header {
     text-align: center;
 }
+
+
+
+
 
 .text-bg-dark {
     color: #fff !important;

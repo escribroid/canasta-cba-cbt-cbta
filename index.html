@@ -291,7 +291,7 @@
                                         <div id="overlay-gender" class="overlay"></div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn-add-person">
+                                <button id="person-form-submit" type="submit" class="btn-add-person">
                                     <svg
                                         class="icon-svg-add"
                                         viewBox="0 0 24 24"
@@ -349,20 +349,47 @@
                                 <tbody id="person-list" class="table-group-divider"></tbody>
                                 <tfoot>
                                     <tr>
-                                        <th class="table-header" scope="col">Alquiler</th>
+                                        <th class="table-header" scope="col">SubTotal</th>
+                                        <th class="table-header" scope="col">-></th>
+                                        <th id="total-canasta" class="table-header" scope="col"></th>
+                                    </tr>
+                                    <!-- <tr class="table-group-divider">
+                                        <th class="table-header" scope="col">
+                                            <select
+                                                name="canasta_alquiler"
+                                                id="canasta_alquiler"
+                                                title="Tipo de Canasta"
+                                            >
+                                                <option value="siAlquiler3amb" selected disabled>Alquiler</option>
+                                                <option value="siAlquilo">Si Alquilo</option>
+                                                <option value="noAlquilo">No Alquilo</option>
+                                                <option value="AlquilerProm3amb">No Alquilo</option>
+                                                <option value="AlquilerProm2amb">No Alquilo</option>
+                                            </select>
+                                        </th>
                                         <th class="table-header" scope="col">-></th>
                                         <th id="total-alquiler" class="table-header" scope="col">
                                             <input type="number" min="0" name="total_alquiler" id="total_alquiler_in" />
                                         </th>
-                                    </tr>
-                                    <tr>
-                                        <th class="table-header" scope="col">Total</th>
-                                        <th class="table-header" scope="col">-></th>
-                                        <th id="total-canasta" class="table-header" scope="col"></th>
-                                    </tr>
+                                    </tr> -->
                                 </tfoot>
                             </table>
                         </form>
+                        <tr class="table-group-divider">
+                            <th class="table-header" scope="col">
+                                <select name="canasta_alquiler" id="canasta_alquiler" title="Tipo de Canasta">
+                                    <option value="siAlquiler3amb" selected disabled>Alquiler</option>
+                                    <option value="siAlquilo">Si Alquilo</option>
+                                    <option value="noAlquilo">No Alquilo</option>
+                                    <option value="AlquilerProm3amb">No Alquilo</option>
+                                    <option value="AlquilerProm2amb">No Alquilo</option>
+                                </select>
+                            </th>
+                            <th class="table-header" scope="col">-></th>
+                            <th id="total-alquiler" class="table-header" scope="col">
+                                <input type="number" min="0" name="total_alquiler" id="total_alquiler_in" />
+                            </th>
+                        </tr>
 
                         <!-- <h3>Tu Canasta Real:</h3>
 
