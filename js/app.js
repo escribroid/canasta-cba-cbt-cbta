@@ -152,8 +152,9 @@ select_custom();
 
 /* TABLA CANASTA PERSONALIZADA ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 let count = 0;
-let sumaTotal = 0;
-let sumaArray = [];
+let suma_Total_Personas = 0;
+let suma_con_alquiler = 0;
+let suma_Array_Personas = [];
 let nuevaSuma = 0;
 
 const form = document.getElementById("person-form");
@@ -163,17 +164,16 @@ let personas_de_local = JSON.parse(localStorage.getItem("personas_de_local")) ||
 //console.log("personas_de_local", personas_de_local);
 
 // Función para agregar persona a la tabla y al array de personas
-function addPersonToTable(gender, age, age_mostrar_table, td_partial, sumaTotal, total_alquiler_in) {
+function addPersonToTable(gender, age, age_mostrar_table, td_partial, sumaTotal, total_alquiler_in, suma_con_alquiler) {
     const row = document.createElement("tr");
     row.innerHTML = `<td>${gender}</td><td>${age_mostrar_table}</td><td class="partial_sumable">${td_partial}</td>`;
     tableBody.appendChild(row);
-    document.getElementById("total-canasta").innerHTML = sumaTotal;
+    document.getElementById("total-canasta").innerHTML = suma_con_alquiler;
     document.querySelector(".view_cbt_personal").innerHTML = `<span class="card_cba_value">$ ${sumaTotal}</span>`;
     document.getElementById("total_alquiler_in").value = total_alquiler_in;
     document.getElementById("total_alquiler_out").textContent = total_alquiler_in;
 
-
-    console.log("personas_de_local1", typeof total_alquiler_in);
+    //console.log("personas_de_local1", typeof total_alquiler_in);
 }
 
 // Cargar personas desde localStorage al cargar la página
@@ -185,18 +185,19 @@ document.addEventListener("DOMContentLoaded", () => {
             person.age_mostrar_table,
             person.td_partial,
             person.sumaTotal,
-            person.total_alquiler_in
+            person.total_alquiler_in,
+            person.suma_con_alquiler
         );
-        console.log("person", person.total_alquiler_in);
+
+        console.log("person.total_alquiler_in", person.total_alquiler_in);
         //document.getElementById("total_alquiler_in").value === person.total_alquiler_in;
-        let sumaNuevaindex = document.querySelectorAll(".partial_sumable");
+        // let sumaNuevaindex = document.querySelectorAll(".partial_sumable");
 
-        sumaNuevaindex.forEach((element) => {
-            nuevaSuma = nuevaSuma + parseFloat(element.textContent);
-            console.log("element.textContent-", element.textContent);
-        });
-
-        console.log("nuevaSuma-", nuevaSuma);
+        // sumaNuevaindex.forEach((element) => {
+        //     nuevaSuma = nuevaSuma + parseFloat(element.textContent);
+        //     //console.log("element.textContent-", element.textContent);
+        //     console.log("nuevaSuma-", nuevaSuma);
+        // });
     });
     //console.log("personas_de_local2", personas_de_local.total_alquiler_in);
 });
@@ -228,7 +229,7 @@ function add_person_sum_canasta() {
 
         document.getElementById("total_alquiler_out").textContent = total_alquiler_in;
 
-        console.log("total_alquiler_in", typeof total_alquiler_in);
+        //console.log("total_alquiler_in", typeof total_alquiler_in);
 
         let td_partial = document.createElement("td");
 
@@ -239,7 +240,7 @@ function add_person_sum_canasta() {
         //     document.getElementById("message_error_age").innerHTML = "Debe ingresar una edad válida";
         // }
 
-        console.log("age1", typeof age);
+        //console.log("age1", typeof age);
 
         if (age < 18) {
             age = age;
@@ -257,29 +258,40 @@ function add_person_sum_canasta() {
             age = "99";
         }
 
-        console.log("age2", typeof age);
+        //console.log("age2", typeof age);
 
         const age_toStr = age.toString();
         const gender_lowercase = gender.toLowerCase();
-        console.log("gender_lowercase-", gender_lowercase);
+        //console.log("gender_lowercase-", gender_lowercase);
 
         let sumando = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente;
 
-        console.log("cbt_unformat-", cbt_unformat);
-        console.log("sumando-", sumando);
-        console.log("sumaArray-", sumaArray);
+        //console.log("cbt_unformat-", cbt_unformat);
+        //console.log("sumando-", sumando);
+        //console.log("suma_Array_Personas-", suma_Array_Personas);
 
-        sumaArray.push(sumando);
+        suma_Array_Personas.push(sumando);
 
-        //console.log("sumaArray-", sumaArray);
+        //console.log("suma_Array_Personas-", suma_Array_Personas);
 
-        sumaTotal = 0;
-        for (let index = 0; index < sumaArray.length; index++) {
-            sumaTotal = sumaTotal + sumaArray[index];
+        suma_Total_Personas = 0;
+        for (let index = 0; index < suma_Array_Personas.length; index++) {
+            suma_Total_Personas = suma_Total_Personas + suma_Array_Personas[index];
         }
-        sumaTotal = sumaTotal + total_alquiler_in;
+        suma_Total_Personas = suma_Total_Personas + total_alquiler_in;
+        suma_con_alquiler = suma_Total_Personas + total_alquiler_in;
 
-        td_partial = sumaArray[count - 1].toLocaleString("es-AR", {
+        document.getElementById("sum_total_reload").addEventListener("click", () => {
+            total_alquiler_in = total_alquiler_in;
+            suma_con_alquiler = suma_con_alquiler + total_alquiler_in;
+            document.getElementById("total_alquiler_out").value = total_alquiler_in;
+            console.log("suma_Total_Personas 2-", suma_Total_Personas);
+            console.log("suma_con_alquiler", suma_con_alquiler);
+
+            return suma_con_alquiler;
+        });
+
+        td_partial = suma_Array_Personas[count - 1].toLocaleString("es-AR", {
             minimumFractionDigits: 0,
             maximumFractionDigits: 0,
         });
@@ -291,8 +303,9 @@ function add_person_sum_canasta() {
             gender,
             sumando,
             td_partial,
-            sumaTotal,
+            sumaTotal: suma_Total_Personas,
             total_alquiler_in,
+            suma_con_alquiler,
         };
 
         personas_de_local.push(local_persona);
@@ -300,7 +313,15 @@ function add_person_sum_canasta() {
         localStorage.setItem("personas_de_local", JSON.stringify(personas_de_local));
 
         // Agregar la persona a la tabla
-        addPersonToTable(gender, age, age_mostrar_table, td_partial, sumaTotal, total_alquiler_in);
+        addPersonToTable(
+            gender,
+            age,
+            age_mostrar_table,
+            td_partial,
+            suma_Total_Personas,
+            total_alquiler_in,
+            suma_con_alquiler
+        );
 
         // Limpiar el formulario
         document.getElementById("person-form").reset();
