@@ -46,15 +46,15 @@ main {
     flex-direction: column;
 }
 
+/* select {
+    height: 40px;
+} */
+
 #person-form {
     border: 0 solid #ff4f00;
     border-radius: var(--font-size-10_0-625);
     margin: 0;
     padding: 0;
-}
-
-#total_alquiler_in {
-    width: 11ch;
 }
 
 .accordion {
@@ -299,12 +299,8 @@ main {
 }
 
 .table_alquiler {
-    margin: 0 auto .6rem;
+    margin: 10px 0;
 }
-
-
-
-
 
 .text-bg-dark {
     color: #fff !important;
@@ -332,12 +328,10 @@ main {
     transform: rotate(90deg) scaley(1.3);
 }
 
-.custom-select-container {
-    background-color: #333;
-}
-
+.total_alquiler_in,
 .selected-gender,
-.selected-age {
+.selected-age,
+.select_canasta_alquiler {
     background-color: #333;
     border: 0.1rem solid #ccc;
     border-radius: 0.3rem;
@@ -349,38 +343,36 @@ main {
     justify-content: space-between;
     align-items: center;
     padding-left: var(--font-size-10_0-625);
-    width: 100%;
-    z-index: 11;
+    width: 100px;
+    /* -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none; */
+    cursor: pointer;
 }
 
-.gender-options,
-.age-options {
-    background-color: #333;
-    border: 0.1rem solid #ff4f00;
-    border-radius: var(--font-size-10_0-625);
-    display: none;
-    max-height: 70%;
-    overflow-y: auto;
-    position: fixed;
-    top: 6.25rem;
-    margin-right: 15%;
-    scrollbar-width: none;
-    width: 70%;
-    z-index: 12;
+.selected-gender option,
+.selected-age option,
+.select_canasta_alquiler option {
+    background-color: #f8f8f8;
+    color: #333;
 }
 
-.gender-options {
-    top: 45%;
+.selected-gender option:hover,
+.selected-age option:hover,
+.select_canasta_alquiler option:hover {
+    background-color: #62709a;
+}
+
+.total_alquiler_in {
+    width: 90%;
+    margin-left: 10px;
 }
 
 .gender-option,
 .age-option {
     border-bottom: 0.1rem solid #ccc;
     cursor: pointer;
-    font-size: var(--font-size-24_1-5);
-    padding: var(--font-size-20_1-25);
     text-align: center;
-    width: 100%;
 }
 
 .age-option:hover,

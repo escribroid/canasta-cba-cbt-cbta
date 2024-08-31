@@ -134,12 +134,12 @@
         <!-- MAIN -->
         <main>
             <!-- Card 1 title -->
-            <div class="card w-100">
+            <!-- <div class="card w-100">
                 <div class="card-body d-flex flex-column align-items-center">
                     <h1>Canasta Básica Alimentaria Canasta Básica Total</h1>
                     <h2 class="subtitle">Julio 2024</h2>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Card 2 Canasta Básica Alimentaria -->
             <div class="card w-100">
@@ -156,12 +156,17 @@
                         <table class="table_alquiler">
                             <tr class="">
                                 <th class="table-header" scope="col">
-                                    <select name="canasta_alquiler" id="canasta_alquiler" title="Tipo de Canasta">
-                                        <option value="siAlquiler3amb" selected disabled>Vivienda</option>
-                                        <option value="siAlquilo">Si Alquilo</option>
-                                        <option value="noAlquilo">No Alquilo</option>
-                                        <option value="AlquilerProm3amb">3amb Prom</option>
-                                        <option value="AlquilerProm2amb">2amb Prom</option>
+                                    <select
+                                        name="canasta_alquiler"
+                                        id="select_canasta_alquiler"
+                                        title="¿Alquilas?"
+                                        class="select_canasta_alquiler"
+                                    >
+                                        <option value="siAlquiler3amb" selected disabled>Casa</option>
+                                        <option value="siAlquilo">Alquilo</option>
+                                        <option value="noAlquilo">Propia</option>
+                                        <option value="AlquilerProm3amb">3 amb</option>
+                                        <option value="AlquilerProm2amb">2 amb</option>
                                     </select>
                                 </th>
                                 <th id="total-alquiler" class="table-header" scope="col">
@@ -170,151 +175,138 @@
                                         min="0"
                                         name="total_alquiler"
                                         id="total_alquiler_in"
-                                        class="partial_sumable"
+                                        class="partial_sumable total_alquiler_in"
                                         value=""
-                                        placeholder="$$$ Valor"
+                                        placeholder=" $ precio"
                                     />
                                 </th>
                                 <th class="table-header" scope="col">
-                                    <button
-                                        type="button"
-                                        class="btn btn-primary"
-                                        id="sum_total_reload"
-                                    >
-                                        ◙◙◙
-                                    </button>
+                                    <button type="button" class="btn btn-primary" id="sum_total_reload">◙</button>
                                 </th>
                             </tr>
                         </table>
                         <form id="person-form">
                             <fieldset>
                                 <div class="person-form-group">
+                                    <!-- SELECTs +++++++++++++++++++++++++++++++++++ -->
                                     <div class="custom-select-container">
-                                        <div id="selected-gender" class="selected-gender">
-                                            Género<span class="arrow-down"> ></span>
-                                        </div>
-                                        <div id="gender-options" class="gender-options">
-                                            <div data-value="Femenina" class="gender-option">Femenina</div>
-                                            <div data-value="Masculino" class="gender-option">Masculino</div>
-                                        </div>
+                                        <select name="selected-gender" id="selected-gender" class="selected-gender">
+                                            <option value="Genero" class="gender-option" selected disabled>
+                                                Genero
+                                            </option>
+                                            <option value="Femenino" class="gender-option">Femenino</option>
+                                            <option value="Masculino" class="gender-option">Masculino</option>
+                                        </select>
                                         <input type="hidden" name="gender" id="gender" required />
                                     </div>
-
-                                    <!-- <div class="select-container">
-                                        <select id="person-type" name="type" class="person-form-select">
-                                            <option value="Femenina">Femenina</option>
-                                            <option value="Masculino">Masculino</option>
-                                        </select>
-                                    </div> -->
                                 </div>
+
                                 <div class="person-form-group">
-                                    <!-- Custom select -->
                                     <div class="custom-select-container">
-                                        <div id="selected-age" class="selected-age">
-                                            Edad<span class="arrow-down"> ></span>
-                                        </div>
-                                        <div id="age-options" class="age-options">
-                                            <div data-value="0" class="age-option">0 años</div>
-                                            <div data-value="1" class="age-option">1 años</div>
-                                            <div data-value="2" class="age-option">2 años</div>
-                                            <div data-value="3" class="age-option">3 años</div>
-                                            <div data-value="4" class="age-option">4 años</div>
-                                            <div data-value="5" class="age-option">5 años</div>
-                                            <div data-value="6" class="age-option">6 años</div>
-                                            <div data-value="7" class="age-option">7 años</div>
-                                            <div data-value="8" class="age-option">8 años</div>
-                                            <div data-value="9" class="age-option">9 años</div>
-                                            <div data-value="10" class="age-option">10 años</div>
-                                            <div data-value="11" class="age-option">11 años</div>
-                                            <div data-value="12" class="age-option">12 años</div>
-                                            <div data-value="13" class="age-option">13 años</div>
-                                            <div data-value="14" class="age-option">14 años</div>
-                                            <div data-value="15" class="age-option">15 años</div>
-                                            <div data-value="16" class="age-option">16 años</div>
-                                            <div data-value="17" class="age-option">17 años</div>
-                                            <div data-value="18" class="age-option">18 años</div>
-                                            <div data-value="19" class="age-option">19 años</div>
-                                            <div data-value="20" class="age-option">20 años</div>
-                                            <div data-value="21" class="age-option">21 años</div>
-                                            <div data-value="22" class="age-option">22 años</div>
-                                            <div data-value="23" class="age-option">23 años</div>
-                                            <div data-value="24" class="age-option">24 años</div>
-                                            <div data-value="25" class="age-option">25 años</div>
-                                            <div data-value="26" class="age-option">26 años</div>
-                                            <div data-value="27" class="age-option">27 años</div>
-                                            <div data-value="28" class="age-option">28 años</div>
-                                            <div data-value="29" class="age-option">29 años</div>
-                                            <div data-value="30" class="age-option">30 años</div>
-                                            <div data-value="31" class="age-option">31 años</div>
-                                            <div data-value="32" class="age-option">32 años</div>
-                                            <div data-value="33" class="age-option">33 años</div>
-                                            <div data-value="34" class="age-option">34 años</div>
-                                            <div data-value="35" class="age-option">35 años</div>
-                                            <div data-value="36" class="age-option">36 años</div>
-                                            <div data-value="37" class="age-option">37 años</div>
-                                            <div data-value="38" class="age-option">38 años</div>
-                                            <div data-value="39" class="age-option">39 años</div>
-                                            <div data-value="40" class="age-option">40 años</div>
-                                            <div data-value="41" class="age-option">41 años</div>
-                                            <div data-value="42" class="age-option">42 años</div>
-                                            <div data-value="43" class="age-option">43 años</div>
-                                            <div data-value="44" class="age-option">44 años</div>
-                                            <div data-value="45" class="age-option">45 años</div>
-                                            <div data-value="46" class="age-option">46 años</div>
-                                            <div data-value="47" class="age-option">47 años</div>
-                                            <div data-value="48" class="age-option">48 años</div>
-                                            <div data-value="49" class="age-option">49 años</div>
-                                            <div data-value="50" class="age-option">50 años</div>
-                                            <div data-value="51" class="age-option">51 años</div>
-                                            <div data-value="52" class="age-option">52 años</div>
-                                            <div data-value="53" class="age-option">53 años</div>
-                                            <div data-value="54" class="age-option">54 años</div>
-                                            <div data-value="55" class="age-option">55 años</div>
-                                            <div data-value="56" class="age-option">56 años</div>
-                                            <div data-value="57" class="age-option">57 años</div>
-                                            <div data-value="58" class="age-option">58 años</div>
-                                            <div data-value="59" class="age-option">59 años</div>
-                                            <div data-value="60" class="age-option">60 años</div>
-                                            <div data-value="61" class="age-option">61 años</div>
-                                            <div data-value="62" class="age-option">62 años</div>
-                                            <div data-value="63" class="age-option">63 años</div>
-                                            <div data-value="64" class="age-option">64 años</div>
-                                            <div data-value="65" class="age-option">65 años</div>
-                                            <div data-value="66" class="age-option">66 años</div>
-                                            <div data-value="67" class="age-option">67 años</div>
-                                            <div data-value="68" class="age-option">68 años</div>
-                                            <div data-value="69" class="age-option">69 años</div>
-                                            <div data-value="70" class="age-option">70 años</div>
-                                            <div data-value="71" class="age-option">71 años</div>
-                                            <div data-value="72" class="age-option">72 años</div>
-                                            <div data-value="73" class="age-option">73 años</div>
-                                            <div data-value="74" class="age-option">74 años</div>
-                                            <div data-value="75" class="age-option">75 años</div>
-                                            <div data-value="76" class="age-option">76 años</div>
-                                            <div data-value="77" class="age-option">77 años</div>
-                                            <div data-value="78" class="age-option">78 años</div>
-                                            <div data-value="79" class="age-option">79 años</div>
-                                            <div data-value="80" class="age-option">80 años</div>
-                                            <div data-value="81" class="age-option">81 años</div>
-                                            <div data-value="82" class="age-option">82 años</div>
-                                            <div data-value="83" class="age-option">83 años</div>
-                                            <div data-value="84" class="age-option">84 años</div>
-                                            <div data-value="85" class="age-option">85 años</div>
-                                            <div data-value="86" class="age-option">86 años</div>
-                                            <div data-value="87" class="age-option">87 años</div>
-                                            <div data-value="88" class="age-option">88 años</div>
-                                            <div data-value="89" class="age-option">89 años</div>
-                                            <div data-value="90" class="age-option">90 años</div>
-                                            <div data-value="91" class="age-option">91 años</div>
-                                            <div data-value="92" class="age-option">92 años</div>
-                                            <div data-value="93" class="age-option">93 años</div>
-                                            <div data-value="94" class="age-option">94 años</div>
-                                            <div data-value="95" class="age-option">95 años</div>
-                                            <div data-value="96" class="age-option">96 años</div>
-                                            <div data-value="97" class="age-option">97 años</div>
-                                            <div data-value="98" class="age-option">98 años</div>
-                                            <div data-value="99" class="age-option">99 o más</div>
-                                        </div>
+                                        <select name="selected-age" id="selected-age" class="selected-age">
+                                            <option value="Edad" class="age-option" selected disabled>Edad</option>
+                                            <option value="0" class="age-option">0 años</option>
+                                            <option value="1" class="age-option">1 años</option>
+                                            <option value="2" class="age-option">2 años</option>
+                                            <option value="3" class="age-option">3 años</option>
+                                            <option value="4" class="age-option">4 años</option>
+                                            <option value="5" class="age-option">5 años</option>
+                                            <option value="6" class="age-option">6 años</option>
+                                            <option value="7" class="age-option">7 años</option>
+                                            <option value="8" class="age-option">8 años</option>
+                                            <option value="9" class="age-option">9 años</option>
+                                            <option value="10" class="age-option">10 años</option>
+                                            <option value="11" class="age-option">11 años</option>
+                                            <option value="12" class="age-option">12 años</option>
+                                            <option value="13" class="age-option">13 años</option>
+                                            <option value="14" class="age-option">14 años</option>
+                                            <option value="15" class="age-option">15 años</option>
+                                            <option value="16" class="age-option">16 años</option>
+                                            <option value="17" class="age-option">17 años</option>
+                                            <option value="18" class="age-option">18 años</option>
+                                            <option value="19" class="age-option">19 años</option>
+                                            <option value="20" class="age-option">20 años</option>
+                                            <option value="21" class="age-option">21 años</option>
+                                            <option value="22" class="age-option">22 años</option>
+                                            <option value="23" class="age-option">23 años</option>
+                                            <option value="24" class="age-option">24 años</option>
+                                            <option value="25" class="age-option">25 años</option>
+                                            <option value="26" class="age-option">26 años</option>
+                                            <option value="27" class="age-option">27 años</option>
+                                            <option value="28" class="age-option">28 años</option>
+                                            <option value="29" class="age-option">29 años</option>
+                                            <option value="30" class="age-option">30 años</option>
+                                            <option value="31" class="age-option">31 años</option>
+                                            <option value="32" class="age-option">32 años</option>
+                                            <option value="33" class="age-option">33 años</option>
+                                            <option value="34" class="age-option">34 años</option>
+                                            <option value="35" class="age-option">35 años</option>
+                                            <option value="36" class="age-option">36 años</option>
+                                            <option value="37" class="age-option">37 años</option>
+                                            <option value="38" class="age-option">38 años</option>
+                                            <option value="39" class="age-option">39 años</option>
+                                            <option value="40" class="age-option">40 años</option>
+                                            <option value="41" class="age-option">41 años</option>
+                                            <option value="42" class="age-option">42 años</option>
+                                            <option value="43" class="age-option">43 años</option>
+                                            <option value="44" class="age-option">44 años</option>
+                                            <option value="45" class="age-option">45 años</option>
+                                            <option value="46" class="age-option">46 años</option>
+                                            <option value="47" class="age-option">47 años</option>
+                                            <option value="48" class="age-option">48 años</option>
+                                            <option value="49" class="age-option">49 años</option>
+                                            <option value="50" class="age-option">50 años</option>
+                                            <option value="51" class="age-option">51 años</option>
+                                            <option value="52" class="age-option">52 años</option>
+                                            <option value="53" class="age-option">53 años</option>
+                                            <option value="54" class="age-option">54 años</option>
+                                            <option value="55" class="age-option">55 años</option>
+                                            <option value="56" class="age-option">56 años</option>
+                                            <option value="57" class="age-option">57 años</option>
+                                            <option value="58" class="age-option">58 años</option>
+                                            <option value="59" class="age-option">59 años</option>
+                                            <option value="60" class="age-option">60 años</option>
+                                            <option value="61" class="age-option">61 años</option>
+                                            <option value="62" class="age-option">62 años</option>
+                                            <option value="63" class="age-option">63 años</option>
+                                            <option value="64" class="age-option">64 años</option>
+                                            <option value="65" class="age-option">65 años</option>
+                                            <option value="66" class="age-option">66 años</option>
+                                            <option value="67" class="age-option">67 años</option>
+                                            <option value="68" class="age-option">68 años</option>
+                                            <option value="69" class="age-option">69 años</option>
+                                            <option value="70" class="age-option">70 años</option>
+                                            <option value="71" class="age-option">71 años</option>
+                                            <option value="72" class="age-option">72 años</option>
+                                            <option value="73" class="age-option">73 años</option>
+                                            <option value="74" class="age-option">74 años</option>
+                                            <option value="75" class="age-option">75 años</option>
+                                            <option value="76" class="age-option">76 años</option>
+                                            <option value="77" class="age-option">77 años</option>
+                                            <option value="78" class="age-option">78 años</option>
+                                            <option value="79" class="age-option">79 años</option>
+                                            <option value="80" class="age-option">80 años</option>
+                                            <option value="81" class="age-option">81 años</option>
+                                            <option value="82" class="age-option">82 años</option>
+                                            <option value="83" class="age-option">83 años</option>
+                                            <option value="84" class="age-option">84 años</option>
+                                            <option value="85" class="age-option">85 años</option>
+                                            <option value="86" class="age-option">86 años</option>
+                                            <option value="87" class="age-option">87 años</option>
+                                            <option value="88" class="age-option">88 años</option>
+                                            <option value="89" class="age-option">89 años</option>
+                                            <option value="90" class="age-option">90 años</option>
+                                            <option value="91" class="age-option">91 años</option>
+                                            <option value="92" class="age-option">92 años</option>
+                                            <option value="93" class="age-option">93 años</option>
+                                            <option value="94" class="age-option">94 años</option>
+                                            <option value="95" class="age-option">95 años</option>
+                                            <option value="96" class="age-option">96 años</option>
+                                            <option value="97" class="age-option">97 años</option>
+                                            <option value="98" class="age-option">98 años</option>
+                                            <option value="99" class="age-option">99 años</option>
+                                            <option value="100" class="age-option">100 años</option>
+                                        </select>
                                         <input type="hidden" name="age" id="age" required />
                                         <!-- message error -->
                                         <div id="message_error_age" class="message_error_age"></div>
@@ -373,7 +365,7 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th class="table-header" scope="col">Tipo</th>
+                                        <th class="table-header" scope="col">Familiar</th>
                                         <th class="table-header" scope="col">Edad</th>
                                         <th class="table-header" scope="col">Canasta</th>
                                     </tr>
