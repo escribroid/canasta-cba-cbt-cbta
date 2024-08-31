@@ -160,9 +160,9 @@
                                         name="canasta_alquiler"
                                         id="select_canasta_alquiler"
                                         title="¿Alquilas?"
-                                        class="select_canasta_alquiler"
+                                        class="form-select select_canasta_alquiler"
                                     >
-                                        <option value="siAlquiler3amb" selected disabled>Casa</option>
+                                        <option value="siAlquiler3amb" selected disabled># Casa:</option>
                                         <option value="siAlquilo">Alquilo</option>
                                         <option value="noAlquilo">Propia</option>
                                         <option value="AlquilerProm3amb">3 amb</option>
@@ -175,7 +175,7 @@
                                         min="0"
                                         name="total_alquiler"
                                         id="total_alquiler_in"
-                                        class="partial_sumable total_alquiler_in"
+                                        class="partial_sumable total_alquiler_in form-control"
                                         value=""
                                         placeholder=" $ precio"
                                     />
@@ -185,7 +185,7 @@
                                 </th>
                             </tr>
                         </table>
-                        <select class="form-select" aria-label="Disabled select example" >
+                        <select class="form-select" aria-label="select example">
                             <option selected>Open this select menu</option>
                             <option value="one">One</option>
                             <option value="two">Two</option>
@@ -196,9 +196,8 @@
                                 <div class="person-form-group">
                                     <!-- SELECTs +++++++++++++++++++++++++++++++++++ -->
                                     <div class="custom-select-container">
-                                        <select name="selected-gender" id="selected-gender" class="selected-gender">
-                                            <option value="Genero" class="gender-option" selected disabled>
-                                                Genero
+                                        <select name="selected-gender" id="selected-gender" class="form-select selected-gender">
+                                            <option value="Genero" class="gender-option" selected disabled># Genero:
                                             </option>
                                             <option value="Femenino" class="gender-option">Femenino</option>
                                             <option value="Masculino" class="gender-option">Masculino</option>
@@ -207,12 +206,10 @@
                                     </div>
                                 </div>
 
-                                
-
                                 <div class="person-form-group">
                                     <div class="custom-select-container">
-                                        <select name="selected-age" id="selected-age" class="selected-age">
-                                            <option value="Edad" class="age-option" disabled>Edad</option>
+                                        <select name="selected-age" id="selected-age" class="form-select selected-age shadow  mb-4 rounded">
+                                            <option value="Edad" class="age-option" selected disabled># Edad:</option>
                                             <option value="0" class="age-option">0 años</option>
                                             <option value="1" class="age-option">1 años</option>
                                             <option value="2" class="age-option">2 años</option>
@@ -367,6 +364,8 @@
                                     </svg>
                                 </button>
                             </fieldset>
+
+                            
 
                             <h3 class="person-table-title">Tu Canasta Mansual</h3>
 
