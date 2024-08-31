@@ -1,5 +1,5 @@
 :root {
-    font-size: 10px;
+    font-size: 16px;
 }
 html {
     box-sizing: border-box;
@@ -121,8 +121,8 @@ a {
     text-decoration: none;
 }
 abbr[title] {
-    border-bottom: none; 
-    text-decoration: underline; 
+    border-bottom: none;
+    text-decoration: underline;
 }
 b,
 strong {
@@ -149,19 +149,19 @@ input {
 code,
 kbd,
 samp {
-    font-family: 'Courier New', Courier, monospace; 
+    font-family: "Courier New", Courier, monospace;
 }
 img {
     width: 100%;
     border-style: none;
 }
 legend {
-    box-sizing: border-box; 
-    color: inherit; 
-    display: table; 
-    max-width: 100%; 
-    padding: 0; 
-    white-space: normal; 
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
 }
 ol,
 ul {
