@@ -71,8 +71,8 @@ let gender_lowercase;
 let suma_de_Personas;
 let suma_con_alquiler = 0;
 let suma_Array_Personas = [];
-let alquiler_out;
-let alquiler_in;
+let alquiler_out = 0;
+let alquiler_in = 0;
 let canasta_por_persona;
 let add_partials;
 
@@ -88,8 +88,17 @@ function addPersonToTable(gender, age_mostrar_table, canasta_por_persona) {
     row.innerHTML = `<td>${gender}</td><td>${age_mostrar_table}</td><td class="add_Partials">${canasta_por_persona}</td>`;
     tableBody.appendChild(row);
 }
-
+suma_con_alquiler = 0;
 function suma_Total(suma_de_Personas, alquiler_in, suma_con_alquiler) {
+    alquiler_in = parseFloat(document.getElementById("alquiler_in").value);
+    alquiler_out = document.getElementById("alquiler_out");
+    if (isNaN(alquiler_in)) {
+        alquiler_in = 0;
+        alquiler_out.textContent = 0;
+    } else if (alquiler_in < 0) {
+        alquiler_in = alquiler_in * -1;
+    }
+    suma_con_alquiler = 0;
     suma_con_alquiler = alquiler_in + suma_de_Personas;
 
     document.getElementById("total-canasta").innerHTML = suma_con_alquiler;
@@ -137,7 +146,6 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     age = document.getElementById("selected-age").value;
     gender = document.getElementById("selected-gender").value;
     alquiler_in = parseFloat(document.getElementById("alquiler_in").value);
-
     // Obtener AGE ++++++++++++++++++
     //console.log("age", age);
 
@@ -219,6 +227,11 @@ document.getElementById("alquiler_in").addEventListener("input", () => {
     age = document.getElementById("selected-age").value;
     gender = document.getElementById("selected-gender").value;
     alquiler_in = parseFloat(document.getElementById("alquiler_in").value);
+    alquiler_out = document.getElementById("alquiler_out").value;
+
+    suma_con_alquiler = 0;
+    //suma_con_alquiler = suma_de_Personas;
+
 
     if (isNaN(alquiler_in)) {
         alquiler_in = 0;
@@ -227,12 +240,13 @@ document.getElementById("alquiler_in").addEventListener("input", () => {
     }
 
     if (isNaN(parseFloat(document.getElementById("alquiler_out").value))) {
-        document.getElementById("alquiler_out").value = 0;
+        document.getElementById("alquiler_out").textContent = alquiler_in;
     } else {
-        document.getElementById("alquiler_out").value = alquiler_in;
+        //document.getElementById("alquiler_out").value = alquiler_in;
         document.getElementById("alquiler_out").textContent = alquiler_in;
     }
 
+    alquiler_in = 0;
     suma_Total(suma_de_Personas, alquiler_in, suma_con_alquiler);
 
     // alquiler_out ++++++++++++++++++++++++++
