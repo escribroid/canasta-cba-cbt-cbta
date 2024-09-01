@@ -2,7 +2,7 @@ html {
 }
 
 body {
-    background-color: rgb(26 17 15);
+    background-color: rgb(18, 19, 24);
     color: aliceblue;
     font-family: var(--font-primary);
     font-size: var(--font-size-22_1-375);
@@ -159,6 +159,18 @@ main {
     justify-content: space-between;
     padding: var(--font-size-10_0-625) 0 0 0;
     width: 100%;
+}
+
+[data-bs-theme=dark] .carousel .carousel-control-next-icon, [data-bs-theme=dark] .carousel .carousel-control-prev-icon, [data-bs-theme=dark].carousel .carousel-control-next-icon, [data-bs-theme=dark].carousel .carousel-control-prev-icon {
+    filter: invert(0) grayscale(100);
+}
+
+.carousel-control-next {
+    right: -16px;
+}
+
+.carousel-control-prev {
+    left: -16px;
 }
 
 .dropdown-toggle::after {
