@@ -162,22 +162,22 @@
                                         title="¿Alquilas?"
                                         class="form-select select_canasta_alquiler"
                                     >
-                                        <option value="" selected>• Casa:</option>
+                                        <option value="" selected>Casa:</option>
                                         <option value="siAlquilo">Alquilo</option>
                                         <option value="noAlquilo">Propia</option>
-                                        <option value="AlquilerProm3amb">3 amb</option>
-                                        <option value="AlquilerProm2amb">2 amb</option>
+                                        <option value="AlquilerProm3amb">3 amb Prom</option>
+                                        <option value="AlquilerProm2amb">2 amb Prom</option>
                                     </select>
                                 </th>
                                 <th id="total-alquiler" class="table-header" scope="col">
                                     <input
                                         type="number"
                                         min="0"
-                                        name="total_alquiler"
-                                        id="total_alquiler_in"
-                                        class="partial_sumable total_alquiler_in form-control"
+                                        name="alquiler_in"
+                                        id="alquiler_in"
+                                        class="partial_sumable alquiler_in form-control"
                                         value=""
-                                        placeholder=" $ precio"
+                                        placeholder=" $ Precio"
                                     />
                                 </th>
                                 <th class="table-header" scope="col">
@@ -196,7 +196,7 @@
                                             id="selected-gender"
                                             class="form-select selected-gender"
                                         >
-                                            <option value="" class="gender-option" selected>• Genero:</option>
+                                            <option value="" class="gender-option" selected>Familiar:</option>
 
                                             <option value="Femenino" class="gender-option">(F) Femenino</option>
                                             <option value="Masculino" class="gender-option">(M) Masculino</option>
@@ -210,9 +210,9 @@
                                         <select
                                             name="selected-age"
                                             id="selected-age"
-                                            class="form-select selected-age shadow mb-4 rounded"
+                                            class="form-select selected-age shadow rounded"
                                         >
-                                            <option value="" class="age-option" selected>• Edad:</option>
+                                            <option value="" class="age-option" selected>Edad:</option>
                                             <option value="0" class="age-option">0 años</option>
                                             <option value="1" class="age-option">1 años</option>
                                             <option value="2" class="age-option">2 años</option>
@@ -368,7 +368,7 @@
                                 </button>
                             </fieldset>
 
-                            <h3 class="person-table-title">Tu Canasta Mansual</h3>
+                            <h3 class="person-table-title">Tu Canasta Mensual</h3>
 
                             <table class="table">
                                 <thead>
@@ -383,7 +383,7 @@
                                     <tr class="table-group-divider">
                                         <th class="table-header" scope="col">Alquiler</th>
                                         <th class="table-header" scope="col">$</th>
-                                        <th id="total_alquiler_out" class="table-header" scope="col"></th>
+                                        <th id="alquiler_out" class="table-header" scope="col"></th>
                                     </tr>
                                     <tr>
                                         <th class="table-header" scope="col">Total</th>
@@ -406,7 +406,7 @@
                                         </th>
                                         <th class="table-header" scope="col">-></th>
                                         <th id="total-alquiler" class="table-header" scope="col">
-                                            <input type="number" min="0" name="total_alquiler" id="total_alquiler_in" />
+                                            <input type="number" min="0" name="alquiler_in" id="alquiler_in" />
                                         </th>
                                     </tr> -->
                                 </tfoot>

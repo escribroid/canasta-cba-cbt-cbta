@@ -12,7 +12,6 @@ body {
 
 fieldset {
     display: flex;
-    gap: 5px;
     justify-content: space-around;
     margin: 0 0 var(--font-size-14_0-875) 0;
     justify-content: space-between;
@@ -89,8 +88,7 @@ main {
     font-size: var(--font-size-14_0-875);
 }
 
-.btn-add-person {
-    align-items: center;
+.btn-add-person, .btn-reset-person {
     background-color: #212529;
     border: 0 solid #ff4f00;
     border-radius: var(--font-size-6_0-375);
@@ -103,6 +101,7 @@ main {
     padding: 0;
     vertical-align: middle;
     width: var(--font-size-42_2-625);
+    height: fit-content;
 }
 
 .btn-add-person:hover {
@@ -250,11 +249,11 @@ main {
     margin-bottom: calc(-0.5 * var(--bs-offcanvas-padding-y));
 }
 
-.person-form-group {
+/* .person-form-group {
     display: flex;
     flex-direction: column;
     width: 34%;
-}
+} */
 
 .person-form-select,
 .person-select-age {
@@ -321,22 +320,21 @@ main {
 /* Select custom +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 
-.total_alquiler_in,
+.alquiler_in,
 .selected-gender,
 .selected-age,
 .select_canasta_alquiler {
     background-color: #333;
     cursor: pointer;
     display: flex;
-    width: 130px;
+    width: 110px;
+    margin-right: 5px;
     /* -webkit-appearance: none; 
     -moz-appearance: none;
     appearance: none; */
 }
 
-.total_alquiler_in {
-    width: 90%;
-    margin-left: 10px;
+.alquiler_in {
 }
 
 .message_error_age {
