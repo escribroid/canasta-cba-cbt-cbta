@@ -62,7 +62,7 @@ main {
 .accordion-flush .accordion-item .accordion-button,
 .accordion-flush .accordion-item .accordion-button.collapsed {
     background: #333;
-    color: var(--font-color-medium);
+    color: rgb(177 197 255);
     font-size: var(--font-size-18_1-125);
 }
 
@@ -162,7 +162,7 @@ main {
 }
 
 [data-bs-theme=dark] .carousel .carousel-control-next-icon, [data-bs-theme=dark] .carousel .carousel-control-prev-icon, [data-bs-theme=dark].carousel .carousel-control-next-icon, [data-bs-theme=dark].carousel .carousel-control-prev-icon {
-    filter: invert(0) grayscale(100);
+    filter:  brightness(100%) contrast(100%) saturate(100%); 
 }
 
 .carousel-control-next {
