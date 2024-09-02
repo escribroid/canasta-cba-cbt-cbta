@@ -72,7 +72,7 @@ let suma_de_Personas;
 let suma_con_alquiler = 0;
 let suma_Array_Personas = [];
 let alquiler_out = 0;
-let alquiler_in = 0;
+let alquiler_in = document.getElementById("alquiler_in");
 let canasta_por_persona;
 let add_partials;
 
@@ -85,12 +85,17 @@ let personas_de_local = JSON.parse(localStorage.getItem("personas_de_local")) ||
 // Función para agregar persona a la tabla y al array de personas
 function addPersonToTable(gender, age_mostrar_table, canasta_por_persona) {
     const row = document.createElement("tr");
-    row.innerHTML = `<td>${gender}</td><td>${age_mostrar_table}</td><td class="add_Partials">${canasta_por_persona}</td>`;
+    row.innerHTML = `<td>${gender}</td><td>${age_mostrar_table}</td><td class="add_Partials">${canasta_por_persona.toLocaleString(
+        "es-AR",
+        {
+            maximumFractionDigits: 0,
+        }
+    )}</td>`;
     tableBody.appendChild(row);
 }
 suma_con_alquiler = 0;
 function suma_Total(suma_de_Personas, alquiler_in, suma_con_alquiler) {
-    alquiler_in = parseFloat(document.getElementById("alquiler_in").value);
+    alquiler_in = parseInt(document.getElementById("alquiler_in").value);
     alquiler_out = document.getElementById("alquiler_out");
     if (isNaN(alquiler_in)) {
         alquiler_in = 0;
@@ -101,14 +106,18 @@ function suma_Total(suma_de_Personas, alquiler_in, suma_con_alquiler) {
     suma_con_alquiler = 0;
     suma_con_alquiler = alquiler_in + suma_de_Personas;
 
-    document.getElementById("total-canasta").innerHTML = suma_con_alquiler;
+    if (isNaN(suma_con_alquiler)) {
+        suma_con_alquiler = alquiler_in;
+    }
+
+    document.getElementById("total-canasta").innerHTML = suma_con_alquiler.toLocaleString("es-AR", {
+        maximumFractionDigits: 0,
+    });
     document.querySelector(
         ".view_cbt_personal"
-    ).innerHTML = `<span class="card_cba_value">$ ${suma_con_alquiler}</span>`;
-}
-
-function suma_actual_con_input(suma_de_Personas, alquiler_in, suma_con_alquiler) {
-
+    ).innerHTML = `<span class="card_cba_value">$ ${suma_con_alquiler.toLocaleString("es-AR", {
+        maximumFractionDigits: 0,
+    })}</span>`;
 }
 
 // //Cargar personas desde localStorage al cargar la página
@@ -145,14 +154,15 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     count = count + 1;
     age = document.getElementById("selected-age").value;
     gender = document.getElementById("selected-gender").value;
-    alquiler_in = parseFloat(document.getElementById("alquiler_in").value);
+    alquiler_in = parseInt(document.getElementById("alquiler_in").value);
+
     // Obtener AGE ++++++++++++++++++
     //console.log("age", age);
 
     if (parseInt(age) < 0) {
         age = document.getElementById("selected-age").value = age * -1;
     }
-    age_mostrar_table = parseFloat(age);
+    age_mostrar_table = parseInt(age);
 
     if (age < 18) {
         age = age;
@@ -199,8 +209,6 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     // Limpiar el formulario
     document.getElementById("person-form").reset();
 
-    //sumar_Personas();
-
     console.log("alquiler_out3", alquiler_out);
 
     // LOCAL STORAGE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -219,19 +227,31 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
 
     localStorage.setItem("personas_de_local", JSON.stringify(personas_de_local));
 
-    return {suma_de_Personas, alquiler_in, suma_con_alquiler};
+    return { suma_de_Personas, alquiler_in, suma_con_alquiler };
+});
+
+
+
+
+
+// Evento keypress para prevenir caracteres no numéricos
+alquiler_in.addEventListener("keypress", function (e) {
+    // Permitir solo dígitos
+    const regex = /[0-9]/;
+    if (!regex.test(e.key)) {
+        e.preventDefault(); // Evitar que el carácter no permitido sea ingresado
+    }
 });
 
 // event INPUT ++++++++++++++++++++++++++++++++++++++++++++++++++++
 document.getElementById("alquiler_in").addEventListener("input", () => {
     age = document.getElementById("selected-age").value;
     gender = document.getElementById("selected-gender").value;
-    alquiler_in = parseFloat(document.getElementById("alquiler_in").value);
+    alquiler_in = parseInt(document.getElementById("alquiler_in").value);
     alquiler_out = document.getElementById("alquiler_out").value;
 
     suma_con_alquiler = 0;
     //suma_con_alquiler = suma_de_Personas;
-
 
     if (isNaN(alquiler_in)) {
         alquiler_in = 0;
@@ -239,7 +259,7 @@ document.getElementById("alquiler_in").addEventListener("input", () => {
         alquiler_in = alquiler_in * -1;
     }
 
-    if (isNaN(parseFloat(document.getElementById("alquiler_out").value))) {
+    if (isNaN(parseInt(document.getElementById("alquiler_out").value))) {
         document.getElementById("alquiler_out").textContent = alquiler_in;
     } else {
         //document.getElementById("alquiler_out").value = alquiler_in;
@@ -302,4 +322,14 @@ document.getElementById("btn-reset-person").addEventListener("click", () => {
     location.reload();
     document.getElementById("person-form").reset();
     document.getElementById("person-list").innerHTML = "";
+});
+
+
+document.getElementById("canasta_resumen").addEventListener("click", () => {
+
+
+    
+
+
+
 });

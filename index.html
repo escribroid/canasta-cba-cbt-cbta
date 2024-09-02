@@ -136,7 +136,6 @@
                                 <th id="total-alquiler" class="table-header" scope="col">
                                     <input
                                         type="number"
-                                        min="0"
                                         name="alquiler_in"
                                         id="alquiler_in"
                                         class="partial_sumable alquiler_in form-control"
@@ -346,36 +345,58 @@
                                 <tfoot>
                                     <tr class="table-group-divider">
                                         <th class="table-header" scope="col">Alquiler</th>
-                                        <th class="table-header" scope="col">$</th>
+                                        <th class="table-header" scope="col"></th>
                                         <th id="alquiler_out" class="table-header" scope="col"></th>
                                     </tr>
                                     <tr>
                                         <th class="table-header" scope="col">Total</th>
-                                        <th class="table-header" scope="col">$</th>
+                                        <th class="table-header" scope="col"></th>
                                         <th id="total-canasta" class="table-header" scope="col"></th>
                                     </tr>
-                                    <!-- <tr class="table-group-divider">
-                                        <th class="table-header" scope="col">
-                                            <select
-                                                name="canasta_alquiler"
-                                                id="canasta_alquiler"
-                                                title="Tipo de Canasta"
-                                            >
-                                                <option value="siAlquiler3amb" selected disabled>Alquiler</option>
-                                                <option value="siAlquilo">Si Alquilo</option>
-                                                <option value="noAlquilo">No Alquilo</option>
-                                                <option value="AlquilerProm3amb">No Alquilo</option>
-                                                <option value="AlquilerProm2amb">No Alquilo</option>
-                                            </select>
-                                        </th>
-                                        <th class="table-header" scope="col">-></th>
-                                        <th id="total-alquiler" class="table-header" scope="col">
-                                            <input type="number" min="0" name="alquiler_in" id="alquiler_in" />
-                                        </th>
-                                    </tr> -->
                                 </tfoot>
                             </table>
                         </form>
+
+                        <!-- Button trigger modal ++++++++++++++++++++++++++++++++++-->
+                        <div class="d-flex justify-content-center mt-2">
+                            <button
+                                type="button"
+                                class="btn btn-primary canasta_resumen w-75"
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"
+                            >
+                                Resumen
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div
+                            class="modal fade"
+                            id="exampleModal"
+                            tabindex="-1"
+                            aria-labelledby="titleModalLabel"
+                            aria-hidden="true"
+                        >
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title text-start fs-5" id="titleModalLabel">Clase</h1>
+                                        <button
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"
+                                        ></button>
+                                    </div>
+                                    <div class="modal-body">LALALA</div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <!-- <h3>Tu Canasta Real:</h3>
 
@@ -394,232 +415,205 @@
                 </ul>
             </div>
 
-            <!-- CARRUSEL  de las CARDs ++++++++++++++++++++++++++++++++++-->
-            <div id="carouselExampleFade" class="carousel slide carousel-fade">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <!-- Card 3 Canasta Básica Alimentaria -->
-                        <div class="card w-100">
-                            <div class="card-header">
-                                <h2>Canasta Básica Alimentaria</h2>
-                                <div class="card_subtitle">
-                                    ||| Con Casa Propia
-                                    <div class="view_cba"></div>
-                                </div>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item list-group-item-acordion">
-                                    <!-- Accordion Tipo de familia -->
-                                    <div class="accordion accordion-flush" id="accordionFlush-1">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button
-                                                    class="accordion-button collapsed"
-                                                    type="button"
-                                                    data-bs-toggle="collapse"
-                                                    data-bs-target="#flush-collapse-1"
-                                                    aria-expanded="false"
-                                                    aria-controls="flush-collapse-1"
-                                                >
-                                                    Para Hogar de 4 personas, integrantes:
-                                                </button>
-                                            </h2>
-                                            <div
-                                                id="flush-collapse-1"
-                                                class="accordion-collapse collapse"
-                                                data-bs-parent="#accordionFlush-1"
-                                            >
-                                                <div class="accordion-body">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">integrante</th>
-                                                                <th scope="col">Edad</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody class="table-group-divider">
-                                                            <tr>
-                                                                <th scope="row">Varon</th>
-                                                                <td>35</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">Mujer</th>
-                                                                <td>31</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">Niño</th>
-                                                                <td>6</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">Niña</th>
-                                                                <td>8</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item lineas_info linea_indigencia"></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <!-- Card 4 Canasta Básica Total -->
-                        <div class="card w-100">
-                            <div class="card-header">
-                                <h2>Canasta Basica Total</h2>
-                                <div class="card_subtitle">
-                                    ||| Con Casa Propia
-                                    <div class="view_cbt"></div>
-                                </div>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item list-group-item-acordion">
-                                    <!-- Accordion Tipo de familia -->
-                                    <div class="accordion accordion-flush" id="accordionFlush-2">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button
-                                                    class="accordion-button collapsed"
-                                                    type="button"
-                                                    data-bs-toggle="collapse"
-                                                    data-bs-target="#flush-collapse-2"
-                                                    aria-expanded="false"
-                                                    aria-controls="flush-collapse-2"
-                                                >
-                                                    Para Hogar de 4 personas, composición:
-                                                </button>
-                                            </h2>
-                                            <div
-                                                id="flush-collapse-2"
-                                                class="accordion-collapse collapse"
-                                                data-bs-parent="#accordionFlush-2"
-                                            >
-                                                <div class="accordion-body">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">Familiar</th>
-                                                                <th scope="col">Edad</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody class="table-group-divider">
-                                                            <tr>
-                                                                <th scope="row">Varon</th>
-                                                                <td>35</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">Mujer</th>
-                                                                <td>31</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">Niño</th>
-                                                                <td>6</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">Niña</th>
-                                                                <td>8</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item lineas_info linea_pobreza"></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <!-- Card 5 Canasta Basica Total + Alquiler -->
-                        <div class="card w-100">
-                            <div class="card-header">
-                                <h2>Canasta Básica Total Alquilando</h2>
-                                <div class="card_subtitle">
-                                    ||| Un 3 ambientes
-                                    <div class="view_cbt_alquiler_3amb"></div>
-                                </div>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item list-group-item-acordion">
-                                    <!-- Accordion Tipo de familia -->
-                                    <div class="accordion accordion-flush" id="accordionFlush-3">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button
-                                                    class="accordion-button collapsed"
-                                                    type="button"
-                                                    data-bs-toggle="collapse"
-                                                    data-bs-target="#flush-collapse-3"
-                                                    aria-expanded="false"
-                                                    aria-controls="flush-collapse-3"
-                                                >
-                                                    Para Hogar de 4 personas, composición:
-                                                </button>
-                                            </h2>
-                                            <div
-                                                id="flush-collapse-3"
-                                                class="accordion-collapse collapse"
-                                                data-bs-parent="#accordionFlush-3"
-                                            >
-                                                <div class="accordion-body">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">Familiar</th>
-                                                                <th scope="col">Edad</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody class="table-group-divider">
-                                                            <tr>
-                                                                <th scope="row">Varon</th>
-                                                                <td>35</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">Mujer</th>
-                                                                <td>31</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">Niño</th>
-                                                                <td>6</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">Niña</th>
-                                                                <td>8</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item lineas_info linea_pobreza_alquilando"></li>
-                            </ul>
-                        </div>
+            <!-- Card 3 Canasta Básica Alimentaria -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Canasta Básica Alimentaria</h2>
+                    <div class="card_subtitle">
+                        ||| Con Casa Propia
+                        <div class="view_cba"></div>
                     </div>
                 </div>
-                <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselExampleFade"
-                    data-bs-slide="prev"
-                >
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExampleFade"
-                    data-bs-slide="next"
-                >
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-acordion">
+                        <!-- Accordion Tipo de familia -->
+                        <div class="accordion accordion-flush" id="accordionFlush-1">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button collapsed"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse-1"
+                                        aria-expanded="false"
+                                        aria-controls="flush-collapse-1"
+                                    >
+                                        Para Hogar de 4 personas, integrantes:
+                                    </button>
+                                </h2>
+                                <div
+                                    id="flush-collapse-1"
+                                    class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlush-1"
+                                >
+                                    <div class="accordion-body">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">integrante</th>
+                                                    <th scope="col">Edad</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <tr>
+                                                    <th scope="row">Varon</th>
+                                                    <td>35</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Mujer</th>
+                                                    <td>31</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Niño</th>
+                                                    <td>6</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Niña</th>
+                                                    <td>8</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item lineas_info linea_indigencia"></li>
+                </ul>
+            </div>
+
+            <!-- Card 4 Canasta Básica Total -->
+            <div class="card w-100">
+                <div class="card-header">
+                    <h2>Canasta Basica Total</h2>
+                    <div class="card_subtitle">
+                        ||| Con Casa Propia
+                        <div class="view_cbt"></div>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-acordion">
+                        <!-- Accordion Tipo de familia -->
+                        <div class="accordion accordion-flush" id="accordionFlush-2">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button collapsed"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse-2"
+                                        aria-expanded="false"
+                                        aria-controls="flush-collapse-2"
+                                    >
+                                        Para Hogar de 4 personas, composición:
+                                    </button>
+                                </h2>
+                                <div
+                                    id="flush-collapse-2"
+                                    class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlush-2"
+                                >
+                                    <div class="accordion-body">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Familiar</th>
+                                                    <th scope="col">Edad</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <tr>
+                                                    <th scope="row">Varon</th>
+                                                    <td>35</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Mujer</th>
+                                                    <td>31</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Niño</th>
+                                                    <td>6</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Niña</th>
+                                                    <td>8</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item lineas_info linea_pobreza"></li>
+                </ul>
+            </div>
+
+            <!-- Card 5 Canasta Basica Total + Alquiler -->
+            <div class="card w-100">
+                <div class="card-header">
+                    <h2>Canasta Básica Total Alquilando</h2>
+                    <div class="card_subtitle">
+                        ||| Un 3 ambientes
+                        <div class="view_cbt_alquiler_3amb"></div>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-acordion">
+                        <!-- Accordion Tipo de familia -->
+                        <div class="accordion accordion-flush" id="accordionFlush-3">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button collapsed"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse-3"
+                                        aria-expanded="false"
+                                        aria-controls="flush-collapse-3"
+                                    >
+                                        Para Hogar de 4 personas, composición:
+                                    </button>
+                                </h2>
+                                <div
+                                    id="flush-collapse-3"
+                                    class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlush-3"
+                                >
+                                    <div class="accordion-body">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Familiar</th>
+                                                    <th scope="col">Edad</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-group-divider">
+                                                <tr>
+                                                    <th scope="row">Varon</th>
+                                                    <td>35</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Mujer</th>
+                                                    <td>31</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Niño</th>
+                                                    <td>6</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Niña</th>
+                                                    <td>8</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item lineas_info linea_pobreza_alquilando"></li>
+                </ul>
             </div>
 
             <!-- ACCORDION -->
