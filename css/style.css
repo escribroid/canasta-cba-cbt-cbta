@@ -31,7 +31,7 @@ h1 {
 }
 
 h2 {
-    color: #121318;
+    color: #ff4f00;
 }
 
 header {
@@ -341,7 +341,7 @@ main {
     background-color: #333;
     cursor: pointer;
     display: flex;
-    width: 120px;
+    width: 130px;
     margin-right: 5px;
 }
 

@@ -10,6 +10,7 @@ const cbt_equivalente = indices_manuales.cbt_manual;
 const cba_unformat = Math.trunc(indices_manuales.cba_manual * 3.09);
 const cbt_unformat = Math.trunc(indices_manuales.cbt_manual * 3.09);
 const mes = indices_manuales.mes_cba_cbt_manual;
+const cbt_alquiler_1amb_unformat = cbt_unformat + indices_manuales.alquilerProm1amb;
 const cbt_alquiler_2amb_unformat = cbt_unformat + indices_manuales.alquilerProm2amb;
 const cbt_alquiler_3amb_unformat = cbt_unformat + indices_manuales.alquilerProm3amb;
 
@@ -71,7 +72,6 @@ let gender_lowercase;
 let suma_de_Personas;
 let suma_con_alquiler = 0;
 let suma_Array_Personas = [];
-let alquiler;
 let alquiler_out = 0;
 let alquiler_in = document.getElementById("alquiler_in");
 let alquiler_in_value = alquiler_in;
@@ -165,7 +165,6 @@ vivienda.addEventListener("change", function () {
         alquiler_in.value = ""; // Limpiar el input
         alquiler_in.placeholder = " No alquilo"; // Mostrar texto en el input
         document.getElementById("alquiler_out").textContent = "No";
-        document.querySelector(".row_mostrar_alquiler").style.display = "none";
     } else if (vivienda.value == "AlquilerProm3amb") {
         alquiler_in.setAttribute("disabled", true); // Deshabilitar el input
         alquiler_in.value = `${indices_manuales.alquilerProm3amb}`;
