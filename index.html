@@ -106,9 +106,10 @@
             <!-- Card 2 Canasta Básica Alimentaria -->
             <div class="card w-100">
                 <div class="card-header">
-                    <h2>Tu Canasta</h2>
-                    <span class="view_cbt_personal"></span>
-
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2>Tu Canasta</h2>
+                        <span class="view_cbt_personal"></span>
+                    </div>
                     <!-- <div class="card_subtitle">
                         ||| Tu Canasta Vital:
                         <span class="view_cbt_personal"></span>
@@ -118,7 +119,7 @@
                     <li class="list-group-item">
                         <!-- <h3 class="person-add-title">Familia y Vivienda:</h3> -->
                         <table class="table_alquiler">
-                            <tr class="">
+                            <tr class="d-flex align-items-center">
                                 <th class="table-header" scope="col">
                                     <select
                                         name="canasta_alquiler"
@@ -144,7 +145,24 @@
                                     />
                                 </th>
                                 <th class="table-header" scope="col">
-                                    <button type="button" class="btn btn-primary" id="sum_total_reload">◙</button>
+                                    <button id="btn-reset-person" type="button" class="btn-reset-person">
+                                        <svg
+                                            class="icon-svg-reset"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="36"
+                                            height="36"
+                                            fill=""
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
+                                            />
+                                            <path
+                                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
+                                            />
+                                        </svg>
+                                    </button>
                                 </th>
                             </tr>
                         </table>
@@ -311,7 +329,7 @@
                                         </g>
                                     </svg>
                                 </button>
-                                <button id="btn-reset-person" type="button" class="btn-reset-person">
+                                <!-- <button id="btn-reset-person" type="button" class="btn-reset-person">
                                     <svg
                                         class="icon-svg-reset"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -328,7 +346,7 @@
                                             d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
                                         />
                                     </svg>
-                                </button>
+                                </button> -->
                             </fieldset>
 
                             <h3 class="person-table-title">Tu Canasta Mensual</h3>
@@ -343,7 +361,7 @@
                                 </thead>
                                 <tbody id="person-list" class="table-group-divider"></tbody>
                                 <tfoot>
-                                    <tr class="table-group-divider">
+                                    <tr class="table-group-divider row_mostrar_alquiler">
                                         <th class="table-header" scope="col">Alquiler</th>
                                         <th class="table-header" scope="col"></th>
                                         <th id="alquiler_out" class="table-header" scope="col"></th>

@@ -71,18 +71,19 @@ let gender_lowercase;
 let suma_de_Personas;
 let suma_con_alquiler = 0;
 let suma_Array_Personas = [];
+let alquiler;
 let alquiler_out = 0;
 let alquiler_in = document.getElementById("alquiler_in");
+let alquiler_in_value = alquiler_in;
 let canasta_por_persona;
 let add_partials;
+let vivienda;
 
 const form = document.getElementById("person-form");
 const tableBody = document.getElementById("person-list");
 let personas_de_local = JSON.parse(localStorage.getItem("personas_de_local")) || [];
 
-//console.log("personas_de_local", personas_de_local);
-
-// Función para agregar persona a la tabla y al array de personas
+// Función para agregar persona a la tabla y al array de personas +++++++++++++++++++++++++++++++
 function addPersonToTable(gender, age_mostrar_table, canasta_por_persona) {
     const row = document.createElement("tr");
     row.innerHTML = `<td>${gender}</td><td>${age_mostrar_table}</td><td class="add_Partials">${canasta_por_persona.toLocaleString(
@@ -94,20 +95,20 @@ function addPersonToTable(gender, age_mostrar_table, canasta_por_persona) {
     tableBody.appendChild(row);
 }
 suma_con_alquiler = 0;
-function suma_Total(suma_de_Personas, alquiler_in, suma_con_alquiler) {
-    alquiler_in = parseInt(document.getElementById("alquiler_in").value);
+function suma_Total(suma_de_Personas, alquiler_in_value, suma_con_alquiler) {
+    alquiler_in_value = parseInt(document.getElementById("alquiler_in").value);
     alquiler_out = document.getElementById("alquiler_out");
-    if (isNaN(alquiler_in)) {
-        alquiler_in = 0;
+    if (isNaN(alquiler_in_value)) {
+        alquiler_in_value = 0;
         alquiler_out.textContent = 0;
-    } else if (alquiler_in < 0) {
-        alquiler_in = alquiler_in * -1;
+    } else if (alquiler_in_value < 0) {
+        alquiler_in_value = alquiler_in_value * -1;
     }
     suma_con_alquiler = 0;
-    suma_con_alquiler = alquiler_in + suma_de_Personas;
+    suma_con_alquiler = alquiler_in_value + suma_de_Personas;
 
     if (isNaN(suma_con_alquiler)) {
-        suma_con_alquiler = alquiler_in;
+        suma_con_alquiler = alquiler_in_value;
     }
 
     document.getElementById("total-canasta").innerHTML = suma_con_alquiler.toLocaleString("es-AR", {
@@ -147,6 +148,41 @@ function suma_Total(suma_de_Personas, alquiler_in, suma_con_alquiler) {
 //     //     );
 //     // });
 // });
+vivienda = document.getElementById("select_canasta_alquiler");
+
+// Agregar un evento al select para cambiar el estado del input
+vivienda.addEventListener("change", function () {
+    alquiler_in = document.getElementById("alquiler_in");
+    if (vivienda.value == "siAlquilo") {
+        alquiler_in.value = "";
+        alquiler_in.enabled = true; // Habilitar el input
+        alquiler_in.removeAttribute("disabled"); // Deshabilitar el input
+        alquiler_in.placeholder = " $ Precio"; // Mostrar texto en el input
+
+        document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
+    } else if (vivienda.value == "noAlquilo") {
+        alquiler_in.setAttribute("disabled", true); // Deshabilitar el input
+        alquiler_in.value = ""; // Limpiar el input
+        alquiler_in.placeholder = " No alquilo"; // Mostrar texto en el input
+        document.getElementById("alquiler_out").textContent = "No";
+        document.querySelector(".row_mostrar_alquiler").style.display = "none";
+    } else if (vivienda.value == "AlquilerProm3amb") {
+        alquiler_in.setAttribute("disabled", true); // Deshabilitar el input
+        alquiler_in.value = `${indices_manuales.alquilerProm3amb}`;
+        document.getElementById("alquiler_out").textContent = alquiler_in.value;
+        document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
+    } else if (vivienda.value == "AlquilerProm2amb") {
+        alquiler_in.setAttribute("disabled", true); // Deshabilitar el input
+        alquiler_in.value = `${indices_manuales.alquilerProm2amb}`;
+        parseInt(alquiler_in.value);
+        document.getElementById("alquiler_out").textContent = alquiler_in.value;
+        document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
+    }
+
+    suma_con_alquiler = 0;
+    alquiler_in_value = 0;
+    suma_Total(suma_de_Personas, alquiler_in_value, suma_con_alquiler);
+});
 
 /* Agregar personas a la tabla SUBMIT +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 document.getElementById("person-form").addEventListener("submit", function (e) {
@@ -154,14 +190,15 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     count = count + 1;
     age = document.getElementById("selected-age").value;
     gender = document.getElementById("selected-gender").value;
-    alquiler_in = parseInt(document.getElementById("alquiler_in").value);
+    alquiler_in = parseInt(document.getElementById("alquiler_in"));
+    alquiler_in_value = alquiler_in.value;
 
-    // Obtener AGE ++++++++++++++++++
-    //console.log("age", age);
-
-    if (parseInt(age) < 0) {
-        age = document.getElementById("selected-age").value = age * -1;
+    // Evitar que se agreguen personas sin género
+    if (!gender) {
+        age = "";
     }
+
+    // Obtener el valor de la edad seleccionada +
     age_mostrar_table = parseInt(age);
 
     if (age < 18) {
@@ -204,7 +241,7 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     // Agregar la persona a la tabla +++++++++++++++++++
     addPersonToTable(gender, age_mostrar_table, canasta_por_persona);
 
-    suma_Total(suma_de_Personas, alquiler_in, suma_con_alquiler);
+    suma_Total(suma_de_Personas, alquiler_in_value, suma_con_alquiler);
 
     // Limpiar el formulario
     document.getElementById("person-form").reset();
@@ -218,7 +255,7 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
         gender,
         add_partials,
         suma_de_Personas,
-        alquiler_in,
+        alquiler_in_value,
         alquiler_out,
         suma_con_alquiler,
     };
@@ -227,12 +264,8 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
 
     localStorage.setItem("personas_de_local", JSON.stringify(personas_de_local));
 
-    return { suma_de_Personas, alquiler_in, suma_con_alquiler };
+    return { suma_de_Personas, alquiler_in_value, suma_con_alquiler };
 });
-
-
-
-
 
 // Evento keypress para prevenir caracteres no numéricos
 alquiler_in.addEventListener("keypress", function (e) {
@@ -247,27 +280,27 @@ alquiler_in.addEventListener("keypress", function (e) {
 document.getElementById("alquiler_in").addEventListener("input", () => {
     age = document.getElementById("selected-age").value;
     gender = document.getElementById("selected-gender").value;
-    alquiler_in = parseInt(document.getElementById("alquiler_in").value);
+    alquiler_in_value = parseInt(document.getElementById("alquiler_in").value);
     alquiler_out = document.getElementById("alquiler_out").value;
 
-    suma_con_alquiler = 0;
     //suma_con_alquiler = suma_de_Personas;
 
-    if (isNaN(alquiler_in)) {
-        alquiler_in = 0;
-    } else if (alquiler_in < 0) {
-        alquiler_in = alquiler_in * -1;
+    if (isNaN(alquiler_in_value)) {
+        alquiler_in_value = 0;
+    } else if (alquiler_in_value < 0) {
+        alquiler_in_value = alquiler_in_value * -1;
     }
 
     if (isNaN(parseInt(document.getElementById("alquiler_out").value))) {
-        document.getElementById("alquiler_out").textContent = alquiler_in;
+        document.getElementById("alquiler_out").textContent = alquiler_in_value;
     } else {
         //document.getElementById("alquiler_out").value = alquiler_in;
-        document.getElementById("alquiler_out").textContent = alquiler_in;
+        document.getElementById("alquiler_out").textContent = alquiler_in_value;
     }
 
-    alquiler_in = 0;
-    suma_Total(suma_de_Personas, alquiler_in, suma_con_alquiler);
+    suma_con_alquiler = 0;
+    alquiler_in_value = 0;
+    suma_Total(suma_de_Personas, alquiler_in_value, suma_con_alquiler);
 
     // alquiler_out ++++++++++++++++++++++++++
 
@@ -279,7 +312,7 @@ document.getElementById("alquiler_in").addEventListener("input", () => {
     // for (let index = 0; index < suma_Array_Personas.length; index++) {
     //     suma_de_Personas = suma_de_Personas + suma_Array_Personas[index];
     // }
-    suma_de_Personas = suma_de_Personas + alquiler_in;
+    suma_de_Personas = suma_de_Personas + alquiler_in_value;
     suma_con_alquiler = suma_de_Personas;
     // addPersonToTable(
     //     gender,
@@ -322,14 +355,4 @@ document.getElementById("btn-reset-person").addEventListener("click", () => {
     location.reload();
     document.getElementById("person-form").reset();
     document.getElementById("person-list").innerHTML = "";
-});
-
-
-document.getElementById("canasta_resumen").addEventListener("click", () => {
-
-
-    
-
-
-
 });
