@@ -129,25 +129,27 @@
                                             title="¿Alquilas?"
                                             class="form-select select_canasta_alquiler"
                                         >
-                                            <option value="" selected disabled>• Casa</option>
-                                            <option value="siAlquilo">Alquilada</option>
-                                            <option value="noAlquilo">No Alquilo</option>
-                                            <option value="AlquilerProm3amb">3 Amb Promedio</option>
-                                            <option value="AlquilerProm2amb">2 Amb Promedio</option>
-                                            <option value="AlquilerProm1amb">1 Amb Promedio</option>
-                                            <option value="noCasa">No tengo casa</option>
+                                            <option value="" selected disabled>► Casa</option>
+                                            <option value="siAlquilo">○ Alquilada</option>
+                                            <option value="noAlquilo">○ No Alquilo</option>
+                                            <option value="AlquilerProm3amb">○ 3 Amb Promedio</option>
+                                            <option value="AlquilerProm2amb">○ 2 Amb Promedio</option>
+                                            <option value="AlquilerProm1amb">• 1 Amb Promedio</option>
+                                            <option value="noCasa">• No tengo casa</option>
                                         </select>
                                     </label>
                                 </th>
                                 <th id="total-alquiler" class="table-header" scope="col">
-                                    <input
-                                        type="number"
-                                        name="alquiler_in"
-                                        id="alquiler_in"
-                                        class="partial_sumable alquiler_in form-control"
-                                        value=""
-                                        placeholder=" $ Precio"
-                                    />
+                                    <label>
+                                        <input
+                                            type="number"
+                                            name="alquiler_in"
+                                            id="alquiler_in"
+                                            class="partial_sumable alquiler_in form-control"
+                                            value=""
+                                            placeholder=" $ Precio"
+                                        />
+                                    </label>
                                 </th>
                                 <th class="table-header" scope="col">
                                     <button
@@ -183,7 +185,7 @@
                                 <div class="person-form-group">
                                     <!-- SELECTs +++++++++++++++++++++++++++++++++++ -->
                                     <div class="custom-select-container">
-                                        <label for="">
+                                        <label>
                                             <select
                                                 aria-label="selected-gender"
                                                 name="selected-gender"
@@ -204,7 +206,7 @@
 
                                 <div class="person-form-group">
                                     <div class="custom-select-container">
-                                        <label for="">
+                                        <label>
                                             <select
                                                 aria-label="selected-age"
                                                 name="selected-age"
