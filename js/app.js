@@ -157,13 +157,13 @@ vivienda.addEventListener("change", function () {
         alquiler_in.value = "";
         alquiler_in.enabled = true; // Habilitar el input
         alquiler_in.removeAttribute("disabled"); // Deshabilitar el input
-        alquiler_in.placeholder = " $ Precio"; // Mostrar texto en el input
+        alquiler_in.placeholder = "$"; // Mostrar texto en el input
 
         document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
     } else if (vivienda.value === "noAlquilo") {
         alquiler_in.setAttribute("disabled", "true"); // Deshabilitar el input
         alquiler_in.value = ""; // Limpiar el input
-        alquiler_in.placeholder = " No alquilo"; // Mostrar texto en el input
+        alquiler_in.placeholder = "No alquilo"; // Mostrar texto en el input
         document.getElementById("alquiler_out").textContent = "No";
     } else if (vivienda.value === "AlquilerProm3amb") {
         alquiler_in.setAttribute("disabled", "true"); // Deshabilitar el input

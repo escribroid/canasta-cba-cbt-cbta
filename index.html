@@ -31,7 +31,7 @@
 
             <nav class="navbar navbar-dark rounded bg-body-tertiary w-100">
                 <div class="container-fluid">
-                    <a class="navbar-brand logo tracking-in-expand" href="#"
+                    <a class="navbar-brand logo" href="#"
                         ><img class="logo-img" src="./img/dibujo.svg" alt="" />CANASTAS</a
                     >
                     <button
@@ -104,7 +104,7 @@
             </div> -->
 
             <!-- Card 2 Canasta Básica Alimentaria -->
-            <div class="card w-100 slide-in-left">
+            <div class="card w-100">
                 <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center">
                         <h2>Tu Canasta</h2>
@@ -130,12 +130,11 @@
                                             class="form-select select_canasta_alquiler"
                                         >
                                             <option value="" selected disabled>► Casa</option>
-                                            <option value="siAlquilo">○ Alquilada</option>
-                                            <option value="noAlquilo">○ No Alquilo</option>
-                                            <option value="AlquilerProm3amb">○ 3 Amb Promedio</option>
-                                            <option value="AlquilerProm2amb">○ 2 Amb Promedio</option>
-                                            <option value="AlquilerProm1amb">• 1 Amb Promedio</option>
-                                            <option value="noCasa">• No tengo casa</option>
+                                            <option class="option_alquiler" value="siAlquilo">Alquilo</option>
+                                            <option value="AlquilerProm3amb">3 Amb Promedio</option>
+                                            <option value="AlquilerProm2amb">2 Amb Promedio</option>
+                                            <option value="AlquilerProm1amb">1 Amb Promedio</option>
+                                            <option value="noAlquilo">No Alquilo</option>
                                         </select>
                                     </label>
                                 </th>
@@ -147,7 +146,7 @@
                                             id="alquiler_in"
                                             class="partial_sumable alquiler_in form-control"
                                             value=""
-                                            placeholder=" $ Precio"
+                                            placeholder="¿Alquilas?"
                                         />
                                     </label>
                                 </th>
@@ -193,11 +192,11 @@
                                                 class="form-select selected-gender"
                                             >
                                                 <option value="" class="gender-option" selected disabled>
-                                                    • Familiar
+                                                    ► Familiar
                                                 </option>
 
-                                                <option value="Femenino" class="gender-option">(F) Femenino</option>
-                                                <option value="Masculino" class="gender-option">(M) Masculino</option>
+                                                <option value="Femenino" class="gender-option">| Femenino |</option>
+                                                <option value="Masculino" class="gender-option">| Masculino |</option>
                                             </select>
                                         </label>
                                         <input type="hidden" name="gender" id="gender" required />
@@ -213,7 +212,7 @@
                                                 id="selected-age"
                                                 class="form-select selected-age shadow rounded"
                                             >
-                                                <option value="" class="age-option" selected disabled>• Edad</option>
+                                                <option value="" class="age-option" selected disabled>► Edad</option>
                                                 <option value="0" class="age-option">0 años</option>
                                                 <option value="1" class="age-option">1 años</option>
                                                 <option value="2" class="age-option">2 años</option>
@@ -314,7 +313,7 @@
                                                 <option value="97" class="age-option">97 años</option>
                                                 <option value="98" class="age-option">98 años</option>
                                                 <option value="99" class="age-option">99 años</option>
-                                                <option value="100" class="age-option">100 años</option>
+                                                <option value="100" class="age-option">100 a 122</option>
                                             </select>
                                         </label>
                                         <input type="hidden" name="age" id="age" required />
@@ -356,24 +355,6 @@
                                         </g>
                                     </svg>
                                 </button>
-                                <!-- <button id="btn-reset-person" type="button" class="btn-reset-person">
-                                    <svg
-                                        class="icon-svg-reset"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="36"
-                                        height="36"
-                                        fill=""
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
-                                        />
-                                        <path
-                                            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
-                                        />
-                                    </svg>
-                                </button> -->
                             </fieldset>
 
                             <h3 class="person-table-title">Tu Canasta Mensual</h3>
@@ -427,7 +408,9 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title text-start fs-5" id="titleModalLabel">Clase</h1>
+                                        <h2 class="modal-title text-start fs-5" id="titleModalLabel">
+                                            Con tus ingresos
+                                        </h2>
                                         <button
                                             type="button"
                                             class="btn-close"
@@ -435,7 +418,15 @@
                                             aria-label="Close"
                                         ></button>
                                     </div>
-                                    <div class="modal-body">LALALA</div>
+                                    <div class="modal-body">
+                                        <div class="vstack gap-1">
+                                            <div class="p-0">Clase Alta</div>
+                                            <div class="p-0">Clase Media</div>
+                                            <div class="p-0">Clase Baja</div>
+                                            <div class="p-0">Pobreza</div>
+                                            <div class="p-0">Indigencia</div>
+                                        </div>
+                                    </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                             Close
@@ -444,19 +435,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- <h3>Tu Canasta Real:</h3>
-
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Tipo</th>
-                                    <th scope="col">Edad</th>
-                                    <th scope="col">Parcial</th>
-                                </tr>
-                            </thead>
-                            <tbody id="person-list" class="table-group-divider"></tbody>
-                        </table> -->
                     </li>
                     <li class="list-group-item aclaracion_edades"></li>
                 </ul>
@@ -662,100 +640,6 @@
                     <li class="list-group-item lineas_info linea_pobreza_alquilando"></li>
                 </ul>
             </div>
-
-            <!-- ACCORDION -->
-            <!-- <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseOne"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseOne"
-                        >
-                            Accordion Item #1
-                        </button>
-                    </h2>
-                    <div
-                        id="flush-collapseOne"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#accordionFlushExample"
-                    >
-                        <div class="accordion-body">
-                            Placeholder content for this accordion, which is intended to demonstrate the
-                            <code>.accordion-flush</code> class. This is the first item's accordion body.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseTwo"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseTwo"
-                        >
-                            Accordion Item #2
-                        </button>
-                    </h2>
-                    <div
-                        id="flush-collapseTwo"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#accordionFlushExample"
-                    >
-                        <div class="accordion-body">
-                            Placeholder content for this accordion, which is intended to demonstrate the
-                            <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
-                            this being filled with some actual content.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseThree"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseThree"
-                        >
-                            Accordion Item #3
-                        </button>
-                    </h2>
-                    <div
-                        id="flush-collapseThree"
-                        class="accordion-collapse collapse"
-                        data-bs-parent="#accordionFlushExample"
-                    >
-                        <div class="accordion-body">
-                            Placeholder content for this accordion, which is intended to demonstrate the
-                            <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
-                            exciting happening here in terms of content, but just filling up the space to make it look,
-                            at least at first glance, a bit more representative of how this would look in a real-world
-                            application.
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- END ACCORDION -->
-
-            <!-- TOOLTIPS -->
-            <!-- <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip"
-                data-bs-title="This top tooltip is themed via CSS variables."
-            >
-                Custom tooltip
-            </button> -->
-            <!-- END TOOLTIPS -->
         </main>
         <!-- FOOTER -->
         <footer class="rounded">

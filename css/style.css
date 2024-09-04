@@ -1,6 +1,3 @@
-html {
-}
-
 body {
     background-color: var(--color-background);
     color: aliceblue;
@@ -148,9 +145,6 @@ main {
 
 .card-header {
     padding: var(--font-size-10_0-625);
-}
-
-.card-header h2 {
 }
 
 .card_subtitle {
@@ -333,6 +327,9 @@ main {
 }
 
 /* Select custom +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.age-option:enabled {
+    text-align: center;
+}
 
 .alquiler_in,
 .selected-gender,
@@ -343,11 +340,13 @@ main {
     display: flex;
     width: 130px;
     margin-right: 5px;
+    text-align: justify;
 }
 
-.alquiler_in {
-    margin: 0;
-    padding-left: 5px;
+.option_alquiler:enabled {
+    display: block;
+    text-align: justify;
+    margin-right: 50px;
 }
 
 .alquiler_in:disabled {
@@ -355,7 +354,7 @@ main {
 }
 
 .alquiler_in::placeholder {
-    text-align: left;
+    text-align: center;
 }
 
 .message_error_age {
