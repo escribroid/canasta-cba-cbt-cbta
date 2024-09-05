@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "vite": "^5.4.1"
+  },
+  "dependencies": {
+    "canastas-cba-cbt-mas-alquiler-indec": "file:"
   }
 }

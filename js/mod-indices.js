@@ -5,6 +5,15 @@ const cbt_manual = 291472;
 const mesAlquilerManual = 8;
 const alquilerProm2amb = 485881;
 
+const linea_indigencia = Math.trunc(cba_manual);
+const linea_pobreza = Math.trunc(cbt_manual);
+const linea_clase_baja_fragil = Math.trunc(cbt_manual * 1.2);
+const linea_clase_baja = Math.trunc(cbt_manual * 1.5);
+const linea_clase_media_fragil = Math.trunc(cbt_manual * 2);
+const linea_clase_media_media = Math.trunc(cbt_manual * 4);
+const linea_clase_media_alta = Math.trunc(cbt_manual * 6);
+const linea_clase_alta_baja = Math.trunc(cbt_manual * 10);
+
 const clase_media = Math.trunc(cbt_manual * 2);
 const clase_alta = Math.trunc(cbt_manual * 4);
 
@@ -24,6 +33,14 @@ const indices_manuales = {
     clase_media,
     clase_alta,
     ipc_manual,
+    linea_indigencia,
+    linea_pobreza,
+    linea_clase_baja_fragil,
+    linea_clase_baja,
+    linea_clase_media_fragil,
+    linea_clase_media_media,
+    linea_clase_media_alta,
+    linea_clase_alta_baja,
 };
 
 export default indices_manuales;
