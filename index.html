@@ -118,7 +118,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <!-- <h3 class="person-add-title">Familia y Vivienda:</h3> -->
-                        <table class="table_alquiler">
+                        <table class="table_alquiler d-flex justify-content-center">
                             <tr class="d-flex align-items-center">
                                 <th class="table-header" scope="col">
                                     <label>
@@ -129,7 +129,7 @@
                                             title="¿Alquilas?"
                                             class="form-select select_canasta_alquiler"
                                         >
-                                            <option value="" selected disabled>► Casa</option>
+                                            <option value="" selected disabled>• Casa</option>
                                             <option class="option_alquiler" value="siAlquilo">Alquilo</option>
                                             <option value="AlquilerProm3amb">3 Amb Promedio</option>
                                             <option value="AlquilerProm2amb">2 Amb Promedio</option>
@@ -192,11 +192,11 @@
                                                 class="form-select selected-gender"
                                             >
                                                 <option value="" class="gender-option" selected disabled>
-                                                    ► Familiar
+                                                    • Familiar
                                                 </option>
 
-                                                <option value="Femenino" class="gender-option">| Femenino |</option>
-                                                <option value="Masculino" class="gender-option">| Masculino |</option>
+                                                <option value="Femenino" class="gender-option">Femenino</option>
+                                                <option value="Masculino" class="gender-option">Masculino</option>
                                             </select>
                                         </label>
                                         <input type="hidden" name="gender" id="gender" required />
@@ -212,7 +212,7 @@
                                                 id="selected-age"
                                                 class="form-select selected-age shadow rounded"
                                             >
-                                                <option value="" class="age-option" selected disabled>► Edad</option>
+                                                <option value="" class="age-option" selected disabled>• Edad</option>
                                                 <option value="0" class="age-option">0 años</option>
                                                 <option value="1" class="age-option">1 años</option>
                                                 <option value="2" class="age-option">2 años</option>
@@ -335,7 +335,7 @@
                                 </button>
                             </fieldset>
 
-                            <h3 class="person-table-title">Tu Canasta Mensual</h3>
+                            <!-- <h3 class="person-table-title">Tu Canasta Mensual</h3> -->
 
                             <table class="table">
                                 <thead>
@@ -345,7 +345,9 @@
                                         <th class="table-header" scope="col">Canasta</th>
                                     </tr>
                                 </thead>
-                                <tbody id="person-list" class="table-group-divider"></tbody>
+                                <tbody id="person-list" class="table-group-divider">
+                                    <tr></tr>
+                                </tbody>
                                 <tfoot>
                                     <tr>
                                         <th class="table-header" scope="col">Alquiler</th>
@@ -361,6 +363,51 @@
                             </table>
                         </form>
 
+                        <div class="container w-100 bg-black p-1 text-center">
+                            <div class="row m-0 p-0 w-100">
+                                <div class="col-3 m-0 p-0">$ 0</div>
+                                <div class="col-1 m-0 p-0">&lt;</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Indigencia</div>
+                                <div class="col-1 m-0 p-0">&lt;</div>
+                                <div class="col-3 m-0 p-0">300000</div>
+                            </div>
+                            <div class="row m-0 p-0 w-100">
+                                <div class="col-3 m-0 p-0">100000</div>
+                                <div class="col-1 m-0 p-0">&lt;</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Pobreza</div>
+                                <div class="col-1 m-0 p-0">&lt;</div>
+                                <div class="col-3 m-0 p-0">300000</div>
+                            </div>
+                            <div class="row m-0 p-0 w-100">
+                                <div class="col-3 m-0 p-0">100000</div>
+                                <div class="col-1 m-0 p-0">&lt;</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Clase Baja</div>
+                                <div class="col-1 m-0 p-0">&lt;</div>
+                                <div class="col-3 m-0 p-0">300000</div>
+                            </div>
+                            <div class="row m-0 p-0 w-100">
+                                <div class="col-3 m-0 p-0">100000</div>
+                                <div class="col-1 m-0 p-0">&lt;</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Media fragil</div>
+                                <div class="col-1 m-0 p-0">&lt;</div>
+                                <div class="col-3 m-0 p-0">300000</div>
+                            </div>
+                            <div class="row m-0 p-0 w-100">
+                                <div class="col-3 m-0 p-0">100000</div>
+                                <div class="col-1 m-0 p-0">&lt;</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Media</div>
+                                <div class="col-1 m-0 p-0">&lt;</div>
+                                <div class="col-3 m-0 p-0">300000</div>
+                            </div>
+                            <div class="row m-0 p-0 w-100 rounded-3">
+                                <div class="col-3 m-0 p-0">100000</div>
+                                <div class="col-1 m-0 p-0">&lt;</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Acomodado</div>
+                                <div class="col-1 m-0 p-0"></div>
+                                <div class="col-3 m-0 p-0"></div>
+                            </div>
+                        </div>
+
                         <!-- Button trigger modal ++++++++++++++++++++++++++++++++++-->
                         <div class="d-flex justify-content-center mt-2">
                             <button
@@ -374,7 +421,6 @@
                                 Resumen
                             </button>
                         </div>
-
                         <!-- Modal -->
                         <div
                             class="modal fade"
@@ -385,9 +431,9 @@
                         >
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
-                                    <div class="modal-header">
+                                    <div class="modal-header py-0 px-2">
                                         <h2 class="modal-title text-start fs-5" id="titleModalLabel">
-                                            Con tus ingresos
+                                            Sector socio economico
                                         </h2>
                                         <button
                                             type="button"
@@ -396,37 +442,50 @@
                                             aria-label="Close"
                                         ></button>
                                     </div>
+
                                     <div class="modal-body">
-                                        <div class="container w-100 bg-danger">
-                                            <div class="row m-0 p-0">
-                                                <div class="col-6 m-0 p-0 bg-black">Indigencia</div>
-                                                <div class="col">lalaLALA</div>
-                                                <div class="col">cba</div>
+                                        <div class="container w-100 bg-black p-1 text-center">
+                                            <div class="row m-0 p-0 w-100">
+                                                <div class="col-3 m-0 p-0">$ 0</div>
+                                                <div class="col-1 m-0 p-0">&lt;</div>
+                                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Indigencia</div>
+                                                <div class="col-1 m-0 p-0">&lt;</div>
+                                                <div class="col-3 m-0 p-0">300000</div>
                                             </div>
-                                            <div class="row m-0 p-0">
-                                                <div class="col-6 m-0 p-0 bg-black">Pobreza no indigente</div>
-                                                <div class="col">lalaLALA</div>
-                                                <div class="col">cba</div>
+                                            <div class="row m-0 p-0 w-100">
+                                                <div class="col-3 m-0 p-0">100000</div>
+                                                <div class="col-1 m-0 p-0">&lt;</div>
+                                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Pobreza</div>
+                                                <div class="col-1 m-0 p-0">&lt;</div>
+                                                <div class="col-3 m-0 p-0">300000</div>
                                             </div>
-                                            <div class="row m-0 p-0">
-                                                <div class="col-6 m-0 p-0 bg-black">Clase Baja no pobre</div>
-                                                <div class="col">lalaLALA</div>
-                                                <div class="col">cba</div>
+                                            <div class="row m-0 p-0 w-100">
+                                                <div class="col-3 m-0 p-0">100000</div>
+                                                <div class="col-1 m-0 p-0">&lt;</div>
+                                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Clase Baja</div>
+                                                <div class="col-1 m-0 p-0">&lt;</div>
+                                                <div class="col-3 m-0 p-0">300000</div>
                                             </div>
-                                            <div class="row m-0 p-0">
-                                                <div class="col-6 m-0 p-0 bg-black">Clase Media fragil</div>
-                                                <div class="col">lalaLALA</div>
-                                                <div class="col">cba</div>
+                                            <div class="row m-0 p-0 w-100">
+                                                <div class="col-3 m-0 p-0">100000</div>
+                                                <div class="col-1 m-0 p-0">&lt;</div>
+                                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Media fragil</div>
+                                                <div class="col-1 m-0 p-0">&lt;</div>
+                                                <div class="col-3 m-0 p-0">300000</div>
                                             </div>
-                                            <div class="row m-0 p-0">
-                                                <div class="col-6 m-0 p-0 bg-black">Clase Media "media"</div>
-                                                <div class="col">lalaLALA</div>
-                                                <div class="col">cba</div>
+                                            <div class="row m-0 p-0 w-100">
+                                                <div class="col-3 m-0 p-0">100000</div>
+                                                <div class="col-1 m-0 p-0">&lt;</div>
+                                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Media</div>
+                                                <div class="col-1 m-0 p-0">&lt;</div>
+                                                <div class="col-3 m-0 p-0">300000</div>
                                             </div>
-                                            <div class="row m-0 p-0">
-                                                <div class="col-6 m-0 p-0 bg-black">Clase Alta</div>
-                                                <div class="col">lalaLALA</div>
-                                                <div class="col">cba</div>
+                                            <div class="row m-0 p-0 w-100 rounded-3">
+                                                <div class="col-3 m-0 p-0">100000</div>
+                                                <div class="col-1 m-0 p-0">&lt;</div>
+                                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Acomodado</div>
+                                                <div class="col-1 m-0 p-0"></div>
+                                                <div class="col-3 m-0 p-0"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -648,6 +707,39 @@
         <footer class="rounded">
             <div class="version"></div>
         </footer>
+
+        <div class="container w-100 bg-black">
+            <div class="row m-0 p-0">
+                <div class="col m-0 p-0">100000</div>
+                <div class="col-5 m-0 p-0 bg-danger rounded-3">Indigencia</div>
+                <div class="col m-0 p-0">300000</div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col m-0 p-0">100000</div>
+                <div class="col-5 m-0 p-0 bg-danger rounded-3">Pobreza no indigente</div>
+                <div class="col m-0 p-0">300000</div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col m-0 p-0">100000</div>
+                <div class="col-5 m-0 p-0 bg-danger rounded-3">Clase Baja no pobre</div>
+                <div class="col m-0 p-0">300000</div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col m-0 p-0">100000</div>
+                <div class="col-5 m-0 p-0 bg-danger rounded-3">Clase Media fragil</div>
+                <div class="col m-0 p-0">300000</div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col m-0 p-0">100000</div>
+                <div class="col-5 m-0 p-0 bg-danger rounded-3">Clase Media "media"</div>
+                <div class="col m-0 p-0">300000</div>
+            </div>
+            <div class="row m-0 p-0 rounded-3">
+                <div class="col m-0 p-0">100000</div>
+                <div class="col-5 m-0 p-0 bg-danger rounded-3">Clase Alta</div>
+                <div class="col m-0 p-0">300000</div>
+            </div>
+        </div>
 
         <!-- JS ------------------------------------------------------------------>
 
