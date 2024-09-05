@@ -186,13 +186,28 @@ main {
 }
 
 .icon-svg-add {
-    fill: #ff4f00;
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    justify-content: center;
+    border: 2px solid #ff4f00;
+    color: #ff4f00;
+    border-radius: 0.5rem;
+    margin: 0;
+    padding: 0 0 2px 0;
+    width: 3rem;
+    height: 2.4rem;
 }
 
 .icon-svg-reset {
     fill: #ff4f00;
-    background: black;
-    border: 0;
+
+    border: 2px solid #ff4f00;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    width: 3rem;
+    height: 2.4rem;
 }
 
 .icon-svg-add:hover {
