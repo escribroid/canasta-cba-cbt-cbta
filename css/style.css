@@ -33,7 +33,7 @@ h2 {
 }
 
 header {
-    margin: 0 0 var(--font-size-20_1-25) 0;
+    margin: 0 0 var(--spacing-10_0-625) 0;
 }
 
 main {
@@ -337,6 +337,10 @@ main {
     margin: 0 auto;
     width: 100%;
     text-align: center;
+}
+
+.table-all-canastas {
+    font-size: 10px !important;
 }
 
 .table-header {

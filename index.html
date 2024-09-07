@@ -27,10 +27,10 @@
     <body>
         <!-- HEADER -->
         <header class="slide-in-left">
-            <p class="m-0 px-2 text-center text-danger-emphasis">Indices Agosto 2024</p>
+            <h6 class="m-0 px-2 text-center text-danger-emphasis">Indices Agosto 2024</h6>
             <!-- NAVBAR -->
 
-            <nav class="navbar navbar-dark rounded bg-body-tertiary w-100">
+            <nav class="navbar navbar-dark rounded-4 bg-body-tertiary w-100">
                 <div class="container-fluid">
                     <a class="navbar-brand logo" href="#"
                         ><img class="logo-img" src="./img/dibujo.svg" alt="" />CANASTAS</a
@@ -105,80 +105,76 @@
             </div> -->
 
             <!-- Card 2 Canasta Básica Alimentaria -->
-            <div class="card w-100">
+            <div class="card w-100 rounded-4">
                 <!-- <div class="card-header"> -->
-                    <!-- <div class="d-flex justify-content-between align-items-center">
+                <!-- <div class="d-flex justify-content-between align-items-center">
                         <h2>Tu Canasta</h2>
                         <span class="view_cbt_personal"></span>
                     </div> -->
-                    <!-- <div class="card_subtitle">
+                <!-- <div class="card_subtitle">
                         ||| Tu Canasta Vital:
                         <span class="view_cbt_personal"></span>
                     </div> -->
                 <!-- </div> -->
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush rounded-4">
                     <li class="list-group-item">
                         <!-- <h3 class="person-add-title">Familia y Vivienda:</h3> -->
-                        <table class="table_alquiler">
-                            <tr class="d-flex align-items-center">
-                                <th class="table-header" scope="col">
-                                    <label>
-                                        <select
-                                            aria-label="canasta_alquiler"
-                                            name="canasta_alquiler"
-                                            id="select_canasta_alquiler"
-                                            title="¿Alquilas?"
-                                            class="form-select select_canasta_alquiler"
-                                        >
-                                            <option value="" selected disabled>• Casa</option>
-                                            <option class="option_alquiler" value="siAlquilo">Alquilo</option>
-                                            <option value="AlquilerProm3amb">3 Amb Promedio</option>
-                                            <option value="AlquilerProm2amb">2 Amb Promedio</option>
-                                            <option value="AlquilerProm1amb">1 Amb Promedio</option>
-                                            <option value="noAlquilo">No Alquilo</option>
-                                        </select>
-                                    </label>
-                                </th>
-                                <th id="total-alquiler" class="table-header" scope="col">
-                                    <label>
-                                        <input
-                                            type="number"
-                                            name="alquiler_in"
-                                            id="alquiler_in"
-                                            class="partial_sumable alquiler_in form-control"
-                                            value=""
-                                            placeholder="¿Alquilas?"
-                                        />
-                                    </label>
-                                </th>
-                                <th class="table-header" scope="col">
-                                    <button
-                                        id="btn-reset-person"
-                                        type="button"
-                                        class="btn-reset-person"
-                                        aria-label="Name"
-                                        name="boton_reset"
+                        <div class="table_alquiler">
+                            <label>
+                                <select
+                                    aria-label="canasta_alquiler"
+                                    name="canasta_alquiler"
+                                    id="select_canasta_alquiler"
+                                    title="¿Alquilas?"
+                                    class="form-select select_canasta_alquiler"
+                                >
+                                    <option value="" selected disabled>• Casa</option>
+                                    <option class="option_alquiler" value="siAlquilo">Alquilo</option>
+                                    <option value="AlquilerProm3amb">3 Amb Promedio</option>
+                                    <option value="AlquilerProm2amb">2 Amb Promedio</option>
+                                    <option value="AlquilerProm1amb">1 Amb Promedio</option>
+                                    <option value="noAlquilo">No Alquilo</option>
+                                </select>
+                            </label>
+                            <div id="total-alquiler" class="table-header" scope="col">
+                                <label>
+                                    <input
+                                        type="number"
+                                        name="alquiler_in"
+                                        id="alquiler_in"
+                                        class="partial_sumable alquiler_in form-control"
+                                        value=""
+                                        placeholder="¿Alquilas?"
+                                    />
+                                </label>
+                            </div>
+                            <div class="table-header" scope="col">
+                                <button
+                                    id="btn-reset-person"
+                                    type="button"
+                                    class="btn-reset-person"
+                                    aria-label="Name"
+                                    name="boton_reset"
+                                >
+                                    <svg
+                                        class="icon-svg-reset"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="36"
+                                        height="36"
+                                        fill=""
+                                        viewBox="0 0 16 16"
                                     >
-                                        <svg
-                                            class="icon-svg-reset"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="36"
-                                            height="36"
-                                            fill=""
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
-                                            />
-                                            <path
-                                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
-                                            />
-                                        </svg>
-                                    </button>
-                                </th>
-                            </tr>
-                        </table>
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
+                                        />
+                                        <path
+                                            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
 
                         <form id="person-form">
                             <fieldset>
@@ -364,55 +360,41 @@
                             </table>
                         </form>
 
-                        <div class="container w-100 bg-black p-1 mt-2 text-center rounded-4">
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div class="col-3 m-0 p-0 show_indigencia_min">$</div>
-                                <div class="col-1 m-0 p-0">≤</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Indigencia</div>
-                                <div class="col-1 m-0 p-0">&lt;</div>
-                                <div class="col-3 m-0 p-0 show_indigencia_max">$</div>
+                        <div class="container w-100 bg-black p-1 mt-2 text-center rounded-4 table-all-canastas fs-6">
+                            <div class="row m-0 mb-2 p-0 w-100">
+                                <div class="col-4 m-0 p-0 show_indigencia_min">________</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center ">≤</span>Indigencia<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span></div>
+                                <div class="col-4 m-0 p-0 show_indigencia_max">________</div>
                             </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div class="col-3 m-0 p-0 show_pobreza_min">$</div>
-                                <div class="col-1 m-0 p-0">≤</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Pobreza</div>
-                                <div class="col-1 m-0 p-0">&lt;</div>
-                                <div class="col-3 m-0 p-0 show_pobreza_max">$</div>
+                            <div class="row m-0 mb-2 p-0 w-100">
+                                <div class="col-4 m-0 p-0 show_pobreza_min">________</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center">≤</span>Pobreza<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span></div>
+                                <div class="col-4 m-0 p-0 show_pobreza_max">________</div>
                             </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div class="col-3 m-0 p-0 show_clase_baja_min">$</div>
-                                <div class="col-1 m-0 p-0">≤</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Clase Baja</div>
-                                <div class="col-1 m-0 p-0">&lt;</div>
-                                <div class="col-3 m-0 p-0 show_clase_baja_max">$</div>
+                            <div class="row m-0 mb-2 p-0 w-100">
+                                <div class="col-4 m-0 p-0 show_clase_baja_min">________</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center">≤</span>Clase Baja<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span></div>
+                                <div class="col-4 m-0 p-0 show_clase_baja_max">________</div>
                             </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div class="col-3 m-0 p-0 suma_clase_media_fragil_min">$</div>
-                                <div class="col-1 m-0 p-0">≤</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Media fragil</div>
-                                <div class="col-1 m-0 p-0">&lt;</div>
-                                <div class="col-3 m-0 p-0 suma_clase_media_fragil_max">$</div>
+                            <div class="row m-0 mb-2 p-0 w-100">
+                                <div class="col-4 m-0 p-0 suma_clase_media_fragil_min">________</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center">≤</span>Media fragil<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span></div>
+                                <div class="col-4 m-0 p-0 suma_clase_media_fragil_max">________</div>
                             </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div class="col-3 m-0 p-0 suma_clase_media_min">$</div>
-                                <div class="col-1 m-0 p-0">≤</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Media</div>
-                                <div class="col-1 m-0 p-0">&lt;</div>
-                                <div class="col-3 m-0 p-0 suma_clase_media_max">$</div>
+                            <div class="row m-0 mb-2 p-0 w-100">
+                                <div class="col-4 m-0 p-0 suma_clase_media_min">________</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center">≤</span>Media<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span></div>
+                                <div class="col-4 m-0 p-0 suma_clase_media_max">________</div>
                             </div>
-                            <div class="row m-0 mb-1 p-0 w-100 rounded-3">
-                                <div class="col-3 m-0 p-0 suma_clase_media_alta_min">$</div>
-                                <div class="col-1 m-0 p-0">≤</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Media alta</div>
-                                <div class="col-1 m-0 p-0">&lt;</div>
-                                <div class="col-3 m-0 p-0 suma_clase_media_alta_max">$</div>
+                            <div class="row m-0 mb-2 p-0 w-100 rounded-3">
+                                <div class="col-4 m-0 p-0 suma_clase_media_alta_min">________</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center" >≤</span> Media alta<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span  ></div>
+                                <div class="col-4 m-0 p-0 suma_clase_media_alta_max">________</div>
                             </div>
                             <div class="row m-0 p-0 w-100 rounded-3">
-                                <div class="col-3 m-0 p-0 suma_clase_alta_min">$</div>
-                                <div class="col-1 m-0 p-0">≤</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Alta</div>
-                                <div class="col-1 m-0 p-0"></div>
-                                <div class="col-3 m-0 p-0"></div>
+                                <div class="col-4 m-0 p-0 suma_clase_alta_min">________</div>
+                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center">≤</span>Alta<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span></div>
+                                <div class="col-4 m-0 p-0 h-100 align-content-center"></div>
                             </div>
                         </div>
 
@@ -420,7 +402,7 @@
                         <div class="d-flex justify-content-center mt-2">
                             <button
                                 type="button"
-                                class="btn btn-primary canasta_resumen w-75"
+                                class="btn btn-primary canasta_resumen w-75 rounded-4"
                                 data-bs-toggle="modal"
                                 data-bs-target="#exampleModal"
                                 aria-label="Resumen"
@@ -511,7 +493,7 @@
             </div>
 
             <!-- Card 3 Canasta Básica Alimentaria -->
-            <div class="card slide-in-left">
+            <div class="card slide-in-left rounded-4">
                 <div class="card-header">
                     <h2>Canasta Básica Alimentaria</h2>
                     <div class="card_subtitle">
@@ -519,7 +501,7 @@
                         <div class="view_cba"></div>
                     </div>
                 </div>
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush rounded-4">
                     <li class="list-group-item list-group-item-acordion">
                         <!-- Accordion Tipo de familia -->
                         <div class="accordion accordion-flush" id="accordionFlush-1">
@@ -578,7 +560,7 @@
             </div>
 
             <!-- Card 4 Canasta Básica Total -->
-            <div class="card w-100">
+            <div class="card w-100 rounded-4">
                 <div class="card-header">
                     <h2>Canasta Basica Total</h2>
                     <div class="card_subtitle">
@@ -586,7 +568,7 @@
                         <div class="view_cbt"></div>
                     </div>
                 </div>
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush rounded-4">
                     <li class="list-group-item list-group-item-acordion">
                         <!-- Accordion Tipo de familia -->
                         <div class="accordion accordion-flush" id="accordionFlush-2">
@@ -645,7 +627,7 @@
             </div>
 
             <!-- Card 5 Canasta Basica Total + Alquiler -->
-            <div class="card w-100">
+            <div class="card w-100 rounded-4">
                 <div class="card-header">
                     <h2>Canasta Básica Total Alquilando</h2>
                     <div class="card_subtitle">
@@ -653,7 +635,7 @@
                         <div class="view_cbt_alquiler_3amb"></div>
                     </div>
                 </div>
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush rounded-4">
                     <li class="list-group-item list-group-item-acordion">
                         <!-- Accordion Tipo de familia -->
                         <div class="accordion accordion-flush" id="accordionFlush-3">
@@ -712,7 +694,7 @@
             </div>
         </main>
         <!-- FOOTER -->
-        <footer class="rounded">
+        <footer class="rounded-4">
             <div class="version"></div>
         </footer>
 
