@@ -33,7 +33,7 @@ h2 {
 }
 
 header {
-    margin: var(--font-size-20_1-25) 0 var(--font-size-20_1-25) 0;
+    margin: 0 0 var(--font-size-20_1-25) 0;
 }
 
 main {
@@ -91,11 +91,16 @@ main {
     border: 0;
     border-radius: var(--font-size-6_0-375);
     font-weight: bold;
+    margin-left: 5px;
 }
 
 .btn-add-person:active,
 .btn-reset-person:active {
     transform: scale(1.3);
+}
+
+.btn-add-person:not(:active) {
+    transform: scale(1);
 }
 
 .btn-close {
@@ -196,7 +201,6 @@ main {
     fill: #ff4f00;
     border: 2px solid #ff4f00;
     border-radius: 0.5rem;
-    padding: 0.1rem;
     width: 2.4rem;
     height: 2.4rem;
     margin: 0;
@@ -210,6 +214,11 @@ main {
 .icon-svg-add:hover {
     color: #ce2331;
     border: 5px solid #ce2331;
+}
+
+.icon-svg-add:not(:active) {
+    border: 2px solid #ff4f00;
+    color: #ff4f00;
 }
 
 .linea_pobreza,
@@ -335,7 +344,10 @@ main {
 }
 
 .table_alquiler {
-    margin: 10px 0;
+    margin: 0 0 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .text-bg-dark {

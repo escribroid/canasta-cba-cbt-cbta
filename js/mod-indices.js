@@ -14,7 +14,6 @@ const linea_clase_media_media = Math.trunc(cbt_manual * 4);
 const linea_clase_media_alta = Math.trunc(cbt_manual * 6);
 const linea_clase_alta_baja = Math.trunc(cbt_manual * 10);
 
-
 // Alquiler medio: 1amb 40m2, 2amb 50m2, 3amb 70m2
 const alquilerProm3amb = Math.trunc(alquilerProm2amb * (7 / 5) * 0.965);
 const alquilerProm1amb = Math.trunc((alquilerProm2amb * (4 / 5)) / 0.955);

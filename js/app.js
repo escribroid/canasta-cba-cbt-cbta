@@ -74,6 +74,12 @@ let gender_lowercase;
 let suma_CBA_Personas;
 let suma_CBT_Personas;
 let suma_con_alquiler = 0;
+let suma_indigencia_alquilando = 0;
+let suma_pobreza_alquilando = 0;
+let suma_clase_baja_alquilando = 0;
+let suma_clase_media_fragil_alquilando = 0;
+let suma_clase_media_alquilando = 0;
+let suma_clase_media_alta_alquilando = 0;
 let Array_CBA_Personas = [];
 let Array_CBT_Personas = [];
 let alquiler_out = 0;
@@ -119,17 +125,19 @@ function suma_Total(suma_CBT_Personas, alquiler_in_value, suma_con_alquiler) {
         suma_con_alquiler = alquiler_in_value;
     }
 
+    console.log("suma_con_alquiler", suma_con_alquiler);
+
     document.getElementById("total-canasta").innerHTML = suma_con_alquiler.toLocaleString("es-AR", {
         maximumFractionDigits: 0,
     });
-    document.querySelector(
-        ".view_cbt_personal"
-    ).innerHTML = `<span class="card_cba_value">$ ${suma_con_alquiler.toLocaleString("es-AR", {
-        maximumFractionDigits: 0,
-    })}</span>`;
+    // document.querySelector(
+    //     ".view_cbt_personal"
+    // ).innerHTML = `<span class="card_cba_value">$ ${suma_con_alquiler.toLocaleString("es-AR", {
+    //     maximumFractionDigits: 0,
+    // })}</span>`;
 }
 
-function suma_tabla_indigencia(suma_CBA_Personas, alquiler_in_value, suma_con_alquiler) {
+function suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler) {
     alquiler_in_value = parseInt(document.getElementById("alquiler_in").value);
     //alquiler_out = document.getElementById("alquiler_out");
     if (isNaN(alquiler_in_value)) {
@@ -138,13 +146,37 @@ function suma_tabla_indigencia(suma_CBA_Personas, alquiler_in_value, suma_con_al
         alquiler_in_value = alquiler_in_value * -1;
     }
     //suma_con_alquiler = 0;
-    suma_con_alquiler = suma_CBA_Personas;
+    suma_indigencia_alquilando = alquiler_in_value + Math.trunc(suma_CBA_Personas);
+    suma_pobreza_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas);
+    suma_clase_baja_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 1.5);
+    suma_clase_media_fragil_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 2);
+    suma_clase_media_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 4);
+    suma_clase_media_alta_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 6);
+    //suma_clase_media_alta_alquilando = alquiler_in_value + suma_CBT_Personas*8;
 
     // if (isNaN(suma_con_alquiler)) {
     //     suma_con_alquiler = alquiler_in_value;
     // }
 
-    document.querySelector(".show_indigencia_max").textContent = suma_con_alquiler;
+    document.querySelector(".show_indigencia_min").textContent = 0;
+    document.querySelector(".show_indigencia_max").textContent = suma_indigencia_alquilando;
+
+    document.querySelector(".show_pobreza_min").textContent = suma_indigencia_alquilando;
+    document.querySelector(".show_pobreza_max").textContent = suma_pobreza_alquilando;
+
+    document.querySelector(".show_clase_baja_min").textContent = suma_pobreza_alquilando;
+    document.querySelector(".show_clase_baja_max").textContent = suma_clase_baja_alquilando;
+
+    document.querySelector(".suma_clase_media_fragil_min").textContent = suma_clase_baja_alquilando;
+    document.querySelector(".suma_clase_media_fragil_max").textContent = suma_clase_media_fragil_alquilando;
+
+    document.querySelector(".suma_clase_media_min").textContent = suma_clase_media_fragil_alquilando;
+    document.querySelector(".suma_clase_media_max").textContent = suma_clase_media_alquilando;
+
+    document.querySelector(".suma_clase_media_alta_min").textContent = suma_clase_media_alquilando;
+    document.querySelector(".suma_clase_media_alta_max").textContent = suma_clase_media_alta_alquilando;
+
+    document.querySelector(".suma_clase_alta_min").textContent = suma_clase_media_alta_alquilando;
 }
 
 // //Cargar personas desde localStorage al cargar la página
@@ -285,7 +317,7 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
 
     suma_Total(suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
 
-    suma_tabla_indigencia(suma_CBA_Personas, alquiler_in_value, suma_con_alquiler);
+    suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
 
     // Limpiar el formulario
     document.getElementById("person-form").reset();
