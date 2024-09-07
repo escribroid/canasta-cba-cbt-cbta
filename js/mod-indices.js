@@ -14,8 +14,6 @@ const linea_clase_media_media = Math.trunc(cbt_manual * 4);
 const linea_clase_media_alta = Math.trunc(cbt_manual * 6);
 const linea_clase_alta_baja = Math.trunc(cbt_manual * 10);
 
-const clase_media = Math.trunc(cbt_manual * 2);
-const clase_alta = Math.trunc(cbt_manual * 4);
 
 // Alquiler medio: 1amb 40m2, 2amb 50m2, 3amb 70m2
 const alquilerProm3amb = Math.trunc(alquilerProm2amb * (7 / 5) * 0.965);
@@ -30,8 +28,6 @@ const indices_manuales = {
     alquilerProm2amb,
     alquilerProm3amb,
     mesAlquilerManual,
-    clase_media,
-    clase_alta,
     ipc_manual,
     linea_indigencia,
     linea_pobreza,
