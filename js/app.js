@@ -212,42 +212,52 @@ function suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in
 vivienda = document.getElementById("select_canasta_alquiler");
 
 // Agregar un evento al select para cambiar el estado del input
-vivienda.addEventListener("change", function () {
+vivienda.addEventListener("input", function () {
+    vivienda = document.getElementById("select_canasta_alquiler");
+
     alquiler_in = document.getElementById("alquiler_in");
     if (vivienda.value === "siAlquilo") {
         alquiler_in.value = "";
+
         alquiler_in.enabled = true; // Habilitar el input
         alquiler_in.removeAttribute("disabled"); // Deshabilitar el input
-        alquiler_in.placeholder = "$"; // Mostrar texto en el input
+        alquiler_in.placeholder = "$ monto $"; // Mostrar texto en el input
 
-        document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
+        //document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
     } else if (vivienda.value === "noAlquilo") {
         alquiler_in.setAttribute("disabled", "true"); // Deshabilitar el input
         alquiler_in.value = ""; // Limpiar el input
+
         alquiler_in.placeholder = "No alquilo"; // Mostrar texto en el input
         document.getElementById("alquiler_out").textContent = "No";
     } else if (vivienda.value === "AlquilerProm3amb") {
         alquiler_in.setAttribute("disabled", "true"); // Deshabilitar el input
         alquiler_in.value = `${indices_manuales.alquilerProm3amb}`;
         document.getElementById("alquiler_out").textContent = alquiler_in.value;
-        document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
+        //document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
     } else if (vivienda.value === "AlquilerProm2amb") {
         alquiler_in.setAttribute("disabled", "true"); // Deshabilitar el input
         alquiler_in.value = `${indices_manuales.alquilerProm2amb}`;
         parseInt(alquiler_in.value);
+
         document.getElementById("alquiler_out").textContent = alquiler_in.value;
-        document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
+        //document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
+        suma_Total(suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
+        suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
     } else if (vivienda.value === "AlquilerProm1amb") {
         alquiler_in.setAttribute("disabled", "true"); // Deshabilitar el input
         alquiler_in.value = `${indices_manuales.alquilerProm1amb}`;
         parseInt(alquiler_in.value);
+
         document.getElementById("alquiler_out").textContent = alquiler_in.value;
-        document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
+        //document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
     }
 
     suma_con_alquiler = 0;
     alquiler_in_value = 0;
+    alquiler_in_value = alquiler_in.value;
     suma_Total(suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
+    suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
 });
 
 /* Agregar personas a la tabla SUBMIT +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -381,6 +391,7 @@ document.getElementById("alquiler_in").addEventListener("input", () => {
     suma_con_alquiler = 0;
     alquiler_in_value = 0;
     suma_Total(suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
+    suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
 
     // alquiler_out ++++++++++++++++++++++++++
 
