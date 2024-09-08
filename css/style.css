@@ -9,7 +9,6 @@ body {
 
 .fieldset {
     display: flex;
-    align-items: center;
     justify-content: center;
     margin: 0 0 var(--font-size-8_0-5) 0;
 }
@@ -184,6 +183,7 @@ main {
 .icon-svg-add {
     display: flex;
     align-items: center;
+    position: relative;
     font-size: 2.2rem;
     justify-content: center;
     border: 2px solid #ff4f00;
@@ -191,16 +191,16 @@ main {
     border-radius: 0.5rem;
     margin-left: 5px;
     padding: 0 0 5px 0;
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.35rem;
+    height: 2.35rem;
 }
 
 .icon-svg-reset {
     fill: #ff4f00;
     border: 2px solid #ff4f00;
     border-radius: 0.5rem;
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.35rem;
+    height: 2.35rem;
     margin-left: 5px;
     padding: 1px;
 }
@@ -415,7 +415,6 @@ main {
     /* display: flex; */
     max-width: 125px;
     margin-right: 5px;
-    text-align: justify;
 }
 
 .option_alquiler:enabled {
