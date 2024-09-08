@@ -189,8 +189,7 @@ main {
     border: 2px solid #ff4f00;
     color: #ff4f00;
     border-radius: 0.5rem;
-    margin-left: 5px;
-    padding: 0 0 5px 0;
+    /* margin-left: 5px; */
     width: 2.35rem;
     height: 2.35rem;
 }
