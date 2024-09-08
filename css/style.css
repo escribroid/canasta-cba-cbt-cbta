@@ -184,13 +184,13 @@ main {
 .icon-svg-add {
     display: flex;
     align-items: center;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     justify-content: center;
     border: 2px solid #ff4f00;
     color: #ff4f00;
     border-radius: 0.5rem;
-    margin: 0;
-    padding: 0 0 2px 0;
+    margin-left: 5px;
+    padding: 0 0 5px 0;
     width: 2.4rem;
     height: 2.4rem;
 }
@@ -201,7 +201,8 @@ main {
     border-radius: 0.5rem;
     width: 2.4rem;
     height: 2.4rem;
-    margin: 0;
+    margin-left: 5px;
+    padding: 1px;
 }
 
 .icon-svg-reset:hover {
@@ -326,13 +327,13 @@ main {
 }
 
 .show_clases_min {
-    width: 32%;
-    margin: 0 0 0 1%;
+    /* width: 32%; */
+    /* margin: 0 0 0 1%; */
 }
 
 .show_clases_max {
-    width: 32%;
-    margin-right: 1% !important;
+    /* width: 32%; */
+    /* margin-right: 1% !important; */
 }
 
 .show_indigencia_min,
@@ -411,7 +412,7 @@ main {
 .select_canasta_alquiler {
     background-color: #333;
     cursor: pointer;
-    display: flex;
+    /* display: flex; */
     max-width: 125px;
     margin-right: 5px;
     text-align: justify;
