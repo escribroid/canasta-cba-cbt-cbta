@@ -88,6 +88,7 @@ main {
 .btn-reset-person {
     background-color: #212529;
     border: 0;
+    margin: 0;
     /* margin-left: 5px; */
 }
 
@@ -186,7 +187,7 @@ main {
     position: relative;
     font-size: 2.2rem;
     justify-content: center;
-    border: 2px solid #ff4f00;
+    /* border: 1px solid #ff4f00; */
     color: #ff4f00;
     border-radius: 0.5rem;
     /* margin-left: 5px; */
@@ -200,7 +201,7 @@ main {
     border-radius: 0.5rem;
     width: 2.35rem;
     height: 2.35rem;
-    margin-left: 5px;
+    /* margin-left: 5px; */
     padding: 1px;
 }
 
