@@ -98,7 +98,7 @@ let personas_de_local = JSON.parse(localStorage.getItem("personas_de_local")) ||
 // Función para agregar persona a la tabla y al array de personas +++++++++++++++++++++++++++++++
 function addPersonToTable(gender, age_mostrar_table, canasta_b_alimentaria_persona, canasta_b_total_persona) {
     const row = document.createElement("tr");
-    row.innerHTML = `<td>${gender}</td><td>${age_mostrar_table}</td><td class="add_Partials">$${canasta_b_total_persona.toLocaleString(
+    row.innerHTML = `<td class="p-1">${gender}</td><td class="p-1">${age_mostrar_table}</td><td class="add_Partials p-1">$${canasta_b_total_persona.toLocaleString(
         "es-AR",
         {
             maximumFractionDigits: 0,

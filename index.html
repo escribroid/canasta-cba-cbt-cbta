@@ -26,11 +26,10 @@
     <!-- BODY -->
     <body>
         <!-- HEADER -->
-        <header class="slide-in-left">
-            <h6 class="m-0 px-2 text-center text-danger-emphasis">Indices Agosto 2024</h6>
+        <header class="">
             <!-- NAVBAR -->
 
-            <nav class="navbar navbar-dark rounded-4 bg-body-tertiary w-100">
+            <nav class="navbar navbar-dark rounded-4 w-100 bg-body-secondary">
                 <div class="container-fluid">
                     <a class="navbar-brand logo" href="#"
                         ><img class="logo-img" src="./img/dibujo.svg" alt="" />CANASTAS</a
@@ -177,7 +176,7 @@
                         </div>
 
                         <form id="person-form">
-                            <fieldset>
+                            <div class="fieldset">
                                 <div class="person-form-group">
                                     <!-- SELECTs +++++++++++++++++++++++++++++++++++ -->
                                     <div class="custom-select-container">
@@ -330,16 +329,16 @@
                                 >
                                     <span class="icon-svg-add">+</span>
                                 </button>
-                            </fieldset>
+                            </div>
 
                             <!-- <h3 class="person-table-title">Tu Canasta Mensual</h3> -->
 
-                            <table class="table">
-                                <thead>
+                            <table class="table table-responsive table-hover">
+                                <thead class="m-0 p-0">
                                     <tr>
-                                        <th class="table-header" scope="col">Familiar</th>
-                                        <th class="table-header" scope="col">Edad</th>
-                                        <th class="table-header" scope="col">Canasta</th>
+                                        <th class="table-header p-1" scope="col">Familiar</th>
+                                        <th class="table-header p-1" scope="col">Edad</th>
+                                        <th class="table-header p-1" scope="col">Canasta</th>
                                     </tr>
                                 </thead>
                                 <tbody id="person-list" class="table-group-divider">
@@ -347,54 +346,161 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th class="table-header" scope="col">Alquiler</th>
-                                        <th class="table-header" scope="col"></th>
-                                        <th id="alquiler_out" class="table-header" scope="col"></th>
+                                        <th class="table-header p-1" scope="col">Alquiler</th>
+                                        <th class="table-header p-1" scope="col"></th>
+                                        <th id="alquiler_out" class="table-header p-1" scope="col"></th>
                                     </tr>
                                     <tr class="table-group-divider">
-                                        <th class="table-header" scope="col">Total</th>
-                                        <th class="table-header" scope="col"></th>
-                                        <th id="total-canasta" class="table-header" scope="col"></th>
+                                        <th class="table-header p-1" scope="col">Total</th>
+                                        <th class="table-header p-1" scope="col"></th>
+                                        <th id="total-canasta" class="table-header p-1" scope="col"></th>
                                     </tr>
                                 </tfoot>
                             </table>
                         </form>
 
-                        <div class="container w-100 bg-black p-1 mt-2 text-center rounded-4 table-all-canastas fs-6">
+                        <div
+                            class="container w-100 bg-black px-0 p-2 mt-2 text-center rounded-4 table-all-canastas fs-6"
+                        >
                             <div class="row m-0 mb-2 p-0 w-100">
-                                <div class="col-4 m-0 p-0 show_indigencia_min">________</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center ">≤</span>Indigencia<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span></div>
-                                <div class="col-4 m-0 p-0 show_indigencia_max">________</div>
+                                <div
+                                    class="col-4 bg-body-secondary rounded-start-4 fs-6 text-center text-shadow show_clases_min"
+                                >
+                                    $
+                                </div>
+                                <div class="col m-0 p-0 bg-danger fs-6 text-center text-shadow">Sector</div>
+                                <div
+                                    class="col-4 m-0 p-0 bg-body-secondary rounded-end-4 fs-6 text-center text-shadow show_clases_max"
+                                >
+                                    $
+                                </div>
                             </div>
                             <div class="row m-0 mb-2 p-0 w-100">
-                                <div class="col-4 m-0 p-0 show_pobreza_min">________</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center">≤</span>Pobreza<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span></div>
-                                <div class="col-4 m-0 p-0 show_pobreza_max">________</div>
+                                <div
+                                    class="col-4 m-0 p-0 show_indigencia_min bg-body-secondary rounded-3 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
+                                <div
+                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                >
+                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
+                                        >≤</span
+                                    >Indigencia<span
+                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                        >&lt;</span
+                                    >
+                                </div>
+                                <div
+                                    class="col-4 m-0 p-0 show_indigencia_max bg-body-secondary rounded-3 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
                             </div>
                             <div class="row m-0 mb-2 p-0 w-100">
-                                <div class="col-4 m-0 p-0 show_clase_baja_min">________</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center">≤</span>Clase Baja<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span></div>
-                                <div class="col-4 m-0 p-0 show_clase_baja_max">________</div>
+                                <div
+                                    class="col-4 m-0 p-0 show_pobreza_min bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
+                                <div
+                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                >
+                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
+                                        >≤</span
+                                    >Pobreza<span
+                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                        >&lt;</span
+                                    >
+                                </div>
+                                <div
+                                    class="col-4 m-0 p-0 show_pobreza_max show_indigencia_max bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
                             </div>
                             <div class="row m-0 mb-2 p-0 w-100">
-                                <div class="col-4 m-0 p-0 suma_clase_media_fragil_min">________</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center">≤</span>Media fragil<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span></div>
-                                <div class="col-4 m-0 p-0 suma_clase_media_fragil_max">________</div>
+                                <div
+                                    class="col-4 m-0 p-0 show_clase_baja_min bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
+                                <div
+                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                >
+                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
+                                        >≤</span
+                                    >Clase Baja<span
+                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                        >&lt;</span
+                                    >
+                                </div>
+                                <div
+                                    class="col-4 m-0 p-0 show_clase_baja_max bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
                             </div>
                             <div class="row m-0 mb-2 p-0 w-100">
-                                <div class="col-4 m-0 p-0 suma_clase_media_min">________</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center">≤</span>Media<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span></div>
-                                <div class="col-4 m-0 p-0 suma_clase_media_max">________</div>
+                                <div
+                                    class="col-4 m-0 p-0 suma_clase_media_fragil_min bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
+                                <div
+                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                >
+                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
+                                        >≤</span
+                                    >Media fragil<span
+                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                        >&lt;</span
+                                    >
+                                </div>
+                                <div
+                                    class="col-4 m-0 p-0 suma_clase_media_fragil_max bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
+                            </div>
+                            <div class="row m-0 mb-2 p-0 w-100">
+                                <div
+                                    class="col-4 m-0 p-0 suma_clase_media_min bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
+                                <div
+                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                >
+                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
+                                        >≤</span
+                                    >Media<span
+                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                        >&lt;</span
+                                    >
+                                </div>
+                                <div
+                                    class="col-4 m-0 p-0 suma_clase_media_max bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
                             </div>
                             <div class="row m-0 mb-2 p-0 w-100 rounded-3">
-                                <div class="col-4 m-0 p-0 suma_clase_media_alta_min">________</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center" >≤</span> Media alta<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span  ></div>
-                                <div class="col-4 m-0 p-0 suma_clase_media_alta_max">________</div>
+                                <div
+                                    class="col-4 m-0 p-0 suma_clase_media_alta_min bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
+                                <div
+                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                >
+                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
+                                        >≤</span
+                                    >
+                                    Media alta<span
+                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                        >&lt;</span
+                                    >
+                                </div>
+                                <div
+                                    class="col-4 m-0 p-0 suma_clase_media_alta_max bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
                             </div>
                             <div class="row m-0 p-0 w-100 rounded-3">
-                                <div class="col-4 m-0 p-0 suma_clase_alta_min">________</div>
-                                <div class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center"><span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center">≤</span>Alta<span class="bg-body-secondary rounded-end text-center h-100 align-content-center">&lt;</span></div>
-                                <div class="col-4 m-0 p-0 h-100 align-content-center"></div>
+                                <div
+                                    class="col-4 m-0 p-0 suma_clase_alta_min bg-body-secondary rounded-3 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
+                                <div
+                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                >
+                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
+                                        >≤</span
+                                    >Alta<span
+                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                        >&lt;</span
+                                    >
+                                </div>
+                                <div
+                                    class="col-4 m-0 p-0 suma_clase_alta_max bg-body-secondary rounded-3 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                ></div>
                             </div>
                         </div>
 
@@ -694,42 +800,10 @@
             </div>
         </main>
         <!-- FOOTER -->
-        <footer class="rounded-4">
+        <footer class="rounded-4 p-2">
+            <h6 class="m-1 text-center fs-6 text-danger-emphasis w-100">Indices AGOSTO 2024</h6>
             <div class="version"></div>
         </footer>
-
-        <div class="container w-100 bg-black">
-            <div class="row m-0 p-0">
-                <div class="col m-0 p-0">100000</div>
-                <div class="col-5 m-0 p-0 bg-danger rounded-3">Indigencia</div>
-                <div class="col m-0 p-0">300000</div>
-            </div>
-            <div class="row m-0 p-0">
-                <div class="col m-0 p-0">100000</div>
-                <div class="col-5 m-0 p-0 bg-danger rounded-3">Pobreza no indigente</div>
-                <div class="col m-0 p-0">300000</div>
-            </div>
-            <div class="row m-0 p-0">
-                <div class="col m-0 p-0">100000</div>
-                <div class="col-5 m-0 p-0 bg-danger rounded-3">Clase Baja no pobre</div>
-                <div class="col m-0 p-0">300000</div>
-            </div>
-            <div class="row m-0 p-0">
-                <div class="col m-0 p-0">100000</div>
-                <div class="col-5 m-0 p-0 bg-danger rounded-3">Clase Media fragil</div>
-                <div class="col m-0 p-0">300000</div>
-            </div>
-            <div class="row m-0 p-0">
-                <div class="col m-0 p-0">100000</div>
-                <div class="col-5 m-0 p-0 bg-danger rounded-3">Clase Media "media"</div>
-                <div class="col m-0 p-0">300000</div>
-            </div>
-            <div class="row m-0 p-0 rounded-3">
-                <div class="col m-0 p-0">100000</div>
-                <div class="col-5 m-0 p-0 bg-danger rounded-3">Clase Alta</div>
-                <div class="col m-0 p-0">300000</div>
-            </div>
-        </div>
 
         <!-- JS ------------------------------------------------------------------>
 
