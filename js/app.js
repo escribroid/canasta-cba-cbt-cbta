@@ -1,8 +1,6 @@
 import indices_manuales from "./mod-indices.js";
 import tabla_equivalentes from "./mod-canasta-custom.js";
 
-
-
 //console.log("tabla_equivalentes[0].mujer", tabla_equivalentes[0].mujer);
 // console.log("in", indices_manuales.cbt_manual);
 
@@ -46,17 +44,17 @@ function calcular_cbt_y_alquiler(personas, edad) {
 
 function linea_indigencia() {
     const linea_indigencia = document.querySelector(".linea_indigencia");
-    linea_indigencia.innerHTML = `<span class="linea_vineta">»</span> Indigentes con Casa Propia, ingresos por mes menores a: $${cba}`;
+    linea_indigencia.innerHTML = `<div class="cards_nota"> <span class="cards_linea_vineta">»</span><span>Indigentes con Casa Propia o sin Casa: ingresos por mes menores a $${cba}</span></div>`;
 }
 
 function linea_pobreza() {
     const linea_pobreza = document.querySelector(".linea_pobreza");
-    linea_pobreza.innerHTML = `» Pobres con Casa Propia, si ingreso por mes menor a: $${cbt}`;
+    linea_pobreza.innerHTML = `<div class="cards_nota"> <span class="cards_linea_vineta">»</span><span>Pobres con Casa Propia: si ingreso por mes menor a $${cbt}</span></div>`;
 }
 
 function linea_pobreza_alquilando() {
     const linea_pobreza_alquilando = document.querySelector(".linea_pobreza_alquilando");
-    linea_pobreza_alquilando.innerHTML = `» Pobres Sin Casa Propia, ALQUILANDO, si ingreso por mes menor a:   $${cbt_alquiler_3amb} `;
+    linea_pobreza_alquilando.innerHTML = `<div class="cards_nota"> <span class="cards_linea_vineta">»</span><span>Pobres Sin Casa Propia, ALQUILANDO: ingreso por mes menor a $${cbt_alquiler_3amb}</span></div>`;
 }
 
 calcular_cba();
@@ -369,7 +367,7 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
 });
 
 // Evento keypress para prevenir caracteres no numéricos
-alquiler_in.addEventListener("keypress", function (e) {
+alquiler_in.addEventListener("keydown", function (e) {
     // Permitir solo dígitos
     const regex = /[0-9]/;
     if (!regex.test(e.key)) {

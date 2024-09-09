@@ -3,8 +3,11 @@ body {
     color: aliceblue;
     font-family: var(--font-primary);
     font-size: var(--font-size-22_1-375);
-    margin: 0 var(--font-size-10_0-625);
+    margin: 0 auto;
     position: relative;
+    max-width: 600px;
+    padding: 0 5px;
+
 }
 
 .fieldset {
@@ -151,6 +154,17 @@ main {
     width: 100%;
 }
 
+.cards_nota {
+    display: flex;
+    align-items: center;
+}
+.cards_linea_vineta {
+    font-weight: bold;
+    border-radius: 50%;
+    margin: 0 10px 0 10px;
+    height: 100%;
+}
+
 [data-bs-theme="dark"] .carousel .carousel-control-next-icon,
 [data-bs-theme="dark"] .carousel .carousel-control-prev-icon,
 [data-bs-theme="dark"].carousel .carousel-control-next-icon,
@@ -190,7 +204,7 @@ main {
     /* border: 1px solid #ff4f00; */
     color: #ff4f00;
     border-radius: 0.5rem;
-    margin-left: 5px;
+    margin-left: 10px;
     width: 2.35rem;
     height: 2.35rem;
 }
@@ -201,7 +215,7 @@ main {
     border-radius: 0.5rem;
     width: 2.35rem;
     height: 2.35rem;
-    /* margin-left: 5px; */
+    margin-left: 5px;
     padding: 1px;
 }
 
