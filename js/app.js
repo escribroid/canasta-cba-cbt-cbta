@@ -367,7 +367,7 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
 });
 
 // Evento keypress para prevenir caracteres no numéricos
-alquiler_in.addEventListener("keydown", function (e) {
+alquiler_in.addEventListener("keypress", function (e) {
     // // Permitir solo dígitos
     // const regex = /[0-9]/;
     // if (!regex.test(e.key)) {
@@ -381,6 +381,7 @@ alquiler_in.addEventListener("keydown", function (e) {
     } else {
         // Evitar que se ingrese cualquier otra tecla
         e.preventDefault();
+        return false;
     }
 });
 
