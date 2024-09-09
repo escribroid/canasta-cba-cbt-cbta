@@ -153,15 +153,21 @@ main {
     width: 100%;
 }
 
-.cards_nota {
-    display: flex;
-    align-items: center;
-}
 .cards_linea_vineta {
     font-weight: bold;
     border-radius: 50%;
     margin: 0 10px 0 10px;
     height: 100%;
+}
+
+.cards_nota {
+    display: flex;
+    align-items: flex-start;
+}
+
+.cards_nota_txt {
+    font-size: 1rem;
+    text-align: left;
 }
 
 [data-bs-theme="dark"] .carousel .carousel-control-next-icon,
@@ -435,6 +441,7 @@ main {
 .view_cbta,
 .view_cbt_alquiler_3amb {
     color: aliceblue;
+    font-size: 5px;
 }
 
 /* Select custom +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
