@@ -377,10 +377,11 @@ alquiler_in.addEventListener("input", function (e) {
     if ((e.key >= "0" && e.key <= "9") || e.key === "Backspace") {
         // Permitir la entrada
         return true;
+    } else if (e.key === "46") {
+        e.preventDefault();
     } else {
         // Evitar que se ingrese cualquier otra tecla
         e.preventDefault();
-        return false;
     }
 });
 
@@ -396,14 +397,13 @@ alquiler_in.addEventListener("keypress", function (e) {
     if ((e.key >= "0" && e.key <= "9") || e.key === "Backspace") {
         // Permitir la entrada
         return true;
+    } else if (e.key === "46") {
+        e.preventDefault();
     } else {
         // Evitar que se ingrese cualquier otra tecla
         e.preventDefault();
-        return false;
     }
 });
-
-
 
 // event INPUT ++++++++++++++++++++++++++++++++++++++++++++++++++++
 document.getElementById("alquiler_in").addEventListener("input", () => {
