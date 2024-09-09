@@ -190,7 +190,7 @@ main {
     /* border: 1px solid #ff4f00; */
     color: #ff4f00;
     border-radius: 0.5rem;
-    /* margin-left: 5px; */
+    margin-left: 5px;
     width: 2.35rem;
     height: 2.35rem;
 }
@@ -256,6 +256,11 @@ main {
 .logo-img {
     margin-right: var(--font-size-10_0-625);
     width: var(--font-size-40_2-5);
+}
+
+.mayor_menor {
+    padding: 0 4px;
+
 }
 
 .modal-body {
