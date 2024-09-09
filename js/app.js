@@ -49,7 +49,7 @@ function linea_indigencia() {
 
 function linea_pobreza() {
     const linea_pobreza = document.querySelector(".linea_pobreza");
-    linea_pobreza.innerHTML = `<div class="cards_nota"><span class="cards_linea_vineta">»</span><span class="cards_nota_txt">Pobres con Casa Propia: si ingreso por mes menor a $${cbt}</span></div>`;
+    linea_pobreza.innerHTML = `<div class="cards_nota"><span class="cards_linea_vineta">»</span><span class="cards_nota_txt">Pobres con Casa Propia: ingreso por mes menor a $${cbt}</span></div>`;
 }
 
 function linea_pobreza_alquilando() {

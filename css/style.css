@@ -20,6 +20,7 @@ footer {
     margin-bottom: var(--font-size-10_0-625);
     text-align: center;
     font-size: var(--font-size-16_1rem);
+    box-shadow: 0rem 0rem 1rem 5px rgba(10, 10, 10, 0.8);
 }
 
 h1 {
@@ -118,6 +119,7 @@ main {
     background-color: #222222;
     justify-content: center;
     margin-bottom: var(--spacing-10_0-625);
+    box-shadow: 0rem 0rem 1rem 5px rgba(0, 0, 0, 0.8);
 }
 
 .card p {
@@ -160,7 +162,7 @@ main {
 }
 
 .cards_nota_txt {
-    font-size: 1rem;
+    font-size: var(--font-size-14_0-875);
     text-align: left;
 }
 
@@ -275,6 +277,10 @@ main {
     position: relative;
     flex: 1 1 auto;
     padding: 0.3rem;
+}
+
+.navbar {
+    box-shadow: 0rem 0rem 1rem 5px rgba(0, 0, 0, 0.8);
 }
 
 .navbar-nav {
