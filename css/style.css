@@ -16,7 +16,6 @@ body {
 }
 
 footer {
-    /* background-color: #000; */
     color: aliceblue;
     margin-bottom: var(--font-size-10_0-625);
     text-align: center;
@@ -24,7 +23,6 @@ footer {
 }
 
 h1 {
-    /* color: #872341; */
     text-align: center;
     width: 24ch;
 }
@@ -42,19 +40,11 @@ main {
     flex-direction: column;
 }
 
-/* select {
-    height: 40px;
-} */
-
 #person-form {
     border: 0 solid #ff4f00;
     border-radius: var(--font-size-10_0-625);
     margin: 0;
     padding: 0;
-}
-
-.accordion {
-    /* --bs-accordion-bg: #302222; */
 }
 
 .accordion-flush .accordion-item .accordion-button,
@@ -143,6 +133,10 @@ main {
 
 .card-header {
     padding: var(--font-size-10_0-625);
+}
+
+.card_header_sub {
+    font-size: var(--font-size-18_1-125);
 }
 
 .card_subtitle {
@@ -277,10 +271,6 @@ main {
     width: var(--font-size-40_2-5);
 }
 
-.mayor_menor {
-    /* padding: 0 4px 0 0; */
-}
-
 .modal-body {
     position: relative;
     flex: 1 1 auto;
@@ -347,16 +337,6 @@ main {
     justify-content: space-around;
     margin: auto;
     width: 90%;
-}
-
-.show_clases_min {
-    /* width: 32%; */
-    /* margin: 0 0 0 1%; */
-}
-
-.show_clases_max {
-    /* width: 32%; */
-    /* margin-right: 1% !important; */
 }
 
 .show_indigencia_min,
@@ -455,7 +435,6 @@ main {
 .select_canasta_alquiler {
     background-color: #333;
     cursor: pointer;
-    /* display: flex; */
     max-width: 125px;
     margin-right: 5px;
 }
@@ -481,15 +460,4 @@ main {
     height: 6rem;
     /* position: absolute; */
     width: var(--font-size-30_1-875);
-}
-
-.overlay {
-    background-color: rgba(0, 0, 0, 0.6);
-    display: none;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 5;
 }
