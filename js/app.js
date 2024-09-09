@@ -1,6 +1,8 @@
 import indices_manuales from "./mod-indices.js";
 import tabla_equivalentes from "./mod-canasta-custom.js";
 
+
+
 //console.log("tabla_equivalentes[0].mujer", tabla_equivalentes[0].mujer);
 // console.log("in", indices_manuales.cbt_manual);
 
@@ -103,7 +105,7 @@ function addPersonToTable(gender, age_mostrar_table, canasta_b_alimentaria_perso
         {
             maximumFractionDigits: 0,
         }
-    )}</td>`;
+    )}</td><td class="p-1">Quit</td>`;
     tableBody.appendChild(row);
 }
 
@@ -148,12 +150,21 @@ function suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in
         alquiler_in_value = alquiler_in_value * -1;
     }
     //suma_con_alquiler = 0;
+
+    console.log("suma_CBA_Personas", suma_CBA_Personas);
+    console.log("suma_CBT_Personas", suma_CBT_Personas);
+
+    if (!suma_CBA_Personas || !suma_CBT_Personas) {
+        suma_CBA_Personas = 0;
+        suma_CBT_Personas = 0;
+    }
     suma_indigencia_alquilando = alquiler_in_value + Math.trunc(suma_CBA_Personas);
     suma_pobreza_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas);
     suma_clase_baja_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 1.5);
     suma_clase_media_fragil_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 2);
     suma_clase_media_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 4);
     suma_clase_media_alta_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 6);
+
     //suma_clase_media_alta_alquilando = alquiler_in_value + suma_CBT_Personas*8;
 
     // if (isNaN(suma_con_alquiler)) {
@@ -223,25 +234,25 @@ vivienda.addEventListener("input", function () {
         alquiler_in.removeAttribute("disabled"); // Deshabilitar el input
         alquiler_in.placeholder = "$ monto $"; // Mostrar texto en el input
 
-        //document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
+        document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
     } else if (vivienda.value === "noAlquilo") {
         alquiler_in.setAttribute("disabled", "true"); // Deshabilitar el input
         alquiler_in.value = ""; // Limpiar el input
-
         alquiler_in.placeholder = "No alquilo"; // Mostrar texto en el input
         document.getElementById("alquiler_out").textContent = "No";
+        document.querySelector(".row_mostrar_alquiler").style.display = "none";
     } else if (vivienda.value === "AlquilerProm3amb") {
         alquiler_in.setAttribute("disabled", "true"); // Deshabilitar el input
         alquiler_in.value = `${indices_manuales.alquilerProm3amb}`;
         document.getElementById("alquiler_out").textContent = alquiler_in.value;
-        //document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
+        document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
     } else if (vivienda.value === "AlquilerProm2amb") {
         alquiler_in.setAttribute("disabled", "true"); // Deshabilitar el input
         alquiler_in.value = `${indices_manuales.alquilerProm2amb}`;
         parseInt(alquiler_in.value);
 
         document.getElementById("alquiler_out").textContent = alquiler_in.value;
-        //document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
+        document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
         suma_Total(suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
         suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
     } else if (vivienda.value === "AlquilerProm1amb") {
@@ -250,7 +261,7 @@ vivienda.addEventListener("input", function () {
         parseInt(alquiler_in.value);
 
         document.getElementById("alquiler_out").textContent = alquiler_in.value;
-        //document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
+        document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
     }
 
     suma_con_alquiler = 0;

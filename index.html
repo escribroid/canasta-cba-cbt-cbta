@@ -25,8 +25,6 @@
     </head>
     <!-- BODY -->
     <body>
-        <div class="version"></div>
-
         <!-- HEADER -->
         <header class="">
             <!-- NAVBAR -->
@@ -340,22 +338,25 @@
                                     <tr>
                                         <th class="table-header p-1" scope="col">Familiar</th>
                                         <th class="table-header p-1" scope="col">Edad</th>
-                                        <th class="table-header p-1" scope="col">Canasta</th>
+                                        <th class="table-header p-1" scope="col">Valor</th>
+                                        <th class="table-header p-1" scope="col">Editar</th>
                                     </tr>
                                 </thead>
                                 <tbody id="person-list" class="table-group-divider">
                                     <tr></tr>
                                 </tbody>
                                 <tfoot>
-                                    <tr>
+                                    <tr class="row_mostrar_alquiler">
                                         <th class="table-header p-1" scope="col">Alquiler</th>
                                         <th class="table-header p-1" scope="col"></th>
                                         <th id="alquiler_out" class="table-header p-1" scope="col"></th>
+                                        <th class="table-header p-1" scope="col"></th>
                                     </tr>
                                     <tr class="table-group-divider">
                                         <th class="table-header p-1" scope="col">Total</th>
                                         <th class="table-header p-1" scope="col"></th>
                                         <th id="total-canasta" class="table-header p-1" scope="col"></th>
+                                        <th class="table-header p-1" scope="col"></th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -379,132 +380,140 @@
                             </div>
                             <div class="row m-0 mb-2 p-0 w-100">
                                 <div
-                                    class="col-4 m-0 p-0 show_indigencia_min bg-body-secondary rounded-3 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 show_indigencia_min bg-body-secondary rounded-start-4 fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col-4 m-0 p-0 bg-gradient fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
-                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
-                                        >≤</span
-                                    >Indigencia<span
-                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                    <span class="bg-body-secondary pe-0 h-100 align-content-center">≤</span
+                                    >Indigencia<span class="bg-body-secondary text-center h-100 align-content-center"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="col-4 m-0 p-0 show_indigencia_max bg-body-secondary rounded-3 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 show_indigencia_max bg-body-secondary rounded-end-4 fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-2 p-0 w-100">
                                 <div
-                                    class="col-4 m-0 p-0 show_pobreza_min bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 show_pobreza_min bg-body-secondary rounded-start-4 fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col-4 m-0 p-0 bg-gradient fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
-                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
-                                        >≤</span
-                                    >Pobreza<span
-                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                    <span class="bg-body-secondary pe-0 h-100 align-content-center">≤</span>Pobreza<span
+                                        class="bg-body-secondary text-center h-100 align-content-center"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="col-4 m-0 p-0 show_pobreza_max show_indigencia_max bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 show_pobreza_max show_indigencia_max bg-body-secondary rounded-end-4 fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-2 p-0 w-100">
                                 <div
-                                    class="col-4 m-0 p-0 show_clase_baja_min bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 show_clase_baja_min bg-body-secondary rounded-start-4 fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col-4 m-0 p-0 bg-gradient fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
-                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
-                                        >≤</span
-                                    >Clase Baja<span
-                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                    <span class="bg-body-secondary pe-0 h-100 align-content-center">≤</span>Clase
+                                    Baja<span class="bg-body-secondary text-center h-100 align-content-center"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="col-4 m-0 p-0 show_clase_baja_max bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 show_clase_baja_max bg-body-secondary rounded-end-4 fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-2 p-0 w-100">
                                 <div
-                                    class="col-4 m-0 p-0 suma_clase_media_fragil_min bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 suma_clase_media_fragil_min bg-body-secondary rounded-start-4 fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col-4 m-0 p-0 bg-gradient fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
-                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
-                                        >≤</span
-                                    >Media fragil<span
-                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                    <span class="bg-body-secondary pe-0 h-100 align-content-center">≤</span>Media
+                                    fragil<span class="bg-body-secondary text-center h-100 align-content-center"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="col-4 m-0 p-0 suma_clase_media_fragil_max bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 suma_clase_media_fragil_max bg-body-secondary rounded-end-4 fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-2 p-0 w-100">
                                 <div
-                                    class="col-4 m-0 p-0 suma_clase_media_min bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 suma_clase_media_min bg-body-secondary fs-6 d-flex justify-content-center align-content-center align-items-center rounded-start-4"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col-4 m-0 p-0 bg-gradient fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
-                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
-                                        >≤</span
-                                    >Media<span
-                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                    <span class="bg-body-secondary pe-0 h-100 align-content-center">≤</span>Media<span
+                                        class="bg-body-secondary text-center h-100 align-content-center"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="col-4 m-0 p-0 suma_clase_media_max bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 suma_clase_media_max bg-body-secondary rounded-end-4 fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 mb-2 p-0 w-100 rounded-3">
+                            <div class="row m-0 mb-2 p-0 w-100">
                                 <div
-                                    class="col-4 m-0 p-0 suma_clase_media_alta_min bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 suma_clase_media_alta_min bg-body-secondary fs-6 d-flex justify-content-center align-content-center align-items-center rounded-start-4"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col-4 m-0 p-0 bg-gradient fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
-                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
-                                        >≤</span
-                                    >
-                                    Media alta<span
-                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                    <span class="bg-body-secondary pe-0 h-100 align-content-center">≤</span>
+                                    Media alta<span class="bg-body-secondary text-center h-100 align-content-center"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="col-4 m-0 p-0 suma_clase_media_alta_max bg-body-secondary rounded-2 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 suma_clase_media_alta_max bg-body-secondary rounded-end-4 fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 p-0 w-100 rounded-3">
+                            <div class="row m-0 p-0 w-100">
                                 <div
-                                    class="col-4 m-0 p-0 suma_clase_alta_min bg-body-secondary rounded-3 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 suma_clase_alta_min bg-body-secondary rounded-start-4 fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-danger rounded-2 fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col-4 m-0 p-0 bg-gradient fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
-                                    <span class="bg-body-secondary rounded-start pe-0 h-100 align-content-center"
-                                        >≤</span
-                                    >Alta<span
-                                        class="bg-body-secondary rounded-end text-center h-100 align-content-center"
+                                    <span class="bg-body-secondary pe-0 h-100 align-content-center">≤</span>Alta<span
+                                        class="bg-body-secondary text-center h-100 align-content-center"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="col-4 m-0 p-0 suma_clase_alta_max bg-body-secondary rounded-3 fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col-4 m-0 p-0 suma_clase_alta_max bg-body-secondary rounded-end-4 fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                         </div>
+
+                        <!-- POPOVER -->
+                        <a
+                            tabindex="0"
+                            class="btn btn-lg btn-danger"
+                            role="button"
+                            data-bs-toggle="popover"
+                            data-bs-trigger="focus"
+                            data-bs-title="Dismissible popover"
+                            data-bs-content="And here's some amazing content. It's very engaging. Right?"
+                            >Dismissible popover</a
+                        >
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-custom-class="custom-tooltip"
+                            data-bs-title="This top tooltip is themed via CSS variables."
+                        >
+                            Custom tooltip
+                        </button>
 
                         <!-- Button trigger modal ++++++++++++++++++++++++++++++++++-->
                         <div class="d-flex justify-content-center mt-2">
@@ -520,81 +529,6 @@
                             </button>
                         </div>
                         <!-- Modal -->
-                        <div
-                            class="modal fade"
-                            id="exampleModal"
-                            tabindex="-1"
-                            aria-labelledby="titleModalLabel"
-                            aria-hidden="true"
-                        >
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header py-0 px-2">
-                                        <h2 class="modal-title text-start fs-5" id="titleModalLabel">
-                                            Sector socio economico
-                                        </h2>
-                                        <button
-                                            type="button"
-                                            class="btn-close"
-                                            data-bs-dismiss="modal"
-                                            aria-label="Close"
-                                        ></button>
-                                    </div>
-
-                                    <div class="modal-body">
-                                        <div class="container w-100 bg-black p-1 text-center">
-                                            <div class="row m-0 p-0 w-100">
-                                                <div class="col-3 m-0 p-0">$ 0</div>
-                                                <div class="col-1 m-0 p-0">&lt;</div>
-                                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Indigencia</div>
-                                                <div class="col-1 m-0 p-0">&lt;</div>
-                                                <div class="col-3 m-0 p-0">300000</div>
-                                            </div>
-                                            <div class="row m-0 p-0 w-100">
-                                                <div class="col-3 m-0 p-0">100000</div>
-                                                <div class="col-1 m-0 p-0">&lt;</div>
-                                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Pobreza</div>
-                                                <div class="col-1 m-0 p-0">&lt;</div>
-                                                <div class="col-3 m-0 p-0">300000</div>
-                                            </div>
-                                            <div class="row m-0 p-0 w-100">
-                                                <div class="col-3 m-0 p-0">100000</div>
-                                                <div class="col-1 m-0 p-0">&lt;</div>
-                                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Clase Baja</div>
-                                                <div class="col-1 m-0 p-0">&lt;</div>
-                                                <div class="col-3 m-0 p-0">300000</div>
-                                            </div>
-                                            <div class="row m-0 p-0 w-100">
-                                                <div class="col-3 m-0 p-0">100000</div>
-                                                <div class="col-1 m-0 p-0">&lt;</div>
-                                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Media fragil</div>
-                                                <div class="col-1 m-0 p-0">&lt;</div>
-                                                <div class="col-3 m-0 p-0">300000</div>
-                                            </div>
-                                            <div class="row m-0 p-0 w-100">
-                                                <div class="col-3 m-0 p-0">100000</div>
-                                                <div class="col-1 m-0 p-0">&lt;</div>
-                                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Media</div>
-                                                <div class="col-1 m-0 p-0">&lt;</div>
-                                                <div class="col-3 m-0 p-0">300000</div>
-                                            </div>
-                                            <div class="row m-0 p-0 w-100 rounded-3">
-                                                <div class="col-3 m-0 p-0">100000</div>
-                                                <div class="col-1 m-0 p-0">&lt;</div>
-                                                <div class="col-4 m-0 p-0 bg-danger rounded-3">Acomodado</div>
-                                                <div class="col-1 m-0 p-0"></div>
-                                                <div class="col-3 m-0 p-0"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                            Close
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </li>
                     <li class="list-group-item aclaracion_edades"></li>
                 </ul>
