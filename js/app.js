@@ -390,9 +390,9 @@ alquiler_in.addEventListener("keydown", function (e) {
 });
 
 alquiler_in.addEventListener("input", function (e) {
-    const cursorPos = numericInput.selectionStart; // Guardar la posición actual del cursor
+    const cursorPos = alquiler_in.selectionStart; // Guardar la posición actual del cursor
     alquiler_in.value = alquiler_in.value.replace(/[^0-9]/g, "");
-    numericInput.selectionStart = numericInput.selectionEnd = cursorPos; // Restaurar la posición del cursor
+    alquiler_in.selectionStart = alquiler_in.selectionEnd = cursorPos; // Restaurar la posición del cursor
 });
 
 // event INPUT ++++++++++++++++++++++++++++++++++++++++++++++++++++
