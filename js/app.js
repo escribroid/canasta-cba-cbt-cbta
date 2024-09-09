@@ -386,7 +386,7 @@ alquiler_in.addEventListener("input", function (e) {
 });
 
 // Evento keypress para prevenir caracteres no numéricos
-alquiler_in.addEventListener("keypress", function (e) {
+alquiler_in.addEventListener("keydown", function (e) {
     // // Permitir solo dígitos
     // const regex = /[0-9]/;
     // if (!regex.test(e.key)) {
