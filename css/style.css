@@ -384,6 +384,7 @@ main {
 
 .table-all-canastas {
     font-size: 10px !important;
+    padding: 0 2px 5px 2px;
 }
 
 .table-header {
