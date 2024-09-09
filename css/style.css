@@ -7,7 +7,6 @@ body {
     position: relative;
     max-width: 600px;
     padding: 0 5px;
-
 }
 
 .fieldset {
@@ -308,8 +307,8 @@ main {
 
 .offcanvas-header .btn-close {
     padding: calc(var(--bs-offcanvas-padding-y) * 0.5) calc(var(--bs-offcanvas-padding-x) * 0.5);
-    margin-top: calc(0.4 * var(--bs-offcanvas-padding-y));
-    margin-right: calc(-0.85 * var(--bs-offcanvas-padding-x));
+    margin-top: calc(-0.2 * var(--bs-offcanvas-padding-y));
+    margin-right: calc(-1.1 * var(--bs-offcanvas-padding-x));
     margin-bottom: calc(-0.5 * var(--bs-offcanvas-padding-y));
 }
 
@@ -400,7 +399,7 @@ main {
 
 .text-bg-dark {
     color: #fff !important;
-    background-color: var(--color-background) !important;
+    /* background-color: var(--color-background) !important; */
 }
 
 .text-shadow {

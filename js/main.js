@@ -8,10 +8,11 @@ import indices_manuales from "./mod-indices.js";
 // version
 const versionUpdated = (document.querySelector(".version").innerHTML = version);
 
-
-
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl, {
-  placement: "top",
-  offset: [-110, 6]
-}))
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map(
+    (tooltipTriggerEl) =>
+        new bootstrap.Tooltip(tooltipTriggerEl, {
+            placement: "top",
+            offset: [-110, 6],
+        })
+);
