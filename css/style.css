@@ -1,5 +1,5 @@
 body {
-    background-color: var(--color-background);
+    /* background-color: var(--color-background); */
     color: aliceblue;
     font-family: var(--font-primary);
     font-size: var(--font-size-22_1-375);
@@ -14,7 +14,7 @@ body {
 }
 
 footer {
-    background-color: #000;
+    /* background-color: #000; */
     color: aliceblue;
     margin-bottom: var(--font-size-10_0-625);
     text-align: center;
@@ -391,6 +391,24 @@ main {
 
 .text-shadow {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.tooltip {
+    background-color: #333; /* Fondo oscuro */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Cambiar el color del texto */
+.tooltip .tooltip-inner {
+    color: #fff; /* Texto blanco */
+    background-color: #333; /* Fondo interno oscuro */
+    padding: 10px; /* Aumentar el padding */
+    font-size: 1rem; /* Tamaño de fuente más grande */
+}
+
+/* Personalizar la flecha del tooltip */
+.tooltip .tooltip-arrow::before {
+    border-top-color: #333; /* Cambiar el color de la flecha */
 }
 
 .version {
