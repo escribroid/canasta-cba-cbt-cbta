@@ -368,10 +368,19 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
 
 // Evento keypress para prevenir caracteres no numéricos
 alquiler_in.addEventListener("keydown", function (e) {
-    // Permitir solo dígitos
-    const regex = /[0-9]/;
-    if (!regex.test(e.key)) {
-        e.preventDefault(); // Evitar que el carácter no permitido sea ingresado
+    // // Permitir solo dígitos
+    // const regex = /[0-9]/;
+    // if (!regex.test(e.key)) {
+    //     e.preventDefault(); // Evitar que el carácter no permitido sea ingresado
+    // }
+
+    // Permitir números (del 0 al 9) y la tecla Backspace
+    if ((e.key >= "0" && e.key <= "9") || e.key === "Backspace") {
+        // Permitir la entrada
+        return true;
+    } else {
+        // Evitar que se ingrese cualquier otra tecla
+        e.preventDefault();
     }
 });
 
