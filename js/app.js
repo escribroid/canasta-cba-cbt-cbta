@@ -366,6 +366,24 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     return { suma_CBT_Personas, alquiler_in_value, suma_con_alquiler };
 });
 
+alquiler_in.addEventListener("input", function (e) {
+    // // Permitir solo dígitos
+    // const regex = /[0-9]/;
+    // if (!regex.test(e.key)) {
+    //     e.preventDefault(); // Evitar que el carácter no permitido sea ingresado
+    // }
+
+    // Permitir números (del 0 al 9) y la tecla Backspace
+    if ((e.key >= "0" && e.key <= "9") || e.key === "Backspace") {
+        // Permitir la entrada
+        return true;
+    } else {
+        // Evitar que se ingrese cualquier otra tecla
+        e.preventDefault();
+        return false;
+    }
+});
+
 // Evento keypress para prevenir caracteres no numéricos
 alquiler_in.addEventListener("keypress", function (e) {
     // // Permitir solo dígitos
@@ -384,6 +402,8 @@ alquiler_in.addEventListener("keypress", function (e) {
         return false;
     }
 });
+
+
 
 // event INPUT ++++++++++++++++++++++++++++++++++++++++++++++++++++
 document.getElementById("alquiler_in").addEventListener("input", () => {
