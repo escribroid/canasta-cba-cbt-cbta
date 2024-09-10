@@ -9,12 +9,6 @@ body {
     padding: 0 5px;
 }
 
-.fieldset {
-    display: flex;
-    justify-content: center;
-    margin: 0 0 var(--font-size-8_0-5) 0;
-}
-
 footer {
     color: aliceblue;
     margin-bottom: var(--font-size-10_0-625);
@@ -119,7 +113,7 @@ main {
     background-color: #222222;
     justify-content: center;
     margin-bottom: var(--spacing-10_0-625);
-    box-shadow: 0rem 0rem 1rem 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0rem 0rem 0.75rem 4px rgba(0, 0, 0, 0.8);
 }
 
 .card p {
@@ -181,6 +175,13 @@ main {
     left: -20px;
 }
 
+/* .detalles_delete {
+    border: 1px solid #ff4f00;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+} */
+
 .dropdown-toggle::after {
     display: none;
 }
@@ -196,43 +197,48 @@ main {
     border-left: 0.3em solid transparent;
 }
 
+.fieldset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 var(--font-size-8_0-5) 0;
+}
+
 .icon-svg-add {
     display: flex;
     align-items: center;
-    position: relative;
-    font-size: 2.2rem;
     justify-content: center;
-    /* border: 1px solid #ff4f00; */
-    color: #ff4f00;
-    border-radius: 0.5rem;
-    margin-left: 10px;
-    width: 2.35rem;
-    height: 2.35rem;
+    margin-left: 5px;
+    border-radius: 10px;
 }
 
 .icon-svg-reset {
-    fill: #ff4f00;
-    border: 2px solid #ff4f00;
-    border-radius: 0.5rem;
-    width: 2.35rem;
-    height: 2.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: 5px;
-    padding: 1px;
 }
 
 .icon-svg-reset:hover {
-    fill: #ce2331;
+    color: #ce2331;
     border: 5px solid #ce2331;
+    border-radius: 10px;
+}
+
+.icon-svg-reset::selection {
+    color: #ce2331;
+    border: 5px solid #ce2331;
+    border-radius: 10px;
 }
 
 .icon-svg-add:hover {
     color: #ce2331;
     border: 5px solid #ce2331;
+    border-radius: 10px;
 }
 
 .icon-svg-add:not(:active) {
-    border: 2px solid #ff4f00;
-    color: #ff4f00;
+    border: 0;
 }
 
 .linea_pobreza,
@@ -280,7 +286,7 @@ main {
 }
 
 .navbar {
-    box-shadow: 0rem 0rem 1rem 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0rem 0rem 0.75rem 4px rgba(0, 0, 0, 0.8);
 }
 
 .navbar-nav {

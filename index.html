@@ -24,12 +24,12 @@
         <link rel="stylesheet" href="./css/style.css" />
     </head>
     <!-- BODY -->
-    <body class="bg-black bg-gradient ">
+    <body class="bg-black bg-gradient">
         <!-- HEADER -->
-        <header class="bg-black rounded-4 ">
+        <header class="bg-black rounded-4">
             <!-- NAVBAR -->
 
-            <nav class="navbar navbar-dark rounded-4 w-100 bg-black bg-gradient ">
+            <nav class="navbar navbar-dark rounded-4 w-100 bg-black bg-gradient">
                 <div class="container-fluid">
                     <a class="navbar-brand logo" href="#"
                         ><img class="logo-img" src="./img/dibujo.svg" alt="" />CANASTAS</a
@@ -106,7 +106,7 @@
             </div> -->
 
             <!-- Card 2 Canasta Básica Alimentaria -->
-            <div class="card w-100 rounded-4">
+            <div class="card w-100 rounded-4 bg-dark bg-gradient-dark">
                 <!-- <div class="card-header"> -->
                 <!-- <div class="d-flex justify-content-between align-items-center">
                         <h2>Tu Canasta</h2>
@@ -151,7 +151,7 @@
                                     />
                                 </label>
                             </div>
-                            <div class="table-header" scope="col">
+                            <div class="table-header d-flex" scope="col">
                                 <button
                                     id="btn-reset-person"
                                     type="button"
@@ -159,22 +159,23 @@
                                     aria-label="Name"
                                     name="boton_reset"
                                 >
-                                    <svg
-                                        class="icon-svg-reset"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="36"
-                                        height="36"
-                                        fill=""
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
-                                        />
-                                        <path
-                                            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
-                                        />
-                                    </svg>
+                                    <span class="icon-svg-reset">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="35"
+                                            height="35"
+                                            fill="#ff4f00"
+                                            class="bi bi-x-square"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                                            />
+                                            <path
+                                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+                                            />
+                                        </svg>
+                                    </span>
                                 </button>
                             </div>
                         </div>
@@ -331,39 +332,86 @@
                                     aria-label="Person"
                                     name="boton_add_person"
                                 >
-                                    <span class="icon-svg-add">+</span>
+                                    <span class="icon-svg-add">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="35"
+                                            height="35"
+                                            fill="#ff4f00"
+                                            class="bi bi-plus-square"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                                            />
+                                            <path
+                                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                                            />
+                                        </svg>
+                                    </span>
                                 </button>
                             </div>
 
                             <!-- <h3 class="person-table-title">Tu Canasta Mensual</h3> -->
-
-                            <table class="table table-responsive table-hover">
-                                <thead class="m-0 p-0">
-                                    <tr>
-                                        <th class="table-header p-1" scope="col">Familiar</th>
-                                        <th class="table-header p-1" scope="col">Edad</th>
-                                        <th class="table-header p-1" scope="col">Valor</th>
-                                        <th class="table-header p-1" scope="col">Editar</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="person-list" class="table-group-divider">
-                                    <tr></tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr class="row_mostrar_alquiler">
-                                        <th class="table-header p-1" scope="col">Alquiler</th>
-                                        <th class="table-header p-1" scope="col"></th>
-                                        <th id="alquiler_out" class="table-header p-1" scope="col"></th>
-                                        <th class="table-header p-1" scope="col"></th>
-                                    </tr>
-                                    <tr class="table-group-divider">
-                                        <th class="table-header p-1" scope="col">Total</th>
-                                        <th class="table-header p-1" scope="col"></th>
-                                        <th id="total-canasta" class="table-header p-1" scope="col"></th>
-                                        <th class="table-header p-1" scope="col"></th>
-                                    </tr>
-                                </tfoot>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table table-hover w-100 overflow-visible">
+                                    <thead class="m-0 p-0">
+                                        <tr>
+                                            <th class="table-header p-1" scope="col">Familiar</th>
+                                            <th class="table-header p-1" scope="col">Edad</th>
+                                            <th class="table-header p-1" scope="col">Valor</th>
+                                            <th class="table-header p-1" scope="col">
+                                                <svg
+                                                    width="24px"
+                                                    height="24px"
+                                                    viewBox="-2.4 -2.4 28.80 28.80"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    stroke="#000000"
+                                                    stroke-width="0.00024000000000000003"
+                                                >
+                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                    <g
+                                                        id="SVGRepo_tracerCarrier"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke="#CCCCCC"
+                                                        stroke-width="0.096"
+                                                    ></g>
+                                                    <g id="SVGRepo_iconCarrier">
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M21.1213 2.70705C19.9497 1.53548 18.0503 1.53547 16.8787 2.70705L15.1989 4.38685L7.29289 12.2928C7.16473 12.421 7.07382 12.5816 7.02986 12.7574L6.02986 16.7574C5.94466 17.0982 6.04451 17.4587 6.29289 17.707C6.54127 17.9554 6.90176 18.0553 7.24254 17.9701L11.2425 16.9701C11.4184 16.9261 11.5789 16.8352 11.7071 16.707L19.5556 8.85857L21.2929 7.12126C22.4645 5.94969 22.4645 4.05019 21.2929 2.87862L21.1213 2.70705ZM18.2929 4.12126C18.6834 3.73074 19.3166 3.73074 19.7071 4.12126L19.8787 4.29283C20.2692 4.68336 20.2692 5.31653 19.8787 5.70705L18.8622 6.72357L17.3068 5.10738L18.2929 4.12126ZM15.8923 6.52185L17.4477 8.13804L10.4888 15.097L8.37437 15.6256L8.90296 13.5112L15.8923 6.52185ZM4 7.99994C4 7.44766 4.44772 6.99994 5 6.99994H10C10.5523 6.99994 11 6.55223 11 5.99994C11 5.44766 10.5523 4.99994 10 4.99994H5C3.34315 4.99994 2 6.34309 2 7.99994V18.9999C2 20.6568 3.34315 21.9999 5 21.9999H16C17.6569 21.9999 19 20.6568 19 18.9999V13.9999C19 13.4477 18.5523 12.9999 18 12.9999C17.4477 12.9999 17 13.4477 17 13.9999V18.9999C17 19.5522 16.5523 19.9999 16 19.9999H5C4.44772 19.9999 4 19.5522 4 18.9999V7.99994Z"
+                                                            fill="#ff4f00"
+                                                        ></path>
+                                                    </g>
+                                                </svg>
+                                            </th>
+                                            <th class="table-header p-1" scope="col">Dias</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="person-list" class="table-group-divider">
+                                        <tr></tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="row_mostrar_alquiler">
+                                            <th class="table-header p-1" scope="col">Alquiler</th>
+                                            <th class="table-header p-1" scope="col"></th>
+                                            <th id="alquiler_out" class="table-header p-1" scope="col"></th>
+                                            <th class="table-header p-1" scope="col"></th>
+                                            <th class="table-header p-1" scope="col"></th>
+                                        </tr>
+                                        <tr class="table-group-divider">
+                                            <th class="table-header p-1" scope="col">Total</th>
+                                            <th class="table-header p-1" scope="col"></th>
+                                            <th id="total-canasta" class="table-header p-1" scope="col"></th>
+                                            <th class="table-header p-1" scope="col"></th>
+                                            <th class="table-header p-1" scope="col"></th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
                         </form>
 
                         <div class="container w-100 bg-black py-2 mt-2 text-center rounded-4 table-all-canastas fs-6">
@@ -372,7 +420,7 @@
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
                                 <div
-                                    class="col m-0 p-0 show_indigencia_min bg-secondary-subtle  fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="col m-0 p-0 show_indigencia_min bg-secondary-subtle fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
                                     class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
@@ -383,12 +431,12 @@
                                     >
                                 </div>
                                 <div
-                                    class="col m-0 p-0 show_indigencia_max bg-secondary-subtle  fs-6 justify-content-center align-content-center align-items-center"
+                                    class="col m-0 p-0 show_indigencia_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
                                 <div
-                                    class="col m-0 p-0 show_pobreza_min bg-secondary-subtle  fs-6 justify-content-center align-content-center align-items-center"
+                                    class="col m-0 p-0 show_pobreza_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
                                     class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
@@ -399,12 +447,12 @@
                                     >
                                 </div>
                                 <div
-                                    class="col m-0 p-0 show_pobreza_max show_indigencia_max bg-secondary-subtle  fs-6 justify-content-center align-content-center align-items-center"
+                                    class="col m-0 p-0 show_pobreza_max show_indigencia_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
                                 <div
-                                    class="col m-0 p-0 show_clase_baja_min bg-secondary-subtle  fs-6 justify-content-center align-content-center align-items-center"
+                                    class="col m-0 p-0 show_clase_baja_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
                                     class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
@@ -415,12 +463,12 @@
                                     >
                                 </div>
                                 <div
-                                    class="col m-0 p-0 show_clase_baja_max bg-secondary-subtle  fs-6 justify-content-center align-content-center align-items-center"
+                                    class="col m-0 p-0 show_clase_baja_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
                                 <div
-                                    class="col m-0 p-0 suma_clase_media_fragil_min bg-secondary-subtle  fs-6 justify-content-center align-content-center align-items-center"
+                                    class="col m-0 p-0 suma_clase_media_fragil_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
                                     class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
@@ -431,7 +479,7 @@
                                     >
                                 </div>
                                 <div
-                                    class="col m-0 p-0 suma_clase_media_fragil_max bg-secondary-subtle  fs-6 justify-content-center align-content-center align-items-center"
+                                    class="col m-0 p-0 suma_clase_media_fragil_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
@@ -452,7 +500,7 @@
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
                                 <div
-                                    class="col m-0 p-0 suma_clase_media_alta_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center "
+                                    class="col m-0 p-0 suma_clase_media_alta_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
                                     class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
@@ -463,12 +511,12 @@
                                     >
                                 </div>
                                 <div
-                                    class="col m-0 p-0 suma_clase_media_alta_max bg-secondary-subtle  fs-6 justify-content-center align-content-center align-items-center"
+                                    class="col m-0 p-0 suma_clase_media_alta_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 p-0 pb-2 w-100">
                                 <div
-                                    class="col m-0 p-0 suma_clase_alta_min bg-secondary-subtle  fs-6 justify-content-center  align-items-center"
+                                    class="col m-0 p-0 suma_clase_alta_min bg-secondary-subtle fs-6 justify-content-center align-items-center"
                                 ></div>
                                 <div
                                     class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
@@ -487,7 +535,6 @@
                         </div>
 
                         <!-- TOOLTIP -->
-                        
                     </li>
                     <li class="list-group-item aclaracion_edades">
                         <button
@@ -505,7 +552,7 @@
             </div>
 
             <!-- Card 3 Canasta Básica Alimentaria -->
-            <div class="card rounded-4 bg-dark bg-gradient ">
+            <div class="card rounded-4 bg-dark bg-gradient-dark">
                 <div class="card-header">
                     <h2>Canasta Básica Alimentaria</h2>
                     <h4 class="card_header_sub">• Linea de indigencia (Li)</h4>
@@ -573,7 +620,7 @@
             </div>
 
             <!-- Card 4 Canasta Básica Total -->
-            <div class="card rounded-4 bg-dark bg-gradient-dark ">
+            <div class="card rounded-4 bg-dark bg-gradient-dark">
                 <div class="card-header">
                     <h2>Canasta Basica Total</h2>
                     <h4 class="card_header_sub">• Linea de Pobreza (LP)</h4>
@@ -641,7 +688,7 @@
             </div>
 
             <!-- Card 5 Canasta Basica Total + Alquiler -->
-            <div class="card rounded-4 bg-dark bg-gradient-dark ">
+            <div class="card rounded-4 bg-dark bg-gradient-dark">
                 <div class="card-header">
                     <h2>Canasta Básica Total Alquilando</h2>
                     <h4 class="card_header_sub">• Linea de Pobreza alquilando (LPA)</h4>
@@ -709,7 +756,7 @@
             </div>
         </main>
         <!-- FOOTER -->
-        <footer class="rounded-4 p-0 bg-light-subtle ">
+        <footer class="rounded-4 p-0 bg-light-subtle">
             <div class="container-fluid bg-black bg-gradient rounded-4 p-2">
                 <h6 class="m-1 text-center fs-6 text-danger-emphasis w-100">Indices AGOSTO 2024</h6>
                 <div class="version"></div>

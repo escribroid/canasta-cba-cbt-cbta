@@ -68,6 +68,7 @@ linea_pobreza_alquilando();
 let count = 0;
 let age;
 let gender;
+let gender_show;
 let age_toStr;
 let age_mostrar_table;
 let gender_lowercase;
@@ -97,13 +98,56 @@ let personas_de_local = JSON.parse(localStorage.getItem("personas_de_local")) ||
 
 // Función para agregar persona a la tabla y al array de personas +++++++++++++++++++++++++++++++
 function addPersonToTable(gender, age_mostrar_table, canasta_b_alimentaria_persona, canasta_b_total_persona) {
+    if (gender == "Femenino") {
+        gender_show = "Fem";
+    } else {
+        gender_show = "Masc";
+    }
+
     const row = document.createElement("tr");
-    row.innerHTML = `<td class="p-1">${gender}</td><td class="p-1">${age_mostrar_table}</td><td class="add_Partials p-1">$${canasta_b_total_persona.toLocaleString(
+    row.innerHTML = `<td class="p-1">${gender_show}</td><td class="p-1">${age_mostrar_table}</td><td class="add_Partials p-1">$${canasta_b_total_persona.toLocaleString(
         "es-AR",
         {
             maximumFractionDigits: 0,
         }
-    )}</td><td class="p-1">Quit</td>`;
+    )}</td><td class="p-1 detalles_delete ">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#ff4f00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+    </td><td>
+    <label for="">
+    <select name="days_select" id="days_select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30" selected>30</option>       
+    </select>
+</label>
+    </td>`;
     tableBody.appendChild(row);
 }
 

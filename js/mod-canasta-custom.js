@@ -43,3 +43,4 @@ export default tabla_equivalentes;
 
 // Embarazo +12%
 // Lactancia +22%
+

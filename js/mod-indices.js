@@ -19,6 +19,10 @@ const alquilerProm3amb = Math.trunc(alquilerProm2amb * (7 / 5) * 0.965);
 const alquilerProm1amb = Math.trunc((alquilerProm2amb * (4 / 5)) / 0.955);
 const ipc_manual = 4.03;
 
+const days = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+];
+
 const indices_manuales = {
     cba_manual,
     cbt_manual,
@@ -36,6 +40,7 @@ const indices_manuales = {
     linea_clase_media_media,
     linea_clase_media_alta,
     linea_clase_alta_baja,
+    days,
 };
 
 export default indices_manuales;
