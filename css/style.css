@@ -68,7 +68,16 @@ main {
 }
 
 .aclaracion_edades {
-    font-size: var(--font-size-14_0-875);
+    display: flex;
+    font-size: var(--font-size-16_1rem);
+    font-weight: bold;
+    font-family: var(--font-mono);
+    background-color: #ff4f0066;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-add-person,
@@ -131,7 +140,9 @@ main {
 }
 
 .card_header_sub {
+    display: flex;
     font-size: var(--font-size-18_1-125);
+    gap: 10px;
 }
 
 .card_subtitle {
@@ -207,7 +218,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-left: 5px; */
+    margin-left: 5px;
 }
 
 .icon-svg-reset {

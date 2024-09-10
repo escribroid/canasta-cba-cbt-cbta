@@ -44,17 +44,17 @@ function calcular_cbt_y_alquiler(personas, edad) {
 
 function linea_indigencia() {
     const linea_indigencia = document.querySelector(".linea_indigencia");
-    linea_indigencia.innerHTML = `<div class="cards_nota"><span class="cards_linea_vineta">»</span><span class="cards_nota_txt">Indigentes con Casa Propia o sin Casa: ingresos por mes menores a $${cba}</span></div>`;
+    linea_indigencia.innerHTML = `<div class="cards_nota"><span class="cards_linea_vineta">»</span><span class="cards_nota_txt">Indigencia con Casa Propia o sin Casa: ingresos por mes menores a $${cba}</span></div>`;
 }
 
 function linea_pobreza() {
     const linea_pobreza = document.querySelector(".linea_pobreza");
-    linea_pobreza.innerHTML = `<div class="cards_nota"><span class="cards_linea_vineta">»</span><span class="cards_nota_txt">Pobres con Casa Propia: ingreso por mes menor a $${cbt}</span></div>`;
+    linea_pobreza.innerHTML = `<div class="cards_nota"><span class="cards_linea_vineta">»</span><span class="cards_nota_txt">Pobreza con Casa Propia: ingreso por mes menor a $${cbt}</span></div>`;
 }
 
 function linea_pobreza_alquilando() {
     const linea_pobreza_alquilando = document.querySelector(".linea_pobreza_alquilando");
-    linea_pobreza_alquilando.innerHTML = `<div class="cards_nota"><span class="cards_linea_vineta">»</span><span class="cards_nota_txt">Pobres Sin Casa Propia, ALQUILANDO: ingreso por mes menor a $${cbt_alquiler_3amb}</span></div>`;
+    linea_pobreza_alquilando.innerHTML = `<div class="cards_nota"><span class="cards_linea_vineta">»</span><span class="cards_nota_txt">Pobreza ALQUILANDO: ingreso por mes menor a $${cbt_alquiler_3amb}</span></div>`;
 }
 
 calcular_cba();
@@ -149,6 +149,10 @@ function addPersonToTable(gender, age_mostrar_table, canasta_b_alimentaria_perso
 </label>
     </td>`;
     tableBody.appendChild(row);
+}
+
+function subsPersonToTable(gender, age_mostrar_table, canasta_b_alimentaria_persona, canasta_b_total_persona) {
+    
 }
 
 // SUMA DE CANASTA PERSONALIZADA +++++++++++++++++++++++
