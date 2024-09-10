@@ -75,8 +75,7 @@ main {
 .btn-reset-person {
     background-color: #212529;
     border: 0;
-    margin: 0;
-    /* margin-left: 5px; */
+    margin-left: 5px;
 }
 
 .btn-add-person:active,
@@ -208,15 +207,14 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 5px;
-    border-radius: 10px;
+    /* margin-left: 5px; */
 }
 
 .icon-svg-reset {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 5px;
+    /* margin-left: 5px; */
 }
 
 .icon-svg-reset:hover {
