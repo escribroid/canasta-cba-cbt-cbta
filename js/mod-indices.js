@@ -1,7 +1,7 @@
 // CONSTANTES DE INDICES MANUALES
-const mes_cba_cbt_manual = 7;
-const cba_manual = 131294;
-const cbt_manual = 291472;
+const mes_cba_cbt_manual = 8;
+const cba_manual = 136399;
+const cbt_manual = 304170;
 const mesAlquilerManual = 8;
 const alquilerProm2amb = 485881;
 
