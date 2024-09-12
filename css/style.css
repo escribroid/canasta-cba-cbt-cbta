@@ -82,6 +82,9 @@ main {
     border: 1px solid #6c757d;
 }
 
+.bi-house-fill {
+}
+
 .btn-add-person,
 .btn-reset-person {
     background-color: #212529;
@@ -225,7 +228,7 @@ main {
 
 .fieldset {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin: 0 0 var(--font-size-8_0-5) 0;
 }
@@ -389,7 +392,7 @@ main {
 .table_alquiler {
     margin: 0 0 10px 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -444,7 +447,7 @@ main {
 .select_canasta_alquiler {
     background-color: #333;
     cursor: pointer;
-    max-width: 125px;
+    max-width: 120px;
     margin-right: 5px;
 }
 

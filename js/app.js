@@ -265,15 +265,15 @@ function suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in
 // });
 
 vivienda = document.getElementById("select_canasta_alquiler");
+document.querySelector(".row_mostrar_alquiler").style.display = "none";
 
 // Agregar un evento al select para cambiar el estado del input
 vivienda.addEventListener("input", function () {
     vivienda = document.getElementById("select_canasta_alquiler");
-
     alquiler_in = document.getElementById("alquiler_in");
+
     if (vivienda.value === "siAlquilo") {
         alquiler_in.value = "";
-
         alquiler_in.enabled = true; // Habilitar el input
         alquiler_in.removeAttribute("disabled"); // Deshabilitar el input
         alquiler_in.placeholder = "$ monto $"; // Mostrar texto en el input
