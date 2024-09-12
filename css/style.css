@@ -67,8 +67,11 @@ main {
     padding: 0;
 }
 
-.aclaracion_edades {
-    display: flex;
+.aclaracion_edades,
+.aclaracion_table_sectores {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: var(--font-size-16_1rem);
     font-weight: bold;
     font-family: var(--font-mono);
@@ -76,15 +79,17 @@ main {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    align-items: center;
-    justify-content: center;
+    border: 1px solid #6c757d;
 }
 
 .btn-add-person,
 .btn-reset-person {
     background-color: #212529;
-    border: 0;
     margin-left: 5px;
+    border: 0;
+    transition: all 0.1s ease;
+    text-shadow: 10px 10px 10px #700;
+    box-shadow: 0 0 0.2rem #000;
 }
 
 .btn-add-person:active,
@@ -92,9 +97,16 @@ main {
     transform: scale(1.3);
 }
 
-.btn-add-person:not(:active) {
+/* En dispositivos móviles */
+/* @media (hover: none) {
+    button:hover {
+        transform: none; 
+    }
+} */
+
+/* .btn-add-person:not(:active) {
     transform: scale(1);
-}
+} */
 
 .btn-close {
     --bs-btn-close-color: #000000;
@@ -137,6 +149,10 @@ main {
 
 .card-header {
     padding: var(--font-size-10_0-625);
+}
+
+.card-header h2 {
+    font-weight: bold;
 }
 
 .card_header_sub {
@@ -214,40 +230,12 @@ main {
     margin: 0 0 var(--font-size-8_0-5) 0;
 }
 
-.icon-svg-add {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 5px;
-}
-
-.icon-svg-reset {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* margin-left: 5px; */
-}
-
+.icon-svg-add:hover,
 .icon-svg-reset:hover {
-    color: #ce2331;
-    border: 5px solid #ce2331;
-    border-radius: 10px;
-}
-
-.icon-svg-reset::selection {
-    color: #ce2331;
-    border: 5px solid #ce2331;
-    border-radius: 10px;
-}
-
-.icon-svg-add:hover {
-    color: #ce2331;
-    border: 5px solid #ce2331;
-    border-radius: 10px;
-}
-
-.icon-svg-add:not(:active) {
-    border: 0;
+    fill: #ce2331;
+    border-radius: 5px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #000;
 }
 
 .linea_pobreza,

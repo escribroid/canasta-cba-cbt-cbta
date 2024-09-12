@@ -14,6 +14,7 @@
 
         <!-- CSS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
         <link rel="stylesheet" href="./css/reset.css" />
+
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -121,6 +122,22 @@
                     <li class="list-group-item bg-dark bg-gradient-dark">
                         <!-- <h3 class="person-add-title">Familia y Vivienda:</h3> -->
                         <div class="table_alquiler">
+                            <span>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="28"
+                                    height="28"
+                                    fill="currentColor"
+                                    class="bi bi-person-plus-fill me-1"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
+                                    />
+                                </svg>
+                            </span>
                             <label>
                                 <select
                                     aria-label="canasta_alquiler"
@@ -159,13 +176,13 @@
                                     aria-label="Name"
                                     name="boton_reset"
                                 >
-                                    <span class="icon-svg-reset">
+                                    <span class="">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="35"
                                             height="35"
                                             fill="#ff4f00"
-                                            class="bi bi-x-square"
+                                            class="bi bi-x-square icon-svg-reset"
                                             viewBox="0 0 16 16"
                                         >
                                             <path
@@ -185,6 +202,23 @@
                                 <div class="person-form-group">
                                     <!-- SELECTs +++++++++++++++++++++++++++++++++++ -->
                                     <div class="custom-select-container">
+                                        <span>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="28"
+                                                height="28"
+                                                fill="currentColor"
+                                                class="bi bi-house-fill me-0"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"
+                                                />
+                                                <path
+                                                    d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"
+                                                />
+                                            </svg>
+                                        </span>
                                         <label>
                                             <select
                                                 aria-label="selected-gender"
@@ -332,13 +366,13 @@
                                     aria-label="Person"
                                     name="boton_add_person"
                                 >
-                                    <span class="icon-svg-add">
+                                    <span class="">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="35"
                                             height="35"
                                             fill="#ff4f00"
-                                            class="bi bi-plus-square"
+                                            class="bi bi-plus-square icon-svg-add"
                                             viewBox="0 0 16 16"
                                         >
                                             <path
@@ -420,26 +454,26 @@
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
                                 <div
-                                    class="col m-0 p-0 show_indigencia_min bg-secondary-subtle fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 show_indigencia_min bg-secondary-subtle fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_indigencia"
                                 >
                                     <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span
-                                    >Indigencia<span class="bg-secondary-subtle text-center h-100 align-content-center"
+                                    >Indigente<span class="bg-secondary-subtle text-center h-100 align-content-center"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="col m-0 p-0 show_indigencia_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 show_indigencia_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
                                 <div
-                                    class="col m-0 p-0 show_pobreza_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 show_pobreza_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
                                     <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span
                                     >Pobreza<span class="bg-secondary-subtle text-center h-100 align-content-center"
@@ -447,15 +481,15 @@
                                     >
                                 </div>
                                 <div
-                                    class="col m-0 p-0 show_pobreza_max show_indigencia_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 show_pobreza_max show_indigencia_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
                                 <div
-                                    class="col m-0 p-0 show_clase_baja_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 show_clase_baja_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
                                     <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span>Clase
                                     Baja<span class="bg-secondary-subtle text-center h-100 align-content-center"
@@ -463,15 +497,15 @@
                                     >
                                 </div>
                                 <div
-                                    class="col m-0 p-0 show_clase_baja_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 show_clase_baja_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
                                 <div
-                                    class="col m-0 p-0 suma_clase_media_fragil_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_media_fragil_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
                                     <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span>Media
                                     fragil<span class="bg-secondary-subtle text-center h-100 align-content-center"
@@ -479,15 +513,15 @@
                                     >
                                 </div>
                                 <div
-                                    class="col m-0 p-0 suma_clase_media_fragil_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_media_fragil_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
                                 <div
-                                    class="col m-0 p-0 suma_clase_media_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_media_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
                                     <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span>Media<span
                                         class="bg-secondary-subtle text-center h-100 align-content-center"
@@ -495,15 +529,15 @@
                                     >
                                 </div>
                                 <div
-                                    class="col m-0 p-0 suma_clase_media_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_media_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
                                 <div
-                                    class="col m-0 p-0 suma_clase_media_alta_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_media_alta_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
                                     <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span>
                                     Media alta<span class="bg-secondary-subtle text-center h-100 align-content-center"
@@ -511,15 +545,15 @@
                                     >
                                 </div>
                                 <div
-                                    class="col m-0 p-0 suma_clase_media_alta_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_media_alta_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 p-0 pb-2 w-100">
+                            <div class="row m-0 p-0 pb-1 w-100">
                                 <div
-                                    class="col m-0 p-0 suma_clase_alta_min bg-secondary-subtle fs-6 justify-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_alta_min bg-secondary-subtle fs-6 justify-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col-4 m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
                                 >
                                     <span
                                         class="bg-secondary-subtle pe-0 h-100 d-flex justify-content-center align-items-center align-content-center text-center mayor_menor"
@@ -529,8 +563,42 @@
                                     >
                                 </div>
                                 <div
-                                    class="col m-0 p-0 suma_clase_alta_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_alta_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
+                            </div>
+
+                            <div class="row m-0 p-0 pb-2 w-100">
+                                <div
+                                    class="m-0 p-0 suma_clase_alta_min bg-black fs-6 justify-content-center align-items-center"
+                                >
+                                    <span class="">
+                                        <button
+                                            type="button"
+                                            class="btn btn-secondary aclaracion_table_sectores"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                        >
+                                            ?
+                                        </button>
+                                    </span>
+
+                                    Minimo
+                                </div>
+                                <div
+                                    class="col m-0 p-0 bg-black fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                >
+                                    <span
+                                        class="bg-black pe-0 h-100 d-flex justify-content-center align-items-center align-content-center text-center mayor_menor"
+                                        >≤</span
+                                    >Tu Sector<span class="bg-black text-center h-100 align-content-center">&lt;</span>
+                                </div>
+                                <div
+                                    class="m-0 p-0 suma_clase_alta_max bg-black fs-6 justify-content-center align-content-center align-items-center"
+                                >
+                                    Maximo
+                                </div>
                             </div>
                         </div>
 
@@ -554,9 +622,9 @@
             <!-- Card 3 Canasta Básica Alimentaria -->
             <div class="card rounded-4 bg-dark bg-gradient-dark">
                 <div class="card-header">
-                    <h2>Canasta Básica Alimentaria</h2>
+                    <h2>Básica Alimentaria → CBA</h2>
                     <h4 class="card_header_sub">
-                        • Linea de indigencia (Li)
+                        • Linea de indigencia - Li
                         <span
                             ><button
                                 type="button"
@@ -636,7 +704,7 @@
             <!-- Card 4 Canasta Básica Total -->
             <div class="card rounded-4 bg-dark bg-gradient-dark">
                 <div class="card-header">
-                    <h2>Canasta Basica Total</h2>
+                    <h2>Básica Total → CBT</h2>
                     <h4 class="card_header_sub">
                         • Linea de Pobreza (LP)
                         <span
@@ -718,9 +786,9 @@
             <!-- Card 5 Canasta Basica Total + Alquiler -->
             <div class="card rounded-4 bg-dark bg-gradient-dark">
                 <div class="card-header">
-                    <h2>Canasta Básica Total Alquilando</h2>
+                    <h2>Básica Total + Alquiler → CBTa</h2>
                     <h4 class="card_header_sub">
-                        • Linea de Pobreza alquilando (LPA)
+                        • Linea Pobreza alquilando (LPa)
                         <span
                             ><button
                                 type="button"
