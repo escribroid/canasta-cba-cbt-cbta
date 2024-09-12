@@ -98,13 +98,21 @@ let personas_de_local = JSON.parse(localStorage.getItem("personas_de_local")) ||
 
 // Función para agregar persona a la tabla y al array de personas +++++++++++++++++++++++++++++++
 function addPersonToTable(gender, age_mostrar_table, canasta_b_alimentaria_persona, canasta_b_total_persona) {
+    const row = document.createElement("tr");
+
     if (gender == "Femenino") {
         gender_show = "Fem";
     } else {
         gender_show = "Masc";
     }
 
-    const row = document.createElement("tr");
+    // if (gender == "" || age_mostrar_table == "") {
+    //     console.log("No se puede agregar persona");
+    // }
+
+    console.log("gender_show", gender_show);
+    console.log("age_mostrar_table", age_mostrar_table);
+
     row.innerHTML = `<td class="p-1">${gender_show}</td><td class="p-1">${age_mostrar_table}</td><td class="add_Partials p-1">$${canasta_b_total_persona.toLocaleString(
         "es-AR",
         {
@@ -329,45 +337,51 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
         age = "";
     }
 
-    // Obtener el valor de la edad seleccionada +
-    age_mostrar_table = parseInt(age);
+    if (!age || !gender) {
+        console.log("No se puede agregar persona");
+        return;
+    } else {
+        // Obtener el valor de la edad seleccionada +
+        age_mostrar_table = parseInt(age);
 
-    if (age < 18) {
-        age = age;
-    } else if (age >= 18 && age <= 29) {
-        age = "18";
-    } else if (age >= 30 && age <= 45) {
-        age = "30";
-    } else if (age >= 46 && age <= 60) {
-        age = "46";
-    } else if (age >= 61 && age <= 75) {
-        age = "61";
-    } else if (age >= 76 && age <= 99) {
-        age = "76";
-    } else if (age >= 100) {
-        age = "99";
+        if (age < 18) {
+            age = age;
+        } else if (age >= 18 && age <= 29) {
+            age = "18";
+        } else if (age >= 30 && age <= 45) {
+            age = "30";
+        } else if (age >= 46 && age <= 60) {
+            age = "46";
+        } else if (age >= 61 && age <= 75) {
+            age = "61";
+        } else if (age >= 76 && age <= 99) {
+            age = "76";
+        } else if (age >= 100) {
+            age = "99";
+        }
+
+        age_toStr = age.toString();
+
+        console.log("age_toStr", typeof age_toStr);
+
+        // Obtener GENDER ++++++++++++++++++++
+        gender_lowercase = gender.toLowerCase();
+
+        canasta_b_almentaria_persona = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cba_equivalente;
+        console.log("canasta_b_almentaria_persona", canasta_b_almentaria_persona);
+
+        Array_CBA_Personas.push(canasta_b_almentaria_persona);
+        suma_CBA_Personas = 0;
+        for (let i = 0; i < Array_CBA_Personas.length; i++) {
+            suma_CBA_Personas = parseFloat(suma_CBA_Personas) + parseFloat(Array_CBA_Personas[i]);
+        }
+
+        console.log("Array_CBA_Personas", Array_CBA_Personas);
+        console.log("suma_CBA_Personas", suma_CBA_Personas);
+
+        canasta_b_total_persona = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente;
+        console.log("canasta_b_total_persona", canasta_b_total_persona);
     }
-
-    age_toStr = age.toString();
-
-    // Obtener GENDER ++++++++++++++++++++
-    gender_lowercase = gender.toLowerCase();
-
-    canasta_b_almentaria_persona = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cba_equivalente;
-    console.log("canasta_b_almentaria_persona", canasta_b_almentaria_persona);
-
-    Array_CBA_Personas.push(canasta_b_almentaria_persona);
-    suma_CBA_Personas = 0;
-    for (let i = 0; i < Array_CBA_Personas.length; i++) {
-        suma_CBA_Personas = parseFloat(suma_CBA_Personas) + parseFloat(Array_CBA_Personas[i]);
-    }
-
-    console.log("Array_CBA_Personas", Array_CBA_Personas);
-    console.log("suma_CBA_Personas", suma_CBA_Personas);
-
-    canasta_b_total_persona = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente;
-    console.log("canasta_b_total_persona", canasta_b_total_persona);
-
     Array_CBT_Personas.push(canasta_b_total_persona);
     suma_CBT_Personas = 0;
     for (let i = 0; i < Array_CBT_Personas.length; i++) {
