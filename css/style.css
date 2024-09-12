@@ -82,16 +82,12 @@ main {
     border: 1px solid #6c757d;
 }
 
-.bi-house-fill {
-}
-
 .btn-add-person,
 .btn-reset-person {
     background-color: #212529;
     margin-left: 5px;
     border: 0;
     transition: all 0.1s ease;
-    text-shadow: 10px 10px 10px #700;
     box-shadow: 0 0 0.2rem #000;
 }
 
@@ -211,6 +207,24 @@ main {
     margin: 0;
 } */
 
+.detalles_delete_body {
+    cursor: pointer;
+}
+
+.detalles_delete_body {
+    stroke: #000000;
+}
+
+.detalles_delete_body:active {
+    fill: #ce2331;
+    stroke: #ce2331;
+    transform: scale(1.5);
+}
+
+.detalles_delete_body:active .svg-path {
+    stroke: #ce2331;
+}
+
 .dropdown-toggle::after {
     display: none;
 }
@@ -233,8 +247,8 @@ main {
     margin: 0 0 var(--font-size-8_0-5) 0;
 }
 
-.icon-svg-add:hover,
-.icon-svg-reset:hover {
+.icon-svg-add:active,
+.icon-svg-reset:active {
     fill: #ce2331;
     border-radius: 5px;
     font-weight: bold;
@@ -447,7 +461,7 @@ main {
 .select_canasta_alquiler {
     background-color: #333;
     cursor: pointer;
-    max-width: 120px;
+    max-width: 110px;
     margin-right: 5px;
 }
 
