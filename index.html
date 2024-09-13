@@ -154,7 +154,7 @@
                                     <option value="noAlquilo">No Alquilo</option>
                                 </select>
                             </label>
-                            <div id="total-alquiler" class="table-header" scope="col">
+                            <div id="total-alquiler" class="table-header">
                                 <label>
                                     <input
                                         type="text"
@@ -169,7 +169,7 @@
                                     />
                                 </label>
                             </div>
-                            <div class="table-header d-flex" scope="col">
+                            <div class="table-header d-flex">
                                 <button
                                     id="btn-reset-person"
                                     type="button"
@@ -607,10 +607,16 @@
                     </li>
                     <li class="list-group-item">
                         <div class="d-flex justify-content-center row w-100">
-                            <span> Indica tu ingreso, ver tu sector </span>
-                            <span>
-                                <label for="">
-                                    <input type="number" placeholder="Ingreso Familiar" />
+                            <span> Indica tu ingreso y ve tu sector </span>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <label>
+                                    <input
+                                        id="ingresos_input"
+                                        class="ingresos_input form-control me-2"
+                                        type="number"
+                                        pattern="\d+"
+                                        placeholder="Ingreso Familiar"
+                                    />
                                 </label>
                                 <button
                                     type="button"
@@ -622,7 +628,7 @@
                                 >
                                     i
                                 </button>
-                            </span>
+                            </div>
                         </div>
                     </li>
                 </ul>

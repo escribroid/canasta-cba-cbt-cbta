@@ -167,11 +167,17 @@ ol,
 ul {
     list-style: none;
 }
+path {
+    cursor: pointer; /* Muestra el cursor como puntero cuando pasa sobre el path */
+}
 progress {
     vertical-align: baseline;
 }
 summary {
     display: list-item;
+}
+svg {
+    pointer-events: all; /* Asegura que el SVG pueda recibir eventos */
 }
 table {
     border-collapse: collapse;

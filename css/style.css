@@ -200,12 +200,12 @@ main {
     left: -20px;
 }
 
-/* .detalles_delete {
+.detalles_delete {
     border: 1px solid #ff4f00;
     border-radius: 50%;
     padding: 0;
     margin: 0;
-} */
+}
 
 .detalles_delete_body {
     cursor: pointer;
@@ -253,6 +253,13 @@ main {
     border-radius: 5px;
     font-weight: bold;
     text-shadow: 1px 1px 1px #000;
+}
+
+.ingresos_input {
+    background-color: #333;
+    cursor: pointer;
+    max-width: 220px;
+    margin-right: 5px;
 }
 
 .linea_pobreza,
@@ -463,6 +470,9 @@ main {
     cursor: pointer;
     max-width: 110px;
     margin-right: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .option_alquiler:enabled {
