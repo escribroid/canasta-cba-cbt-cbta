@@ -140,8 +140,12 @@ main {
 }
 
 .card_cba_value {
-    color: rgb(211 193 255);
-    /* color: rgb(255 181 158); */
+    /* color: rgb(211 193 255); */
+    /* color: rgb(214, 132, 107); */
+    color: #fa824b;
+    /* color: rgba(255, 79, 0, 0.8); */
+
+    /* color: var(--bs-danger-text-emphasis)!important; */
     font-weight: var(--font-weight-700-bold);
     margin-left: var(--font-size-10_0-625);
 }
