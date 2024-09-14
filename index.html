@@ -146,8 +146,7 @@
                                     title="¿Alquilas?"
                                     class="form-select select_canasta_alquiler"
                                 >
-                                    <option value="" selected disabled>• Casa</option>
-                                    <option class="option_alquiler" value="siAlquilo">Alquilo</option>
+                                    <option class="option_alquiler" value="siAlquilo" selected>Alquilo</option>
                                     <option value="AlquilerProm3amb">3 Amb Promedio</option>
                                     <option value="AlquilerProm2amb">2 Amb Promedio</option>
                                     <option value="AlquilerProm1amb">1 Amb Promedio</option>
@@ -164,8 +163,7 @@
                                         id="alquiler_in"
                                         class="partial_sumable alquiler_in form-control"
                                         value=""
-                                        placeholder="¿Alquilas?"
-                                        disabled
+                                        placeholder="$ monto $"
                                     />
                                 </label>
                             </div>
@@ -227,11 +225,13 @@
                                                 id="selected-gender"
                                                 class="form-select selected-gender"
                                             >
-                                                <option value="" class="gender-option" selected disabled>
+                                                <!-- <option value="" class="gender-option" selected disabled>
                                                     • Persona
-                                                </option>
+                                                </option> -->
 
-                                                <option value="Femenino" class="gender-option">Femenino</option>
+                                                <option value="Femenino" class="gender-option" selected>
+                                                    Femenino
+                                                </option>
                                                 <option value="Masculino" class="gender-option">Masculino</option>
                                             </select>
                                         </label>
@@ -248,7 +248,7 @@
                                                 id="selected-age"
                                                 class="form-select selected-age shadow rounded"
                                             >
-                                                <option value="" class="age-option" selected disabled>• Edad</option>
+                                                <option value="" class="age-option" selected>• Edad •</option>
                                                 <option value="0" class="age-option">0 años</option>
                                                 <option value="1" class="age-option">1 años</option>
                                                 <option value="2" class="age-option">2 años</option>
@@ -389,13 +389,13 @@
                             </div>
 
                             <!-- <h3 class="person-table-title">Tu Canasta Mensual</h3> -->
-                            <div class="table-responsive">
+                            <div class="table-responsive overflow-visible">
                                 <table class="table table-hover w-100 overflow-visible">
                                     <thead class="m-0 p-0">
                                         <tr>
-                                            <th class="table-header p-1" scope="col">Familiar</th>
+                                            <th class="table-header p-1" scope="col">Familia</th>
                                             <th class="table-header p-1" scope="col">Edad</th>
-                                            <th class="table-header p-1" scope="col">Valor</th>
+                                            <th class="table-header p-1" scope="col">$</th>
                                             <th class="table-header p-1" scope="col">
                                                 <!-- SVG DELETE -->
                                                 <svg
@@ -449,9 +449,9 @@
                             </div>
                         </form>
 
-                        <div class="container w-100 bg-black py-2 mt-2 text-center rounded-4 table-all-canastas fs-6">
+                        <div class="bg-black py-2 mt-2 text-center rounded-4 table-all-canastas fs-6">
                             <div class="row m-0 mb-1 p-0 w-100">
-                                <div class="col m-0 p-0 fs-5 text-center text-shadow">Sector Socio Económico</div>
+                                <div class="col m-0 p-0 pb-1 fs-5 text-center text-shadow">Sector Socio Económico</div>
                             </div>
                             <div class="row m-0 mb-1 p-0 w-100">
                                 <div
@@ -568,7 +568,7 @@
                                 ></div>
                             </div>
 
-                            <div class="row m-0 p-0 pb-2 w-100">
+                            <div class="row m-0 p-0 pb-1 pt-1 w-100">
                                 <div
                                     class="m-0 p-0 suma_clase_alta_min bg-black fs-6 justify-content-center align-items-center"
                                 >
@@ -607,15 +607,15 @@
                     </li>
                     <li class="list-group-item">
                         <div class="d-flex justify-content-center row w-100">
-                            <span> Indica tu ingreso y ve tu sector </span>
+                            <span class="pb-2">Mete tu ingreso y resalta tu sector</span>
                             <div class="d-flex justify-content-center align-items-center">
                                 <label>
                                     <input
                                         id="ingresos_input"
-                                        class="ingresos_input form-control me-2"
+                                        class="ingresos_input form-control me-2 text-center"
                                         type="number"
                                         pattern="\d+"
-                                        placeholder="Ingreso Familiar"
+                                        placeholder="$ Ingreso Familiar $"
                                     />
                                 </label>
                                 <button

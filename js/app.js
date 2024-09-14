@@ -71,6 +71,7 @@ let gender;
 let gender_show;
 let age_toStr;
 let age_mostrar_table;
+let index;
 let gender_lowercase;
 let suma_CBA_Personas;
 let suma_CBT_Personas;
@@ -103,12 +104,13 @@ function addPersonToTable(
     age_mostrar_table,
     canasta_b_alimentaria_persona,
     canasta_b_total_persona,
+    array_count_person,
     count_person
 ) {
     const row = document.createElement("tr");
 
     if (gender === "Femenino") {
-        gender_show = "Fem";
+        gender_show = "Feme";
     } else {
         gender_show = "Masc";
     }
@@ -120,14 +122,18 @@ function addPersonToTable(
     //console.log("gender_show", gender_show);
     //console.log("age_mostrar_table", age_mostrar_table);
 
-    row.id = `person_${count_person}`;
+    index = array_count_person.length - 1;
 
-    row.innerHTML = `<td class="p-1">${gender_show}</td><td class="p-1">${age_mostrar_table}</td><td id="detalles_monto_person_${count_person}" class="add_Partials p-1">$${canasta_b_total_persona.toLocaleString(
+    row.id = `person_${index}`;
+
+    console.log("count_ADD", index);
+
+    row.innerHTML = `<td class="p-1">${gender_show}</td><td class="p-1">${age_mostrar_table}</td><td id="detalles_monto_person_${index}" class="add_Partials p-1">$${canasta_b_total_persona.toLocaleString(
         "es-AR",
         {
             maximumFractionDigits: 0,
         }
-    )}</td><td class="p-1 detalles_delete" id="detalles_person_${count_person}">
+    )}</td><td class="p-1 detalles_delete" id="detalles_person_${index}">
     <svg id="testSvg" class="detalles_delete_body" width="20px" height="20px" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
@@ -172,40 +178,51 @@ function addPersonToTable(
 
 //console.log("count_person GG", count_person);
 
-const person_list = document.getElementById("person-list");
+//const person_list = document.getElementById("person-list");
 
-person_list.addEventListener("click", (event) => {
-    // const clickedRow = event.target.closest("tr"); // Detectar la fila clickeada
-    // if (clickedRow && clickedRow.id) {
-    //     console.log(`Has hecho clic en la fila con ID: ${clickedRow.id}`);
+tableBody.addEventListener("click", (event) => {
+    const clickedCell = event.target.closest("td"); // Detectar la fila clickeada
+    if (clickedCell && clickedCell.id) {
+        //console.log(`Click en CELL con ID: ${clickedCell.id}`);
 
-    //     const rowId = clickedRow.id;
+        const cellId = clickedCell.id;
 
-    //     console.log("rowId", rowId);
+        console.log("cellId", cellId);
 
-    //     const parts = rowId.split("_");
-    //     const count_person_del = parts[1];
-    //     console.log("count_person_del", count_person_del);
+        const parts = cellId.split("_");
+        const count_person_del = parts[2];
+        console.log("count_person_DEL", count_person_del);
+
+        subsPersonToTable(
+            gender,
+            age_mostrar_table,
+            canasta_b_alimentaria_persona,
+            canasta_b_total_persona,
+            array_CBA_Personas,
+            array_CBT_Personas,
+            array_count_person,
+            count_person_del
+        );
+    }
+
+    // let targetElement = event.target;
+
+    // // Debugging: Verifica qué elemento está siendo clickeado
+    // console.log("Elemento clickeado:", targetElement);
+
+    // // Si el clic fue en un SVG, sube al <td>
+    // if (targetElement.tagName === "svg") {
+    //     targetElement = targetElement.closest("td");
     // }
 
-    let targetElement = event.target;
+    // if (targetElement.tagName === "path") {
+    //     targetElement = targetElement.closest("td");
+    // }
 
-    // Debugging: Verifica qué elemento está siendo clickeado
-    console.log("Elemento clickeado:", targetElement);
-
-    // Si el clic fue en un SVG, sube al <td>
-    if (targetElement.tagName === "svg") {
-        targetElement = targetElement.closest("td");
-    }
-
-    if (targetElement.tagName === "path") {
-        targetElement = targetElement.closest("td");
-    }
-
-    // Si el clic fue en un <td>, haz algo
-    if (targetElement.tagName === "TD") {
-        console.log("ID del <td> clickeado:", targetElement.getAttribute("id"));
-    }
+    // // Si el clic fue en un <td>, haz algo
+    // if (targetElement.tagName === "TD") {
+    //     console.log("ID del <td> clickeado:", targetElement.getAttribute("id"));
+    // }
 
     // Verificar si el elemento clicado es una celda (td)
     // let targetElement = event.target;
@@ -241,17 +258,40 @@ function subsPersonToTable(
     age_mostrar_table,
     canasta_b_alimentaria_persona,
     canasta_b_total_persona,
+    array_CBA_Personas,
     array_CBT_Personas,
     array_count_person,
-    count_person
+    count_person_del
 ) {
-    const row_del = document.getElementById("person_" + count_person);
+    const row_del = document.getElementById("person_" + count_person_del);
 
-    //array_CBT_Personas.splice(count_person - 1, 1);
+    array_CBA_Personas.splice(count_person_del - 1, 1);
+    console.log("array_CBA_Personas-SUB:", array_CBA_Personas);
 
-    // suma_Total(suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
+    suma_CBA_Personas = 0;
+    for (let i = 0; i < array_CBA_Personas.length; i++) {
+        suma_CBA_Personas = parseFloat(suma_CBA_Personas) + parseFloat(array_CBA_Personas[i]);
+    }
 
-    // row_del.remove();
+    array_CBT_Personas.splice(count_person_del - 1, 1);
+    console.log("array_CBT_Personas-SUB:", array_CBT_Personas);
+    suma_CBT_Personas = 0;
+    for (let i = 0; i < array_CBT_Personas.length; i++) {
+        suma_CBT_Personas = parseFloat(suma_CBT_Personas) + parseFloat(array_CBT_Personas[i]);
+    }
+
+    suma_con_alquiler = 0;
+
+    suma_Total(suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
+    suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
+
+    //array_count_person.splice(count_person - 1, 1);
+    //count_person = count_person - 1;
+    array_count_person.pop();
+
+    console.log("count_person-SUB 2:", count_person);
+
+    row_del.remove();
 }
 
 // SUMA DE CANASTA PERSONALIZADA +++++++++++++++++++++++
@@ -307,8 +347,8 @@ function suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in
     suma_pobreza_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas);
     suma_clase_baja_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 1.5);
     suma_clase_media_fragil_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 2);
-    suma_clase_media_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 4);
-    suma_clase_media_alta_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 6);
+    suma_clase_media_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 5);
+    suma_clase_media_alta_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 8);
 
     //suma_clase_media_alta_alquilando = alquiler_in_value + suma_CBT_Personas*8;
 
@@ -378,7 +418,6 @@ vivienda.addEventListener("input", function () {
         alquiler_in.enabled = true; // Habilitar el input
         alquiler_in.removeAttribute("disabled"); // Deshabilitar el input
         alquiler_in.placeholder = "$ monto $"; // Mostrar texto en el input
-
         document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
     } else if (vivienda.value === "noAlquilo") {
         alquiler_in.setAttribute("disabled", "true"); // Deshabilitar el input
@@ -416,7 +455,7 @@ vivienda.addEventListener("input", function () {
     suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
 });
 
-/* Agregar personas a la tabla SUBMIT +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Agregar a la tabla SUBMIT +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 document.getElementById("person-form").addEventListener("submit", function (e) {
     e.preventDefault();
     age = document.getElementById("selected-age").value;
@@ -454,14 +493,14 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
 
         age_toStr = age.toString();
 
-        count_person = count_person + 1;
-        array_count_person.push(count_person);
-        console.log("array_count_person", array_count_person);
-        console.log("array_count_person", array_count_person.length);
-        console.log("count_person", count_person);
-
         // Obtener GENDER ++++++++++++++++++++
         gender_lowercase = gender.toLowerCase();
+
+        count_person = count_person + 1;
+        array_count_person.push(count_person);
+        console.log("array_count_person1+", array_count_person);
+        //console.log("array_count_person_LEN", array_count_person.length);
+        console.log("count_person", count_person);
 
         canasta_b_alimentaria_persona = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cba_equivalente;
         //console.log("canasta_b_alimentaria_persona", canasta_b_alimentaria_persona);
@@ -486,25 +525,20 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
 
     //suma_con_alquiler = alquiler_in + suma_CBT_Personas;
 
-    console.log("array_CBT_Personas", array_CBT_Personas);
-    console.log("array_CBT_Personas", array_CBT_Personas.length);
-    console.log("suma_CBT_Personas", suma_CBT_Personas);
+    // console.log("array_CBT_Personas", array_CBT_Personas);
+    // console.log("array_CBT_Personas", array_CBT_Personas.length);
+    // console.log("suma_CBT_Personas", suma_CBT_Personas);
 
     // Agregar la persona a la tabla +++++++++++++++++++
-    addPersonToTable(gender, age_mostrar_table, canasta_b_alimentaria_persona, canasta_b_total_persona, count_person);
-
-    subsPersonToTable(
+    addPersonToTable(
         gender,
         age_mostrar_table,
         canasta_b_alimentaria_persona,
         canasta_b_total_persona,
-        array_CBT_Personas,
         array_count_person,
         count_person
     );
-
     suma_Total(suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
-
     suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
 
     // Limpiar el formulario
@@ -525,21 +559,14 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
         alquiler_out,
         suma_con_alquiler,
     };
-
     personas_de_local.push(local_persona);
-
     localStorage.setItem("personas_de_local", JSON.stringify(personas_de_local));
-
     return { suma_CBT_Personas, alquiler_in_value, suma_con_alquiler };
 });
 
-// Evento keypress para prevenir caracteres no numéricos
+// Evento keydown prevenir caracteres no numéricos
 alquiler_in.addEventListener("keydown", function (e) {
     // // Permitir solo dígitos
-    // const regex = /[0-9]/;
-    // if (!regex.test(e.key)) {
-    //     e.preventDefault(); // Evitar que el carácter no permitido sea ingresado
-    // }
 
     // Permitir números (del 0 al 9) y la tecla Backspace
     if (
@@ -556,6 +583,7 @@ alquiler_in.addEventListener("keydown", function (e) {
     }
 });
 
+// Evento input prevenir caracteres no numéricos
 alquiler_in.addEventListener("input", function (e) {
     const cursorPos = alquiler_in.selectionStart; // Guardar la posición actual del cursor
     alquiler_in.value = alquiler_in.value.replace(/[^0-9]/g, "");
@@ -565,77 +593,35 @@ alquiler_in.addEventListener("input", function (e) {
 });
 
 // event INPUT ++++++++++++++++++++++++++++++++++++++++++++++++++++
-document.getElementById("alquiler_in").addEventListener("input", () => {
-    age = document.getElementById("selected-age").value;
-    gender = document.getElementById("selected-gender").value;
-    alquiler_in_value = parseInt(document.getElementById("alquiler_in").value);
-    alquiler_out = document.getElementById("alquiler_out").value;
+function input_alquiler_in() {
+    document.getElementById("alquiler_in").addEventListener("input", () => {
+        age = document.getElementById("selected-age").value;
+        gender = document.getElementById("selected-gender").value;
+        alquiler_in_value = parseInt(document.getElementById("alquiler_in").value);
+        alquiler_out = document.getElementById("alquiler_out").value;
 
-    //suma_con_alquiler = suma_CBT_Personas;
+        if (isNaN(alquiler_in_value)) {
+            alquiler_in_value = 0;
+        } else if (alquiler_in_value < 0) {
+            alquiler_in_value = alquiler_in_value * -1;
+        }
 
-    if (isNaN(alquiler_in_value)) {
+        if (isNaN(parseInt(document.getElementById("alquiler_out").value))) {
+            document.getElementById("alquiler_out").textContent = alquiler_in_value;
+        } else {
+            document.getElementById("alquiler_out").textContent = alquiler_in_value;
+        }
+
+        suma_con_alquiler = 0;
         alquiler_in_value = 0;
-    } else if (alquiler_in_value < 0) {
-        alquiler_in_value = alquiler_in_value * -1;
-    }
+        suma_Total(suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
+        suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
 
-    if (isNaN(parseInt(document.getElementById("alquiler_out").value))) {
-        document.getElementById("alquiler_out").textContent = alquiler_in_value;
-    } else {
-        //document.getElementById("alquiler_out").value = alquiler_in;
-        document.getElementById("alquiler_out").textContent = alquiler_in_value;
-    }
-
-    suma_con_alquiler = 0;
-    alquiler_in_value = 0;
-    suma_Total(suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
-    suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
-
-    // alquiler_out ++++++++++++++++++++++++++
-
-    //alquiler_out = document.getElementById("alquiler_out").textContent = alquiler_in;
-    //canasta_b_total_persona = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente;
-    // array_CBT_Personas.push(canasta_b_total_persona);
-
-    // suma_CBT_Personas = 0;
-    // for (let index = 0; index < array_CBT_Personas.length; index++) {
-    //     suma_CBT_Personas = suma_CBT_Personas + array_CBT_Personas[index];
-    // }
-    suma_CBT_Personas = suma_CBT_Personas + alquiler_in_value;
-    suma_con_alquiler = suma_CBT_Personas;
-    // addPersonToTable(
-    //     gender,
-    //     age,
-    //     age_mostrar_table,
-    //     add_partials,
-    //     alquiler_in,
-    //     alquiler_out,
-    //     suma_con_alquiler
-    // )
-
-    //sumar_Personas();
-});
-
-// function sumar_Personas(suma_CBT_Personas, alquiler_in, alquiler_out) {
-//     console.log("suma_CBT_Personas", suma_CBT_Personas);
-
-//     age = document.getElementById("selected-age").value;
-//     // alquiler_out ++++++++++++++++++++++++++
-//     alquiler_in = parseFloat(document.getElementById("alquiler_in").value);
-//     alquiler_out = document.getElementById("alquiler_out").value;
-//     //array_CBT_Personas.push(canasta_b_total_persona);
-
-//     console.log("alquiler_in", alquiler_in);
-//     console.log("alquiler_out", alquiler_out);
-
-//     suma_CBT_Personas = 0;
-//     for (let index = 0; index < array_CBT_Personas.length; index++) {
-//         suma_CBT_Personas = suma_CBT_Personas + array_CBT_Personas[index];
-//     }
-//     suma_CBT_Personas = suma_CBT_Personas + alquiler_in;
-//     suma_con_alquiler = suma_CBT_Personas;
-// }
-// sumar_Personas(suma_CBT_Personas, alquiler_in, alquiler_out);
+        suma_CBT_Personas = suma_CBT_Personas + alquiler_in_value;
+        suma_con_alquiler = suma_CBT_Personas;
+    });
+}
+input_alquiler_in();
 
 document.getElementById("btn-reset-person").addEventListener("click", () => {
     //localStorage.removeItem('personas_de_local');

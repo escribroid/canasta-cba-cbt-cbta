@@ -11,7 +11,7 @@ body {
 
 footer {
     color: aliceblue;
-    margin-bottom: var(--font-size-10_0-625);
+    margin-bottom: var(--spacing-10_0-625);
     text-align: center;
     font-size: var(--font-size-16_1rem);
     box-shadow: 0rem 0rem 1rem 5px rgba(10, 10, 10, 0.8);
@@ -27,7 +27,8 @@ h2 {
 }
 
 header {
-    margin: var(--spacing-10_0-625) 0;
+    margin: 0;
+    margin-bottom: var(--spacing-16_1rem);
 }
 
 main {
@@ -37,7 +38,7 @@ main {
 
 #person-form {
     border: 0 solid #ff4f00;
-    border-radius: var(--font-size-10_0-625);
+    border-radius: var(--spacing-10_0-625);
     margin: 0;
     padding: 0;
 }
@@ -131,7 +132,7 @@ main {
 .card {
     background-color: #222222;
     justify-content: center;
-    margin-bottom: var(--spacing-10_0-625);
+    margin-bottom: var(--spacing-16_1rem);
     box-shadow: 0rem 0rem 0.75rem 4px rgba(0, 0, 0, 0.8);
 }
 
@@ -142,16 +143,17 @@ main {
 .card_cba_value {
     /* color: rgb(211 193 255); */
     /* color: rgb(214, 132, 107); */
-    color: #fa824b;
+    /* color: #fa824b; */
+    color: #ff9464;
     /* color: rgba(255, 79, 0, 0.8); */
 
     /* color: var(--bs-danger-text-emphasis)!important; */
     font-weight: var(--font-weight-700-bold);
-    margin-left: var(--font-size-10_0-625);
+    margin-left: var(--spacing-10_0-625);
 }
 
 .card-header {
-    padding: var(--font-size-10_0-625);
+    padding: var(--spacing-10_0-625);
 }
 
 .card-header h2 {
@@ -160,6 +162,7 @@ main {
 
 .card_header_sub {
     display: flex;
+    justify-content: space-between;
     font-size: var(--font-size-18_1-125);
     gap: 10px;
 }
@@ -168,7 +171,7 @@ main {
     color: rgb(255 255 255);
     display: inline-flex;
     justify-content: space-between;
-    padding: var(--font-size-10_0-625) 0 0 0;
+    padding: var(--spacing-10_0-625) 0 0 0;
     width: 100%;
 }
 
@@ -248,7 +251,7 @@ main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0 0 var(--font-size-8_0-5) 0;
+    margin: 0 0 var(--spacing-8_0-5) 0;
 }
 
 .icon-svg-add:active,
@@ -273,7 +276,7 @@ main {
 }
 
 .lineas_info {
-    padding: var(--font-size-10_0-625);
+    padding: var(--spacing-10_0-625);
 }
 
 .list-group-item {
@@ -287,7 +290,7 @@ main {
 }
 
 .list-group-item-acordion {
-    padding: var(--font-size-6_0-375) 0;
+    padding: var(--spacing-6_0-375) 0;
 }
 
 .logo {
@@ -300,8 +303,8 @@ main {
 }
 
 .logo-img {
-    margin-right: var(--font-size-10_0-625);
-    width: var(--font-size-40_2-5);
+    margin-right: var(--spacing-10_0-625);
+    width: var(--spacing-40_2-5);
 }
 
 .modal-body {
@@ -357,12 +360,12 @@ main {
 }
 
 .person-add-title {
-    margin: var(--font-size-10_0-625) 0 var(--font-size-14_0-875) 0;
+    margin: var(--spacing-10_0-625) 0 var(--spacing-14_0-875) 0;
     text-align: center;
 }
 
 .person-table-title {
-    margin: var(--font-size-10_0-625) 0 var(--font-size-14_0-875) 0;
+    margin: var(--spacing-10_0-625) 0 var(--spacing-14_0-875) 0;
     padding: 5px;
     text-align: center;
     background-color: rgb(82 70 26);
@@ -499,5 +502,5 @@ main {
     display: none;
     height: 6rem;
     /* position: absolute; */
-    width: var(--font-size-30_1-875);
+    width: var(--spacing-30_1-875);
 }
