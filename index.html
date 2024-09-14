@@ -23,872 +23,882 @@
         />
         <link rel="stylesheet" href="./css/design-system.css" />
         <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/media-desktop.css">
     </head>
     <!-- BODY -->
     <body class="bg-gradient">
-        <!-- HEADER -->
-        <header class="bg-black rounded-4">
-            <!-- NAVBAR -->
+        <div class="container-fluid position-relative">
+            <!-- HEADER -->
+            <header class="bg-black rounded-4">
+                <!-- NAVBAR -->
 
-            <nav class="navbar navbar-dark rounded-4 w-100 bg-black bg-gradient">
-                <div class="container-fluid">
-                    <a class="navbar-brand logo" href="#"
-                        ><img class="logo-img" src="./img/dibujo.svg" alt="" />CANASTAS</a
-                    >
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasDarkNavbar"
-                        aria-controls="offcanvasDarkNavbar"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div
-                        class="offcanvas offcanvas-end text-bg-dark bg-black bg-gradient"
-                        tabindex="-1"
-                        id="offcanvasDarkNavbar"
-                        aria-labelledby="offcanvasDarkNavbarLabel"
-                    >
-                        <div class="offcanvas-header">
-                            <h3 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Canastas</h3>
-                            <button
-                                type="button"
-                                class="btn-close btn-close-white"
-                                data-bs-dismiss="offcanvas"
-                                aria-label="Close"
-                            ></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">inicio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">CBA</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a
-                                        class="nav-link dropdown-toggle"
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        CBT
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-dark">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider" />
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                <nav class="navbar navbar-dark rounded-4 w-100 bg-black bg-gradient">
+                    <div class="container-fluid">
+                        <a class="navbar-brand logo" href="#"
+                            ><img class="logo-img" src="./img/dibujo.svg" alt="" />CANASTAS</a
+                        >
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasDarkNavbar"
+                            aria-controls="offcanvasDarkNavbar"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div
+                            class="offcanvas offcanvas-end text-bg-dark bg-black bg-gradient"
+                            tabindex="-1"
+                            id="offcanvasDarkNavbar"
+                            aria-labelledby="offcanvasDarkNavbarLabel"
+                        >
+                            <div class="offcanvas-header">
+                                <h3 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Canastas</h3>
+                                <button
+                                    type="button"
+                                    class="btn-close btn-close-white"
+                                    data-bs-dismiss="offcanvas"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">inicio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">CBA</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a
+                                            class="nav-link dropdown-toggle"
+                                            href="#"
+                                            role="button"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false"
+                                        >
+                                            CBT
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider" />
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </nav>
-        </header>
+                </nav>
+            </header>
 
-        <!-- <div class="version m-0 p-0 text-center fs-6"></div> -->
+            <!-- <div class="version m-0 p-0 text-center fs-6"></div> -->
 
-        <!-- MAIN -->
-        <main>
-            <!-- Card 1 title -->
-            <!-- <div class="card w-100">
+            <!-- MAIN -->
+            <main>
+                <!-- Card 1 title -->
+                <!-- <div class="card w-100">
                 <div class="card-body d-flex flex-column align-items-center">
                     <h1>Canasta Básica Alimentaria Canasta Básica Total</h1>
                     <h2 class="subtitle">Julio 2024</h2>
                 </div>
             </div> -->
 
-            <!-- Card 2 Canasta Básica Alimentaria -->
-            <div class="card w-100 rounded-4 bg-dark bg-gradient-dark">
-                <!-- <div class="card-header"> -->
-                <!-- <div class="d-flex justify-content-between align-items-center">
+                <!-- Card 2 Canasta Básica Alimentaria -->
+                <div class="card w-100 rounded-4 bg-dark bg-gradient-dark">
+                    <!-- <div class="card-header"> -->
+                    <!-- <div class="d-flex justify-content-between align-items-center">
                         <h2>Tu Canasta</h2>
                         <span class="view_cbt_personal"></span>
                     </div> -->
-                <!-- <div class="card_subtitle">
+                    <!-- <div class="card_subtitle">
                         ||| Tu Canasta Vital:
                         <span class="view_cbt_personal"></span>
                     </div> -->
-                <!-- </div> -->
-                <ul class="list-group list-group-flush rounded-4">
-                    <li class="list-group-item bg-dark bg-gradient-dark d-grid">
-                        <!-- <h3 class="person-add-title">Familia y Vivienda:</h3> -->
-                        <div class="table_alquiler">
-                            <span>
-                                <!-- SVG CASA -->
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="28"
-                                    height="28"
-                                    fill="currentColor"
-                                    class="bi bi-house-fill"
-                                    viewBox="0 0 16 16"
-                                >
-                                    <path
-                                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"
-                                    />
-                                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z" />
-                                </svg>
-                            </span>
-                            <label>
-                                <select
-                                    aria-label="canasta_alquiler"
-                                    name="canasta_alquiler"
-                                    id="select_canasta_alquiler"
-                                    title="¿Alquilas?"
-                                    class="form-select select_canasta_alquiler"
-                                >
-                                    <option class="option_alquiler" value="siAlquilo" selected>Alquilo</option>
-                                    <option value="AlquilerProm3amb">3 Amb Promedio</option>
-                                    <option value="AlquilerProm2amb">2 Amb Promedio</option>
-                                    <option value="AlquilerProm1amb">1 Amb Promedio</option>
-                                    <option value="noAlquilo">No Alquilo</option>
-                                </select>
-                            </label>
-                            <div id="total-alquiler" class="table-header">
-                                <label>
-                                    <input
-                                        type="text"
-                                        inputmode="numeric"
-                                        pattern="\d*"
-                                        name="alquiler_in"
-                                        id="alquiler_in"
-                                        class="partial_sumable alquiler_in form-control"
-                                        value=""
-                                        placeholder="$ monto $"
-                                    />
-                                </label>
-                            </div>
-                            <div class="table-header d-flex">
-                                <button
-                                    id="btn-reset-person"
-                                    type="button"
-                                    class="btn-reset-person"
-                                    aria-label="Name"
-                                    name="boton_reset"
-                                >
-                                    <span class="">
-                                        <!-- SVG RELOAD -->
-
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="35"
-                                            height="35"
-                                            fill="#ff4f00"
-                                            class="bi bi-x-square icon-svg-reset"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
-                                            />
-                                            <path
-                                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
-                                            />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <form id="person-form">
-                            <div class="fieldset">
+                    <!-- </div> -->
+                    <ul class="list-group list-group-flush rounded-4">
+                        <li class="list-group-item bg-dark bg-gradient-dark d-grid">
+                            <!-- <h3 class="person-add-title">Familia y Vivienda:</h3> -->
+                            <div class="table_alquiler">
                                 <span>
-                                    <!-- SVG PERSON -->
+                                    <!-- SVG CASA -->
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="28"
                                         height="28"
                                         fill="currentColor"
-                                        class="bi bi-person-fill"
+                                        class="bi bi-house-fill"
                                         viewBox="0 0 16 16"
                                     >
                                         <path
-                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+                                            d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"
+                                        />
+                                        <path
+                                            d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"
                                         />
                                     </svg>
                                 </span>
-                                <div class="person-form-group">
-                                    <!-- SELECTs +++++++++++++++++++++++++++++++++++ -->
-                                    <div class="custom-select-container">
-                                        <label>
-                                            <select
-                                                aria-label="selected-gender"
-                                                name="selected-gender"
-                                                id="selected-gender"
-                                                class="form-select selected-gender"
-                                            >
-                                                <!-- <option value="" class="gender-option" selected disabled>
-                                                    • Persona
-                                                </option> -->
-
-                                                <option value="Femenino" class="gender-option" selected>
-                                                    Femenino
-                                                </option>
-                                                <option value="Masculino" class="gender-option">Masculino</option>
-                                            </select>
-                                        </label>
-                                        <input type="hidden" name="gender" id="gender" required />
-                                    </div>
+                                <label>
+                                    <select
+                                        aria-label="canasta_alquiler"
+                                        name="canasta_alquiler"
+                                        id="select_canasta_alquiler"
+                                        title="¿Alquilas?"
+                                        class="form-select select_canasta_alquiler"
+                                    >
+                                        <option class="option_alquiler" value="siAlquilo" selected>Alquilo</option>
+                                        <option value="AlquilerProm3amb">3 Amb Promedio</option>
+                                        <option value="AlquilerProm2amb">2 Amb Promedio</option>
+                                        <option value="AlquilerProm1amb">1 Amb Promedio</option>
+                                        <option value="noAlquilo">No Alquilo</option>
+                                    </select>
+                                </label>
+                                <div id="total-alquiler" class="table-header">
+                                    <label>
+                                        <input
+                                            type="text"
+                                            inputmode="numeric"
+                                            pattern="\d*"
+                                            name="alquiler_in"
+                                            id="alquiler_in"
+                                            class="partial_sumable alquiler_in form-control"
+                                            value=""
+                                            placeholder="$ monto $"
+                                        />
+                                    </label>
                                 </div>
+                                <div class="table-header d-flex">
+                                    <button
+                                        id="btn-reset-person"
+                                        type="button"
+                                        class="btn-reset-person"
+                                        aria-label="Name"
+                                        name="boton_reset"
+                                    >
+                                        <span class="">
+                                            <!-- SVG RELOAD -->
 
-                                <div class="person-form-group">
-                                    <div class="custom-select-container">
-                                        <label>
-                                            <select
-                                                aria-label="selected-age"
-                                                name="selected-age"
-                                                id="selected-age"
-                                                class="form-select selected-age shadow rounded"
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="35"
+                                                height="35"
+                                                fill="#ff4f00"
+                                                class="bi bi-x-square icon-svg-reset"
+                                                viewBox="0 0 16 16"
                                             >
-                                                <option value="" class="age-option" selected>• Edad •</option>
-                                                <option value="0" class="age-option">0 años</option>
-                                                <option value="1" class="age-option">1 años</option>
-                                                <option value="2" class="age-option">2 años</option>
-                                                <option value="3" class="age-option">3 años</option>
-                                                <option value="4" class="age-option">4 años</option>
-                                                <option value="5" class="age-option">5 años</option>
-                                                <option value="6" class="age-option">6 años</option>
-                                                <option value="7" class="age-option">7 años</option>
-                                                <option value="8" class="age-option">8 años</option>
-                                                <option value="9" class="age-option">9 años</option>
-                                                <option value="10" class="age-option">10 años</option>
-                                                <option value="11" class="age-option">11 años</option>
-                                                <option value="12" class="age-option">12 años</option>
-                                                <option value="13" class="age-option">13 años</option>
-                                                <option value="14" class="age-option">14 años</option>
-                                                <option value="15" class="age-option">15 años</option>
-                                                <option value="16" class="age-option">16 años</option>
-                                                <option value="17" class="age-option">17 años</option>
-                                                <option value="18" class="age-option">18 años</option>
-                                                <option value="19" class="age-option">19 años</option>
-                                                <option value="20" class="age-option">20 años</option>
-                                                <option value="21" class="age-option">21 años</option>
-                                                <option value="22" class="age-option">22 años</option>
-                                                <option value="23" class="age-option">23 años</option>
-                                                <option value="24" class="age-option">24 años</option>
-                                                <option value="25" class="age-option">25 años</option>
-                                                <option value="26" class="age-option">26 años</option>
-                                                <option value="27" class="age-option">27 años</option>
-                                                <option value="28" class="age-option">28 años</option>
-                                                <option value="29" class="age-option">29 años</option>
-                                                <option value="30" class="age-option">30 años</option>
-                                                <option value="31" class="age-option">31 años</option>
-                                                <option value="32" class="age-option">32 años</option>
-                                                <option value="33" class="age-option">33 años</option>
-                                                <option value="34" class="age-option">34 años</option>
-                                                <option value="35" class="age-option">35 años</option>
-                                                <option value="36" class="age-option">36 años</option>
-                                                <option value="37" class="age-option">37 años</option>
-                                                <option value="38" class="age-option">38 años</option>
-                                                <option value="39" class="age-option">39 años</option>
-                                                <option value="40" class="age-option">40 años</option>
-                                                <option value="41" class="age-option">41 años</option>
-                                                <option value="42" class="age-option">42 años</option>
-                                                <option value="43" class="age-option">43 años</option>
-                                                <option value="44" class="age-option">44 años</option>
-                                                <option value="45" class="age-option">45 años</option>
-                                                <option value="46" class="age-option">46 años</option>
-                                                <option value="47" class="age-option">47 años</option>
-                                                <option value="48" class="age-option">48 años</option>
-                                                <option value="49" class="age-option">49 años</option>
-                                                <option value="50" class="age-option">50 años</option>
-                                                <option value="51" class="age-option">51 años</option>
-                                                <option value="52" class="age-option">52 años</option>
-                                                <option value="53" class="age-option">53 años</option>
-                                                <option value="54" class="age-option">54 años</option>
-                                                <option value="55" class="age-option">55 años</option>
-                                                <option value="56" class="age-option">56 años</option>
-                                                <option value="57" class="age-option">57 años</option>
-                                                <option value="58" class="age-option">58 años</option>
-                                                <option value="59" class="age-option">59 años</option>
-                                                <option value="60" class="age-option">60 años</option>
-                                                <option value="61" class="age-option">61 años</option>
-                                                <option value="62" class="age-option">62 años</option>
-                                                <option value="63" class="age-option">63 años</option>
-                                                <option value="64" class="age-option">64 años</option>
-                                                <option value="65" class="age-option">65 años</option>
-                                                <option value="66" class="age-option">66 años</option>
-                                                <option value="67" class="age-option">67 años</option>
-                                                <option value="68" class="age-option">68 años</option>
-                                                <option value="69" class="age-option">69 años</option>
-                                                <option value="70" class="age-option">70 años</option>
-                                                <option value="71" class="age-option">71 años</option>
-                                                <option value="72" class="age-option">72 años</option>
-                                                <option value="73" class="age-option">73 años</option>
-                                                <option value="74" class="age-option">74 años</option>
-                                                <option value="75" class="age-option">75 años</option>
-                                                <option value="76" class="age-option">76 años</option>
-                                                <option value="77" class="age-option">77 años</option>
-                                                <option value="78" class="age-option">78 años</option>
-                                                <option value="79" class="age-option">79 años</option>
-                                                <option value="80" class="age-option">80 años</option>
-                                                <option value="81" class="age-option">81 años</option>
-                                                <option value="82" class="age-option">82 años</option>
-                                                <option value="83" class="age-option">83 años</option>
-                                                <option value="84" class="age-option">84 años</option>
-                                                <option value="85" class="age-option">85 años</option>
-                                                <option value="86" class="age-option">86 años</option>
-                                                <option value="87" class="age-option">87 años</option>
-                                                <option value="88" class="age-option">88 años</option>
-                                                <option value="89" class="age-option">89 años</option>
-                                                <option value="90" class="age-option">90 años</option>
-                                                <option value="91" class="age-option">91 años</option>
-                                                <option value="92" class="age-option">92 años</option>
-                                                <option value="93" class="age-option">93 años</option>
-                                                <option value="94" class="age-option">94 años</option>
-                                                <option value="95" class="age-option">95 años</option>
-                                                <option value="96" class="age-option">96 años</option>
-                                                <option value="97" class="age-option">97 años</option>
-                                                <option value="98" class="age-option">98 años</option>
-                                                <option value="99" class="age-option">99 años</option>
-                                                <option value="100" class="age-option">100 a 122</option>
-                                            </select>
-                                        </label>
-                                        <input type="hidden" name="age" id="age" required />
-                                        <!-- message error -->
-                                        <div id="message_error_age" class="message_error_age"></div>
-                                        <!-- Overlay for the age options ++++++++++++++++++++++++-->
-                                        <div id="overlay-age" class="overlay"></div>
-                                        <div id="overlay-gender" class="overlay"></div>
-                                    </div>
+                                                <path
+                                                    d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                                                />
+                                                <path
+                                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+                                                />
+                                            </svg>
+                                        </span>
+                                    </button>
                                 </div>
-                                <button
-                                    id="person-form-submit"
-                                    type="submit"
-                                    class="btn-add-person"
-                                    aria-label="Person"
-                                    name="boton_add_person"
-                                >
-                                    <span class="">
-                                        <!-- SVG ADD PERSON -->
+                            </div>
+
+                            <form id="person-form">
+                                <div class="fieldset">
+                                    <span>
+                                        <!-- SVG PERSON -->
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            width="35"
-                                            height="35"
-                                            fill="#ff4f00"
-                                            class="bi bi-plus-square icon-svg-add"
+                                            width="28"
+                                            height="28"
+                                            fill="currentColor"
+                                            class="bi bi-person-fill"
                                             viewBox="0 0 16 16"
                                         >
                                             <path
-                                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
-                                            />
-                                            <path
-                                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
                                             />
                                         </svg>
                                     </span>
-                                </button>
-                            </div>
-
-                            <!-- <h3 class="person-table-title">Tu Canasta Mensual</h3> -->
-                            <div class="table-responsive overflow-visible">
-                                <table class="table table-hover w-100 overflow-visible">
-                                    <thead class="m-0 p-0">
-                                        <tr>
-                                            <th class="table-header p-1" scope="col">Familia</th>
-                                            <th class="table-header p-1" scope="col">Edad</th>
-                                            <th class="table-header p-1" scope="col">$</th>
-                                            <th class="table-header p-1" scope="col">
-                                                <!-- SVG DELETE -->
-                                                <svg
-                                                    class="detalles_delete_head"
-                                                    width="20px"
-                                                    height="20px"
-                                                    viewBox="0 0 24 24"
-                                                    fill="#000000"
-                                                    xmlns="http://www.w3.org/2000/svg"
+                                    <div class="person-form-group">
+                                        <!-- SELECTs +++++++++++++++++++++++++++++++++++ -->
+                                        <div class="custom-select-container">
+                                            <label>
+                                                <select
+                                                    aria-label="selected-gender"
+                                                    name="selected-gender"
+                                                    id="selected-gender"
+                                                    class="form-select selected-gender"
                                                 >
-                                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                    <g
-                                                        id="SVGRepo_tracerCarrier"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                    ></g>
-                                                    <g id="SVGRepo_iconCarrier">
-                                                        <path
-                                                            d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16"
-                                                            stroke="#ffffff"
-                                                            stroke-width="2"
+                                                    <!-- <option value="" class="gender-option" selected disabled>
+                                                    • Persona
+                                                </option> -->
+
+                                                    <option value="Femenino" class="gender-option" selected>
+                                                        Femenino
+                                                    </option>
+                                                    <option value="Masculino" class="gender-option">Masculino</option>
+                                                </select>
+                                            </label>
+                                            <input type="hidden" name="gender" id="gender" required />
+                                        </div>
+                                    </div>
+
+                                    <div class="person-form-group">
+                                        <div class="custom-select-container">
+                                            <label>
+                                                <select
+                                                    aria-label="selected-age"
+                                                    name="selected-age"
+                                                    id="selected-age"
+                                                    class="form-select selected-age shadow rounded"
+                                                >
+                                                    <option value="" class="age-option" selected>• Edad •</option>
+                                                    <option value="0" class="age-option">0 años</option>
+                                                    <option value="1" class="age-option">1 años</option>
+                                                    <option value="2" class="age-option">2 años</option>
+                                                    <option value="3" class="age-option">3 años</option>
+                                                    <option value="4" class="age-option">4 años</option>
+                                                    <option value="5" class="age-option">5 años</option>
+                                                    <option value="6" class="age-option">6 años</option>
+                                                    <option value="7" class="age-option">7 años</option>
+                                                    <option value="8" class="age-option">8 años</option>
+                                                    <option value="9" class="age-option">9 años</option>
+                                                    <option value="10" class="age-option">10 años</option>
+                                                    <option value="11" class="age-option">11 años</option>
+                                                    <option value="12" class="age-option">12 años</option>
+                                                    <option value="13" class="age-option">13 años</option>
+                                                    <option value="14" class="age-option">14 años</option>
+                                                    <option value="15" class="age-option">15 años</option>
+                                                    <option value="16" class="age-option">16 años</option>
+                                                    <option value="17" class="age-option">17 años</option>
+                                                    <option value="18" class="age-option">18 años</option>
+                                                    <option value="19" class="age-option">19 años</option>
+                                                    <option value="20" class="age-option">20 años</option>
+                                                    <option value="21" class="age-option">21 años</option>
+                                                    <option value="22" class="age-option">22 años</option>
+                                                    <option value="23" class="age-option">23 años</option>
+                                                    <option value="24" class="age-option">24 años</option>
+                                                    <option value="25" class="age-option">25 años</option>
+                                                    <option value="26" class="age-option">26 años</option>
+                                                    <option value="27" class="age-option">27 años</option>
+                                                    <option value="28" class="age-option">28 años</option>
+                                                    <option value="29" class="age-option">29 años</option>
+                                                    <option value="30" class="age-option">30 años</option>
+                                                    <option value="31" class="age-option">31 años</option>
+                                                    <option value="32" class="age-option">32 años</option>
+                                                    <option value="33" class="age-option">33 años</option>
+                                                    <option value="34" class="age-option">34 años</option>
+                                                    <option value="35" class="age-option">35 años</option>
+                                                    <option value="36" class="age-option">36 años</option>
+                                                    <option value="37" class="age-option">37 años</option>
+                                                    <option value="38" class="age-option">38 años</option>
+                                                    <option value="39" class="age-option">39 años</option>
+                                                    <option value="40" class="age-option">40 años</option>
+                                                    <option value="41" class="age-option">41 años</option>
+                                                    <option value="42" class="age-option">42 años</option>
+                                                    <option value="43" class="age-option">43 años</option>
+                                                    <option value="44" class="age-option">44 años</option>
+                                                    <option value="45" class="age-option">45 años</option>
+                                                    <option value="46" class="age-option">46 años</option>
+                                                    <option value="47" class="age-option">47 años</option>
+                                                    <option value="48" class="age-option">48 años</option>
+                                                    <option value="49" class="age-option">49 años</option>
+                                                    <option value="50" class="age-option">50 años</option>
+                                                    <option value="51" class="age-option">51 años</option>
+                                                    <option value="52" class="age-option">52 años</option>
+                                                    <option value="53" class="age-option">53 años</option>
+                                                    <option value="54" class="age-option">54 años</option>
+                                                    <option value="55" class="age-option">55 años</option>
+                                                    <option value="56" class="age-option">56 años</option>
+                                                    <option value="57" class="age-option">57 años</option>
+                                                    <option value="58" class="age-option">58 años</option>
+                                                    <option value="59" class="age-option">59 años</option>
+                                                    <option value="60" class="age-option">60 años</option>
+                                                    <option value="61" class="age-option">61 años</option>
+                                                    <option value="62" class="age-option">62 años</option>
+                                                    <option value="63" class="age-option">63 años</option>
+                                                    <option value="64" class="age-option">64 años</option>
+                                                    <option value="65" class="age-option">65 años</option>
+                                                    <option value="66" class="age-option">66 años</option>
+                                                    <option value="67" class="age-option">67 años</option>
+                                                    <option value="68" class="age-option">68 años</option>
+                                                    <option value="69" class="age-option">69 años</option>
+                                                    <option value="70" class="age-option">70 años</option>
+                                                    <option value="71" class="age-option">71 años</option>
+                                                    <option value="72" class="age-option">72 años</option>
+                                                    <option value="73" class="age-option">73 años</option>
+                                                    <option value="74" class="age-option">74 años</option>
+                                                    <option value="75" class="age-option">75 años</option>
+                                                    <option value="76" class="age-option">76 años</option>
+                                                    <option value="77" class="age-option">77 años</option>
+                                                    <option value="78" class="age-option">78 años</option>
+                                                    <option value="79" class="age-option">79 años</option>
+                                                    <option value="80" class="age-option">80 años</option>
+                                                    <option value="81" class="age-option">81 años</option>
+                                                    <option value="82" class="age-option">82 años</option>
+                                                    <option value="83" class="age-option">83 años</option>
+                                                    <option value="84" class="age-option">84 años</option>
+                                                    <option value="85" class="age-option">85 años</option>
+                                                    <option value="86" class="age-option">86 años</option>
+                                                    <option value="87" class="age-option">87 años</option>
+                                                    <option value="88" class="age-option">88 años</option>
+                                                    <option value="89" class="age-option">89 años</option>
+                                                    <option value="90" class="age-option">90 años</option>
+                                                    <option value="91" class="age-option">91 años</option>
+                                                    <option value="92" class="age-option">92 años</option>
+                                                    <option value="93" class="age-option">93 años</option>
+                                                    <option value="94" class="age-option">94 años</option>
+                                                    <option value="95" class="age-option">95 años</option>
+                                                    <option value="96" class="age-option">96 años</option>
+                                                    <option value="97" class="age-option">97 años</option>
+                                                    <option value="98" class="age-option">98 años</option>
+                                                    <option value="99" class="age-option">99 años</option>
+                                                    <option value="100" class="age-option">100 a 122</option>
+                                                </select>
+                                            </label>
+                                            <input type="hidden" name="age" id="age" required />
+                                            <!-- message error -->
+                                            <div id="message_error_age" class="message_error_age"></div>
+                                            <!-- Overlay for the age options ++++++++++++++++++++++++-->
+                                            <div id="overlay-age" class="overlay"></div>
+                                            <div id="overlay-gender" class="overlay"></div>
+                                        </div>
+                                    </div>
+                                    <button
+                                        id="person-form-submit"
+                                        type="submit"
+                                        class="btn-add-person"
+                                        aria-label="Person"
+                                        name="boton_add_person"
+                                    >
+                                        <span class="">
+                                            <!-- SVG ADD PERSON -->
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="35"
+                                                height="35"
+                                                fill="#ff4f00"
+                                                class="bi bi-plus-square icon-svg-add"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                                                />
+                                                <path
+                                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                                                />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!-- <h3 class="person-table-title">Tu Canasta Mensual</h3> -->
+                                <div class="table-responsive overflow-visible">
+                                    <table class="table table-hover w-100 overflow-visible">
+                                        <thead class="m-0 p-0">
+                                            <tr>
+                                                <th class="table-header p-1" scope="col">Familia</th>
+                                                <th class="table-header p-1" scope="col">Edad</th>
+                                                <th class="table-header p-1" scope="col">$</th>
+                                                <th class="table-header p-1" scope="col">
+                                                    <!-- SVG DELETE -->
+                                                    <svg
+                                                        class="detalles_delete_head"
+                                                        width="20px"
+                                                        height="20px"
+                                                        viewBox="0 0 24 24"
+                                                        fill="#000000"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                        <g
+                                                            id="SVGRepo_tracerCarrier"
                                                             stroke-linecap="round"
                                                             stroke-linejoin="round"
-                                                        ></path>
-                                                    </g>
-                                                </svg>
-                                            </th>
-                                            <th class="table-header p-1" scope="col">Dias</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="person-list" class="table-group-divider">
-                                        <tr></tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr class="row_mostrar_alquiler">
-                                            <th class="table-header p-1" scope="col">Alquiler</th>
-                                            <th class="table-header p-1" scope="col"></th>
-                                            <th id="alquiler_out" class="table-header p-1" scope="col"></th>
-                                            <th class="table-header p-1" scope="col"></th>
-                                            <th class="table-header p-1" scope="col"></th>
-                                        </tr>
-                                        <tr class="table-group-divider">
-                                            <th class="table-header p-1" scope="col">Total</th>
-                                            <th class="table-header p-1" scope="col"></th>
-                                            <th id="total-canasta" class="table-header p-1" scope="col"></th>
-                                            <th class="table-header p-1" scope="col"></th>
-                                            <th class="table-header p-1" scope="col"></th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                        </form>
+                                                        ></g>
+                                                        <g id="SVGRepo_iconCarrier">
+                                                            <path
+                                                                d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16"
+                                                                stroke="#ffffff"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round"
+                                                            ></path>
+                                                        </g>
+                                                    </svg>
+                                                </th>
+                                                <th class="table-header p-1" scope="col">Dias</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="person-list" class="table-group-divider">
+                                            <tr></tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr class="row_mostrar_alquiler">
+                                                <th class="table-header p-1" scope="col">Alquiler</th>
+                                                <th class="table-header p-1" scope="col"></th>
+                                                <th id="alquiler_out" class="table-header p-1" scope="col"></th>
+                                                <th class="table-header p-1" scope="col"></th>
+                                                <th class="table-header p-1" scope="col"></th>
+                                            </tr>
+                                            <tr class="table-group-divider">
+                                                <th class="table-header p-1" scope="col">Total</th>
+                                                <th class="table-header p-1" scope="col"></th>
+                                                <th id="total-canasta" class="table-header p-1" scope="col"></th>
+                                                <th class="table-header p-1" scope="col"></th>
+                                                <th class="table-header p-1" scope="col"></th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </form>
 
-                        <div class="bg-black py-2 mt-2 text-center rounded-4 table-all-canastas fs-6">
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div class="col m-0 p-0 pb-1 fs-5 text-center text-shadow">Sector Socio Económico</div>
-                            </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div
-                                    class="m-0 p-0 show_indigencia_min bg-secondary-subtle fs-6 d-flex justify-content-center align-content-center align-items-center"
-                                ></div>
-                                <div
-                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_indigencia"
-                                >
-                                    <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span
-                                    >Indigente<span class="bg-secondary-subtle text-center h-100 align-content-center"
-                                        >&lt;</span
-                                    >
+                            <div class="bg-black py-2 mt-2 text-center rounded-4 table-all-canastas fs-6">
+                                <div class="row m-0 mb-1 p-0 w-100">
+                                    <div class="col m-0 p-0 pb-1 fs-5 text-center text-shadow">
+                                        Sector Socio Económico
+                                    </div>
                                 </div>
-                                <div
-                                    class="m-0 p-0 show_indigencia_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
-                                ></div>
-                            </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div
-                                    class="m-0 p-0 show_pobreza_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
-                                ></div>
-                                <div
-                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
-                                >
-                                    <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span
-                                    >Pobreza<span class="bg-secondary-subtle text-center h-100 align-content-center"
-                                        >&lt;</span
+                                <div class="row m-0 mb-1 p-0 w-100">
+                                    <div
+                                        class="m-0 p-0 show_indigencia_min bg-secondary-subtle fs-6 d-flex justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                    <div
+                                        class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_indigencia"
                                     >
-                                </div>
-                                <div
-                                    class="m-0 p-0 show_pobreza_max show_indigencia_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
-                                ></div>
-                            </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div
-                                    class="m-0 p-0 show_clase_baja_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
-                                ></div>
-                                <div
-                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
-                                >
-                                    <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span>Clase
-                                    Baja<span class="bg-secondary-subtle text-center h-100 align-content-center"
-                                        >&lt;</span
-                                    >
-                                </div>
-                                <div
-                                    class="m-0 p-0 show_clase_baja_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
-                                ></div>
-                            </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div
-                                    class="m-0 p-0 suma_clase_media_fragil_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
-                                ></div>
-                                <div
-                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
-                                >
-                                    <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span>Media
-                                    fragil<span class="bg-secondary-subtle text-center h-100 align-content-center"
-                                        >&lt;</span
-                                    >
-                                </div>
-                                <div
-                                    class="m-0 p-0 suma_clase_media_fragil_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
-                                ></div>
-                            </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div
-                                    class="m-0 p-0 suma_clase_media_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
-                                ></div>
-                                <div
-                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
-                                >
-                                    <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span>Media<span
-                                        class="bg-secondary-subtle text-center h-100 align-content-center"
-                                        >&lt;</span
-                                    >
-                                </div>
-                                <div
-                                    class="m-0 p-0 suma_clase_media_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
-                                ></div>
-                            </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div
-                                    class="m-0 p-0 suma_clase_media_alta_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
-                                ></div>
-                                <div
-                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
-                                >
-                                    <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span>
-                                    Media alta<span class="bg-secondary-subtle text-center h-100 align-content-center"
-                                        >&lt;</span
-                                    >
-                                </div>
-                                <div
-                                    class="m-0 p-0 suma_clase_media_alta_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
-                                ></div>
-                            </div>
-                            <div class="row m-0 p-0 pb-1 w-100">
-                                <div
-                                    class="m-0 p-0 suma_clase_alta_min bg-secondary-subtle fs-6 justify-content-center align-items-center"
-                                ></div>
-                                <div
-                                    class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
-                                >
-                                    <span
-                                        class="bg-secondary-subtle pe-0 h-100 d-flex justify-content-center align-items-center align-content-center text-center mayor_menor"
-                                        >≤</span
-                                    >Alta<span class="bg-secondary-subtle text-center h-100 align-content-center"
-                                        >&lt;</span
-                                    >
-                                </div>
-                                <div
-                                    class="m-0 p-0 suma_clase_alta_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
-                                ></div>
-                            </div>
-
-                            <div class="row m-0 p-0 pb-1 pt-1 w-100">
-                                <div
-                                    class="m-0 p-0 suma_clase_alta_min bg-black fs-6 justify-content-center align-items-center"
-                                >
-                                    <span class="">
-                                        <button
-                                            type="button"
-                                            class="btn btn-secondary aclaracion_table_sectores"
-                                            data-bs-toggle="tooltip"
-                                            data-bs-placement="top"
-                                            data-bs-custom-class="custom-tooltip"
-                                            data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                        <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span
+                                        >Indigente<span
+                                            class="bg-secondary-subtle text-center h-100 align-content-center"
+                                            >&lt;</span
                                         >
-                                            ?
-                                        </button>
-                                    </span>
+                                    </div>
+                                    <div
+                                        class="m-0 p-0 show_indigencia_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                </div>
+                                <div class="row m-0 mb-1 p-0 w-100">
+                                    <div
+                                        class="m-0 p-0 show_pobreza_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                    <div
+                                        class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    >
+                                        <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span
+                                        >Pobreza<span class="bg-secondary-subtle text-center h-100 align-content-center"
+                                            >&lt;</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="m-0 p-0 show_pobreza_max show_indigencia_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                </div>
+                                <div class="row m-0 mb-1 p-0 w-100">
+                                    <div
+                                        class="m-0 p-0 show_clase_baja_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                    <div
+                                        class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    >
+                                        <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span>Clase
+                                        Baja<span class="bg-secondary-subtle text-center h-100 align-content-center"
+                                            >&lt;</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="m-0 p-0 show_clase_baja_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                </div>
+                                <div class="row m-0 mb-1 p-0 w-100">
+                                    <div
+                                        class="m-0 p-0 suma_clase_media_fragil_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                    <div
+                                        class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    >
+                                        <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span>Media
+                                        fragil<span class="bg-secondary-subtle text-center h-100 align-content-center"
+                                            >&lt;</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="m-0 p-0 suma_clase_media_fragil_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                </div>
+                                <div class="row m-0 mb-1 p-0 w-100">
+                                    <div
+                                        class="m-0 p-0 suma_clase_media_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                    <div
+                                        class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    >
+                                        <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span
+                                        >Media<span class="bg-secondary-subtle text-center h-100 align-content-center"
+                                            >&lt;</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="m-0 p-0 suma_clase_media_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                </div>
+                                <div class="row m-0 mb-1 p-0 w-100">
+                                    <div
+                                        class="m-0 p-0 suma_clase_media_alta_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                    <div
+                                        class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    >
+                                        <span class="bg-secondary-subtle pe-0 h-100 align-content-center">≤</span>
+                                        Media alta<span
+                                            class="bg-secondary-subtle text-center h-100 align-content-center"
+                                            >&lt;</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="m-0 p-0 suma_clase_media_alta_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                </div>
+                                <div class="row m-0 p-0 pb-1 w-100">
+                                    <div
+                                        class="m-0 p-0 suma_clase_alta_min bg-secondary-subtle fs-6 justify-content-center align-items-center"
+                                    ></div>
+                                    <div
+                                        class="col m-0 p-0 bg-secondary-subtle fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    >
+                                        <span
+                                            class="bg-secondary-subtle pe-0 h-100 d-flex justify-content-center align-items-center align-content-center text-center mayor_menor"
+                                            >≤</span
+                                        >Alta<span class="bg-secondary-subtle text-center h-100 align-content-center"
+                                            >&lt;</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="m-0 p-0 suma_clase_alta_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
+                                    ></div>
+                                </div>
 
-                                    Minimo
-                                </div>
-                                <div
-                                    class="col m-0 p-0 bg-black fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
-                                >
-                                    <span
-                                        class="bg-black pe-0 h-100 d-flex justify-content-center align-items-center align-content-center text-center mayor_menor"
-                                        >≤</span
-                                    >Tu Sector<span class="bg-black text-center h-100 align-content-center">&lt;</span>
-                                </div>
-                                <div
-                                    class="m-0 p-0 suma_clase_alta_max bg-black fs-6 justify-content-center align-content-center align-items-center"
-                                >
-                                    Maximo
+                                <div class="row m-0 p-0 pb-1 pt-1 w-100">
+                                    <div
+                                        class="m-0 p-0 suma_clase_alta_min bg-black fs-6 justify-content-center align-items-center"
+                                    >
+                                        <span class="">
+                                            <button
+                                                type="button"
+                                                class="btn btn-secondary aclaracion_table_sectores"
+                                                data-bs-toggle="tooltip"
+                                                data-bs-placement="top"
+                                                data-bs-custom-class="custom-tooltip"
+                                                data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                            >
+                                                ?
+                                            </button>
+                                        </span>
+
+                                        Minimo
+                                    </div>
+                                    <div
+                                        class="col m-0 p-0 bg-black fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow"
+                                    >
+                                        <span
+                                            class="bg-black pe-0 h-100 d-flex justify-content-center align-items-center align-content-center text-center mayor_menor"
+                                            >≤</span
+                                        >Tu Sector<span class="bg-black text-center h-100 align-content-center"
+                                            >&lt;</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="m-0 p-0 suma_clase_alta_max bg-black fs-6 justify-content-center align-content-center align-items-center"
+                                    >
+                                        Maximo
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- TOOLTIP -->
-                    </li>
-                    <li class="list-group-item">
-                        <div class="d-flex justify-content-center row w-100">
-                            <span class="pb-2">Mete tu ingreso y resalta tu sector</span>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <label>
-                                    <input
-                                        id="ingresos_input"
-                                        class="ingresos_input form-control me-2 text-center"
-                                        type="number"
-                                        pattern="\d+"
-                                        placeholder="$ Ingreso Familiar $"
-                                    />
-                                </label>
-                                <button
+                            <!-- TOOLTIP -->
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-center row w-100">
+                                <span class="pb-2">Mete tu ingreso y resalta tu sector</span>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <label>
+                                        <input
+                                            id="ingresos_input"
+                                            class="ingresos_input form-control me-2 text-center"
+                                            type="number"
+                                            pattern="\d+"
+                                            placeholder="$ Ingreso Familiar $"
+                                        />
+                                    </label>
+                                    <button
+                                        type="button"
+                                        class="btn btn-secondary aclaracion_edades"
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        data-bs-custom-class="custom-tooltip"
+                                        data-bs-title=" top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                    >
+                                        i
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 Canasta Básica Alimentaria -->
+                <div class="card rounded-4 bg-dark bg-gradient-dark">
+                    <div class="card-header">
+                        <h2>Canasta Básica Alimentaria</h2>
+                        <h4 class="card_header_sub">
+                            CBA - Linea de indigencia [Li]
+                            <span
+                                ><button
                                     type="button"
                                     class="btn btn-secondary aclaracion_edades"
                                     data-bs-toggle="tooltip"
                                     data-bs-placement="top"
                                     data-bs-custom-class="custom-tooltip"
-                                    data-bs-title=" top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                    data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
                                 >
                                     i
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Card 3 Canasta Básica Alimentaria -->
-            <div class="card rounded-4 bg-dark bg-gradient-dark">
-                <div class="card-header">
-                    <h2>Canasta Básica Alimentaria</h2>
-                    <h4 class="card_header_sub">
-                        CBA - Linea de indigencia [Li]
-                        <span
-                            ><button
-                                type="button"
-                                class="btn btn-secondary aclaracion_edades"
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="top"
-                                data-bs-custom-class="custom-tooltip"
-                                data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                </button></span
                             >
-                                i
-                            </button></span
-                        >
-                    </h4>
-                    <div class="card_subtitle fs-6 py-1 pb-0">
-                        • Con Casa Propia
-                        <div class="view_cba"></div>
+                        </h4>
+                        <div class="card_subtitle fs-6 py-1 pb-0">
+                            • Con Casa Propia
+                            <div class="view_cba"></div>
+                        </div>
                     </div>
-                </div>
-                <ul class="list-group list-group-flush rounded-4">
-                    <li class="list-group-item list-group-item-acordion">
-                        <!-- Accordion Tipo de familia -->
-                        <div class="accordion accordion-flush" id="accordionFlush-1">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button
-                                        class="accordion-button collapsed"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapse-1"
-                                        aria-expanded="false"
-                                        aria-controls="flush-collapse-1"
+                    <ul class="list-group list-group-flush rounded-4">
+                        <li class="list-group-item list-group-item-acordion">
+                            <!-- Accordion Tipo de familia -->
+                            <div class="accordion accordion-flush" id="accordionFlush-1">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapse-1"
+                                            aria-expanded="false"
+                                            aria-controls="flush-collapse-1"
+                                        >
+                                            Para Hogar de 4 personas, integrantes:
+                                        </button>
+                                    </h2>
+                                    <div
+                                        id="flush-collapse-1"
+                                        class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionFlush-1"
                                     >
-                                        Para Hogar de 4 personas, integrantes:
-                                    </button>
-                                </h2>
-                                <div
-                                    id="flush-collapse-1"
-                                    class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlush-1"
-                                >
-                                    <div class="accordion-body">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">integrante</th>
-                                                    <th scope="col">Edad</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="table-group-divider">
-                                                <tr>
-                                                    <th scope="row">Varon</th>
-                                                    <td>35</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Mujer</th>
-                                                    <td>31</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Niño</th>
-                                                    <td>6</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Niña</th>
-                                                    <td>8</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <div class="accordion-body">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">integrante</th>
+                                                        <th scope="col">Edad</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="table-group-divider">
+                                                    <tr>
+                                                        <th scope="row">Varon</th>
+                                                        <td>35</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Mujer</th>
+                                                        <td>31</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Niño</th>
+                                                        <td>6</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Niña</th>
+                                                        <td>8</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item lineas_info linea_indigencia"></li>
-                </ul>
-            </div>
-
-            <!-- Card 4 Canasta Básica Total -->
-            <div class="card rounded-4 bg-dark bg-gradient-dark">
-                <div class="card-header">
-                    <h2>Canasta Básica Total</h2>
-                    <h4 class="card_header_sub">
-                        CBT - Linea de Pobreza [LP]
-                        <span
-                            ><button
-                                type="button"
-                                class="btn btn-secondary aclaracion_edades"
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="top"
-                                data-bs-custom-class="custom-tooltip"
-                                data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
-                            >
-                                i
-                            </button></span
-                        >
-                    </h4>
-                    <div class="card_subtitle fs-6 py-1 pb-0">
-                        • Con Casa Propia
-                        <div class="view_cbt"></div>
-                    </div>
+                        </li>
+                        <li class="list-group-item lineas_info linea_indigencia"></li>
+                    </ul>
                 </div>
-                <ul class="list-group list-group-flush rounded-4">
-                    <li class="list-group-item list-group-item-acordion">
-                        <!-- Accordion Tipo de familia -->
-                        <div class="accordion accordion-flush" id="accordionFlush-2">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button
-                                        class="accordion-button collapsed"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapse-2"
-                                        aria-expanded="false"
-                                        aria-controls="flush-collapse-2"
-                                    >
-                                        Para Hogar de 4 personas, composición:
-                                    </button>
-                                </h2>
-                                <div
-                                    id="flush-collapse-2"
-                                    class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlush-2"
+
+                <!-- Card 4 Canasta Básica Total -->
+                <div class="card rounded-4 bg-dark bg-gradient-dark">
+                    <div class="card-header">
+                        <h2>Canasta Básica Total</h2>
+                        <h4 class="card_header_sub">
+                            CBT - Linea de Pobreza [LP]
+                            <span
+                                ><button
+                                    type="button"
+                                    class="btn btn-secondary aclaracion_edades"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
                                 >
-                                    <div class="accordion-body">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Familiar</th>
-                                                    <th scope="col">Edad</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="table-group-divider">
-                                                <tr>
-                                                    <th scope="row">Varon</th>
-                                                    <td>35</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Mujer</th>
-                                                    <td>31</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Niño</th>
-                                                    <td>6</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Niña</th>
-                                                    <td>8</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    i
+                                </button></span
+                            >
+                        </h4>
+                        <div class="card_subtitle fs-6 py-1 pb-0">
+                            • Con Casa Propia
+                            <div class="view_cbt"></div>
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush rounded-4">
+                        <li class="list-group-item list-group-item-acordion">
+                            <!-- Accordion Tipo de familia -->
+                            <div class="accordion accordion-flush" id="accordionFlush-2">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapse-2"
+                                            aria-expanded="false"
+                                            aria-controls="flush-collapse-2"
+                                        >
+                                            Para Hogar de 4 personas, composición:
+                                        </button>
+                                    </h2>
+                                    <div
+                                        id="flush-collapse-2"
+                                        class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionFlush-2"
+                                    >
+                                        <div class="accordion-body">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Familiar</th>
+                                                        <th scope="col">Edad</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="table-group-divider">
+                                                    <tr>
+                                                        <th scope="row">Varon</th>
+                                                        <td>35</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Mujer</th>
+                                                        <td>31</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Niño</th>
+                                                        <td>6</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Niña</th>
+                                                        <td>8</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item lineas_info linea_pobreza"></li>
-                </ul>
-            </div>
-
-            <!-- Card 5 Canasta Basica Total + Alquiler -->
-            <div class="card rounded-4 bg-dark bg-gradient-dark">
-                <div class="card-header">
-                    <h2>Canasta Básica Total</h2>
-                    <h4>Más Alquiler - CBTA</h4>
-                    <h4 class="card_header_sub">
-                        Linea Pobreza Alquilando [LPA]
-                        <span
-                            ><button
-                                type="button"
-                                class="btn btn-secondary aclaracion_edades"
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="top"
-                                data-bs-custom-class="custom-tooltip"
-                                data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
-                            >
-                                i
-                            </button></span
-                        >
-                    </h4>
-                    <div class="card_subtitle fs-6 py-1 pb-0">
-                        • 3 amb Promedio
-                        <div class="view_cbt_alquiler_3amb"></div>
-                    </div>
+                        </li>
+                        <li class="list-group-item lineas_info linea_pobreza"></li>
+                    </ul>
                 </div>
-                <ul class="list-group list-group-flush rounded-4">
-                    <li class="list-group-item list-group-item-acordion">
-                        <!-- Accordion Tipo de familia -->
-                        <div class="accordion accordion-flush" id="accordionFlush-3">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button
-                                        class="accordion-button collapsed"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapse-3"
-                                        aria-expanded="false"
-                                        aria-controls="flush-collapse-3"
-                                    >
-                                        Para Hogar de 4 personas, composición:
-                                    </button>
-                                </h2>
-                                <div
-                                    id="flush-collapse-3"
-                                    class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlush-3"
+
+                <!-- Card 5 Canasta Basica Total + Alquiler -->
+                <div class="card rounded-4 bg-dark bg-gradient-dark">
+                    <div class="card-header">
+                        <h2>Canasta Básica Total</h2>
+                        <h4>Más Alquiler - CBTA</h4>
+                        <h4 class="card_header_sub">
+                            Linea Pobreza Alquilando [LPA]
+                            <span
+                                ><button
+                                    type="button"
+                                    class="btn btn-secondary aclaracion_edades"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
                                 >
-                                    <div class="accordion-body">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Familiar</th>
-                                                    <th scope="col">Edad</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="table-group-divider">
-                                                <tr>
-                                                    <th scope="row">Varon</th>
-                                                    <td>35</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Mujer</th>
-                                                    <td>31</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Niño</th>
-                                                    <td>6</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Niña</th>
-                                                    <td>8</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    i
+                                </button></span
+                            >
+                        </h4>
+                        <div class="card_subtitle fs-6 py-1 pb-0">
+                            • 3 amb Promedio
+                            <div class="view_cbt_alquiler_3amb"></div>
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush rounded-4">
+                        <li class="list-group-item list-group-item-acordion">
+                            <!-- Accordion Tipo de familia -->
+                            <div class="accordion accordion-flush" id="accordionFlush-3">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapse-3"
+                                            aria-expanded="false"
+                                            aria-controls="flush-collapse-3"
+                                        >
+                                            Para Hogar de 4 personas, composición:
+                                        </button>
+                                    </h2>
+                                    <div
+                                        id="flush-collapse-3"
+                                        class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionFlush-3"
+                                    >
+                                        <div class="accordion-body">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Familiar</th>
+                                                        <th scope="col">Edad</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="table-group-divider">
+                                                    <tr>
+                                                        <th scope="row">Varon</th>
+                                                        <td>35</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Mujer</th>
+                                                        <td>31</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Niño</th>
+                                                        <td>6</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Niña</th>
+                                                        <td>8</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item lineas_info linea_pobreza_alquilando"></li>
-                </ul>
-            </div>
-        </main>
-        <!-- FOOTER -->
-        <footer class="rounded-4 p-0 bg-light-subtle">
-            <div class="container-fluid bg-black bg-gradient rounded-4 p-2">
-                <h6 class="m-1 text-center fs-6 text-danger-emphasis w-100">Indices AGOSTO 2024</h6>
-                <div class="version"></div>
-            </div>
-        </footer>
-
+                        </li>
+                        <li class="list-group-item lineas_info linea_pobreza_alquilando"></li>
+                    </ul>
+                </div>
+            </main>
+            <!-- FOOTER -->
+            <footer class="rounded-4 p-0 bg-light-subtle">
+                <div class="container-fluid bg-black bg-gradient rounded-4 p-2">
+                    <h6 class="m-1 text-center fs-6 text-danger-emphasis w-100">Indices AGOSTO 2024</h6>
+                    <div class="version"></div>
+                </div>
+            </footer>
+        </div>
         <!-- JS ------------------------------------------------------------------>
 
         <!-- BOOTSTRAP -->
