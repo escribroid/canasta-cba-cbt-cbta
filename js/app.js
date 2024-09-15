@@ -65,14 +65,15 @@ linea_pobreza();
 linea_pobreza_alquilando();
 
 /* TABLA CANASTA PERSONALIZADA ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-let count_person = 0;
 let age;
-let gender;
-let gender_show;
 let age_toStr;
 let age_mostrar_table;
-let index;
+let count_person = 0;
+let gender;
+let gender_show;
 let gender_lowercase;
+let index;
+let index_array_cells;
 let suma_CBA_Personas;
 let suma_CBT_Personas;
 let suma_con_alquiler = 0;
@@ -85,6 +86,7 @@ let suma_clase_media_alta_alquilando = 0;
 let array_CBA_Personas = [];
 let array_CBT_Personas = [];
 let array_count_person = [];
+
 let alquiler_out = 0;
 let alquiler_in = document.getElementById("alquiler_in");
 let alquiler_in_value = alquiler_in;
@@ -122,24 +124,24 @@ function addPersonToTable(
     //console.log("gender_show", gender_show);
     //console.log("age_mostrar_table", age_mostrar_table);
 
-    index = array_count_person.length - 1;
+    //index = array_count_person.length - 1;
 
-    row.id = `person_${index}`;
+    row.id = `person_${count_person}`;
 
-    console.log("count_ADD", index);
+    console.log("count_ADD", count_person);
 
-    row.innerHTML = `<td class="p-1">${gender_show}</td><td class="p-1">${age_mostrar_table}</td><td id="detalles_monto_person_${index}" class="add_Partials p-1">$${canasta_b_total_persona.toLocaleString(
+    row.innerHTML = `<td class="p-1">${gender_show}</td><td class="p-1">${age_mostrar_table}</td><td id="detalles_monto_person_${count_person}" class="add_Partials p-1">$${canasta_b_total_persona.toLocaleString(
         "es-AR",
         {
             maximumFractionDigits: 0,
         }
-    )}</td><td class="p-1 detalles_delete" id="detalles_person_${index}">
+    )}</td><td class="p-1 detalles_delete" id="detalles_person_${count_person}">
     <svg id="testSvg" class="detalles_delete_body" width="20px" height="20px" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
     </td><td>
     <label>
-    <select name="days_select" id="days_select">
+    <select name="days_select" id="days_select_${count_person}">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -181,91 +183,37 @@ function addPersonToTable(
 //const person_list = document.getElementById("person-list");
 
 tableBody.addEventListener("click", (event) => {
+    const cells = tableBody.querySelectorAll("td");
+
+    let array_cells = Array.from(cells); // Convertir NodeList a array
+
     const clickedCell = event.target.closest("td"); // Detectar la fila clickeada
     if (clickedCell && clickedCell.id) {
         //console.log(`Click en CELL con ID: ${clickedCell.id}`);
 
-        const cellId = clickedCell.id;
+        const cell_select_id = clickedCell.id;
 
-        console.log("cellId", cellId);
+        console.log("cell_select_id", cell_select_id);
 
-        const parts = cellId.split("_");
-        const count_person_del = parts[2];
-        console.log("count_person_DEL", count_person_del);
+        const parts = cell_select_id.split("_");
+        //const count_person_del = parts[2];
+        //console.log("count_person_DEL", count_person_del);
 
-        subsPersonToTable(
-            gender,
-            age_mostrar_table,
-            canasta_b_alimentaria_persona,
-            canasta_b_total_persona,
-            array_CBA_Personas,
-            array_CBT_Personas,
-            array_count_person,
-            count_person_del
-        );
+        cells.forEach((cell) => {
+            if (cell.id === cell_select_id) {
+                let index_array_cells = array_cells.findIndex((cell) => cell.id === cell_select_id);
+            }
+        });
+
+        subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_person, index_array_cells);
+
+        const row_del = clickedCell.parentElement;
+        row_del.remove();
     }
-
-    // let targetElement = event.target;
-
-    // // Debugging: Verifica qué elemento está siendo clickeado
-    // console.log("Elemento clickeado:", targetElement);
-
-    // // Si el clic fue en un SVG, sube al <td>
-    // if (targetElement.tagName === "svg") {
-    //     targetElement = targetElement.closest("td");
-    // }
-
-    // if (targetElement.tagName === "path") {
-    //     targetElement = targetElement.closest("td");
-    // }
-
-    // // Si el clic fue en un <td>, haz algo
-    // if (targetElement.tagName === "TD") {
-    //     console.log("ID del <td> clickeado:", targetElement.getAttribute("id"));
-    // }
-
-    // Verificar si el elemento clicado es una celda (td)
-    // let targetElement = event.target;
-    // if (targetElement.tagName === "svg") {
-    //     targetElement = targetElement.closest("td");
-    // }
-    // // Si el clic fue en un <td>, haz algo
-    // if (targetElement.tagName === "TD") {
-    //     console.log("ID del <td> clickeado:", targetElement.getAttribute("id"));
-    // }
-    // if (targetElement && targetElement.nodeName === "TD") {
-    //     // Si el clic fue en un SVG, sube al <td>
-
-    //     console.log("targetElement", targetElement);
-
-    //     const clickedCell = targetElement;
-    //     const cellId = clickedCell.id;
-    //     const row = clickedCell.parentNode; // Obtener el <tr> padre
-    //     console.log("Celda clicada:", cellId); // Aquí puedes hacer algo con la celda
-    //     console.log("Fila:", row.id); // Aquí puedes hacer algo con la fila
-
-    //     if (cellId) {
-    //         console.log("ID de la celda clicada:", cellId);
-    //         // Puedes hacer algo con el ID de la celda aquí
-    //     } else {
-    //         console.log("La celda clicada no tiene ID.");
-    //     }
-    // }
 });
 
-function subsPersonToTable(
-    gender,
-    age_mostrar_table,
-    canasta_b_alimentaria_persona,
-    canasta_b_total_persona,
-    array_CBA_Personas,
-    array_CBT_Personas,
-    array_count_person,
-    count_person_del
-) {
-    const row_del = document.getElementById("person_" + count_person_del);
-
-    array_CBA_Personas.splice(count_person_del - 1, 1);
+function subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_person, index_array_cells) {
+    array_CBA_Personas.splice(index_array_cells, 1);
     console.log("array_CBA_Personas-SUB:", array_CBA_Personas);
 
     suma_CBA_Personas = 0;
@@ -273,7 +221,7 @@ function subsPersonToTable(
         suma_CBA_Personas = parseFloat(suma_CBA_Personas) + parseFloat(array_CBA_Personas[i]);
     }
 
-    array_CBT_Personas.splice(count_person_del - 1, 1);
+    array_CBT_Personas.splice(index_array_cells, 1);
     console.log("array_CBT_Personas-SUB:", array_CBT_Personas);
     suma_CBT_Personas = 0;
     for (let i = 0; i < array_CBT_Personas.length; i++) {
@@ -290,8 +238,6 @@ function subsPersonToTable(
     array_count_person.pop();
 
     console.log("count_person-SUB 2:", count_person);
-
-    row_del.remove();
 }
 
 // SUMA DE CANASTA PERSONALIZADA +++++++++++++++++++++++

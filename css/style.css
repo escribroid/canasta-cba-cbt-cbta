@@ -213,8 +213,6 @@ main {
 }
 
 .detalles_delete {
-    border: 1px solid #ff4f00;
-    border-radius: 50%;
     padding: 0;
     margin: 0;
 }
