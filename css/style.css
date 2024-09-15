@@ -482,7 +482,7 @@ main {
 .select_canasta_alquiler {
     background-color: #333;
     cursor: pointer;
-    max-width: 115px;
+    max-width: 120px;
     margin-right: 5px;
     -webkit-appearance: none;
     -moz-appearance: none;
