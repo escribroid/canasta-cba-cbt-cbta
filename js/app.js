@@ -518,3 +518,69 @@ document.getElementById("btn-reset-person").addEventListener("click", () => {
     document.getElementById("person-form").reset();
     document.getElementById("person-list").innerHTML = "";
 });
+
+const ingresos_input = document.getElementById("ingresos_input");
+
+document.getElementById("ingresos_input").addEventListener("input", (e) => {
+    const ingresos = parseInt(e.target.value);
+
+    console.log("ingresos", typeof ingresos);
+
+    if (ingresos >= 0 && ingresos < suma_indigencia_alquilando) {
+        document.querySelector(".all_canasta_indigencia").style.setProperty("background-color", "red", "important");
+    } else if (ingresos >= suma_indigencia_alquilando && ingresos < suma_pobreza_alquilando) {
+        document.querySelector(".all_canasta_pobreza").style.setProperty("background-color", "red", "important");
+        document.querySelector(".all_canasta_indigencia").style.removeProperty("background-color");
+    } else if (ingresos >= suma_pobreza_alquilando && ingresos < suma_clase_baja_alquilando) {
+        document.querySelector(".all_canasta_baja").style.setProperty("background-color", "red", "important");
+        document.querySelector(".all_canasta_pobreza").style.removeProperty("background-color");
+    } else if (ingresos >= suma_clase_baja_alquilando && ingresos < suma_clase_media_fragil_alquilando) {
+        document.querySelector(".all_canasta_media_fragil").style.setProperty("background-color", "red", "important");
+        document.querySelector(".all_canasta_pobreza").style.removeProperty("background-color");
+
+        document.querySelector(".all_canasta_baja").style.removeProperty("background-color");
+    } else if (ingresos >= suma_clase_media_fragil_alquilando && ingresos < suma_clase_media_alquilando) {
+        document.querySelector(".all_canasta_media").style.setProperty("background-color", "red", "important");
+        document.querySelector(".all_canasta_pobreza").style.removeProperty("background-color");
+        document.querySelector(".all_canasta_baja").style.removeProperty("background-color");
+
+        document.querySelector(".all_canasta_media_fragil").style.removeProperty("background-color");
+    } else if (ingresos >= suma_clase_media_alquilando && ingresos < suma_clase_media_alta_alquilando) {
+        document.querySelector(".all_canasta_media_alta").style.setProperty("background-color", "red", "important");
+        document.querySelector(".all_canasta_pobreza").style.removeProperty("background-color");
+        document.querySelector(".all_canasta_baja").style.removeProperty("background-color");
+        document.querySelector(".all_canasta_media_fragil").style.removeProperty("background-color");
+
+        document.querySelector(".all_canasta_media").style.removeProperty("background-color");
+    } else if (ingresos >= suma_clase_media_alta_alquilando) {
+        document.querySelector(".all_canasta_alta").style.setProperty("background-color", "red", "important");
+        document.querySelector(".all_canasta_pobreza").style.removeProperty("background-color");
+        document.querySelector(".all_canasta_baja").style.removeProperty("background-color");
+        document.querySelector(".all_canasta_media_fragil").style.removeProperty("background-color");
+        document.querySelector(".all_canasta_media").style.removeProperty("background-color");
+
+        document.querySelector(".all_canasta_media_alta").style.removeProperty("background-color");
+    }
+
+    console.log("suma_indigencia_alquilando", typeof suma_indigencia_alquilando);
+});
+
+// document.querySelector(".show_indigencia_min").textContent = 0;
+// document.querySelector(".show_indigencia_max").textContent = suma_indigencia_alquilando;
+
+// document.querySelector(".show_pobreza_min").textContent = suma_indigencia_alquilando;
+// document.querySelector(".show_pobreza_max").textContent = suma_pobreza_alquilando;
+
+// document.querySelector(".show_clase_baja_min").textContent = suma_pobreza_alquilando;
+// document.querySelector(".show_clase_baja_max").textContent = suma_clase_baja_alquilando;
+
+// document.querySelector(".suma_clase_media_fragil_min").textContent = suma_clase_baja_alquilando;
+// document.querySelector(".suma_clase_media_fragil_max").textContent = suma_clase_media_fragil_alquilando;
+
+// document.querySelector(".suma_clase_media_min").textContent = suma_clase_media_fragil_alquilando;
+// document.querySelector(".suma_clase_media_max").textContent = suma_clase_media_alquilando;
+
+// document.querySelector(".suma_clase_media_alta_min").textContent = suma_clase_media_alquilando;
+// document.querySelector(".suma_clase_media_alta_max").textContent = suma_clase_media_alta_alquilando;
+
+// document.querySelector(".suma_clase_alta_min").textContent = suma_clase_media_alta_alquilando;

@@ -16,3 +16,9 @@ const tooltipList = [...tooltipTriggerList].map(
             offset: [-110, 6],
         })
 );
+
+
+
+
+
+
