@@ -14,7 +14,7 @@ footer {
     margin-bottom: var(--spacing-10_0-625);
     text-align: center;
     font-size: var(--font-size-16_1rem);
-    box-shadow: 0rem 0rem 0.3rem 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 0.3rem 5px rgba(0, 0, 0, 0.8);
 }
 
 h1 {
@@ -134,7 +134,7 @@ main {
     background-color: #222222;
     justify-content: center;
     margin-bottom: var(--spacing-16_1rem);
-    box-shadow: 0rem 0rem 0.3rem 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 0.3rem 5px rgba(0, 0, 0, 0.8);
 }
 
 .card p {
@@ -313,7 +313,7 @@ main {
 }
 
 .navbar {
-    box-shadow: 0rem 0rem 0.3rem 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 0.3rem 5px rgba(0, 0, 0, 0.8);
 }
 
 .navbar-nav {

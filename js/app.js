@@ -482,7 +482,7 @@ alquiler_in.addEventListener("keydown", function (e) {
 });
 
 // Evento input prevenir caracteres no numéricos
-alquiler_in.addEventListener("input", function (e) {
+alquiler_in.addEventListener("input", function () {
     const cursorPos = alquiler_in.selectionStart; // Guardar la posición actual del cursor
     alquiler_in.value = alquiler_in.value.replace(/[^0-9]/g, "");
     alquiler_in.selectionEnd = cursorPos; // Restaurar la posición del cursor
@@ -626,7 +626,7 @@ function ingresos_input_in(ingresos) {
         document.querySelector(".all_canasta_media_alta").style.removeProperty("background-color");
     }
 
-    if (ingresos == "" || !ingresos || ingresos == undefined || ingresos == null) {
+    if (ingresos === "" || !ingresos) {
         document.querySelector(".all_canasta_indigencia").style.removeProperty("background-color");
         document.querySelector(".all_canasta_pobreza").style.removeProperty("background-color");
 

@@ -20,7 +20,7 @@ Total : 21 files,  2685 codes, 233 comments, 189 blanks, all 3107 lines
 | [css/light.css](/css/light.css) | CSS | 51 | 0 | 1 | 52 |
 | [css/reset.css](/css/reset.css) | CSS | 189 | 3 | 2 | 194 |
 | [css/style.css](/css/style.css) | CSS | 339 | 6 | 61 | 406 |
-| [img/dibujo.svg](/img/dibujo.svg) | XML | 87 | 1 | 2 | 90 |
+| [img/dibujo.svg](/img/iso_logo.svg) | XML | 87 | 1 | 2 | 90 |
 | [index.html](/index.html) | HTML | 507 | 167 | 18 | 692 |
 | [js/app.js](/js/app.js) | JavaScript | 171 | 33 | 60 | 264 |
 | [js/fetch-data.js](/js/fetch-data.js) | JavaScript | 27 | 3 | 10 | 40 |
