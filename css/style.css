@@ -1,6 +1,3 @@
-html {
-}
-
 body {
     /* background-color: var(--color-background); */
     color: #fff;
@@ -91,7 +88,6 @@ main {
 .btn-add-person,
 .btn-reset-person {
     background-color: #212529;
-    margin-left: 5px;
     border: 0;
     transition: all 0.1s ease;
     box-shadow: 0 0 0.2rem #000;
@@ -482,7 +478,7 @@ main {
 .select_canasta_alquiler {
     background-color: #333;
     cursor: pointer;
-    max-width: 115px;
+    max-width: 117px;
     margin-right: 5px;
     -webkit-appearance: none;
     -moz-appearance: none;

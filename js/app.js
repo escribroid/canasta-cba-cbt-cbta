@@ -121,7 +121,7 @@ function addPersonToTable(
 
     row.id = `person_${count_person}`;
 
-    console.log("count_ADD", count_person);
+    //console.log("count_ADD", count_person);
 
     row.innerHTML = `<td class="p-1">${gender_show}</td><td class="p-1">${age_mostrar_table}</td><td id="detalles_monto_person_${count_person}" class="add_Partials p-1">$${canasta_b_total_persona.toLocaleString(
         "es-AR",
@@ -176,34 +176,34 @@ tableBody.addEventListener("click", (event) => {
     const filas = tableBody.querySelectorAll("tr");
     let array_filas = Array.from(filas);
 
-    console.log("filas", filas);
+    //console.log("filas", filas);
 
     const cells = tableBody.querySelectorAll("td");
 
-    console.log("cells", cells);
+    //console.log("cells", cells);
 
     let array_cells = Array.from(cells); // Convertir NodeList a array
 
     const clickedCell = event.target.closest("td"); // Detectar la fila clickeada
     const cell_select_id = clickedCell.id;
 
-    console.log("cell_select_id=", clickedCell.id);
+    //console.log("cell_select_id=", clickedCell.id);
 
     const clickedRow = clickedCell.parentNode; // Detectar la fila clickeada
     const clickedRowId = clickedRow.id; // Detectar el id de la fila clickeada
 
-    console.log("clickedRowId", clickedRowId);
+    //console.log("clickedRowId", clickedRowId);
 
     if (clickedCell && clickedCell.id) {
         let index_array_cells = array_cells.findIndex((cell) => cell.id === cell_select_id);
-        console.log("index_array_cells=", index_array_cells);
+        // console.log("index_array_cells=", index_array_cells);
 
         if (index_array_cells !== 3) {
             index_array_cells_new = (index_array_cells - 3) / 5;
         } else if (index_array_cells === 3) {
             index_array_cells_new = 0;
         }
-        console.log("index_array_cells_new", index_array_cells_new);
+        // console.log("index_array_cells_new", index_array_cells_new);
 
         subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_person, index_array_cells_new);
 
@@ -214,7 +214,9 @@ tableBody.addEventListener("click", (event) => {
 
 function subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_person, index_array_cells_new) {
     array_CBA_Personas.splice(index_array_cells_new, 1);
-    console.log("array_CBA_Personas-SUB:", array_CBA_Personas);
+    ingresos = document.getElementById("ingresos_input").value;
+
+    // console.log("array_CBA_Personas-SUB:", array_CBA_Personas);
 
     suma_CBA_Personas = 0;
     for (let i = 0; i < array_CBA_Personas.length; i++) {
@@ -222,7 +224,7 @@ function subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_p
     }
 
     array_CBT_Personas.splice(index_array_cells_new, 1);
-    console.log("array_CBT_Personas-SUB:", array_CBT_Personas);
+    // console.log("array_CBT_Personas-SUB:", array_CBT_Personas);
     suma_CBT_Personas = 0;
     for (let i = 0; i < array_CBT_Personas.length; i++) {
         suma_CBT_Personas = parseFloat(suma_CBT_Personas) + parseFloat(array_CBT_Personas[i]);
@@ -232,6 +234,8 @@ function subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_p
 
     suma_Total(suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
     suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
+
+    ingresos_input_in(ingresos);
 }
 
 // SUMA DE CANASTA PERSONALIZADA +++++++++++++++++++++++
@@ -369,7 +373,7 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     }
 
     if (!age || !gender) {
-        console.log("No se puede agregar persona");
+        // console.log("No se puede agregar persona");
         return;
     } else {
         // Obtener el valor de la edad seleccionada +
@@ -398,9 +402,9 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
 
         count_person = count_person + 1;
         array_count_person.push(count_person);
-        console.log("array_count_person1+", array_count_person);
+        // console.log("array_count_person1+", array_count_person);
         //console.log("array_count_person_LEN", array_count_person.length);
-        console.log("count_person", count_person);
+        // console.log("count_person", count_person);
 
         canasta_b_alimentaria_persona = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cba_equivalente;
         //console.log("canasta_b_alimentaria_persona", canasta_b_alimentaria_persona);
@@ -411,8 +415,8 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
             suma_CBA_Personas = parseFloat(suma_CBA_Personas) + parseFloat(array_CBA_Personas[i]);
         }
 
-        console.log("array_CBA_Personas-SUB", array_CBA_Personas);
-        console.log("suma_CBA_Personas-SUB", suma_CBA_Personas);
+        // console.log("array_CBA_Personas-SUB", array_CBA_Personas);
+        // console.log("suma_CBA_Personas-SUB", suma_CBA_Personas);
 
         canasta_b_total_persona = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente;
         //console.log("canasta_b_total_persona", canasta_b_total_persona);
@@ -423,9 +427,9 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
         suma_CBT_Personas = parseFloat(suma_CBT_Personas) + parseFloat(array_CBT_Personas[i]);
     }
 
-    console.log("array_CBT_Personas", array_CBT_Personas);
+    // console.log("array_CBT_Personas", array_CBT_Personas);
     // console.log("array_CBT_Personas", array_CBT_Personas.length);
-    console.log("suma_CBT_Personas", suma_CBT_Personas);
+    // console.log("suma_CBT_Personas", suma_CBT_Personas);
 
     // Agregar la persona a la tabla +++++++++++++++++++
     addPersonToTable(
