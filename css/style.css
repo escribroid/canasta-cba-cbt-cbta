@@ -557,12 +557,12 @@ main {
 
 .select_canasta_alquiler,
 .alquiler_in {
-    background-color: #0c5da599;
+    background-color: #0c5da533;
 }
 
 .selected-age,
 .selected-gender {
-    background-color: #39770d88;
+    background-color: #39770d33;
 }
 
 .option_alquiler:enabled {
@@ -573,7 +573,7 @@ main {
 
 .alquiler_in:disabled {
     text-align: center;
-    background-color: #0c5da533;
+    background-color: #0c5da511;
 }
 
 .alquiler_in::placeholder {
