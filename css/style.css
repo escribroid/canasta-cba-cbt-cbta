@@ -343,6 +343,16 @@ main {
     list-style: none;
 }
 
+.navbar > .container,
+.navbar > .container-fluid,
+.navbar > .container-lg,
+.navbar > .container-md,
+.navbar > .container-sm,
+.navbar > .container-xl,
+.navbar > .container-xxl {
+    padding-right: 12px;
+}
+
 .navbar-toggler {
     padding: 0;
 }
@@ -381,7 +391,7 @@ main {
 
 .offcanvas-header .btn-close {
     position: relative;
-    padding: calc(var(--bs-offcanvas-padding-y) * 0.5) calc(var(--bs-offcanvas-padding-x) * 0.5);
+    padding: 8px 0;
     margin-top: calc(-0.9 * var(--bs-offcanvas-padding-y));
     margin-right: calc(-1.1 * var(--bs-offcanvas-padding-x));
     margin-bottom: calc(-0.5 * var(--bs-offcanvas-padding-y));
