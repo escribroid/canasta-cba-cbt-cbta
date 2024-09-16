@@ -1,36 +1,40 @@
 body {
     /* background-color: var(--color-background); */
-    color: #fff;
+    color: #f2f4f7;
     font-family: var(--font-primary);
     font-size: var(--font-size-22_1-375);
     margin: 0 auto;
     max-width: 600px;
     padding: 0 0.5rem !important;
     overflow: auto !important;
+    background-color: #121417;
 }
 
 footer {
-    color: #fff;
+    color: #f2f4f7;
     margin-bottom: var(--spacing-10_0-625);
     text-align: center;
     font-size: var(--font-size-16_1rem);
-    box-shadow: 0 0 0.3rem 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 0.3rem 4px #2c2f33;
+    background-color: #121417 !important;
 }
 
 h1 {
     text-align: center;
     width: 24ch;
+    color: #ff8800;
 }
 
 h2 {
-    color: #ff4f00;
+    /* color: #ff4f00; */
+    color: #ff5500;
 }
 
 header {
     position: static;
     margin: 0;
     margin-top: 5px;
-    margin-bottom: var(--spacing-20_1-25);
+    margin-bottom: var(--spacing-24_1-5);
 }
 
 main {
@@ -40,17 +44,23 @@ main {
 }
 
 #person-form {
-    border: 0 solid #ff4f00;
     border-radius: var(--spacing-10_0-625);
     margin: 0;
     padding: 0;
 }
 
+.accordion {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .accordion-flush .accordion-item .accordion-button,
 .accordion-flush .accordion-item .accordion-button.collapsed {
-    background: #333;
+    background: #2c2f33;
     color: rgb(177 197 255);
     font-size: var(--font-size-16_1rem);
+    gap: 20px;
 }
 
 .accordion-flush .accordion-item {
@@ -83,12 +93,12 @@ main {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    border: 1px solid #6c757d;
+    border: 1px solid #2c2f33;
 }
 
 .btn-add-person,
 .btn-reset-person {
-    background-color: #212529;
+    background-color: #1b1f24;
     border: 0;
     margin-left: 5px;
     transition: all 0.1s ease;
@@ -99,6 +109,11 @@ main {
 .btn-reset-person:active {
     transform: scale(1.3);
 }
+
+/* .btn-add-person:hover {
+    transform: scale(1.3);
+
+} */
 
 /* En dispositivos mÃ³viles */
 /* @media (hover: none) {
@@ -134,42 +149,52 @@ main {
 
 .canasta-custom-person-add-title {
     padding-bottom: 10px;
-    border-bottom: 1px solid #555;
+    border-bottom: 2px solid #2c2f33;
 }
 
 .canasta_txt_vivienda {
     margin-left: 2.5rem;
     margin-bottom: 10px;
+    padding-top: 5px;
 }
 
 .card {
-    background-color: #222222;
+    background-color: #1b1f24;
     justify-content: center;
-    margin-bottom: var(--spacing-20_1-25);
-    box-shadow: 0 0 0.3rem 5px rgba(0, 0, 0, 0.8);
+    margin-bottom: var(--spacing-24_1-5);
+    box-shadow: 0 0 0.3rem 4px #2c2f33;
 }
 
 .card p {
-    color: #fff;
+    color: #f2f4f7;
+}
+
+.card_cba {
+    box-shadow: 0 0 0.3rem 1px #ff3366;
+}
+.card_cbt {
+    box-shadow: 0 0 0.3rem 1px #ff5500;
+}
+
+.card_cbta {
+    box-shadow: 0 0 0.3rem 1px #4caf50;
 }
 
 .card_cba_value {
-    /* color: rgb(211 193 255); */
-    /* color: rgb(214, 132, 107); */
-    /* color: #fa824b; */
-    color: #ff9464;
-    /* color: rgba(255, 79, 0, 0.8); */
-
-    /* color: var(--bs-danger-text-emphasis)!important; */
+    color: #ff8800;
     font-weight: var(--font-weight-700-bold);
     margin-left: var(--spacing-10_0-625);
     background: linear-gradient(#140803, #0f0703);
     border-radius: 5px;
     padding: 4px;
 }
+v .card-header {
+}
 
 .card-header {
-    padding: var(--spacing-10_0-625);
+    padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+    color: var(--bs-card-cap-color);
+    background-color: #1b1f24 !important;
 }
 
 .card-header h2 {
@@ -190,7 +215,7 @@ main {
 }
 
 .card_subtitle {
-    color: #fff;
+    color: #f2f4f7;
     display: flex;
     justify-content: space-between;
     margin-left: 1rem;
@@ -274,24 +299,43 @@ main {
     align-items: center;
     margin: 0 0 0.5rem 0;
     padding: 0 0 1rem 0;
-    border-bottom: 1px solid #555;
+    border-bottom: 2px solid #2c2f33;
 }
 
 .foo_indices_date {
-    color: #c63e00;
+    color: #ff5500;
     text-shadow: 1px 1px 1px #000;
 }
-
-.icon-svg-add:active,
-.icon-svg-reset:active {
-    fill: #ce2331;
+.icon-svg-add:hover {
+    fill: #ff5500;
     border-radius: 5px;
     font-weight: bold;
-    text-shadow: 1px 1px 1px #000;
+    box-shadow: 0px 0px 10px 4px #ff5500;
+}
+
+.icon-svg-add:active {
+    fill: #ff5500;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px #ff5500;
+}
+
+.icon-svg-reset:hover {
+    fill: #ff3366;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px 4px #ff3366;
+}
+
+.icon-svg-reset:active {
+    fill: #ff3366;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px #ff3366;
 }
 
 .ingresos_input {
-    background-color: #333;
+    background-color: #2c2f33;
     cursor: pointer;
     max-width: 220px;
     margin-right: 5px;
@@ -314,7 +358,8 @@ main {
     padding: var(--bs-list-group-item-padding-y) 0.01rem;
     color: var(--bs-list-group-color);
     text-decoration: none;
-    background-color: var(--bs-list-group-bg);
+    /* background-color: var(--bs-list-group-bg); */
+    background-color: #1b1f24 !important;
     border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
 }
 
@@ -330,7 +375,8 @@ main {
     font-weight: var(--font-weight-700-bold);
     letter-spacing: 0.1rem;
     font-style: italic;
-    /* color: #F05941; */
+    color: #ff8800;
+    color: #f2f4f7;
 }
 
 .logo-img {
@@ -346,7 +392,8 @@ main {
 }
 
 .navbar {
-    box-shadow: 0 0 0.3rem 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 0.3rem 4px #2c2f33;
+    background: #1b1f24 !important;
 }
 
 .navbar-nav {
@@ -384,7 +431,7 @@ main {
 }
 
 .text-bg-dark {
-    color: #fff !important;
+    color: #f2f4f7 !important;
     /* background-color: var(--color-background) !important; */
     background: none !important;
 }
@@ -399,6 +446,7 @@ main {
     flex-grow: 1;
     padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
     overflow-y: auto;
+    background-color: #121417;
     box-shadow: 0 0 0.3rem 5px rgba(0, 0, 0, 0.8);
 }
 
@@ -419,7 +467,7 @@ main {
     box-shadow: 0 0 0.3rem 1px rgba(0, 0, 0, 0.8);
     right: 8px;
     opacity: 1;
-    background-color: #ffffff;
+    background-color: #f2f4f7;
 }
 
 /* .person-form-group {
@@ -438,13 +486,13 @@ main {
     text-align: center;
 }
 
-.person-table-title {
+/* .person-table-title {
     margin: var(--spacing-10_0-625) 0 var(--spacing-14_0-875) 0;
     padding: 5px;
     text-align: center;
     background-color: rgb(82 70 26);
     border-radius: 0.3rem;
-}
+} */
 
 .row {
     display: flex;
@@ -507,7 +555,7 @@ main {
     justify-content: space-evenly;
     align-items: center;
     padding: 0 0 1rem 0;
-    border-bottom: 1px solid #555;
+    border-bottom: 2px solid #2c2f33;
 }
 
 .text-shadow {
@@ -522,18 +570,19 @@ main {
 /* Cambiar el color del texto */
 .tooltip .tooltip-inner {
     color: #fff; /* Texto blanco */
-    background-color: #333; /* Fondo interno oscuro */
+    opacity: 1;
+    background-color: #111; /* Fondo interno oscuro */
     padding: 10px; /* Aumentar el padding */
     font-size: 1rem; /* TamaÃ±o de fuente mÃ¡s grande */
 }
 
 /* Personalizar la flecha del tooltip */
 .tooltip .tooltip-arrow::before {
-    border-top-color: #333; /* Cambiar el color de la flecha */
+    border-top-color: #2c2f33; /* Cambiar el color de la flecha */
 }
 
 .version {
-    color: #fff;
+    color: #f2f4f7;
     width: 100%;
     text-shadow: 1px 1px 1px #000;
     font-size: var(--font-size-16_1rem);
@@ -543,7 +592,7 @@ main {
 .view_cbt,
 .view_cbta,
 .view_cbt_alquiler_3amb {
-    color: #fff;
+    color: #f2f4f7;
     font-size: 5px;
 }
 
@@ -552,16 +601,16 @@ main {
 .gender-option:enabled,
 .option_alquiler:enabled {
     text-align: center;
-    background-color: #000;
+    background-color: #121417;
 }
 
 .option_alquiler:first-child {
-    background-color: #333;
+    background-color: #2c2f33;
 }
 
 .age-option-selected {
     text-align: left;
-    background-color: #333;
+    background-color: #2c2f33;
 }
 
 .alquiler_in,
@@ -571,7 +620,7 @@ main {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none; /* Remueve el estilo nativo */
-    background-color: #333;
+    background-color: #2c2f33;
     cursor: pointer;
     max-width: 120px;
     margin-right: 0px;
@@ -580,23 +629,24 @@ main {
 
 .select_canasta_alquiler,
 .alquiler_in {
-    background-color: #0c5da533;
+    background-color: #4caf5033;
 }
 
 .selected-age,
 .selected-gender {
-    background-color: #39770d33;
+    background-color: #ff550066;
 }
 
 .option_alquiler:enabled {
     display: block;
     text-align: justify;
     margin-right: 50px;
+    background-color: #121417;
 }
 
 .alquiler_in:disabled {
     text-align: center;
-    background-color: #0c5da511;
+    background-color: #4caf5033;
 }
 
 .alquiler_in::placeholder {
@@ -605,7 +655,7 @@ main {
 
 .message_error_age {
     background-color: rgb(73, 51, 51);
-    color: #fff;
+    color: #f2f4f7;
     display: none;
     height: 6rem;
     /* position: absolute; */

@@ -49,12 +49,12 @@ function linea_indigencia() {
 
 function linea_pobreza() {
     const linea_pobreza = document.querySelector(".linea_pobreza");
-    linea_pobreza.innerHTML = `<div class="cards_nota"><span class="cards_linea_vineta">»</span><span class="cards_nota_txt">Pobreza con Casa Propia: ingreso mensual menor a $${cbt}</span></div>`;
+    linea_pobreza.innerHTML = `<div class="cards_nota"><span class="cards_nota_txt">» Pobreza con Casa Propia: ingreso mensual menor a $${cbt}</span></div>`;
 }
 
 function linea_pobreza_alquilando() {
     const linea_pobreza_alquilando = document.querySelector(".linea_pobreza_alquilando");
-    linea_pobreza_alquilando.innerHTML = `<div class="cards_nota"><span class="cards_linea_vineta">»</span><span class="cards_nota_txt">Pobreza ALQUILANDO: ingreso mensual menor a $${cbt_alquiler_3amb}</span></div>`;
+    linea_pobreza_alquilando.innerHTML = `<div class="cards_nota"><span class="cards_nota_txt">» Pobreza ALQUILANDO: ingreso mensual menor a $${cbt_alquiler_3amb}</span></div>`;
 }
 
 calcular_cba();
@@ -566,7 +566,7 @@ function ingresos_input_in(ingresos) {
     }
 
     if (ingresos >= 0 && ingresos < suma_indigencia_alquilando) {
-        document.querySelector(".all_canasta_indigencia").style.setProperty("background-color", "red", "important");
+        document.querySelector(".all_canasta_indigencia").style.setProperty("background-color", "#FF1100", "important");
         // document.querySelector(".all_canasta_indigencia").style.setProperty("border", "2px solid red", "important");
         // document.querySelector(".all_canasta_indigencia").style.setProperty("border-radius", "20px", "important");
 
@@ -577,7 +577,7 @@ function ingresos_input_in(ingresos) {
         document.querySelector(".all_canasta_media_alta").style.removeProperty("background-color");
         document.querySelector(".all_canasta_alta").style.removeProperty("background-color");
     } else if (ingresos >= suma_indigencia_alquilando && ingresos < suma_pobreza_alquilando) {
-        document.querySelector(".all_canasta_pobreza").style.setProperty("background-color", "red", "important");
+        document.querySelector(".all_canasta_pobreza").style.setProperty("background-color", "#FF1100cc", "important");
         document.querySelector(".all_canasta_indigencia").style.removeProperty("background-color");
         document.querySelector(".all_canasta_baja").style.removeProperty("background-color");
         document.querySelector(".all_canasta_media_fragil").style.removeProperty("background-color");
@@ -585,7 +585,7 @@ function ingresos_input_in(ingresos) {
         document.querySelector(".all_canasta_media_alta").style.removeProperty("background-color");
         document.querySelector(".all_canasta_alta").style.removeProperty("background-color");
     } else if (ingresos >= suma_pobreza_alquilando && ingresos < suma_clase_baja_alquilando) {
-        document.querySelector(".all_canasta_baja").style.setProperty("background-color", "red", "important");
+        document.querySelector(".all_canasta_baja").style.setProperty("background-color", "#FF5500 ", "important");
         document.querySelector(".all_canasta_indigencia").style.removeProperty("background-color");
         document.querySelector(".all_canasta_pobreza").style.removeProperty("background-color");
         document.querySelector(".all_canasta_media_fragil").style.removeProperty("background-color");
@@ -593,7 +593,9 @@ function ingresos_input_in(ingresos) {
         document.querySelector(".all_canasta_media_alta").style.removeProperty("background-color");
         document.querySelector(".all_canasta_alta").style.removeProperty("background-color");
     } else if (ingresos >= suma_clase_baja_alquilando && ingresos < suma_clase_media_fragil_alquilando) {
-        document.querySelector(".all_canasta_media_fragil").style.setProperty("background-color", "red", "important");
+        document
+            .querySelector(".all_canasta_media_fragil")
+            .style.setProperty("background-color", "#4CAF50aa", "important");
         document.querySelector(".all_canasta_indigencia").style.removeProperty("background-color");
         document.querySelector(".all_canasta_pobreza").style.removeProperty("background-color");
         document.querySelector(".all_canasta_baja").style.removeProperty("background-color");
@@ -601,7 +603,7 @@ function ingresos_input_in(ingresos) {
         document.querySelector(".all_canasta_media_alta").style.removeProperty("background-color");
         document.querySelector(".all_canasta_alta").style.removeProperty("background-color");
     } else if (ingresos >= suma_clase_media_fragil_alquilando && ingresos < suma_clase_media_alquilando) {
-        document.querySelector(".all_canasta_media").style.setProperty("background-color", "red", "important");
+        document.querySelector(".all_canasta_media").style.setProperty("background-color", "#4CAF50aa", "important");
         document.querySelector(".all_canasta_indigencia").style.removeProperty("background-color");
         document.querySelector(".all_canasta_pobreza").style.removeProperty("background-color");
         document.querySelector(".all_canasta_baja").style.removeProperty("background-color");
@@ -609,7 +611,9 @@ function ingresos_input_in(ingresos) {
         document.querySelector(".all_canasta_media_alta").style.removeProperty("background-color");
         document.querySelector(".all_canasta_alta").style.removeProperty("background-color");
     } else if (ingresos >= suma_clase_media_alquilando && ingresos < suma_clase_media_alta_alquilando) {
-        document.querySelector(".all_canasta_media_alta").style.setProperty("background-color", "red", "important");
+        document
+            .querySelector(".all_canasta_media_alta")
+            .style.setProperty("background-color", "#4CAF50aa", "important");
         document.querySelector(".all_canasta_indigencia").style.removeProperty("background-color");
         document.querySelector(".all_canasta_pobreza").style.removeProperty("background-color");
         document.querySelector(".all_canasta_baja").style.removeProperty("background-color");
@@ -617,7 +621,7 @@ function ingresos_input_in(ingresos) {
         document.querySelector(".all_canasta_media").style.removeProperty("background-color");
         document.querySelector(".all_canasta_alta").style.removeProperty("background-color");
     } else if (ingresos >= suma_clase_media_alta_alquilando) {
-        document.querySelector(".all_canasta_alta").style.setProperty("background-color", "red", "important");
+        document.querySelector(".all_canasta_alta").style.setProperty("background-color", "#4CAF50aa", "important");
         document.querySelector(".all_canasta_indigencia").style.removeProperty("background-color");
         document.querySelector(".all_canasta_pobreza").style.removeProperty("background-color");
         document.querySelector(".all_canasta_baja").style.removeProperty("background-color");
