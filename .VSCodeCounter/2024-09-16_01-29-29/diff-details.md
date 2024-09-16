@@ -1,0 +1,17 @@
+# Diff Details
+
+Date : 2024-09-16 01:29:29
+
+Directory c:\\Users\\smsua\\OneDrive\\Code-Codigo_Practic\\Webs-desarrolladas\\canastas-cba-cbt-mas-alquiler-indec
+
+Total : 2 files,  61 codes, 12 comments, 9 blanks, all 82 lines
+
+[Summary](results.md) / [Details](details.md) / [Diff Summary](diff.md) / Diff Details
+
+## Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [css/style.css](/css/style.css) | CSS | 61 | 11 | 9 | 81 |
+| [index.html](/index.html) | HTML | 0 | 1 | 0 | 1 |
+
+[Summary](results.md) / [Details](details.md) / [Diff Summary](diff.md) / Diff Details
