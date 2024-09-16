@@ -53,7 +53,7 @@
                         aria-labelledby="offcanvasDarkNavbarLabel"
                     >
                         <div class="offcanvas-header">
-                            <h3 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Canastas</h3>
+                            <h3 class="offcanvas-title" id="offcanvasDarkNavbarLabel"></h3>
                             <button
                                 type="button"
                                 class="btn-close btn-close-white"
@@ -61,7 +61,7 @@
                                 aria-label="Close"
                             ></button>
                         </div>
-                        <div class="offcanvas-body">
+                        <div class="offcanvas-body bg-black bg-gradient rounded-4">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="#">inicio</a>
@@ -129,7 +129,7 @@
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="28"
                                     height="28"
-                                    fill="currentColor"
+                                    fill="#0C5DA5"
                                     class="bi bi-house-fill"
                                     viewBox="0 0 16 16"
                                 >
@@ -147,11 +147,11 @@
                                     title="¿Alquilas?"
                                     class="form-select select_canasta_alquiler"
                                 >
-                                    <option class="option_alquiler" value="siAlquilo" selected>Alquilo</option>
-                                    <option value="AlquilerProm3amb">3 Amb Promedio</option>
-                                    <option value="AlquilerProm2amb">2 Amb Promedio</option>
-                                    <option value="AlquilerProm1amb">1 Amb Promedio</option>
-                                    <option value="noAlquilo">No Alquilo</option>
+                                    <option class="option_alquiler" value="siAlquilo" selected>Alquiler</option>
+                                    <option class="option_alquiler" value="AlquilerProm3amb">3 Amb Promedio</option>
+                                    <option class="option_alquiler" value="AlquilerProm2amb">2 Amb Promedio</option>
+                                    <option class="option_alquiler" value="AlquilerProm1amb">1 Amb Promedio</option>
+                                    <option class="option_alquiler" value="noAlquilo">No Alquilo</option>
                                 </select>
                             </label>
                             <div id="total-alquiler" class="table-header">
@@ -183,7 +183,7 @@
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="35"
                                             height="35"
-                                            fill="#ff4f00"
+                                            fill="#E7003E"
                                             class="bi bi-x-square icon-svg-reset"
                                             viewBox="0 0 16 16"
                                         >
@@ -207,7 +207,7 @@
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="28"
                                         height="28"
-                                        fill="currentColor"
+                                        fill="#398900"
                                         class="bi bi-person-fill"
                                         viewBox="0 0 16 16"
                                     >
@@ -249,7 +249,7 @@
                                                 id="selected-age"
                                                 class="form-select selected-age shadow rounded"
                                             >
-                                                <option value="" class="age-option" selected>► Edad ◄</option>
+                                                <option value="" class="age-option-selected" selected>◄ Edad ►</option>
                                                 <option value="0" class="age-option">0 años</option>
                                                 <option value="1" class="age-option">1 años</option>
                                                 <option value="2" class="age-option">2 años</option>
@@ -372,9 +372,9 @@
                                         <!-- SVG ADD PERSON -->
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            width="35"
-                                            height="35"
-                                            fill="#ff4f00"
+                                            width="36"
+                                            height="36"
+                                            fill="#398900"
                                             class="bi bi-plus-square icon-svg-add"
                                             viewBox="0 0 16 16"
                                         >
@@ -883,7 +883,7 @@
         <!-- FOOTER -->
         <footer class="rounded-4 p-0 bg-light-subtle">
             <div class="container-fluid bg-black bg-gradient rounded-4 p-2">
-                <h6 class="m-1 text-center fs-6 text-danger-emphasis w-100">Indices AGOSTO 2024</h6>
+                <h6 class="m-1 text-center fs-6 foo_indices_date">Indices AGOSTO 2024</h6>
                 <div class="version"></div>
             </div>
         </footer>
