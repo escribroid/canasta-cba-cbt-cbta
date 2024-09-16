@@ -1,0 +1,35 @@
+Date : 2024-09-15 20:49:53
+Directory : c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec
+Total : 6 files,  -365 codes, -121 comments, -135 blanks, all -621 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| XML        |          2 |          0 |          0 |          0 |          0 |
+| CSS        |          1 |         -3 |          0 |         -1 |         -4 |
+| JavaScript |          3 |       -362 |       -121 |       -134 |       -617 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                   |          6 |       -365 |       -121 |       -135 |       -621 |
+| css                                                                                                                 |          1 |         -3 |          0 |         -1 |         -4 |
+| img                                                                                                                 |          2 |          0 |          0 |          0 |          0 |
+| js                                                                                                                  |          3 |       -362 |       -121 |       -134 |       -617 |
++---------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                            | language   | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\style.css    | CSS        |         -3 |          0 |         -1 |         -4 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\img\dibujo.svg   | XML        |        -87 |         -1 |         -2 |        -90 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\img\iso_logo.svg | XML        |         87 |          1 |          2 |         90 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\app copy 2.js | JavaScript |       -182 |        -86 |        -68 |       -336 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\app copy.js   | JavaScript |       -273 |        -55 |        -79 |       -407 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\app.js        | JavaScript |         93 |         20 |         13 |        126 |
+| Total                                                                                                               |            |       -365 |       -121 |       -135 |       -621 |
++---------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
