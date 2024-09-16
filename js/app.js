@@ -44,7 +44,7 @@ function calcular_cbt_y_alquiler(personas, edad) {
 
 function linea_indigencia() {
     const linea_indigencia = document.querySelector(".linea_indigencia");
-    linea_indigencia.innerHTML = `<div class="cards_nota"><span class="cards_linea_vineta">»</span><span class="cards_nota_txt">Indigencia con Casa Propia: ingreso mensual menor a $${cba}</span></div>`;
+    linea_indigencia.innerHTML = `<div class="cards_nota"><span class="cards_nota_txt">» Indigencia con Casa Propia: ingreso mensual menor a $${cba}</span></div>`;
 }
 
 function linea_pobreza() {

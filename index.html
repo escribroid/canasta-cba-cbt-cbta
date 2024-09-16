@@ -68,7 +68,7 @@
                                     <a class="nav-link active" aria-current="page" href="#">inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">CBA</a>
+                                    <a class="nav-link" href="#">Canasta básica alimentaria</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a
@@ -78,7 +78,7 @@
                                         data-bs-toggle="dropdown"
                                         aria-expanded="false"
                                     >
-                                        CBT
+                                        Canasta básica total + alquiler
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-dark">
                                         <li><a class="dropdown-item" href="#">Action</a></li>
@@ -88,6 +88,12 @@
                                         </li>
                                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                                     </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Canasta básica total</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contacto</a>
                                 </li>
                             </ul>
                         </div>
@@ -108,7 +114,7 @@
                 </div>
             </div> -->
 
-            <!-- Card 2 Canasta Básica Alimentaria -->
+            <!-- Card 2 Canasta persolalizada -->
             <div class="card w-100 rounded-4 bg-dark bg-gradient-dark">
                 <!-- <div class="card-header"> -->
                 <!-- <div class="d-flex justify-content-between align-items-center">
@@ -122,7 +128,10 @@
                 <!-- </div> -->
                 <ul class="list-group list-group-flush rounded-4">
                     <li class="list-group-item bg-dark bg-gradient-dark d-grid">
-                        <!-- <h3 class="person-add-title">Familia y Vivienda:</h3> -->
+                        <h2 class="canasta-custom-person-add-title text-center fs-5 text-body-secondary">
+                            Conocé tu Canasta Familiar y tu Sector Socioeconómico
+                        </h2>
+                        <p class="canasta_txt_vivienda">▼ Situación de vivienda</p>
                         <div class="table_alquiler">
                             <span>
                                 <!-- SVG CASA -->
@@ -148,7 +157,7 @@
                                     title="¿Alquilas?"
                                     class="form-select select_canasta_alquiler"
                                 >
-                                    <option class="option_alquiler" value="siAlquilo" selected>Alquiler</option>
+                                    <option class="option_alquiler" value="siAlquilo" selected>Alquilo</option>
                                     <option class="option_alquiler" value="AlquilerProm3amb">3 Amb Promedio</option>
                                     <option class="option_alquiler" value="AlquilerProm2amb">2 Amb Promedio</option>
                                     <option class="option_alquiler" value="AlquilerProm1amb">1 Amb Promedio</option>
@@ -201,6 +210,8 @@
                         </div>
 
                         <form id="person-form">
+                            <p class="canasta_txt_vivienda">▼ Ingresa al grupo familiar</p>
+
                             <div class="fieldset">
                                 <span>
                                     <!-- SVG PERSON -->
@@ -449,11 +460,11 @@
                             </div>
                         </form>
 
-                        <div class="bg-black py-2 mt-2 text-center rounded-4 table-all-canastas fs-6">
-                            <div class="row m-0 mb-1 p-0 w-100">
-                                <div class="col m-0 p-0 pb-1 fs-5 text-center text-shadow">Sector Socio Económico</div>
+                        <div class="bg-black py-2 px-0 mt-3 text-center rounded-4 table-all-canastas fs-6 w-100">
+                            <div class="row m-0 mb-2 p-0 w-100">
+                                <div class="col pb-1 fs-5 text-center text-shadow">Sector Socio Económico</div>
                             </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
+                            <div class="row m-0 mb-2 p-0 w-100">
                                 <div
                                     class="m-0 p-0 show_indigencia_min bg-secondary-subtle fs-6 d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
@@ -469,7 +480,7 @@
                                     class="m-0 p-0 show_indigencia_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
+                            <div class="row m-0 mb-2 p-0 w-100">
                                 <div
                                     class="m-0 p-0 show_pobreza_min bg-body fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
@@ -485,7 +496,7 @@
                                     class="m-0 p-0 show_pobreza_max show_indigencia_max bg-body fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
+                            <div class="row m-0 mb-2 p-0 w-100">
                                 <div
                                     class="m-0 p-0 show_clase_baja_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
@@ -501,15 +512,15 @@
                                     class="m-0 p-0 show_clase_baja_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
+                            <div class="row m-0 mb-2 p-0 w-100">
                                 <div
                                     class="m-0 p-0 suma_clase_media_fragil_min bg-body fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
                                     class="col m-0 p-0 bg-body fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_media_fragil"
                                 >
-                                    <span class="bg-body pe-0 h-100 align-content-center">≤</span>Media
-                                    fragil<span class="bg-body text-center h-100 align-content-center"
+                                    <span class="bg-body pe-0 h-100 align-content-center">≤</span>Media fragil<span
+                                        class="bg-body text-center h-100 align-content-center"
                                         >&lt;</span
                                     >
                                 </div>
@@ -517,7 +528,7 @@
                                     class="m-0 p-0 suma_clase_media_fragil_max bg-body fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
+                            <div class="row m-0 mb-2 p-0 w-100">
                                 <div
                                     class="m-0 p-0 suma_clase_media_min bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
@@ -533,7 +544,7 @@
                                     class="m-0 p-0 suma_clase_media_max bg-secondary-subtle fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 mb-1 p-0 w-100">
+                            <div class="row m-0 mb-2 p-0 w-100">
                                 <div
                                     class="m-0 p-0 suma_clase_media_alta_min bg-body fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
@@ -541,15 +552,13 @@
                                     class="col m-0 p-0 bg-body fs-6 d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_media_alta"
                                 >
                                     <span class="bg-body pe-0 h-100 align-content-center">≤</span>
-                                    Media alta<span class="bg-body text-center h-100 align-content-center"
-                                        >&lt;</span
-                                    >
+                                    Media alta<span class="bg-body text-center h-100 align-content-center">&lt;</span>
                                 </div>
                                 <div
                                     class="m-0 p-0 suma_clase_media_alta_max bg-body fs-6 justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 p-0 pb-1 w-100">
+                            <div class="row m-0 p-0 pb-1 mb-1 w-100">
                                 <div
                                     class="m-0 p-0 suma_clase_alta_min bg-secondary-subtle fs-6 justify-content-center align-items-center"
                                 ></div>
@@ -639,9 +648,9 @@
             <!-- Card 3 Canasta Básica Alimentaria -->
             <div class="card rounded-4 bg-dark bg-gradient-dark">
                 <div class="card-header">
-                    <h2>Canasta Básica Alimentaria</h2>
+                    <h2 class="card_header_title">Canasta Básica Alimentaria</h2>
                     <h4 class="card_header_sub">
-                        CBA - Linea de indigencia [Li]
+                        • CBA - Linea de indigencia [Li]
                         <span
                             ><button
                                 type="button"
@@ -655,7 +664,7 @@
                             </button></span
                         >
                     </h4>
-                    <div class="card_subtitle fs-6 py-1 pb-0">
+                    <div class="card_subtitle py-1 pb-0">
                         • Con Casa Propia
                         <div class="view_cba"></div>
                     </div>
@@ -674,7 +683,7 @@
                                         aria-expanded="false"
                                         aria-controls="flush-collapse-1"
                                     >
-                                        Para Hogar de 4 personas, integrantes:
+                                        Para Hogar de 4 integrantes:
                                     </button>
                                 </h2>
                                 <div
@@ -721,9 +730,9 @@
             <!-- Card 4 Canasta Básica Total -->
             <div class="card rounded-4 bg-dark bg-gradient-dark">
                 <div class="card-header">
-                    <h2>Canasta Básica Total</h2>
+                    <h2 class="card_header_title">Canasta Básica Total</h2>
                     <h4 class="card_header_sub">
-                        CBT - Linea de Pobreza [LP]
+                        • CBT - Linea de Pobreza [LP]
                         <span
                             ><button
                                 type="button"
@@ -756,7 +765,7 @@
                                         aria-expanded="false"
                                         aria-controls="flush-collapse-2"
                                     >
-                                        Para Hogar de 4 personas, composición:
+                                        Para Hogar de 4 integrantes:
                                     </button>
                                 </h2>
                                 <div
@@ -803,10 +812,9 @@
             <!-- Card 5 Canasta Basica Total + Alquiler -->
             <div class="card rounded-4 bg-dark bg-gradient-dark">
                 <div class="card-header">
-                    <h2>Canasta Básica Total</h2>
-                    <h4>Más Alquiler - CBTA</h4>
+                    <h2 class="card_header_title">Canasta Básica Total <span class="fs-6">+ Alquiler</span></h2>
                     <h4 class="card_header_sub">
-                        Linea Pobreza Alquilando [LPA]
+                        • Linea Pobreza Alquilando [LPA]
                         <span
                             ><button
                                 type="button"
@@ -839,7 +847,7 @@
                                         aria-expanded="false"
                                         aria-controls="flush-collapse-3"
                                     >
-                                        Para Hogar de 4 personas, composición:
+                                        Para Hogar de 4 integrantes:
                                     </button>
                                 </h2>
                                 <div

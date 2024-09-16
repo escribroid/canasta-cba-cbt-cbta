@@ -4,9 +4,8 @@ body {
     font-family: var(--font-primary);
     font-size: var(--font-size-22_1-375);
     margin: 0 auto;
-    position: relative;
     max-width: 600px;
-    padding: 0 5px !important;
+    padding: 0 0.5rem !important;
     overflow: auto !important;
 }
 
@@ -31,7 +30,7 @@ header {
     position: static;
     margin: 0;
     margin-top: 5px;
-    margin-bottom: var(--spacing-16_1rem);
+    margin-bottom: var(--spacing-20_1-25);
 }
 
 main {
@@ -51,7 +50,7 @@ main {
 .accordion-flush .accordion-item .accordion-button.collapsed {
     background: #333;
     color: rgb(177 197 255);
-    font-size: var(--font-size-18_1-125);
+    font-size: var(--font-size-16_1rem);
 }
 
 .accordion-flush .accordion-item {
@@ -133,10 +132,20 @@ main {
     opacity: var(--bs-btn-close-opacity);
 }
 
+.canasta-custom-person-add-title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #555;
+}
+
+.canasta_txt_vivienda {
+    margin-left: 2.5rem;
+    margin-bottom: 10px;
+}
+
 .card {
     background-color: #222222;
     justify-content: center;
-    margin-bottom: var(--spacing-16_1rem);
+    margin-bottom: var(--spacing-20_1-25);
     box-shadow: 0 0 0.3rem 5px rgba(0, 0, 0, 0.8);
 }
 
@@ -154,6 +163,9 @@ main {
     /* color: var(--bs-danger-text-emphasis)!important; */
     font-weight: var(--font-weight-700-bold);
     margin-left: var(--spacing-10_0-625);
+    background: linear-gradient(#140803, #0f0703);
+    border-radius: 5px;
+    padding: 4px;
 }
 
 .card-header {
@@ -167,16 +179,23 @@ main {
 .card_header_sub {
     display: flex;
     justify-content: space-between;
-    font-size: var(--font-size-18_1-125);
-    gap: 10px;
+    font-size: var(--font-size-16_1rem);
+    font-family: var(--font-secondary);
+    margin-left: 0.5rem;
+}
+
+.card_header_title {
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
 }
 
 .card_subtitle {
     color: #fff;
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
-    padding: var(--spacing-10_0-625) 0 0 0;
-    width: 100%;
+    margin-left: 1rem;
+    padding: 0;
+    font-size: var(--font-size-16_1rem);
 }
 
 .cards_linea_vineta {
@@ -188,12 +207,12 @@ main {
 
 .cards_nota {
     display: flex;
-    align-items: flex-start;
+    width: 80%;
 }
 
 .cards_nota_txt {
     font-size: var(--font-size-14_0-875);
-    text-align: left;
+    text-align: center;
 }
 
 [data-bs-theme="dark"] .carousel .carousel-control-next-icon,
@@ -253,7 +272,9 @@ main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0 0 var(--spacing-8_0-5) 0;
+    margin: 0 0 0.5rem 0;
+    padding: 0 0 1rem 0;
+    border-bottom: 1px solid #555;
 }
 
 .foo_indices_date {
@@ -279,6 +300,8 @@ main {
 .linea_pobreza,
 .linea_indigencia,
 .linea_pobreza_alquilando {
+    display: flex;
+    justify-content: center;
     font-size: var(--font-size-16_1rem);
 }
 
@@ -288,17 +311,15 @@ main {
 
 .list-group-item {
     position: relative;
-    display: block;
-    padding: var(--bs-list-group-item-padding-y) 0.3rem;
+    padding: var(--bs-list-group-item-padding-y) 0.01rem;
     color: var(--bs-list-group-color);
     text-decoration: none;
     background-color: var(--bs-list-group-bg);
     border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
 }
 
-.list-group-item-acordion {
-    padding: var(--spacing-6_0-375) 0;
-}
+/* .list-group-item-acordion {
+} */
 
 .logo {
     display: flex;
@@ -473,7 +494,7 @@ main {
 
 .table-all-canastas {
     font-size: 10px !important;
-    padding: 0 2px;
+    padding: 0 1px;
 }
 
 .table-header {
@@ -481,10 +502,12 @@ main {
 }
 
 .table_alquiler {
-    margin: 0 0 10px 0;
+    margin: 0 0 0.5rem 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 0 0 1rem 0;
+    border-bottom: 1px solid #555;
 }
 
 .text-shadow {
