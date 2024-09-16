@@ -303,7 +303,9 @@ main {
 .logo {
     display: flex;
     font-family: var(--font-logo);
+    /* font-family: var(--font-mono); */
     font-size: var(--font-size-36_2-25);
+    /* font-size: var(--font-size-40_2-5); */
     font-weight: var(--font-weight-700-bold);
     letter-spacing: 0.1rem;
     font-style: italic;
@@ -384,7 +386,7 @@ main {
     margin-right: calc(-1.1 * var(--bs-offcanvas-padding-x));
     margin-bottom: calc(-0.5 * var(--bs-offcanvas-padding-y));
     box-shadow: 0 0 0.3rem 1px rgba(0, 0, 0, 0.8);
-    right: 5px;
+    right: 8px;
     opacity: 1;
     background-color: #ffffff;
 }
