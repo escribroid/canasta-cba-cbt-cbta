@@ -480,6 +480,7 @@ main {
     cursor: pointer;
     max-width: 118px;
     margin-right: 5px;
+    padding-left: 10px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
