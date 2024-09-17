@@ -13,6 +13,6 @@ const tooltipList = [...tooltipTriggerList].map(
     (tooltipTriggerEl) =>
         new bootstrap.Tooltip(tooltipTriggerEl, {
             placement: "top",
-            offset: [-110, 6],
+            offset: [0, 0],
         })
 );

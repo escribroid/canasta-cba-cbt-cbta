@@ -52,7 +52,6 @@ main {
 .accordion {
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 .accordion-flush .accordion-item .accordion-button,
@@ -61,6 +60,11 @@ main {
     color: rgb(177 197 255);
     font-size: var(--font-size-16_1rem);
     gap: 20px;
+}
+
+.accordion-flush .accordion-item:last-child {
+    border-bottom: 0;
+    width: 99%;
 }
 
 .accordion-flush .accordion-item {
@@ -77,11 +81,17 @@ main {
     margin: 0;
 }
 
+/* .accordion-header {
+    margin: 0 auto;
+    width: 98%;
+} */
+
 .accordion-item {
     padding: 0;
 }
 
 .aclaracion_edades,
+.aclaracion_ingresos,
 .aclaracion_table_sectores {
     display: inline-flex;
     position: relative;
@@ -95,6 +105,11 @@ main {
     height: 25px;
     border-radius: 50%;
     border: 1px solid #2c2f33;
+}
+
+.aclaracion_ingresos {
+    position: absolute;
+    right: 20px;
 }
 
 .btn-add-person,
@@ -204,10 +219,12 @@ v .card-header {
 
 .card_header_sub {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     font-size: var(--font-size-16_1rem);
     font-family: var(--font-secondary);
     margin-left: 0.5rem;
+    gap: 16px;
+    align-items: center;
 }
 
 .card_header_title {
@@ -218,10 +235,11 @@ v .card-header {
 .card_subtitle {
     color: #f2f4f7;
     display: flex;
-    justify-content: space-between;
     margin-left: 1rem;
     padding: 0;
     font-size: var(--font-size-16_1rem);
+    align-items: center;
+    justify-content: space-between;
 }
 
 .cards_linea_vineta {
@@ -386,6 +404,11 @@ v .card-header {
     filter: invert(55%) sepia(90%) saturate(5600%) hue-rotate(0deg) brightness(100%) contrast(105%);
 }
 
+.mayor_menor {
+    font-size: var(--font-size-18_1-125);
+    font-size: 18px;
+}
+
 .modal-body {
     position: relative;
     flex: 1 1 auto;
@@ -527,6 +550,7 @@ v .card-header {
 .suma_clase_alta_min,
 .suma_clase_alta_max {
     width: 31%;
+    font-size: var(--spacing-18_1-125);
 }
 
 .subtitle {
@@ -564,17 +588,30 @@ v .card-header {
 }
 
 .tooltip {
-    background-color: #333; /* Fondo oscuro */
-    border-radius: 10px; /* Bordes redondeados */
+    opacity: 1 !important;
+    border: 1px solid #ff550099; /* Borde gris */
+    --bs-tooltip-arrow-width: 0;
+    --bs-tooltip-arrow-height: 0;
+    --bs-tooltip-arrow-color: transparent;
+    border-radius: 20px;
+    right: 10px;
 }
+
+/* .custom-tooltip {
+    position: absolute;
+    inset: auto auto 10px 10px;
+    margin: 0px;
+    transform: translate3d(58.6667px, 127.333px, 0px);
+} */
 
 /* Cambiar el color del texto */
 .tooltip .tooltip-inner {
     color: #fff; /* Texto blanco */
-    opacity: 1;
     background-color: #111; /* Fondo interno oscuro */
     padding: 10px; /* Aumentar el padding */
     font-size: 1rem; /* TamaÃ±o de fuente mÃ¡s grande */
+    border-radius: 20px;
+    max-width: 300px;
 }
 
 /* Personalizar la flecha del tooltip */
