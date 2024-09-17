@@ -325,11 +325,14 @@ v .card-header {
     color: #ff5500;
     text-shadow: 1px 1px 1px #000;
 }
-.icon-svg-add:hover {
-    fill: #ff5500;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 0px 0px 10px 4px #ff5500;
+
+.form-select {
+    background-position: right 0.2rem center;
+    background-size: 16px 12px;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    padding: 0.375rem 1.5rem 0.375rem 0;
 }
 
 .icon-svg-add:active {
@@ -337,13 +340,6 @@ v .card-header {
     border-radius: 5px;
     font-weight: bold;
     box-shadow: 0px 0px 10px #ff5500;
-}
-
-.icon-svg-reset:hover {
-    fill: #ff3366;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 0px 0px 10px 4px #ff3366;
 }
 
 .icon-svg-reset:active {
@@ -355,6 +351,7 @@ v .card-header {
 
 .ingresos_input {
     background-color: #2c2f33;
+    background-color: #4caf5011;
     cursor: pointer;
     max-width: 220px;
     margin-right: 5px;
@@ -589,34 +586,29 @@ v .card-header {
 
 .tooltip {
     opacity: 1 !important;
-    border: 1px solid #ff550099; /* Borde gris */
-    --bs-tooltip-arrow-width: 0;
-    --bs-tooltip-arrow-height: 0;
-    --bs-tooltip-arrow-color: transparent;
+    border: 1px solid #ff550099; 
+    --bs-tooltip-arrow-width: 0px;
+    --bs-tooltip-arrow-height: 0px;
+    --bs-tooltip-arrow-color: red;
     border-radius: 20px;
-    right: 10px;
 }
 
-/* .custom-tooltip {
-    position: absolute;
-    inset: auto auto 10px 10px;
-    margin: 0px;
-    transform: translate3d(58.6667px, 127.333px, 0px);
-} */
+.custom-tooltip {
+}
 
 /* Cambiar el color del texto */
 .tooltip .tooltip-inner {
-    color: #fff; /* Texto blanco */
-    background-color: #111; /* Fondo interno oscuro */
-    padding: 10px; /* Aumentar el padding */
-    font-size: 1rem; /* TamaÃ±o de fuente mÃ¡s grande */
+    color: #f2f4f7;
+    background-color: #111; 
+    padding: 10px; 
+    font-size: 1rem; 
     border-radius: 20px;
-    max-width: 300px;
+    max-width: 250px;
 }
 
 /* Personalizar la flecha del tooltip */
 .tooltip .tooltip-arrow::before {
-    border-top-color: #2c2f33; /* Cambiar el color de la flecha */
+    border-top-color: #2c2f33; 
 }
 
 .version {
@@ -660,7 +652,7 @@ v .card-header {
     appearance: none; /* Remueve el estilo nativo */
     background-color: #2c2f33;
     cursor: pointer;
-    max-width: 118px;
+    max-width: 115px;
     margin-right: 0px;
     padding-left: 8px;
 }
