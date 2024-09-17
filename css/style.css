@@ -5,7 +5,7 @@ body {
     font-size: var(--font-size-22_1-375);
     margin: 0 auto;
     max-width: 600px;
-    padding: 0 0.5rem !important;
+    padding: 0 0.4rem !important;
     overflow: auto !important;
     background-color: #121417;
 }
@@ -33,7 +33,7 @@ h2 {
 header {
     position: static;
     margin: 0;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: var(--spacing-24_1-5);
 }
 
@@ -84,6 +84,7 @@ main {
 .aclaracion_edades,
 .aclaracion_table_sectores {
     display: inline-flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     font-size: var(--font-size-16_1rem);
