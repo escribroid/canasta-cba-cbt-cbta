@@ -131,104 +131,9 @@
                         <h2 class="canasta-custom-person-add-title text-center fs-5 text-body-secondary">
                             Conocé tu Canasta Familiar y tu Sector Socioeconómico
                         </h2>
-                        <p class="canasta_txt_vivienda">• Tipo de vivienda</p>
-                        <div class="table_alquiler">
-                            <span class="">
-                                <button
-                                    type="button"
-                                    class="btn btn-secondary aclaracion_icons"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-placement="top"
-                                    data-bs-custom-class="custom-tooltip"
-                                    data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
-                                >
-                                    <span>
-                                        <!-- SVG CASA -->
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="35"
-                                            height="35"
-                                            fill="#4CAF50"
-                                            class="bi bi-house-fill icon-svg-hause"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"
-                                            />
-                                            <path
-                                                d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"
-                                            />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </span>
-
-                            <label>
-                                <select
-                                    aria-label="canasta_alquiler"
-                                    name="canasta_alquiler"
-                                    id="select_canasta_alquiler"
-                                    title="¿Alquilas?"
-                                    class="form-select select_canasta_alquiler"
-                                >
-                                    <option class="option_alquiler" value="siAlquilo" selected>Alquilo</option>
-                                    <option class="option_alquiler" value="AlquilerProm3amb">Alquiler 3 Ambientes Promedio en CABA</option>
-                                    <option class="option_alquiler" value="AlquilerProm2amb">Alquiler 2 Ambientes Promedio en CABA</option>
-                                    <option class="option_alquiler" value="AlquilerProm1amb">Alquiler 1 Ambiente Promedio en CABA</option>
-                                    <option class="option_alquiler" value="noAlquilo">No Alquilo</option>
-                                </select>
-                            </label>
-                            <div id="total-alquiler" class="table-header">
-                                <label>
-                                    <input
-                                        type="text"
-                                        inputmode="numeric"
-                                        pattern="\d*"
-                                        name="alquiler_in"
-                                        id="alquiler_in"
-                                        class="partial_sumable alquiler_in form-control"
-                                        value=""
-                                        placeholder="$ valor $"
-                                    />
-                                </label>
-                            </div>
-                            <div class="table-header d-flex">
-                                <button
-                                    id="btn-reset-person"
-                                    type="button"
-                                    class="btn-reset-person"
-                                    aria-label="Name"
-                                    name="boton_reset"
-                                >
-                                    <span class="">
-                                        <!-- SVG RELOAD       fill="#E7003E"
--->
-
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="45"
-                                            height="45"
-                                            fill="#FF3366"
-                                            class="bi bi-x-square icon-svg-reset"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
-                                            />
-                                            <path
-                                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
-                                            />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <form id="person-form">
-                            <p class="canasta_txt_vivienda">• Ingresa tu grupo familiar</p>
-
-                            <div class="fieldset">
-                                <span class="">
+                        <div class="mx-2">
+                            <div class="canasta_txt_vivienda_container">
+                                <span>
                                     <button
                                         type="button"
                                         class="btn btn-secondary aclaracion_icons"
@@ -238,194 +143,303 @@
                                         data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
                                     >
                                         <span>
-                                            <!-- SVG PERSON -->
+                                            <!-- SVG CASA -->
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 width="35"
                                                 height="35"
-                                                fill="#FF5500   "
-                                                class="bi bi-person-fill icon-svg-person"
+                                                fill="#4CAF50"
+                                                class="bi bi-house-fill icon-svg-hause"
                                                 viewBox="0 0 16 16"
                                             >
                                                 <path
-                                                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+                                                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"
+                                                />
+                                                <path
+                                                    d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"
                                                 />
                                             </svg>
                                         </span>
                                     </button>
                                 </span>
 
-                                <div class="person-form-group">
-                                    <!-- SELECTs +++++++++++++++++++++++++++++++++++ -->
-                                    <div class="custom-select-container">
-                                        <label>
-                                            <select
-                                                aria-label="selected-gender"
-                                                name="selected-gender"
-                                                id="selected-gender"
-                                                class="form-select selected-gender"
+                                <p class="canasta_txt_vivienda">Tipo de vivienda</p>
+                            </div>
+                            <div class="table_alquiler">
+                                <label>
+                                    <select
+                                        aria-label="canasta_alquiler"
+                                        name="canasta_alquiler"
+                                        id="select_canasta_alquiler"
+                                        title="¿Alquilas?"
+                                        class="form-select select_canasta_alquiler"
+                                    >
+                                        <option class="option_alquiler" value="siAlquilo" selected>Alquilo</option>
+                                        <option class="option_alquiler" value="AlquilerProm3amb">
+                                            Alquiler 3 Ambientes Promedio en CABA
+                                        </option>
+                                        <option class="option_alquiler" value="AlquilerProm2amb">
+                                            Alquiler 2 Ambientes Promedio en CABA
+                                        </option>
+                                        <option class="option_alquiler" value="AlquilerProm1amb">
+                                            Alquiler 1 Ambiente Promedio en CABA
+                                        </option>
+                                        <option class="option_alquiler" value="noAlquilo">No Alquilo</option>
+                                    </select>
+                                </label>
+                                <div id="total-alquiler" class="table-header">
+                                    <label>
+                                        <input
+                                            type="text"
+                                            inputmode="numeric"
+                                            pattern="\d*"
+                                            name="alquiler_in"
+                                            id="alquiler_in"
+                                            class="partial_sumable alquiler_in form-control"
+                                            value=""
+                                            placeholder="$ valor $"
+                                        />
+                                    </label>
+                                </div>
+                                <div class="table-header d-flex">
+                                    <button
+                                        id="btn-reset-person"
+                                        type="button"
+                                        class="btn-reset-person"
+                                        aria-label="Name"
+                                        name="boton_reset"
+                                    >
+                                        <span class="">
+                                            <!-- SVG RELOAD       fill="#E7003E"
+-->
+
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="45"
+                                                height="45"
+                                                fill="#FF3366"
+                                                class="bi bi-x-square icon-svg-reset"
+                                                viewBox="0 0 16 16"
                                             >
-                                                <!-- <option value="" class="gender-option" selected disabled>
+                                                <path
+                                                    d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                                                />
+                                                <path
+                                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+                                                />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form id="person-form">
+                            <div class="mx-2">
+                                <div class="canasta_txt_vivienda_container">
+                                    <span class="">
+                                        <button
+                                            type="button"
+                                            class="btn btn-secondary aclaracion_icons"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                        >
+                                            <span>
+                                                <!-- SVG PERSON -->
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="35"
+                                                    height="35"
+                                                    fill="#FF5500   "
+                                                    class="bi bi-person-fill icon-svg-person"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <path
+                                                        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+                                                    />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </span>
+                                    <p class="canasta_txt_vivienda">Ingresa tu grupo familiar</p>
+                                </div>
+                                <div class="fieldset">
+                                    <div class="person-form-group">
+                                        <!-- SELECTs +++++++++++++++++++++++++++++++++++ -->
+                                        <div class="custom-select-container">
+                                            <label>
+                                                <select
+                                                    aria-label="selected-gender"
+                                                    name="selected-gender"
+                                                    id="selected-gender"
+                                                    class="form-select selected-gender"
+                                                >
+                                                    <!-- <option value="" class="gender-option" selected disabled>
                                                     • Persona
                                                 </option> -->
 
-                                                <option value="Femenino" class="gender-option" selected>
-                                                    Femenino
-                                                </option>
-                                                <option value="Masculino" class="gender-option">Masculino</option>
-                                            </select>
-                                        </label>
-                                        <input type="hidden" name="gender" id="gender" required />
+                                                    <option value="Femenino" class="gender-option" selected>
+                                                        Femenino
+                                                    </option>
+                                                    <option value="Masculino" class="gender-option">Masculino</option>
+                                                </select>
+                                            </label>
+                                            <input type="hidden" name="gender" id="gender" required />
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="person-form-group">
-                                    <div class="custom-select-container">
-                                        <label>
-                                            <select
-                                                aria-label="selected-age"
-                                                name="selected-age"
-                                                id="selected-age"
-                                                class="form-select selected-age rounded"
-                                            >
-                                                <option value="" class="age-option-selected" selected>« Edad »</option>
-                                                <option value="0" class="age-option">0 años</option>
-                                                <option value="1" class="age-option">1 años</option>
-                                                <option value="2" class="age-option">2 años</option>
-                                                <option value="3" class="age-option">3 años</option>
-                                                <option value="4" class="age-option">4 años</option>
-                                                <option value="5" class="age-option">5 años</option>
-                                                <option value="6" class="age-option">6 años</option>
-                                                <option value="7" class="age-option">7 años</option>
-                                                <option value="8" class="age-option">8 años</option>
-                                                <option value="9" class="age-option">9 años</option>
-                                                <option value="10" class="age-option">10 años</option>
-                                                <option value="11" class="age-option">11 años</option>
-                                                <option value="12" class="age-option">12 años</option>
-                                                <option value="13" class="age-option">13 años</option>
-                                                <option value="14" class="age-option">14 años</option>
-                                                <option value="15" class="age-option">15 años</option>
-                                                <option value="16" class="age-option">16 años</option>
-                                                <option value="17" class="age-option">17 años</option>
-                                                <option value="18" class="age-option">18 años</option>
-                                                <option value="19" class="age-option">19 años</option>
-                                                <option value="20" class="age-option">20 años</option>
-                                                <option value="21" class="age-option">21 años</option>
-                                                <option value="22" class="age-option">22 años</option>
-                                                <option value="23" class="age-option">23 años</option>
-                                                <option value="24" class="age-option">24 años</option>
-                                                <option value="25" class="age-option">25 años</option>
-                                                <option value="26" class="age-option">26 años</option>
-                                                <option value="27" class="age-option">27 años</option>
-                                                <option value="28" class="age-option">28 años</option>
-                                                <option value="29" class="age-option">29 años</option>
-                                                <option value="30" class="age-option">30 años</option>
-                                                <option value="31" class="age-option">31 años</option>
-                                                <option value="32" class="age-option">32 años</option>
-                                                <option value="33" class="age-option">33 años</option>
-                                                <option value="34" class="age-option">34 años</option>
-                                                <option value="35" class="age-option">35 años</option>
-                                                <option value="36" class="age-option">36 años</option>
-                                                <option value="37" class="age-option">37 años</option>
-                                                <option value="38" class="age-option">38 años</option>
-                                                <option value="39" class="age-option">39 años</option>
-                                                <option value="40" class="age-option">40 años</option>
-                                                <option value="41" class="age-option">41 años</option>
-                                                <option value="42" class="age-option">42 años</option>
-                                                <option value="43" class="age-option">43 años</option>
-                                                <option value="44" class="age-option">44 años</option>
-                                                <option value="45" class="age-option">45 años</option>
-                                                <option value="46" class="age-option">46 años</option>
-                                                <option value="47" class="age-option">47 años</option>
-                                                <option value="48" class="age-option">48 años</option>
-                                                <option value="49" class="age-option">49 años</option>
-                                                <option value="50" class="age-option">50 años</option>
-                                                <option value="51" class="age-option">51 años</option>
-                                                <option value="52" class="age-option">52 años</option>
-                                                <option value="53" class="age-option">53 años</option>
-                                                <option value="54" class="age-option">54 años</option>
-                                                <option value="55" class="age-option">55 años</option>
-                                                <option value="56" class="age-option">56 años</option>
-                                                <option value="57" class="age-option">57 años</option>
-                                                <option value="58" class="age-option">58 años</option>
-                                                <option value="59" class="age-option">59 años</option>
-                                                <option value="60" class="age-option">60 años</option>
-                                                <option value="61" class="age-option">61 años</option>
-                                                <option value="62" class="age-option">62 años</option>
-                                                <option value="63" class="age-option">63 años</option>
-                                                <option value="64" class="age-option">64 años</option>
-                                                <option value="65" class="age-option">65 años</option>
-                                                <option value="66" class="age-option">66 años</option>
-                                                <option value="67" class="age-option">67 años</option>
-                                                <option value="68" class="age-option">68 años</option>
-                                                <option value="69" class="age-option">69 años</option>
-                                                <option value="70" class="age-option">70 años</option>
-                                                <option value="71" class="age-option">71 años</option>
-                                                <option value="72" class="age-option">72 años</option>
-                                                <option value="73" class="age-option">73 años</option>
-                                                <option value="74" class="age-option">74 años</option>
-                                                <option value="75" class="age-option">75 años</option>
-                                                <option value="76" class="age-option">76 años</option>
-                                                <option value="77" class="age-option">77 años</option>
-                                                <option value="78" class="age-option">78 años</option>
-                                                <option value="79" class="age-option">79 años</option>
-                                                <option value="80" class="age-option">80 años</option>
-                                                <option value="81" class="age-option">81 años</option>
-                                                <option value="82" class="age-option">82 años</option>
-                                                <option value="83" class="age-option">83 años</option>
-                                                <option value="84" class="age-option">84 años</option>
-                                                <option value="85" class="age-option">85 años</option>
-                                                <option value="86" class="age-option">86 años</option>
-                                                <option value="87" class="age-option">87 años</option>
-                                                <option value="88" class="age-option">88 años</option>
-                                                <option value="89" class="age-option">89 años</option>
-                                                <option value="90" class="age-option">90 años</option>
-                                                <option value="91" class="age-option">91 años</option>
-                                                <option value="92" class="age-option">92 años</option>
-                                                <option value="93" class="age-option">93 años</option>
-                                                <option value="94" class="age-option">94 años</option>
-                                                <option value="95" class="age-option">95 años</option>
-                                                <option value="96" class="age-option">96 años</option>
-                                                <option value="97" class="age-option">97 años</option>
-                                                <option value="98" class="age-option">98 años</option>
-                                                <option value="99" class="age-option">99 años</option>
-                                                <option value="100" class="age-option">100 a 122</option>
-                                            </select>
-                                        </label>
-                                        <input type="hidden" name="age" id="age" required />
-                                        <!-- message error -->
-                                        <div id="message_error_age" class="message_error_age"></div>
-                                        <!-- Overlay for the age options ++++++++++++++++++++++++-->
-                                        <div id="overlay-age" class="overlay"></div>
-                                        <div id="overlay-gender" class="overlay"></div>
+                                    <div class="person-form-group">
+                                        <div class="custom-select-container">
+                                            <label>
+                                                <select
+                                                    aria-label="selected-age"
+                                                    name="selected-age"
+                                                    id="selected-age"
+                                                    class="form-select selected-age rounded"
+                                                >
+                                                    <option value="" class="age-option-selected" selected>
+                                                        « Edad »
+                                                    </option>
+                                                    <option value="0" class="age-option">0 años</option>
+                                                    <option value="1" class="age-option">1 años</option>
+                                                    <option value="2" class="age-option">2 años</option>
+                                                    <option value="3" class="age-option">3 años</option>
+                                                    <option value="4" class="age-option">4 años</option>
+                                                    <option value="5" class="age-option">5 años</option>
+                                                    <option value="6" class="age-option">6 años</option>
+                                                    <option value="7" class="age-option">7 años</option>
+                                                    <option value="8" class="age-option">8 años</option>
+                                                    <option value="9" class="age-option">9 años</option>
+                                                    <option value="10" class="age-option">10 años</option>
+                                                    <option value="11" class="age-option">11 años</option>
+                                                    <option value="12" class="age-option">12 años</option>
+                                                    <option value="13" class="age-option">13 años</option>
+                                                    <option value="14" class="age-option">14 años</option>
+                                                    <option value="15" class="age-option">15 años</option>
+                                                    <option value="16" class="age-option">16 años</option>
+                                                    <option value="17" class="age-option">17 años</option>
+                                                    <option value="18" class="age-option">18 años</option>
+                                                    <option value="19" class="age-option">19 años</option>
+                                                    <option value="20" class="age-option">20 años</option>
+                                                    <option value="21" class="age-option">21 años</option>
+                                                    <option value="22" class="age-option">22 años</option>
+                                                    <option value="23" class="age-option">23 años</option>
+                                                    <option value="24" class="age-option">24 años</option>
+                                                    <option value="25" class="age-option">25 años</option>
+                                                    <option value="26" class="age-option">26 años</option>
+                                                    <option value="27" class="age-option">27 años</option>
+                                                    <option value="28" class="age-option">28 años</option>
+                                                    <option value="29" class="age-option">29 años</option>
+                                                    <option value="30" class="age-option">30 años</option>
+                                                    <option value="31" class="age-option">31 años</option>
+                                                    <option value="32" class="age-option">32 años</option>
+                                                    <option value="33" class="age-option">33 años</option>
+                                                    <option value="34" class="age-option">34 años</option>
+                                                    <option value="35" class="age-option">35 años</option>
+                                                    <option value="36" class="age-option">36 años</option>
+                                                    <option value="37" class="age-option">37 años</option>
+                                                    <option value="38" class="age-option">38 años</option>
+                                                    <option value="39" class="age-option">39 años</option>
+                                                    <option value="40" class="age-option">40 años</option>
+                                                    <option value="41" class="age-option">41 años</option>
+                                                    <option value="42" class="age-option">42 años</option>
+                                                    <option value="43" class="age-option">43 años</option>
+                                                    <option value="44" class="age-option">44 años</option>
+                                                    <option value="45" class="age-option">45 años</option>
+                                                    <option value="46" class="age-option">46 años</option>
+                                                    <option value="47" class="age-option">47 años</option>
+                                                    <option value="48" class="age-option">48 años</option>
+                                                    <option value="49" class="age-option">49 años</option>
+                                                    <option value="50" class="age-option">50 años</option>
+                                                    <option value="51" class="age-option">51 años</option>
+                                                    <option value="52" class="age-option">52 años</option>
+                                                    <option value="53" class="age-option">53 años</option>
+                                                    <option value="54" class="age-option">54 años</option>
+                                                    <option value="55" class="age-option">55 años</option>
+                                                    <option value="56" class="age-option">56 años</option>
+                                                    <option value="57" class="age-option">57 años</option>
+                                                    <option value="58" class="age-option">58 años</option>
+                                                    <option value="59" class="age-option">59 años</option>
+                                                    <option value="60" class="age-option">60 años</option>
+                                                    <option value="61" class="age-option">61 años</option>
+                                                    <option value="62" class="age-option">62 años</option>
+                                                    <option value="63" class="age-option">63 años</option>
+                                                    <option value="64" class="age-option">64 años</option>
+                                                    <option value="65" class="age-option">65 años</option>
+                                                    <option value="66" class="age-option">66 años</option>
+                                                    <option value="67" class="age-option">67 años</option>
+                                                    <option value="68" class="age-option">68 años</option>
+                                                    <option value="69" class="age-option">69 años</option>
+                                                    <option value="70" class="age-option">70 años</option>
+                                                    <option value="71" class="age-option">71 años</option>
+                                                    <option value="72" class="age-option">72 años</option>
+                                                    <option value="73" class="age-option">73 años</option>
+                                                    <option value="74" class="age-option">74 años</option>
+                                                    <option value="75" class="age-option">75 años</option>
+                                                    <option value="76" class="age-option">76 años</option>
+                                                    <option value="77" class="age-option">77 años</option>
+                                                    <option value="78" class="age-option">78 años</option>
+                                                    <option value="79" class="age-option">79 años</option>
+                                                    <option value="80" class="age-option">80 años</option>
+                                                    <option value="81" class="age-option">81 años</option>
+                                                    <option value="82" class="age-option">82 años</option>
+                                                    <option value="83" class="age-option">83 años</option>
+                                                    <option value="84" class="age-option">84 años</option>
+                                                    <option value="85" class="age-option">85 años</option>
+                                                    <option value="86" class="age-option">86 años</option>
+                                                    <option value="87" class="age-option">87 años</option>
+                                                    <option value="88" class="age-option">88 años</option>
+                                                    <option value="89" class="age-option">89 años</option>
+                                                    <option value="90" class="age-option">90 años</option>
+                                                    <option value="91" class="age-option">91 años</option>
+                                                    <option value="92" class="age-option">92 años</option>
+                                                    <option value="93" class="age-option">93 años</option>
+                                                    <option value="94" class="age-option">94 años</option>
+                                                    <option value="95" class="age-option">95 años</option>
+                                                    <option value="96" class="age-option">96 años</option>
+                                                    <option value="97" class="age-option">97 años</option>
+                                                    <option value="98" class="age-option">98 años</option>
+                                                    <option value="99" class="age-option">99 años</option>
+                                                    <option value="100" class="age-option">100 a 122</option>
+                                                </select>
+                                            </label>
+                                            <input type="hidden" name="age" id="age" required />
+                                            <!-- message error -->
+                                            <div id="message_error_age" class="message_error_age"></div>
+                                            <!-- Overlay for the age options ++++++++++++++++++++++++-->
+                                            <div id="overlay-age" class="overlay"></div>
+                                            <div id="overlay-gender" class="overlay"></div>
+                                        </div>
                                     </div>
+                                    <button
+                                        id="person-form-submit"
+                                        type="submit"
+                                        class="btn-add-person"
+                                        aria-label="Person"
+                                        name="boton_add_person"
+                                    >
+                                        <span class="">
+                                            <!-- SVG ADD PERSON -->
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="45"
+                                                height="45"
+                                                fill="#FF8800dd "
+                                                class="bi bi-plus-square icon-svg-add"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                                                />
+                                                <path
+                                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                                                />
+                                            </svg>
+                                        </span>
+                                    </button>
                                 </div>
-                                <button
-                                    id="person-form-submit"
-                                    type="submit"
-                                    class="btn-add-person"
-                                    aria-label="Person"
-                                    name="boton_add_person"
-                                >
-                                    <span class="">
-                                        <!-- SVG ADD PERSON -->
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="45"
-                                            height="45"
-                                            fill="#FF8800dd "
-                                            class="bi bi-plus-square icon-svg-add"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
-                                            />
-                                            <path
-                                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
-                                            />
-                                        </svg>
-                                    </span>
-                                </button>
                             </div>
 
                             <!-- <h3 class="person-table-title">Tu Canasta Mensual</h3> -->

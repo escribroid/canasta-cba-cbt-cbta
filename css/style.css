@@ -180,8 +180,12 @@ main {
     border-bottom: 2px solid #2c2f33;
 }
 
+.canasta_txt_vivienda_container {
+    display: flex;
+}
+
 .canasta_txt_vivienda {
-    margin-left: 2.5rem;
+    margin-left: 0.65rem;
     margin-bottom: 10px;
     padding-top: 5px;
 }
@@ -214,7 +218,7 @@ main {
     margin-left: var(--spacing-10_0-625);
     background: linear-gradient(#140803, #0f0703);
     border-radius: 5px;
-    padding: 4px;
+    padding: 4px 8px 4px 8px;
 }
 v .card-header {
 }
@@ -326,7 +330,7 @@ v .card-header {
 
 .fieldset {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     margin: 0 0 0.5rem 0;
     padding: 0 0 1rem 0;
@@ -388,10 +392,17 @@ v .card-header {
 
 .ingresos_input {
     background-color: #2c2f33;
-    background-color: #4caf5011;
+    background-color: #ff880022;
+    font-weight: bold;
     cursor: pointer;
     max-width: 220px;
     margin-right: 5px;
+    border: 1px solid #ff8800;
+}
+
+.ingresos_input:focus {
+    box-shadow: 0 0 5px 0.2rem #ff5500;
+    border-color: #ff550066;
 }
 
 .linea_pobreza,
@@ -611,7 +622,7 @@ v .card-header {
 .table_alquiler {
     margin: 0 0 0.5rem 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding: 0 0 1rem 0;
     border-bottom: 2px solid #2c2f33;
@@ -688,15 +699,22 @@ v .card-header {
     -moz-appearance: none;
     appearance: none;
     background-color: #2c2f33;
+    font-size: var(--font-size-18_1-125);
     cursor: pointer;
-    max-width: 115px;
+    max-width: 130px;
     height: 40px;
     margin-right: 0px;
     padding-left: 8px;
 }
 
-.alquiler_in, .selected-age {
-    max-width: 110px;
+.select_canasta_alquiler,
+.selected-gender {
+    min-width: 130px;
+}
+
+.alquiler_in,
+.selected-age {
+    max-width: 130px;
 }
 
 .select_canasta_alquiler,
@@ -732,7 +750,6 @@ v .card-header {
     text-align: center;
     box-shadow: 0 0 5px 0.2rem #4caf50aa;
     border-color: #4caf5033;
-
 }
 
 .alquiler_in::placeholder {
