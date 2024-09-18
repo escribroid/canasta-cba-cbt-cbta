@@ -101,8 +101,8 @@ main {
     font-weight: bold;
     font-family: var(--font-mono);
     background-color: #ff4f0066;
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     border: 1px solid #2c2f33;
 }
@@ -231,7 +231,7 @@ v .card-header {
 
 .card_header_sub {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     font-size: var(--font-size-16_1rem);
     font-family: var(--font-secondary);
     margin-left: 0.5rem;
@@ -690,8 +690,13 @@ v .card-header {
     background-color: #2c2f33;
     cursor: pointer;
     max-width: 115px;
+    height: 40px;
     margin-right: 0px;
     padding-left: 8px;
+}
+
+.alquiler_in, .selected-age {
+    max-width: 110px;
 }
 
 .select_canasta_alquiler,
@@ -725,7 +730,9 @@ v .card-header {
 
 .alquiler_in:disabled {
     text-align: center;
-    background-color: #4caf5033;
+    box-shadow: 0 0 5px 0.2rem #4caf50aa;
+    border-color: #4caf5033;
+
 }
 
 .alquiler_in::placeholder {
