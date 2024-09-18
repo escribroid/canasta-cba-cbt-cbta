@@ -103,7 +103,7 @@ main {
     background-color: #ff4f0066;
     width: 28px;
     height: 28px;
-    border-radius: 50%;
+    border-radius: 10px;
     border: 1px solid #2c2f33;
 }
 
@@ -114,8 +114,8 @@ main {
     justify-content: center;
     font-size: var(--font-size-16_1rem);
     background-color: #1b1f24;
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     border: 0;
 }
 
@@ -371,18 +371,18 @@ v .card-header {
 .icon-svg-hause:hover {
     box-shadow: 0px 0 5px 0.2rem #4caf50aa;
     border-color: #4caf5033;
-    border-radius: 50%;
-    transform: scale(1.3);
-    padding: 3px;
+    border-radius: 5px;
+    transform: scale(1.2);
+    padding: 1px;
     background: #1b1f24;
 }
 
 .icon-svg-person:hover {
     box-shadow: 0px 0 5px 0.2rem #ff5500;
     border-color: #ff550066;
-    border-radius: 50%;
-    transform: scale(1.3);
-    padding: 3px;
+    border-radius: 5px;
+    transform: scale(1.2);
+    padding: 1px;
     background: #1b1f24;
 }
 
