@@ -7,8 +7,11 @@ body {
     max-width: 37.5rem;
     padding: 0 0.4rem !important;
     overflow: auto !important;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"> <filter id="noiseFilter"> <feTurbulence type="fractalNoise" baseFrequency="13" numOctaves="4" stitchTiles="stitch"  /> <feColorMatrix type="saturate" values="0"/> </filter><rect width="100%" height="100%" fill="rgb(0, 0, 5)"/> <rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.1"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"> <filter id="noiseFilter"> <feTurbulence type="fractalNoise" baseFrequency="10" numOctaves="4" stitchTiles="stitch"  /> <feColorMatrix type="saturate" values="0"/> </filter><rect width="100%" height="100%" fill="rgb(25, 25, 30)"/> <rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.1"/></svg>');
     background-size: cover;
+}
+code {
+    color: rgb(25, 25, 30);
 }
 
 footer {
@@ -18,6 +21,8 @@ footer {
     font-size: var(--font-size-16_1rem);
     box-shadow: 0 0 0.3rem 0.25rem #2c2f33;
     box-shadow: 0 0 0.5rem var(--spacing-1_0-0625) rgba(240, 240, 240, 0.8);
+    box-shadow: 0 0 0.4rem 0.25rem rgba(0, 0, 0, 0.9);
+
     background-color: #121417 !important;
 }
 
@@ -106,7 +111,17 @@ main {
     width: var(--spacing-28_1-75);
     height: var(--spacing-28_1-75);
     border-radius: var(--spacing-10_0-625);
+    border-radius: 50%;
     border: var(--spacing-1_0-625) solid #2c2f33;
+    transition: all 0.5s ease;
+}
+
+.aclaracion_edades:hover,
+.aclaracion_ingresos:hover,
+.aclaracion_table_sectores:hover {
+    transform: scale(1.2);
+    border-radius: var(--spacing-10_0-625);
+    background-color: #ff4f00bb;
 }
 
 .aclaracion_icons {
@@ -119,6 +134,7 @@ main {
     width: var(--spacing-30_1-875);
     height: var(--spacing-30_1-875);
     border: 0;
+    transition: all 5s ease;
 }
 
 .aclaracion_ingresos {
@@ -189,11 +205,11 @@ main {
 
 .canasta_txt_vivienda,
 .canasta_txt_familia {
-    margin-left: 0.65rem;
+    margin-left: 1rem;
     margin-bottom: var(--spacing-10_0-625);
     padding-top: var(--spacing-5_0-3125);
-    border-left: var(--spacing-4_0-25) solid #4caf50aa;
-    padding-left: 0.5rem;
+    border-left: 0.2rem solid #4caf50aa;
+    padding-left: 0.85rem;
 }
 
 .canasta_txt_familia {
@@ -205,7 +221,8 @@ main {
     justify-content: center;
     margin-bottom: var(--spacing-24_1-5);
     box-shadow: 0 0 0.3rem var(--spacing-4_0-25) #2c2f33;
-    box-shadow: 0 0 0.5rem var(--spacing-1_0-0625) rgba(240, 240, 240, 0.8);
+    box-shadow: 0 0 0.4rem 0.25rem rgba(0, 0, 0, 0.9);
+    --bs-card-border-width: none;
 }
 
 .card p {
@@ -230,6 +247,7 @@ main {
     background: linear-gradient(#140803, #0f0703);
     border-radius: var(--spacing-5_0-3125);
     padding: var(--spacing-4_0-25) var(--spacing-8_0-5) var(--spacing-4_0-25) var(--spacing-4_0-25);
+    border: 0.0625rem solid #ff880088;
 }
 
 .card-header {
@@ -355,7 +373,7 @@ main {
 .icon-svg-hause,
 .icon-svg-reset,
 .icon-svg-person {
-    transition: all 0.4s ease; /* Transición suave */
+    transition: all 0.5s ease; /* Transición suave */
 }
 
 .icon-svg-hause,
@@ -469,6 +487,7 @@ main {
     box-shadow: 0 0 0.3rem var(--spacing-4_0-25) #2c2f33;
     background: #1b1f24 !important;
     box-shadow: 0 0 0.5rem var(--spacing-1_0-0625) rgba(240, 240, 240, 0.8);
+    box-shadow: 0 0 0.4rem 0.25rem rgba(0, 0, 0, 0.9);
 }
 
 .navbar-nav {
@@ -648,6 +667,7 @@ main {
 }
 
 .custom-tooltip {
+    width: auto;
 }
 
 /* Cambiar el color del texto */
