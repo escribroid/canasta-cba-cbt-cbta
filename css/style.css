@@ -204,6 +204,7 @@ main {
 .canasta-custom-person-add-title {
     padding: 0 var(--spacing-10_0-625) var(--spacing-10_0-625) var(--spacing-10_0-625);
     border-bottom: var(--spacing-2_0-125) solid rgb(44, 47, 51);
+    color: #fffaf0;
 }
 
 .canasta_txt_vivienda_container {
@@ -654,9 +655,10 @@ main {
 .table-all-canastas {
     font-size: var(--spacing-10_0-625) !important;
     padding: 0 var(--spacing-1_0-0625);
-    border: 1px solid #ff880099;
+    border: 1px solid #ff880055;
     width: 99.5%;
     margin: 0 auto;
+    background-color: #ff880011;
 }
 
 .table-header {
@@ -782,7 +784,7 @@ main {
 
 .selected-age,
 .selected-gender {
-    background-color: #ff550066;
+    background-color: #ff550055;
 }
 
 .selected-age:focus,
