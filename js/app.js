@@ -238,9 +238,12 @@ function subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_p
     ingresos_input_in(ingresos);
 
     if (array_CBA_Personas.length === 0) {
-        document.querySelector(".icon-svg-reset").style.transform = "rotate(90deg)";
-        document.querySelector(".icon-svg-reset").style.transition = "transform 5s ease-in-out";
-        document.querySelector(".icon-svg-reset").style.display = "none";
+        document.querySelector(".icon-svg-reset").style.transition = "transform 0.3s ease-in-out";
+        document.querySelector(".icon-svg-reset").style.transform = "translatex(4rem)";
+        setTimeout(() => {
+            document.querySelector(".icon-svg-reset").style.opacity = "0";
+            // Ocultar después de la transición
+        }, 400); // Esperar que la transición termine (0.5s)
     }
 }
 
@@ -428,7 +431,9 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
         //console.log("canasta_b_total_persona", canasta_b_total_persona);
 
         // activar boton reset
-        document.querySelector(".icon-svg-reset").style.display = "flex";
+        document.querySelector(".icon-svg-reset").style.transform = "translatex(0rem)";
+        document.querySelector(".icon-svg-reset").style.transition = "transform .3s ease-in-out";
+        document.querySelector(".icon-svg-reset").style.opacity = "1";
     }
     array_CBT_Personas.push(canasta_b_total_persona);
     suma_CBT_Personas = 0;

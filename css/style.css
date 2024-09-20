@@ -7,7 +7,7 @@ body {
     max-width: 37.5rem;
     padding: 0 0.5rem !important;
     overflow: auto !important;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"> <filter id="noiseFilter"> <feTurbulence type="fractalNoise" baseFrequency="10" numOctaves="4" stitchTiles="stitch"  /> <feColorMatrix type="saturate" values="0"/> </filter><rect width="100%" height="100%" fill="rgb(30, 30, 35)"/> <rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.1"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"> <filter id="noiseFilter"> <feTurbulence type="fractalNoise" baseFrequency="10" numOctaves="4" stitchTiles="stitch"  /> <feColorMatrix type="saturate" values="0"/> </filter><rect width="100%" height="100%" fill="rgb(40, 40, 45)"/> <rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.1"/></svg>');
     background-size: cover;
 }
 
@@ -16,11 +16,9 @@ footer {
     margin-bottom: 0.625rem;
     text-align: center;
     font-size: var(--font-size-16_1rem);
-    box-shadow: 0 0 0.3rem 0.25rem #2c2f33;
-    box-shadow: 0 0 0.5rem var(--spacing-1_0-0625) rgba(240, 240, 240, 0.8);
-    box-shadow: 0 0 0.4rem 0.25rem rgba(0, 0, 0, 0.9);
-
-    background-color: #121417 !important;
+    box-shadow: 0 0 0.3rem 0.4rem rgba(20, 20, 25, 1);
+    background-color: #1b1f24 !important;
+    width: 100%;
 }
 
 h1 {
@@ -227,12 +225,11 @@ main {
 }
 
 .card {
-    background-color: #1b1f24;
     justify-content: center;
     margin-bottom: var(--spacing-24_1-5);
     box-shadow: 0 0 0.3rem var(--spacing-4_0-25) #2c2f33;
-    box-shadow: 0 0 0.4rem 0.25rem rgba(0, 0, 0, 0.9);
     --bs-card-border-width: none;
+    box-shadow: 0 0 0.3rem 0.4rem rgba(20, 20, 25, 1);
 }
 
 .card p {
@@ -240,14 +237,14 @@ main {
 }
 
 .card_cba {
-    box-shadow: 0 0 0.3rem var(--spacing-1_0-0625) #ff3366;
+    box-shadow: 0 0 0.3rem 0.1rem #ff3366;
 }
 .card_cbt {
-    box-shadow: 0 0 0.3rem var(--spacing-1_0-0625) #ff5500;
+    box-shadow: 0 0 0.3rem 0.1rem #ff5500;
 }
 
 .card_cbta {
-    box-shadow: 0 0 0.3rem var(--spacing-1_0-0625) #4caf50;
+    box-shadow: 0 0 0.3rem 0.1rem #4caf50;
 }
 
 .card_cba_value {
@@ -387,9 +384,10 @@ main {
 }
 
 .icon-svg-reset {
-    display: none;
+    display: flex;
+    transform: translateX(2rem);
+    opacity: 0;
     margin-top: -0.6rem;
-    transition: all 1s ease-in-out;
 }
 
 .icon-svg-hause,
@@ -462,7 +460,7 @@ main {
     color: var(--bs-list-group-color);
     text-decoration: none;
     /* background-color: var(--bs-list-group-bg); */
-    background-color: #1b1f24 !important;
+    /* background-color: #1b1f24 !important; */
     border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
 }
 
@@ -503,7 +501,7 @@ main {
     box-shadow: 0 0 0.3rem var(--spacing-4_0-25) #2c2f33;
     background: #1b1f24 !important;
     box-shadow: 0 0 0.5rem var(--spacing-1_0-0625) rgba(240, 240, 240, 0.8);
-    box-shadow: 0 0 0.4rem 0.25rem rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 0.3rem 0.4rem rgba(20, 20, 25, 1);
 }
 
 .navbar-nav {
