@@ -384,7 +384,7 @@ main {
 }
 
 .icon-svg-reset {
-    display: flex;
+    display: none;
     transform: translateX(2rem);
     opacity: 0;
     margin-top: -0.6rem;
@@ -571,7 +571,7 @@ main {
 .offcanvas-header .btn-close {
     position: relative;
     padding: var(--spacing-8_0-5) 0;
-    margin-top: calc(-0.9 * var(--bs-offcanvas-padding-y));
+    margin-top: calc(-0.6 * var(--bs-offcanvas-padding-y));
     margin-right: calc(-1.1 * var(--bs-offcanvas-padding-x));
     margin-bottom: calc(-0.5 * var(--bs-offcanvas-padding-y));
     box-shadow: 0 0 0.3rem var(--spacing-1_0-0625) rgba(0, 0, 0, 0.8);
