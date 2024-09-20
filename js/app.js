@@ -216,7 +216,7 @@ function subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_p
     array_CBA_Personas.splice(index_array_cells_new, 1);
     ingresos = document.getElementById("ingresos_input").value;
 
-    // console.log("array_CBA_Personas-SUB:", array_CBA_Personas);
+    //console.log("array_CBA_Personas-SUB:", array_CBA_Personas);
 
     suma_CBA_Personas = 0;
     for (let i = 0; i < array_CBA_Personas.length; i++) {
@@ -236,6 +236,12 @@ function subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_p
     suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
 
     ingresos_input_in(ingresos);
+
+    if (array_CBA_Personas.length === 0) {
+        document.querySelector(".icon-svg-reset").style.transform = "rotate(90deg)";
+        document.querySelector(".icon-svg-reset").style.transition = "transform 5s ease-in-out";
+        document.querySelector(".icon-svg-reset").style.display = "none";
+    }
 }
 
 // SUMA DE CANASTA PERSONALIZADA +++++++++++++++++++++++
@@ -420,6 +426,9 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
 
         canasta_b_total_persona = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente;
         //console.log("canasta_b_total_persona", canasta_b_total_persona);
+
+        // activar boton reset
+        document.querySelector(".icon-svg-reset").style.display = "flex";
     }
     array_CBT_Personas.push(canasta_b_total_persona);
     suma_CBT_Personas = 0;
