@@ -635,9 +635,19 @@ main {
 .suma_clase_media_alta_min,
 .suma_clase_media_alta_max,
 .suma_clase_alta_min,
-.suma_clase_alta_max {
+.suma_clase_alta_max,
+.suma_clase_alta_min_info,
+.suma_clase_alta_max_info {
     width: 31%;
     font-size: var(--spacing-18_1-125);
+}
+
+.suma_clase_alta_min_info {
+    border-radius: 0 0 0 1rem;
+}
+
+.suma_clase_alta_max_info {
+    border-radius: 0 0 1rem 0;
 }
 
 .subtitle {
