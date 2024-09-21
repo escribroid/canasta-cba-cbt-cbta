@@ -194,7 +194,7 @@
                                 </div>
                             </div>
                             <div class="table_alquiler">
-                                <label>
+                                <label class="w-50">
                                     <select
                                         aria-label="canasta_alquiler"
                                         name="canasta_alquiler"
@@ -265,42 +265,37 @@
                                     <p class="canasta_txt_familia">Ingresa tu grupo familiar</p>
                                 </div>
                                 <div class="fieldset">
-                                    <div class="person-form-group">
+                                    <div class="gender-form-group">
                                         <!-- SELECTs +++++++++++++++++++++++++++++++++++ -->
-                                        <div class="custom-select-container">
-                                            <label>
-                                                <select
-                                                    aria-label="selected-gender"
-                                                    name="selected-gender"
-                                                    id="selected-gender"
-                                                    class="form-select selected-gender"
-                                                >
-                                                    <!-- <option value="" class="gender-option" selected disabled>
+                                        <label class="w-100">
+                                            <select
+                                                aria-label="selected-gender"
+                                                name="selected-gender"
+                                                id="selected-gender"
+                                                class="form-select selected-gender"
+                                            >
+                                                <!-- <option value="" class="gender-option" selected disabled>
                                                     • Persona
                                                 </option> -->
 
-                                                    <option value="Femenino" class="gender-option" selected>
-                                                        Femenino
-                                                    </option>
-                                                    <option value="Masculino" class="gender-option">Masculino</option>
-                                                </select>
-                                            </label>
-                                            <input type="hidden" name="gender" id="gender" required />
-                                        </div>
+                                                <option value="Femenino" class="gender-option" selected>
+                                                    Femenino
+                                                </option>
+                                                <option value="Masculino" class="gender-option">Masculino</option>
+                                            </select>
+                                        </label>
+                                        <input type="hidden" name="gender" id="gender" required />
                                     </div>
-
-                                    <div class="person-form-group">
-                                        <div class="custom-select-container">
-                                            <label>
+                                    <div class="age_add_container">
+                                        <div class="age-form-group">
+                                            <label for="selected-age" class="d-block">
                                                 <select
                                                     aria-label="selected-age"
                                                     name="selected-age"
                                                     id="selected-age"
                                                     class="form-select selected-age rounded"
                                                 >
-                                                    <option value="" class="age-option-selected" selected>
-                                                        • Edad
-                                                    </option>
+                                                    <option value="" class="age-option-selected" selected>Edad</option>
                                                     <option value="0" class="age-option">0 a 11 meses</option>
                                                     <option value="1" class="age-option">1 año</option>
                                                     <option value="2" class="age-option">2 años</option>
@@ -411,33 +406,33 @@
                                             <div id="overlay-age" class="overlay"></div>
                                             <div id="overlay-gender" class="overlay"></div>
                                         </div>
+                                        <button
+                                            id="person-form-submit"
+                                            type="submit"
+                                            class="btn-add-person"
+                                            aria-label="Person"
+                                            name="boton_add_person"
+                                        >
+                                            <span class="">
+                                                <!-- SVG ADD PERSON -->
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="45"
+                                                    height="45"
+                                                    fill="#FF8800dd "
+                                                    class="bi bi-plus-square icon-svg-add"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <path
+                                                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                                                    />
+                                                    <path
+                                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                                                    />
+                                                </svg>
+                                            </span>
+                                        </button>
                                     </div>
-                                    <button
-                                        id="person-form-submit"
-                                        type="submit"
-                                        class="btn-add-person"
-                                        aria-label="Person"
-                                        name="boton_add_person"
-                                    >
-                                        <span class="">
-                                            <!-- SVG ADD PERSON -->
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="45"
-                                                height="45"
-                                                fill="#FF8800dd "
-                                                class="bi bi-plus-square icon-svg-add"
-                                                viewBox="0 0 16 16"
-                                            >
-                                                <path
-                                                    d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
-                                                />
-                                                <path
-                                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </button>
                                 </div>
                             </div>
 

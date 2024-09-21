@@ -361,7 +361,8 @@ main {
     align-items: center;
     margin: 0 0 0.5rem 0;
     padding: 0 0 1rem 0;
-    border-bottom: var(--spacing-2_0-125) solid #2c2f33;
+    width: 100%;
+    /* border-bottom: var(--spacing-2_0-125) solid #2c2f33; */
 }
 
 .foo_indices_date {
@@ -662,7 +663,8 @@ main {
     text-align: center;
 }
 
-.table th, td {
+.table th,
+td {
 }
 
 .table-all-canastas {
@@ -766,10 +768,13 @@ main {
     background-color: #2c2f33;
     font-size: var(--font-size-18_1-125);
     cursor: pointer;
-    width: 9rem; /* 130px */
     height: 2.6rem;
-    /* margin-right: 80px; */
-    padding-left: 0.4rem;
+}
+
+.age_add_container {
+    display: flex;
+    width: 48%;
+    align-items: center;
 }
 
 .select_canasta_alquiler {
@@ -777,11 +782,15 @@ main {
 }
 
 .alquiler_in {
-    width: 90%;
+    width: 96%;
+}
+.age-form-group {
+    flex: 1;
 }
 
-.selected-age {
-    max-width: 7.5rem; /* 130px */
+.gender-form-group {
+    flex: 0 0 50%;
+    margin-right: 0.5rem;
 }
 
 .select_canasta_alquiler,
@@ -809,6 +818,10 @@ main {
 .selected-gender:focus {
     box-shadow: 0 0 0.3125rem 0.2rem #ff5500;
     border-color: #ff550066;
+}
+
+#total-alquiler {
+    width: 50%;
 }
 
 .option_alquiler:enabled {
