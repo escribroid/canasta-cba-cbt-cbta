@@ -203,7 +203,7 @@ main {
 
 .canasta-custom-person-add-title {
     padding: 0 var(--spacing-10_0-625) var(--spacing-10_0-625) var(--spacing-10_0-625);
-    border-bottom: var(--spacing-2_0-125) solid rgb(44, 47, 51);
+    border-bottom: var(--spacing-2_0-125) solid #2c2f33;
     color: #fffaf0;
 }
 
@@ -549,14 +549,14 @@ main {
     top: var(--spacing-5_0-3125);
     right: 0;
     border-left: 0;
-    height: 70vh;
+    height: 80vh;
 }
 
 .offcanvas-body {
     flex-grow: 1;
     padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
     overflow-y: auto;
-    background-color: #121417;
+    background-color: #1b1f24;
     box-shadow: 0 0 0.3rem var(--spacing-1_0-0625) rgba(240, 240, 240, 0.8);
     margin: 0.4rem;
 }
@@ -662,6 +662,9 @@ main {
     text-align: center;
 }
 
+.table th, td {
+}
+
 .table-all-canastas {
     font-size: var(--spacing-10_0-625) !important;
     padding: 0 var(--spacing-1_0-0625);
@@ -682,6 +685,11 @@ main {
     align-items: center;
     padding: 0 0 1rem 0;
     border-bottom: var(--spacing-2_0-125) solid #2c2f33;
+}
+
+.table-responsive {
+    border: 1px solid #ff880033;
+    border-radius: 20px;
 }
 
 .text-shadow {
@@ -812,8 +820,8 @@ main {
 
 .alquiler_in:disabled {
     text-align: center;
-    box-shadow: 0 0 0.3125rem 0.2rem #4caf50aa;
-    border-color: #4caf5033;
+    border-color: #4caf5055;
+    background-color: #4caf5011;
 }
 
 .alquiler_in::placeholder {

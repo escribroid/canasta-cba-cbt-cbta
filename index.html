@@ -202,15 +202,15 @@
                                         title="¿Alquilas?"
                                         class="form-select select_canasta_alquiler"
                                     >
-                                        <option class="option_alquiler" value="siAlquilo" selected>Alquilo</option>
+                                        <option class="option_alquiler" value="siAlquilo" selected>Alquilada</option>
                                         <option class="option_alquiler" value="AlquilerProm3amb">
-                                            Alquiler 3 Ambientes Promedio en CABA
+                                            Alquiler 3 Amb Promedio en CABA
                                         </option>
                                         <option class="option_alquiler" value="AlquilerProm2amb">
-                                            Alquiler 2 Ambientes Promedio en CABA
+                                            Alquiler 2 Amb Promedio en CABA
                                         </option>
                                         <option class="option_alquiler" value="AlquilerProm1amb">
-                                            Alquiler 1 Ambiente Promedio en CABA
+                                            Alquiler 1 Amb Promedio en CABA
                                         </option>
                                         <option class="option_alquiler" value="noAlquilo">No Alquilo</option>
                                     </select>
@@ -299,10 +299,10 @@
                                                     class="form-select selected-age rounded"
                                                 >
                                                     <option value="" class="age-option-selected" selected>
-                                                        « Edad »
+                                                        • Edad
                                                     </option>
-                                                    <option value="0" class="age-option">0 años</option>
-                                                    <option value="1" class="age-option">1 años</option>
+                                                    <option value="0" class="age-option">0 a 11 meses</option>
+                                                    <option value="1" class="age-option">1 año</option>
                                                     <option value="2" class="age-option">2 años</option>
                                                     <option value="3" class="age-option">3 años</option>
                                                     <option value="4" class="age-option">4 años</option>
@@ -442,14 +442,14 @@
                             </div>
 
                             <!-- <h3 class="person-table-title">Tu Canasta Mensual</h3> -->
-                            <div class="table-responsive overflow-visible">
-                                <table class="table table-hover overflow-visible">
-                                    <thead class="m-0 p-0">
-                                        <tr>
-                                            <th class="table-header p-1" scope="col">Familia</th>
-                                            <th class="table-header p-1" scope="col">Edad</th>
-                                            <th class="table-header p-1" scope="col">$</th>
-                                            <th class="table-header p-1" scope="col">
+                            <div class="table-responsive overflow-hidden">
+                                <table class="table table-hover overflow-hidden">
+                                    <thead class="">
+                                        <tr class="">
+                                            <th class="table-header" scope="col">Familiar</th>
+                                            <th class="table-header" scope="col-1">Edad</th>
+                                            <th class="table-header" scope="col">$</th>
+                                            <th class="table-header" scope="col">
                                                 <!-- SVG DELETE -->
                                                 <svg
                                                     class="detalles_delete_head"
@@ -479,21 +479,21 @@
                                             <th class="table-header p-1" scope="col">Dias</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="person-list" class="table-group-divider"></tbody>
+                                    <tbody id="person-list" class=""></tbody>
                                     <tfoot>
                                         <tr class="row_mostrar_alquiler">
                                             <th class="table-header p-1" scope="col">Alquiler</th>
-                                            <th class="table-header p-1" scope="col"></th>
+                                            <th class="table-header col-1 p-1" scope="col">aa</th>
                                             <th id="alquiler_out" class="table-header p-1" scope="col"></th>
                                             <th class="table-header p-1" scope="col"></th>
-                                            <th class="table-header p-1" scope="col"></th>
+                                            <th class="table-header col-1 p-1" scope="col"></th>
                                         </tr>
                                         <tr class="table-group-divider">
                                             <th class="table-header p-1" scope="col">Total</th>
-                                            <th class="table-header p-1" scope="col"></th>
+                                            <th class="table-header col-1 p-1" scope="col"></th>
                                             <th id="total-canasta" class="table-header p-1" scope="col"></th>
-                                            <th class="table-header p-1" scope="col"></th>
-                                            <th class="table-header p-1" scope="col"></th>
+                                            <th class="table-header col-1 p-1" scope="col"></th>
+                                            <th class="table-header col-1 p-1" scope="col"></th>
                                         </tr>
                                     </tfoot>
                                 </table>
