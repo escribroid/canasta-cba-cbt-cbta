@@ -320,7 +320,6 @@ function suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in
 
     document.querySelector(".suma_clase_alta_min").textContent = suma_clase_media_alta_alquilando;
     document.querySelector(".suma_clase_alta_max").textContent = suma_clase_alta_baja_alquilando;
-
 }
 
 vivienda = document.getElementById("select_canasta_alquiler");

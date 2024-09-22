@@ -208,6 +208,10 @@
                                         class="form-select select_canasta_alquiler"
                                     >
                                         <option class="option_alquiler" value="siAlquilo" selected>Alquilada</option>
+                                        <option class="option_alquiler" value="noAlquilo">No Alquilo</option>
+                                        <option class="option_alquiler" value="" disabled>
+                                            = Datos Promedio CABA ▼
+                                        </option>
                                         <option class="option_alquiler" value="AlquilerProm3amb">
                                             Alquiler 3 Amb Promedio en CABA
                                         </option>
@@ -217,7 +221,21 @@
                                         <option class="option_alquiler" value="AlquilerProm1amb">
                                             Alquiler 1 Amb Promedio en CABA
                                         </option>
-                                        <option class="option_alquiler" value="noAlquilo">No Alquilo</option>
+                                        <option class="option_alquiler" value="" disabled>
+                                            = Datos Promedio GBA-N ▼
+                                        </option>
+                                        <option class="option_alquiler" value="" disabled>
+                                            = Datos Promedio GBA-O ▼
+                                        </option>
+                                        <option class="option_alquiler" value="" disabled>
+                                            = Datos Promedio GBA-S ▼
+                                        </option>
+                                        <option class="option_alquiler" value="" disabled>
+                                            = Datos Promedio Cordoba ▼
+                                        </option>
+                                        <option class="option_alquiler" value="" disabled>
+                                            = Datos Promedio Rosario ▼
+                                        </option>
                                     </select>
                                 </label>
                                 <div id="total-alquiler" class="table-header">
@@ -446,7 +464,7 @@
                                 <table class="table table-hover overflow-hidden table-header">
                                     <thead class="">
                                         <tr class="">
-                                            <th class="col-3 p-1 py-1 m-0" scope="col">
+                                            <th class="col-3 p-0 py-1 m-0" scope="col">
                                                 <label for="detalle_personal"></label>
                                                 <select
                                                     name="detalle_personal"
@@ -457,7 +475,7 @@
                                                     <option value="Familia" selected>Detalle</option>
                                                     <option value="cba">Indigencia</option>
                                                     <option value="cbt">Pobreza</option>
-                                                    <option value="cbt">= "Clase" =</option>
+                                                    <option value="cbt" disabled>= "Clase" ▼</option>
 
                                                     <option value="mas_alquiler">Baja</option>
                                                     <option value="mas_alquiler">Media Fragil</option>
@@ -466,7 +484,7 @@
                                                     <option value="mas_alquiler">Alta</option>
                                                 </select>
                                             </th>
-                                            <th class="table-header col-1 p-0 m-0" scope="col-1">Edad</th>
+                                            <th class="table-header col-1 p-1 m-0" scope="col-1">Edad</th>
                                             <th class="table-header p-0 m-0" scope="col">$</th>
                                             <th class="table-header col-1 p-0 m-0" scope="col">
                                                 <!-- SVG DELETE -->
