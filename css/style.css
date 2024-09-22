@@ -336,7 +336,7 @@ header {
 
 .detalle_personal_select {
     width: 93%;
-    font-size: var(--font-size-16_1rem);
+    font-size: 1.125rem;
     border-radius: 5px;
 }
 
