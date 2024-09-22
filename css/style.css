@@ -203,7 +203,7 @@ header {
 
 .canasta_txt_vivienda_container {
     display: flex;
-    margin-top: 0.6rem;
+    margin-top: 0.65rem;
 }
 
 .canasta_txt_vivienda,
@@ -336,7 +336,23 @@ header {
 
 .detalle_personal_select {
     width: 93%;
+    height: 29px;
     font-size: 1.125rem;
+    border-radius: 10px;
+    background-color: #3f322466;
+    border: 0;
+    outline: 2px solid #6b351b;
+}
+
+.detalle_personal_select:focus-visible {
+    outline: none;
+    font-size: 1.125rem;
+    border-radius: 10px;
+    border: 1px solid #ff5500;
+}
+
+.detalle_personal_option {
+    background-color: #3f3224;
     border-radius: 5px;
 }
 
@@ -389,7 +405,7 @@ header {
     display: none;
     transform: translateX(2rem);
     opacity: 0;
-    margin-top: -0.6rem;
+    margin-top: -0.5rem;
 }
 
 .icon-svg-hause,
@@ -748,20 +764,19 @@ td {
 }
 
 /* Select custom +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-.age-option:enabled,
-.gender-option:enabled,
-.option_alquiler:enabled {
-    text-align: center;
+option {
+    color: #fffaf0;
+}
+
+option:disabled {
     background-color: #121417;
 }
 
-.option_alquiler:first-child {
-    background-color: #2c2f33;
-}
-
-.age-option-selected {
-    text-align: left;
-    background-color: #2c2f33;
+.age-option:enabled,
+.gender-option:enabled,
+.option_alquiler:enabled {
+    text-align: start;
+    background-color: #693015;
 }
 
 .alquiler_in,
@@ -774,12 +789,13 @@ td {
     background-color: #2c2f33;
     font-size: var(--font-size-18_1-125);
     cursor: pointer;
-    height: 2.6rem;
+    height: 2.75rem;
 }
 
 .age_add_container {
     display: flex;
     width: 48%;
+    gap: 2px;
     align-items: center;
 }
 
@@ -832,9 +848,23 @@ td {
 
 .option_alquiler:enabled {
     display: block;
-    text-align: justify;
+    /* text-align: justify; */
     margin-right: var(--spacing-50_3-125);
-    background-color: #121417;
+    background-color: #295935;
+}
+
+.option_alquiler:disabled {
+    display: block;
+    /* text-align: justify; */
+    margin-right: var(--spacing-50_3-125);
+    background-color: #000;
+}
+
+.option_alquiler:hover:focus {
+    display: block;
+    /* text-align: justify; */
+    margin-right: var(--spacing-50_3-125);
+    background: #a42929;
 }
 
 .alquiler_in:disabled {
