@@ -17,7 +17,7 @@ fetch(url_ipc)
         //console.log("ipc_percent", ipc_percent);
 
         ipc_percent_txt = ipc_percent.toLocaleString("es-AR", { minimumFractionDigits: 2 });
-        document.querySelector(".ipc_percent").textContent = ipc_percent_txt + "%";
+        document.querySelector(".indices_short_ipc_percent").textContent = ipc_percent_txt + "%";
     })
     .catch((error) => console.log(error));
 

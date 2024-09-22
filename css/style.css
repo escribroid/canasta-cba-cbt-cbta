@@ -339,7 +339,7 @@ header {
     height: 29px;
     font-size: 1.125rem;
     border-radius: 10px;
-    background-color: #3f322466;
+    background-color: #3f3224;
     border: 0;
     outline: 2px solid #6b351b;
 }
@@ -450,6 +450,13 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: #050509;
+    position: relative;
+    box-shadow: 0 0px 0.5rem 1rem #000;
+    z-index: -1;
+}
+.indices_short_ipc_percent {
+    font-family: var(--font-mono);
 }
 
 .ingresos_input {
@@ -804,7 +811,7 @@ option:disabled {
 }
 
 .alquiler_in {
-    width: 96%;
+    width: 95%;
 }
 .age-form-group {
     flex: 1;

@@ -21,7 +21,6 @@ const cba = cba_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
 const cbt = cbt_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
 const cbt_alquiler_2amb = cbt_alquiler_2amb_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
 const cbt_alquiler_3amb = cbt_alquiler_3amb_unformat.toLocaleString("es-AR", { minimumFractionDigits: 0 });
-
 //console.log("cba", cba);
 
 // Calculos cba, cbt, cbt_alquiler_2amb, cbt_alquiler_3amb +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -70,10 +69,17 @@ let age;
 let age_toStr;
 let age_mostrar_table;
 let alquiler_out = 0;
-let alquiler_in = document.getElementById("alquiler_in");
-let alquiler_in_value = alquiler_in;
-let canasta_b_alimentaria_persona;
-let canasta_b_total_persona;
+let alquiler_in = 0;
+alquiler_in = document.getElementById("alquiler_in");
+let alquiler_in_value = 0;
+alquiler_in_value = parseFloat(alquiler_in.value);
+let canasta_basica_alimentaria_ind_indigencia;
+let canasta_basica_total_ind_pobreza;
+let canasta_basica_clase_baja_individual;
+let canasta_basica_clase_media_fragil_individual;
+let canasta_basica_clase_media_individual;
+let canasta_basica_clase_media_alta_individual;
+let canasta_basica_clase_alta_individual;
 let count_person = 0;
 let gender;
 let gender_show;
@@ -108,24 +114,24 @@ let personas_de_local = JSON.parse(localStorage.getItem("personas_de_local")) ||
 function addPersonToTable(
     gender,
     age_mostrar_table,
-    canasta_b_alimentaria_persona,
-    canasta_b_total_persona,
+    canasta_basica_alimentaria_ind_indigencia,
+    canasta_basica_total_ind_pobreza,
     array_count_person,
     count_person
 ) {
     const row = document.createElement("tr");
 
     if (gender === "Femenino") {
-        gender_show = "Feme";
+        gender_show = "Femenino";
     } else {
-        gender_show = "Masc";
+        gender_show = "Masculino";
     }
 
     row.id = `person_${count_person}`;
 
     //console.log("count_ADD", count_person);
 
-    row.innerHTML = `<td class="p-1">${gender_show}</td><td class="col-1 p-1">${age_mostrar_table}</td><td id="detalles_monto_person_${count_person}" class="add_Partials p-1">$${canasta_b_total_persona.toLocaleString(
+    row.innerHTML = `<td class="p-1">${gender_show}</td><td class="col-1 p-1">${age_mostrar_table}</td><td id="detalles_monto_person_${count_person}" class="add_Partials p-1">$${canasta_basica_total_ind_pobreza.toLocaleString(
         "es-AR",
         {
             maximumFractionDigits: 0,
@@ -217,6 +223,7 @@ tableBody.addEventListener("click", (event) => {
 function subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_person, index_array_cells_new) {
     array_CBA_Personas.splice(index_array_cells_new, 1);
     ingresos = document.getElementById("ingresos_input").value;
+    vivienda = document.getElementById("select_canasta_alquiler");
 
     //console.log("array_CBA_Personas-SUB:", array_CBA_Personas);
 
@@ -239,15 +246,16 @@ function subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_p
 
     ingresos_input_in(ingresos);
 
-    if (array_CBA_Personas.length === 0) {
+    if (
+        array_CBA_Personas.length === 0 &&
+        (vivienda.value == "siAlquilo" || vivienda.value == "vivienda_slc" || vivienda.value == "noAlquilo")
+    ) {
         document.querySelector(".icon-svg-reset").style.transition = "transform 0.3s ease-in-out";
         document.querySelector(".icon-svg-reset").style.transform = "translatex(4rem)";
         setTimeout(() => {
             document.querySelector(".icon-svg-reset").style.opacity = "0";
             document.querySelector(".icon-svg-reset").style.display = "none";
-
-            // Ocultar después de la transición
-        }, 400); // Esperar que la transición termine (0.5s)
+        }, 400);
     }
 }
 
@@ -365,6 +373,15 @@ vivienda.addEventListener("input", function () {
         document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
     }
 
+    if (vivienda.value !== "siAlquilo" && vivienda.value !== "vivienda_slc" && vivienda.value !== "noAlquilo") {
+        document.querySelector(".icon-svg-reset").style.display = "flex";
+        setTimeout(() => {
+            document.querySelector(".icon-svg-reset").style.transition = "transform 0.3s ease-in-out";
+            document.querySelector(".icon-svg-reset").style.transform = "translatex(0rem)";
+            document.querySelector(".icon-svg-reset").style.opacity = "1";
+        }, 400);
+    }
+
     suma_con_alquiler = 0;
     alquiler_in_value = 0;
     alquiler_in_value = alquiler_in.value;
@@ -422,20 +439,39 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
         //console.log("array_count_person_LEN", array_count_person.length);
         // console.log("count_person", count_person);
 
-        canasta_b_alimentaria_persona = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cba_equivalente;
-        //console.log("canasta_b_alimentaria_persona", canasta_b_alimentaria_persona);
-
-        array_CBA_Personas.push(canasta_b_alimentaria_persona);
+        canasta_basica_alimentaria_ind_indigencia =
+            tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cba_equivalente;
+        //console.log("canasta_basica_alimentaria_ind_indigencia", canasta_basica_alimentaria_ind_indigencia);
+        array_CBA_Personas.push(canasta_basica_alimentaria_ind_indigencia);
         suma_CBA_Personas = 0;
         for (let i = 0; i < array_CBA_Personas.length; i++) {
             suma_CBA_Personas = parseFloat(suma_CBA_Personas) + parseFloat(array_CBA_Personas[i]);
         }
-
         // console.log("array_CBA_Personas-SUB", array_CBA_Personas);
         // console.log("suma_CBA_Personas-SUB", suma_CBA_Personas);
 
-        canasta_b_total_persona = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente;
-        //console.log("canasta_b_total_persona", canasta_b_total_persona);
+        canasta_basica_total_ind_pobreza = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente;
+        //console.log("canasta_basica_total_ind_pobreza", canasta_basica_total_ind_pobreza);
+        array_CBT_Personas.push(canasta_basica_total_ind_pobreza);
+        suma_CBT_Personas = 0;
+        for (let i = 0; i < array_CBT_Personas.length; i++) {
+            suma_CBT_Personas = parseFloat(suma_CBT_Personas) + parseFloat(array_CBT_Personas[i]);
+        }
+
+        canasta_basica_clase_baja_individual =
+            tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente * 1.5;
+
+        canasta_basica_clase_media_fragil_individual =
+            tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente * 2;
+
+        canasta_basica_clase_media_individual =
+            tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente * 4.5;
+
+        canasta_basica_clase_media_alta_individual =
+            tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente * 6.5;
+
+        canasta_basica_clase_alta_individual =
+            tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente * 10;
 
         // activar boton reset
         document.querySelector(".icon-svg-reset").style.display = "flex";
@@ -448,11 +484,11 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
             // Ocultar después de la transición
         }, 300); // Esperar que la transición termine (0.5s)
     }
-    array_CBT_Personas.push(canasta_b_total_persona);
-    suma_CBT_Personas = 0;
-    for (let i = 0; i < array_CBT_Personas.length; i++) {
-        suma_CBT_Personas = parseFloat(suma_CBT_Personas) + parseFloat(array_CBT_Personas[i]);
-    }
+    // array_CBT_Personas.push(canasta_basica_total_ind_pobreza);
+    // suma_CBT_Personas = 0;
+    // for (let i = 0; i < array_CBT_Personas.length; i++) {
+    //     suma_CBT_Personas = parseFloat(suma_CBT_Personas) + parseFloat(array_CBT_Personas[i]);
+    // }
 
     // console.log("array_CBT_Personas", array_CBT_Personas);
     // console.log("array_CBT_Personas", array_CBT_Personas.length);
@@ -462,8 +498,8 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     addPersonToTable(
         gender,
         age_mostrar_table,
-        canasta_b_alimentaria_persona,
-        canasta_b_total_persona,
+        canasta_basica_alimentaria_ind_indigencia,
+        canasta_basica_total_ind_pobreza,
         array_count_person,
         count_person
     );
@@ -542,6 +578,15 @@ function input_alquiler_in() {
 
         suma_CBT_Personas = suma_CBT_Personas + alquiler_in_value;
         suma_con_alquiler = suma_CBT_Personas;
+
+        if (!alquiler_in_value || alquiler_in_value !== 0) {
+            document.querySelector(".icon-svg-reset").style.display = "flex";
+            setTimeout(() => {
+                document.querySelector(".icon-svg-reset").style.transition = "transform 0.3s ease-in-out";
+                document.querySelector(".icon-svg-reset").style.transform = "translatex(0rem)";
+                document.querySelector(".icon-svg-reset").style.opacity = "1";
+            }, 400);
+        }
     });
 }
 input_alquiler_in();
@@ -550,9 +595,17 @@ document.getElementById("btn-reset-person").addEventListener("click", () => {
     //localStorage.removeItem('personas_de_local');
     personas_de_local = [];
     localStorage.setItem("personas_de_local", JSON.stringify(personas_de_local));
-    location.reload();
-    document.getElementById("person-form").reset();
-    document.getElementById("person-list").innerHTML = "";
+    document.querySelector(".icon-svg-reset").style.transition = "transform 0.3s ease-in-out";
+    document.querySelector(".icon-svg-reset").style.transform = "translatex(4rem)";
+    setTimeout(() => {
+        document.querySelector(".icon-svg-reset").style.opacity = "0";
+        document.querySelector(".icon-svg-reset").style.display = "none";
+        document.getElementById("person-form").reset();
+    }, 400);
+    setTimeout(() => {
+        document.getElementById("person-list").innerHTML = "";
+        location.reload();
+    }, 400);
 });
 
 function ingresos_input_in(ingresos) {
