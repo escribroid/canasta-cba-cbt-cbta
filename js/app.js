@@ -87,10 +87,12 @@ let suma_CBT_Personas = 0;
 let suma_con_alquiler = 0;
 let suma_indigencia_alquilando = 0;
 let suma_pobreza_alquilando = 0;
+let suma_clase_baja_fragil_alquilando = 0;
 let suma_clase_baja_alquilando = 0;
 let suma_clase_media_fragil_alquilando = 0;
 let suma_clase_media_alquilando = 0;
 let suma_clase_media_alta_alquilando = 0;
+let suma_clase_alta_baja_alquilando = 0;
 let vivienda;
 let ingresos = document.getElementById("ingresos_input").value;
 
@@ -291,10 +293,12 @@ function suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in
     }
     suma_indigencia_alquilando = alquiler_in_value + Math.trunc(suma_CBA_Personas);
     suma_pobreza_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas);
+    suma_clase_baja_fragil_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 1.2);
     suma_clase_baja_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 1.5);
     suma_clase_media_fragil_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 2);
-    suma_clase_media_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 5);
-    suma_clase_media_alta_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 8);
+    suma_clase_media_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 4.5);
+    suma_clase_media_alta_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 6.5);
+    suma_clase_alta_baja_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 10);
 
     document.querySelector(".show_indigencia_min").textContent = 0;
     document.querySelector(".show_indigencia_max").textContent = suma_indigencia_alquilando;
@@ -315,6 +319,8 @@ function suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in
     document.querySelector(".suma_clase_media_alta_max").textContent = suma_clase_media_alta_alquilando;
 
     document.querySelector(".suma_clase_alta_min").textContent = suma_clase_media_alta_alquilando;
+    document.querySelector(".suma_clase_alta_max").textContent = suma_clase_alta_baja_alquilando;
+
 }
 
 vivienda = document.getElementById("select_canasta_alquiler");
@@ -642,7 +648,7 @@ function ingresos_input_in(ingresos) {
         document.querySelector(".all_canasta_media_fragil").style.removeProperty("background-color");
         document.querySelector(".all_canasta_media").style.removeProperty("background-color");
         document.querySelector(".all_canasta_alta").style.removeProperty("background-color");
-    } else if (ingresos >= suma_clase_media_alta_alquilando) {
+    } else if (ingresos >= suma_clase_media_alta_alquilando && ingresos < suma_clase_alta_baja_alquilando) {
         document.querySelector(".all_canasta_alta").style.setProperty("background-color", "#4CAF50aa", "important");
         document.querySelector(".all_canasta_indigencia").style.removeProperty("background-color");
         document.querySelector(".all_canasta_pobreza").style.removeProperty("background-color");

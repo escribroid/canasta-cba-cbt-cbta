@@ -10,8 +10,8 @@ const linea_pobreza = Math.trunc(cbt_manual);
 const linea_clase_baja_fragil = Math.trunc(cbt_manual * 1.2);
 const linea_clase_baja = Math.trunc(cbt_manual * 1.5);
 const linea_clase_media_fragil = Math.trunc(cbt_manual * 2);
-const linea_clase_media_media = Math.trunc(cbt_manual * 4);
-const linea_clase_media_alta = Math.trunc(cbt_manual * 6);
+const linea_clase_media_media = Math.trunc(cbt_manual * 4.5);
+const linea_clase_media_alta = Math.trunc(cbt_manual * 6.5);
 const linea_clase_alta_baja = Math.trunc(cbt_manual * 10);
 
 // Alquiler medio: 1amb 40m2, 2amb 50m2, 3amb 70m2

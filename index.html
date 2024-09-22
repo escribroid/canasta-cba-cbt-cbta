@@ -39,6 +39,11 @@
     <body class="">
         <!-- HEADER -->
         <!-- <div class="shadow-top"></div> -->
+        <div class="indices_short">
+            <div><span>ipc</span><span>%</span></div>
+            <div><span>cba</span><span>$</span></div>
+            <div><span>cbt</span><span>$</span></div>
+        </div>
         <header class="bg-black rounded-4">
             <!-- NAVBAR -->
 
@@ -137,7 +142,7 @@
                     </div> -->
                 <!-- </div> -->
                 <ul class="list-group list-group-flush rounded-4">
-                    <li class="list-group-item d-grid">
+                    <li class="list-group-item d-flex flex-column">
                         <h2 class="canasta-custom-person-add-title text-center fs-5">
                             Conocé tu Canasta Familiar y tu Sector Socioeconómico
                         </h2>
@@ -438,13 +443,32 @@
 
                             <!-- <h3 class="person-table-title">Tu Canasta Mensual</h3> -->
                             <div class="table-responsive overflow-hidden">
-                                <table class="table table-hover overflow-hidden">
+                                <table class="table table-hover overflow-hidden table-header">
                                     <thead class="">
                                         <tr class="">
-                                            <th class="table-header" scope="col">Familiar</th>
-                                            <th class="table-header" scope="col-1">Edad</th>
-                                            <th class="table-header" scope="col">$</th>
-                                            <th class="table-header" scope="col">
+                                            <th class="col-3 p-1 py-1 m-0" scope="col">
+                                                <label for="detalle_personal"></label>
+                                                <select
+                                                    name="detalle_personal"
+                                                    id="detalle_personal"
+                                                    title="Seleccione el detalle personal"
+                                                    class="detalle_personal_select"
+                                                >
+                                                    <option value="Familia" selected>Detalle</option>
+                                                    <option value="cba">Indigencia</option>
+                                                    <option value="cbt">Pobreza</option>
+                                                    <option value="cbt">= "Clase" =</option>
+
+                                                    <option value="mas_alquiler">Baja</option>
+                                                    <option value="mas_alquiler">Media Fragil</option>
+                                                    <option value="mas_alquiler">Media</option>
+                                                    <option value="mas_alquiler">Media Alta</option>
+                                                    <option value="mas_alquiler">Alta</option>
+                                                </select>
+                                            </th>
+                                            <th class="table-header col-1 p-0 m-0" scope="col-1">Edad</th>
+                                            <th class="table-header p-0 m-0" scope="col">$</th>
+                                            <th class="table-header col-1 p-0 m-0" scope="col">
                                                 <!-- SVG DELETE -->
                                                 <svg
                                                     class="detalles_delete_head"
@@ -471,24 +495,24 @@
                                                     </g>
                                                 </svg>
                                             </th>
-                                            <th class="table-header p-1" scope="col">Dias</th>
+                                            <th class="table-header col-1 p-1 m-0" scope="col">Dias</th>
                                         </tr>
                                     </thead>
                                     <tbody id="person-list" class=""></tbody>
                                     <tfoot>
                                         <tr class="row_mostrar_alquiler">
-                                            <th class="table-header p-1" scope="col">Alquiler</th>
-                                            <th class="table-header col-1 p-1" scope="col">aa</th>
-                                            <th id="alquiler_out" class="table-header p-1" scope="col"></th>
-                                            <th class="table-header p-1" scope="col"></th>
-                                            <th class="table-header col-1 p-1" scope="col"></th>
+                                            <th class="table-header" scope="col">Alquiler</th>
+                                            <th class="table-header col-1" scope="col"></th>
+                                            <th id="alquiler_out" class="table-header" scope="col"></th>
+                                            <th class="table-header col-1" scope="col"></th>
+                                            <th class="table-header col-1" scope="col"></th>
                                         </tr>
                                         <tr class="table-group-divider">
-                                            <th class="table-header p-1" scope="col">Total</th>
-                                            <th class="table-header col-1 p-1" scope="col"></th>
-                                            <th id="total-canasta" class="table-header p-1" scope="col"></th>
-                                            <th class="table-header col-1 p-1" scope="col"></th>
-                                            <th class="table-header col-1 p-1" scope="col"></th>
+                                            <th class="table-header" scope="col">Total</th>
+                                            <th class="table-header col-1" scope="col"></th>
+                                            <th id="total-canasta" class="table-header" scope="col"></th>
+                                            <th class="table-header col-1" scope="col"></th>
+                                            <th class="table-header col-1" scope="col"></th>
                                         </tr>
                                     </tfoot>
                                 </table>
