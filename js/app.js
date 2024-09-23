@@ -44,11 +44,17 @@ function calcular_cbt_y_alquiler(personas, edad) {
 function linea_indigencia() {
     const linea_indigencia = document.querySelector(".linea_indigencia");
     linea_indigencia.innerHTML = `<div class="cards_nota"><span class="cards_nota_txt">» Indigencia con Casa Propia: ingreso mensual menor a $${cba}</span></div>`;
+
+    const cba_top_short = document.querySelector(".indices_short_cba");
+    cba_top_short.innerHTML = "$" + cba;
 }
 
 function linea_pobreza() {
     const linea_pobreza = document.querySelector(".linea_pobreza");
     linea_pobreza.innerHTML = `<div class="cards_nota"><span class="cards_nota_txt">» Pobreza con Casa Propia: ingreso mensual menor a $${cbt}</span></div>`;
+
+    const cbt_top_short = document.querySelector(".indices_short_cbt");
+    cbt_top_short.innerHTML = "$" + cbt;
 }
 
 function linea_pobreza_alquilando() {
@@ -87,9 +93,13 @@ let gender_lowercase;
 let index;
 let index_array_cells = 0;
 let index_array_cells_new = 0;
-let show_indigencia_max = document.querySelector(".show_indigencia_max");
 let suma_CBA_Personas = 0;
 let suma_CBT_Personas = 0;
+let suma_clase_baja = 0;
+let suma_clase_media_fragil = 0;
+let suma_clase_media = 0;
+let suma_clase_media_alta = 0;
+let suma_clase_alta = 0;
 let suma_con_alquiler = 0;
 let suma_indigencia_alquilando = 0;
 let suma_pobreza_alquilando = 0;
@@ -100,15 +110,104 @@ let suma_clase_media_alquilando = 0;
 let suma_clase_media_alta_alquilando = 0;
 let suma_clase_alta_baja_alquilando = 0;
 let vivienda;
+let show_indigencia_max = document.querySelector(".show_indigencia_max");
 let ingresos = document.getElementById("ingresos_input").value;
+vivienda = document.getElementById("select_canasta_alquiler");
+document.querySelector(".row_mostrar_alquiler").style.display = "none";
 
-let array_CBA_Personas = [];
-let array_CBT_Personas = [];
+let array_cba_individual = [];
+let array_cbt_individual = [];
+let array_clase_baja = [];
+let array_clase_media_fragil = [];
+let array_clase_media = [];
+let array_clase_media_alta = [];
+let array_clase_alta = [];
 let array_count_person = [];
+let table_matrix = [];
+let table_rows = [];
 
 const form = document.getElementById("person-form");
 const tableBody = document.getElementById("person-list");
 let personas_de_local = JSON.parse(localStorage.getItem("personas_de_local")) || [];
+
+/* Borrar Rows de la tabla ++++++++++++++++++++++++++++++++++++++++++++++ */
+tableBody.addEventListener("click", (event) => {
+    const filas = tableBody.querySelectorAll("tr");
+    let array_filas = Array.from(filas);
+
+    //console.log("filas", filas);
+
+    const cells = tableBody.querySelectorAll("td");
+
+    //console.log("cells", cells);
+
+    let array_cells = Array.from(cells); // Convertir NodeList a array
+
+    const clickedCell = event.target.closest("td"); // Detectar la fila clickeada
+    const cell_select_id = clickedCell.id;
+
+    //console.log("cell_select_id=", clickedCell.id);
+
+    const clickedRow = clickedCell.parentNode; // Detectar la fila clickeada
+    const clickedRowId = clickedRow.id; // Detectar el id de la fila clickeada
+
+    //console.log("clickedRowId", clickedRowId);
+
+    if (clickedCell && clickedCell.id) {
+        let index_array_cells = array_cells.findIndex((cell) => cell.id === cell_select_id);
+        // console.log("index_array_cells=", index_array_cells);
+
+        if (index_array_cells !== 3) {
+            index_array_cells_new = (index_array_cells - 3) / 5;
+        } else if (index_array_cells === 3) {
+            index_array_cells_new = 0;
+        }
+        // console.log("index_array_cells_new", index_array_cells_new);
+
+        subsPersonToTable(array_cba_individual, array_cbt_individual, array_count_person, index_array_cells_new);
+
+        const row_del = clickedCell.parentNode;
+        row_del.remove();
+    }
+});
+
+// change select detalles canastas
+document.getElementById("detalle_personal").addEventListener("change", function () {
+    //console.log("CAMBIO");
+    let select_canastas = document.getElementById("detalle_personal").value;
+
+    if (select_canastas == "indigencia") {
+        console.log("indigencia");
+        console.log("array_cba_individual-2", array_cba_individual);
+        console.log("table_rows", table_rows);
+
+        for (let i = 0; i < table_rows.length; i++) {
+            table_rows[i][2] = array_cba_individual[i];
+            let existingRow = tableBody.rows[i];
+            let existingCell = existingRow.cells[2];
+            existingCell.textContent = array_cba_individual[i];
+        }
+        console.log("table_rows D-", table_rows);
+    } else if (select_canastas == "pobreza") {
+        console.log("pobreza");
+        console.log("array_cbt_individual", array_cbt_individual);
+    } else if (select_canastas == "clase_baja") {
+        console.log("clase_baja");
+        console.log("array_clase_baja", array_clase_baja);
+    } else if (select_canastas == "clase_media_fragil") {
+        console.log("clase_media_fragil");
+        console.log("array_clase_media_fragil", array_clase_media_fragil);
+    } else if (select_canastas == "clase_media") {
+        console.log("clase_media");
+        console.log("array_clase_media", array_clase_media);
+    } else if (select_canastas == "clase_media_alta") {
+        console.log("clase_media_alta");
+        console.log("array_clase_media_alta", array_clase_media_alta);
+    } else if (select_canastas == "clase_alta") {
+        console.log("clase_alta");
+        console.log("array_clase_alta", array_clase_alta);
+    }
+});
 
 // Función para agregar persona a la tabla y al array de personas +++++++++++++++++++++++++++++++
 function addPersonToTable(
@@ -121,6 +220,8 @@ function addPersonToTable(
 ) {
     const row = document.createElement("tr");
 
+    table_matrix.pop();
+
     if (gender === "Femenino") {
         gender_show = "Femenino";
     } else {
@@ -131,12 +232,19 @@ function addPersonToTable(
 
     //console.log("count_ADD", count_person);
 
-    row.innerHTML = `<td class="p-1">${gender_show}</td><td class="col-1 p-1">${age_mostrar_table}</td><td id="detalles_monto_person_${count_person}" class="add_Partials p-1">$${canasta_basica_total_ind_pobreza.toLocaleString(
-        "es-AR",
-        {
-            maximumFractionDigits: 0,
-        }
-    )}</td><td class="p-1 detalles_delete" id="detalles_person_${count_person}">
+    let cells = [gender_show, age_mostrar_table, canasta_basica_total_ind_pobreza];
+
+    table_rows.push(cells);
+
+    //console.log("table_rows", table_rows);
+
+    row.innerHTML = `<td class="p-1">${table_rows[array_count_person.length - 1][0]}</td><td class="col-1 p-1">${
+        table_rows[array_count_person.length - 1][1]
+    }</td><td id="detalles_monto_person_${count_person}" class="add_Partials p-1">$${table_rows[
+        array_count_person.length - 1
+    ][2].toLocaleString("es-AR", {
+        maximumFractionDigits: 0,
+    })}</td><td class="p-1 detalles_delete" id="detalles_person_${count_person}">
     <svg id="testSvg" class="detalles_delete_body" width="20px" height="20px" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
@@ -177,67 +285,36 @@ function addPersonToTable(
 </label>
     </td>`;
     tableBody.appendChild(row);
+
+    return table_rows;
 }
 
-/* Borrar Rows de la tabla ++++++++++++++++++++++++++++++++++++++++++++++ */
-tableBody.addEventListener("click", (event) => {
-    const filas = tableBody.querySelectorAll("tr");
-    let array_filas = Array.from(filas);
-
-    //console.log("filas", filas);
-
-    const cells = tableBody.querySelectorAll("td");
-
-    //console.log("cells", cells);
-
-    let array_cells = Array.from(cells); // Convertir NodeList a array
-
-    const clickedCell = event.target.closest("td"); // Detectar la fila clickeada
-    const cell_select_id = clickedCell.id;
-
-    //console.log("cell_select_id=", clickedCell.id);
-
-    const clickedRow = clickedCell.parentNode; // Detectar la fila clickeada
-    const clickedRowId = clickedRow.id; // Detectar el id de la fila clickeada
-
-    //console.log("clickedRowId", clickedRowId);
-
-    if (clickedCell && clickedCell.id) {
-        let index_array_cells = array_cells.findIndex((cell) => cell.id === cell_select_id);
-        // console.log("index_array_cells=", index_array_cells);
-
-        if (index_array_cells !== 3) {
-            index_array_cells_new = (index_array_cells - 3) / 5;
-        } else if (index_array_cells === 3) {
-            index_array_cells_new = 0;
-        }
-        // console.log("index_array_cells_new", index_array_cells_new);
-
-        subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_person, index_array_cells_new);
-
-        const row_del = clickedCell.parentNode;
-        row_del.remove();
-    }
-});
-
-function subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_person, index_array_cells_new) {
-    array_CBA_Personas.splice(index_array_cells_new, 1);
+// Quitar personas de la tabla y del array de personas +++++++++++++++++++++++++++++++++
+function subsPersonToTable(array_cba_individual, array_cbt_individual, array_count_person, index_array_cells_new) {
+    array_cba_individual.splice(index_array_cells_new, 1);
     ingresos = document.getElementById("ingresos_input").value;
     vivienda = document.getElementById("select_canasta_alquiler");
 
-    //console.log("array_CBA_Personas-SUB:", array_CBA_Personas);
+    //console.log("array_cba_individual-SUB:", array_cba_individual);
 
     suma_CBA_Personas = 0;
-    for (let i = 0; i < array_CBA_Personas.length; i++) {
-        suma_CBA_Personas = parseFloat(suma_CBA_Personas) + parseFloat(array_CBA_Personas[i]);
+    for (let i = 0; i < array_cba_individual.length; i++) {
+        suma_CBA_Personas = parseFloat(suma_CBA_Personas) + parseFloat(array_cba_individual[i]);
     }
 
-    array_CBT_Personas.splice(index_array_cells_new, 1);
-    // console.log("array_CBT_Personas-SUB:", array_CBT_Personas);
+    table_rows.splice(index_array_cells_new, 1);
+
+    console.log("table_rows-SUB:", table_rows);
+
+    array_cbt_individual.splice(index_array_cells_new, 1);
+    // console.log("array_cbt_individual-SUB:", array_cbt_individual);
     suma_CBT_Personas = 0;
-    for (let i = 0; i < array_CBT_Personas.length; i++) {
-        suma_CBT_Personas = parseFloat(suma_CBT_Personas) + parseFloat(array_CBT_Personas[i]);
+    for (let i = 0; i < array_cbt_individual.length; i++) {
+        suma_CBT_Personas = parseFloat(suma_CBT_Personas) + parseFloat(array_cbt_individual[i]);
     }
+
+    array_count_person.pop();
+    console.log("array_count_person-SUB:", array_count_person);
 
     suma_con_alquiler = 0;
 
@@ -247,7 +324,7 @@ function subsPersonToTable(array_CBA_Personas, array_CBT_Personas, array_count_p
     ingresos_input_in(ingresos);
 
     if (
-        array_CBA_Personas.length === 0 &&
+        array_cba_individual.length === 0 &&
         (vivienda.value == "siAlquilo" || vivienda.value == "vivienda_slc" || vivienda.value == "noAlquilo")
     ) {
         document.querySelector(".icon-svg-reset").style.transition = "transform 0.3s ease-in-out";
@@ -329,9 +406,6 @@ function suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in
     document.querySelector(".suma_clase_alta_min").textContent = suma_clase_media_alta_alquilando;
     document.querySelector(".suma_clase_alta_max").textContent = suma_clase_alta_baja_alquilando;
 }
-
-vivienda = document.getElementById("select_canasta_alquiler");
-document.querySelector(".row_mostrar_alquiler").style.display = "none";
 
 // Agregar un evento al select para cambiar el estado del input
 vivienda.addEventListener("input", function () {
@@ -442,36 +516,65 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
         canasta_basica_alimentaria_ind_indigencia =
             tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cba_equivalente;
         //console.log("canasta_basica_alimentaria_ind_indigencia", canasta_basica_alimentaria_ind_indigencia);
-        array_CBA_Personas.push(canasta_basica_alimentaria_ind_indigencia);
+        array_cba_individual.push(canasta_basica_alimentaria_ind_indigencia);
         suma_CBA_Personas = 0;
-        for (let i = 0; i < array_CBA_Personas.length; i++) {
-            suma_CBA_Personas = parseFloat(suma_CBA_Personas) + parseFloat(array_CBA_Personas[i]);
+        for (let i = 0; i < array_cba_individual.length; i++) {
+            suma_CBA_Personas = parseFloat(suma_CBA_Personas) + parseFloat(array_cba_individual[i]);
         }
-        // console.log("array_CBA_Personas-SUB", array_CBA_Personas);
+        console.log("array_cba_individual-SUB", array_cba_individual);
         // console.log("suma_CBA_Personas-SUB", suma_CBA_Personas);
 
         canasta_basica_total_ind_pobreza = tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente;
         //console.log("canasta_basica_total_ind_pobreza", canasta_basica_total_ind_pobreza);
-        array_CBT_Personas.push(canasta_basica_total_ind_pobreza);
+        array_cbt_individual.push(canasta_basica_total_ind_pobreza);
         suma_CBT_Personas = 0;
-        for (let i = 0; i < array_CBT_Personas.length; i++) {
-            suma_CBT_Personas = parseFloat(suma_CBT_Personas) + parseFloat(array_CBT_Personas[i]);
+        for (let i = 0; i < array_cbt_individual.length; i++) {
+            suma_CBT_Personas = parseFloat(suma_CBT_Personas) + parseFloat(array_cbt_individual[i]);
         }
 
         canasta_basica_clase_baja_individual =
             tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente * 1.5;
+        array_clase_baja.push(canasta_basica_clase_baja_individual);
+        suma_clase_baja = 0;
+        for (let i = 0; i < array_clase_baja.length; i++) {
+            suma_clase_baja = parseFloat(suma_clase_baja) + parseFloat(array_clase_baja[i]);
+        }
 
         canasta_basica_clase_media_fragil_individual =
             tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente * 2;
+        array_clase_media_fragil.push(canasta_basica_clase_media_fragil_individual);
+        suma_clase_media_fragil = 0;
+        for (let i = 0; i < array_clase_media_fragil.length; i++) {
+            suma_clase_media_fragil = parseFloat(suma_clase_media_fragil) + parseFloat(array_clase_media_fragil[i]);
+        }
 
         canasta_basica_clase_media_individual =
             tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente * 4.5;
+        array_clase_media.push(canasta_basica_clase_media_individual);
+        suma_clase_media = 0;
+        for (let i = 0; i < array_clase_media.length; i++) {
+            suma_clase_media = parseFloat(suma_clase_media) + parseFloat(array_clase_media[i]);
+        }
 
         canasta_basica_clase_media_alta_individual =
             tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente * 6.5;
+        array_clase_media_alta.push(canasta_basica_clase_media_alta_individual);
+        suma_clase_media_alta = 0;
+        for (let i = 0; i < array_clase_media_alta.length; i++) {
+            suma_clase_media_alta = parseFloat(suma_clase_media_alta) + parseFloat(array_clase_media_alta[i]);
+        }
 
         canasta_basica_clase_alta_individual =
             tabla_equivalentes[`${age_toStr}`][`${gender_lowercase}`] * cbt_equivalente * 10;
+        array_clase_alta.push(canasta_basica_clase_alta_individual);
+        suma_clase_alta = 0;
+        for (let i = 0; i < array_clase_alta.length; i++) {
+            suma_clase_alta = parseFloat(suma_clase_alta) + parseFloat(array_clase_alta[i]);
+        }
+
+        // console.log("suma_CBA_Personas", suma_CBA_Personas);
+        // console.log("suma_CBT_Personas", suma_CBT_Personas);
+        // console.log("suma_clase_baja", suma_clase_baja);
 
         // activar boton reset
         document.querySelector(".icon-svg-reset").style.display = "flex";
@@ -484,14 +587,14 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
             // Ocultar después de la transición
         }, 300); // Esperar que la transición termine (0.5s)
     }
-    // array_CBT_Personas.push(canasta_basica_total_ind_pobreza);
+    // array_cbt_individual.push(canasta_basica_total_ind_pobreza);
     // suma_CBT_Personas = 0;
-    // for (let i = 0; i < array_CBT_Personas.length; i++) {
-    //     suma_CBT_Personas = parseFloat(suma_CBT_Personas) + parseFloat(array_CBT_Personas[i]);
+    // for (let i = 0; i < array_cbt_individual.length; i++) {
+    //     suma_CBT_Personas = parseFloat(suma_CBT_Personas) + parseFloat(array_cbt_individual[i]);
     // }
 
-    // console.log("array_CBT_Personas", array_CBT_Personas);
-    // console.log("array_CBT_Personas", array_CBT_Personas.length);
+    // console.log("array_cbt_individual", array_cbt_individual);
+    // console.log("array_cbt_individual", array_cbt_individual.length);
     // console.log("suma_CBT_Personas", suma_CBT_Personas);
 
     // Agregar la persona a la tabla +++++++++++++++++++
@@ -507,8 +610,12 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
     suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in_value, suma_con_alquiler);
     ingresos_input_in(ingresos);
 
+    console.log("table_rows", table_rows);
+    // console.log("table_rows1", table_rows);
+    // console.log("table_rows2", table_rows);
+
     // Limpiar el formulario
-    document.getElementById("person-form").reset();
+    //document.getElementById("person-form").reset();
 
     // LOCAL STORAGE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     const local_persona = {

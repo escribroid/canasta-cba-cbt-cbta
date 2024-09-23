@@ -31,10 +31,13 @@
     <!-- BODY +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
     <body class="">
         <!-- <div class="shadow-top"></div> -->
-        <div class="indices_short">
-            <div><span>ipc </span><span class="indices_short_ipc_percent"></span></div>
-            <div><span>cba </span><span>$</span></div>
-            <div><span>cbt </span><span>$</span></div>
+        <div class="indices_short_container">
+            <div><span class="indices_short">ipc </span><span class="indices_short_ipc_percent"></span></div>
+            <span>|</span>
+            <div><span class="indices_short">cba </span><span class="indices_short_cba"></span></div>
+            <span>|</span>
+
+            <div><span class="indices_short">cbt </span><span class="indices_short_cbt"></span></div>
         </div>
         <!-- HEADER +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
         <header class="bg-black rounded-4">
@@ -437,11 +440,11 @@
                             </div>
 
                             <!-- <h3 class="person-table-title">Tu Canasta Mensual</h3> -->
-                            <div class="table-responsive overflow-hidden">
-                                <table class="table table-hover overflow-hidden table-header">
+                            <div class="table-responsive overflow-auto">
+                                <table class="table table-hover overflow-hidden table-header table-bordered w-100">
                                     <thead class="">
                                         <tr class="">
-                                            <th class="col-3 p-0 py-1 m-0" scope="col">
+                                            <th class="col-4 p-0 m-0" scope="col">
                                                 <label for="detalle_personal"></label>
                                                 <select
                                                     name="detalle_personal"
@@ -449,37 +452,32 @@
                                                     title="Seleccione el detalle personal"
                                                     class="detalle_personal_select"
                                                 >
-                                                    <option
-                                                        class="detalle_personal_option"
-                                                        value="Familia"
-                                                        selected
-                                                        disabled
-                                                    >
+                                                    <option class="detalle_personal_option" value="" selected disabled>
                                                         Detalle de cada sector ▼▼
                                                     </option>
-                                                    <option class="detalle_personal_option" value="cba">
+                                                    <option class="detalle_personal_option" value="indigencia">
                                                         • Indigencia
                                                     </option>
-                                                    <option class="detalle_personal_option" value="cbt">
+                                                    <option class="detalle_personal_option" value="pobreza">
                                                         • Pobreza
                                                     </option>
-                                                    <option class="detalle_personal_option" value="cbt" disabled>
+                                                    <option class="detalle_personal_option" value="" disabled>
                                                         == Clase ▼▼
                                                     </option>
 
-                                                    <option class="detalle_personal_option" value="mas_alquiler">
+                                                    <option class="detalle_personal_option" value="clase_baja">
                                                         • Baja
                                                     </option>
-                                                    <option class="detalle_personal_option" value="mas_alquiler">
+                                                    <option class="detalle_personal_option" value="clase_media_fragil">
                                                         • Media Fragil
                                                     </option>
-                                                    <option class="detalle_personal_option" value="mas_alquiler">
+                                                    <option class="detalle_personal_option" value="clase_media">
                                                         • Media
                                                     </option>
-                                                    <option class="detalle_personal_option" value="mas_alquiler">
+                                                    <option class="detalle_personal_option" value="clase_media_alta">
                                                         • Media Alta
                                                     </option>
-                                                    <option class="detalle_personal_option" value="mas_alquiler">
+                                                    <option class="detalle_personal_option" value="clase_alta">
                                                         • Alta
                                                     </option>
                                                 </select>

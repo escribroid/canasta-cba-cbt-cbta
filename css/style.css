@@ -446,7 +446,7 @@ header {
     background: #1b1f24;
 }
 
-.indices_short {
+.indices_short_container {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -454,9 +454,19 @@ header {
     position: relative;
     box-shadow: 0 0px 0.5rem 1rem #000;
     z-index: -1;
+    color: gainsboro;
+    font-family: monospace;
 }
-.indices_short_ipc_percent {
-    font-family: var(--font-mono);
+.indices_short_ipc_percent,
+.indices_short_cba,
+.indices_short_cbt,
+.indices_short {
+    font-family: var(--font-secondary);
+    font-family: monospace;
+    font-size: 1rem;
+    color: gainsboro;
+    color: lightblue;
+    color: #bbccdd;
 }
 
 .ingresos_input {
@@ -719,8 +729,10 @@ td {
 }
 
 .table-responsive {
-    border: 1px solid #ff880033;
-    border-radius: 20px;
+    border-radius: 10px;
+    outline: 1px solid #ff880033;
+    margin: 0 auto;
+    width: 99%;
 }
 
 .text-shadow {
