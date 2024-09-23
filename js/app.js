@@ -46,7 +46,7 @@ function linea_indigencia() {
     linea_indigencia.innerHTML = `<div class="cards_nota"><span class="cards_nota_txt">» Indigencia con Casa Propia: ingreso mensual menor a $${cba}</span></div>`;
 
     const cba_top_short = document.querySelector(".indices_short_cba");
-    cba_top_short.innerHTML = "$" + cba;
+    cba_top_short.innerHTML = " $" + cba;
 }
 
 function linea_pobreza() {
