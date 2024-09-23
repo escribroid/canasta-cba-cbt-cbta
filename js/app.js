@@ -46,7 +46,7 @@ function linea_indigencia() {
     linea_indigencia.innerHTML = `<div class="cards_nota"><span class="cards_nota_txt">» Indigencia con Casa Propia: ingreso mensual menor a $${cba}</span></div>`;
 
     const cba_top_short = document.querySelector(".indices_short_cba");
-    cba_top_short.innerHTML = " $" + cba;
+    cba_top_short.innerHTML = "$" + cba;
 }
 
 function linea_pobreza() {
@@ -180,32 +180,76 @@ document.getElementById("detalle_personal").addEventListener("change", function 
         console.log("indigencia");
         console.log("array_cba_individual-2", array_cba_individual);
         console.log("table_rows", table_rows);
-
         for (let i = 0; i < table_rows.length; i++) {
             table_rows[i][2] = array_cba_individual[i];
             let existingRow = tableBody.rows[i];
             let existingCell = existingRow.cells[2];
-            existingCell.textContent = array_cba_individual[i];
+            existingCell.textContent = Math.trunc(array_cba_individual[i]);
         }
+        document.getElementById("total-canasta").innerHTML = suma_indigencia_alquilando;
+
         console.log("table_rows D-", table_rows);
     } else if (select_canastas == "pobreza") {
         console.log("pobreza");
         console.log("array_cbt_individual", array_cbt_individual);
+
+        for (let i = 0; i < table_rows.length; i++) {
+            table_rows[i][2] = array_cbt_individual[i];
+            let existingRow = tableBody.rows[i];
+            let existingCell = existingRow.cells[2];
+            existingCell.textContent = Math.trunc(array_cbt_individual[i]);
+        }
+        document.getElementById("total-canasta").innerHTML = suma_pobreza_alquilando;
     } else if (select_canastas == "clase_baja") {
         console.log("clase_baja");
         console.log("array_clase_baja", array_clase_baja);
+        for (let i = 0; i < table_rows.length; i++) {
+            table_rows[i][2] = array_clase_baja[i];
+            let existingRow = tableBody.rows[i];
+            let existingCell = existingRow.cells[2];
+            existingCell.textContent = Math.trunc(array_clase_baja[i]);
+        }
+        document.getElementById("total-canasta").innerHTML = suma_clase_baja_alquilando;
     } else if (select_canastas == "clase_media_fragil") {
         console.log("clase_media_fragil");
         console.log("array_clase_media_fragil", array_clase_media_fragil);
+        for (let i = 0; i < table_rows.length; i++) {
+            table_rows[i][2] = array_clase_media_fragil[i];
+            let existingRow = tableBody.rows[i];
+            let existingCell = existingRow.cells[2];
+            existingCell.textContent = Math.trunc(array_clase_media_fragil[i]);
+        }
+        document.getElementById("total-canasta").innerHTML = suma_clase_media_fragil_alquilando;
     } else if (select_canastas == "clase_media") {
         console.log("clase_media");
         console.log("array_clase_media", array_clase_media);
+        for (let i = 0; i < table_rows.length; i++) {
+            table_rows[i][2] = array_clase_media[i];
+            let existingRow = tableBody.rows[i];
+            let existingCell = existingRow.cells[2];
+            existingCell.textContent = Math.trunc(array_clase_media[i]);
+        }
+        document.getElementById("total-canasta").innerHTML = suma_clase_media_alquilando;
     } else if (select_canastas == "clase_media_alta") {
         console.log("clase_media_alta");
         console.log("array_clase_media_alta", array_clase_media_alta);
+        for (let i = 0; i < table_rows.length; i++) {
+            table_rows[i][2] = array_clase_media_alta[i];
+            let existingRow = tableBody.rows[i];
+            let existingCell = existingRow.cells[2];
+            existingCell.textContent = Math.trunc(array_clase_media_alta[i]);
+        }
+        document.getElementById("total-canasta").innerHTML = suma_clase_media_alta_alquilando;
     } else if (select_canastas == "clase_alta") {
         console.log("clase_alta");
         console.log("array_clase_alta", array_clase_alta);
+        for (let i = 0; i < table_rows.length; i++) {
+            table_rows[i][2] = array_clase_alta[i];
+            let existingRow = tableBody.rows[i];
+            let existingCell = existingRow.cells[2];
+            existingCell.textContent = Math.trunc(array_clase_alta[i]);
+        }
+        document.getElementById("total-canasta").innerHTML = suma_clase_alta_baja_alquilando;
     }
 });
 
@@ -416,7 +460,7 @@ vivienda.addEventListener("input", function () {
         alquiler_in.value = "";
         alquiler_in.enabled = true; // Habilitar el input
         alquiler_in.removeAttribute("disabled"); // Deshabilitar el input
-        alquiler_in.placeholder = "$ monto $"; // Mostrar texto en el input
+        alquiler_in.placeholder = "$ valor alquiler"; // Mostrar texto en el input
         document.querySelector(".row_mostrar_alquiler").style.display = "table-row";
     } else if (vivienda.value === "noAlquilo") {
         alquiler_in.setAttribute("disabled", "true"); // Deshabilitar el input
