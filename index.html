@@ -136,7 +136,7 @@
                                         data-bs-placement="top"
                                         aria-label="aclaracion_icons"
                                         data-bs-custom-class="custom-tooltip"
-                                        data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                        data-bs-title="Ingresá en el recuadro verde si Alquilas o no, en el recuadro verde de la derecha ingresá el monto del alquiler si alquilas, o elegí entre los valores promedio de alquiler suministrados."
                                     >
                                         <div>
                                             <!-- SVG CASA -->
@@ -232,6 +232,7 @@
                                             class="partial_sumable alquiler_in form-control"
                                             value=""
                                             placeholder="$ valor alquiler"
+                                            disabled
                                         />
                                     </label>
                                 </div>
@@ -249,7 +250,7 @@
                                             data-bs-placement="top"
                                             aria-label="aclaracion_icons"
                                             data-bs-custom-class="custom-tooltip"
-                                            data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                            data-bs-title="Ingresá presionando el botón más, de color naranja, a cada miembro de tu hogar, su género y su edad, para construir la canasta real de tu familia."
                                         >
                                             <span>
                                                 <!-- SVG PERSON -->
@@ -449,8 +450,7 @@
                                 <table class="table table-hover overflow-hidden table-header table-bordered w-100">
                                     <thead class="">
                                         <tr class="">
-                                            <th class="col-4 p-0 m-0" scope="col">
-                                                <label for="detalle_personal"></label>
+                                            <th class="detalle_personal_container col-3 p-0 m-0" scope="col">
                                                 <select
                                                     name="detalle_personal"
                                                     id="detalle_personal"
@@ -544,125 +544,114 @@
                             <div class="row m-0 mb-2 p-0 w-100">
                                 <div class="col pb-1 fs-5 text-center text-shadow">Sector Socio Económico</div>
                             </div>
-                            <div class="row m-0 mb-0 p-0 w-100">
+                            <div class="row m-0 mb-0 p-0 w-100 show_indigencia">
                                 <div
-                                    class="m-0 p-0 show_indigencia_min bg-body d-flex justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 show_indigencia_min d-flex justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col m-0 p-0 py-1 bg-body d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_indigencia"
+                                    class="col m-0 p-0 py-1 d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_indigencia"
                                 >
-                                    <span class="bg-body pe-0 h-100 align-content-center mayor_menor">≤</span
-                                    >Indigente<span class="bg-body text-center h-100 align-content-center mayor_menor"
+                                    <span class="pe-0 h-100 align-content-center mayor_menor">≤</span>Indigente<span
+                                        class="text-center h-100 align-content-center mayor_menor"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="m-0 p-0 show_indigencia_max bg-body justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 show_indigencia_max justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 p-0 w-100">
+                            <div class="row m-0 p-0 w-100 show_pobreza">
                                 <div
-                                    class="m-0 p-0 show_pobreza_min bg-secondary-subtle justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 show_pobreza_min justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col m-0 p-0 py-1 bg-secondary-subtle d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_pobreza"
+                                    class="col m-0 p-0 py-1 d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_pobreza"
                                 >
-                                    <span class="bg-secondary-subtle pe-0 h-100 align-content-center mayor_menor"
-                                        >≤</span
-                                    >Pobreza<span
-                                        class="bg-secondary-subtle text-center h-100 align-content-center mayor_menor"
+                                    <span class="pe-0 h-100 align-content-center mayor_menor">≤</span>Pobreza<span
+                                        class="text-center h-100 align-content-center mayor_menor"
+                                        >&lt;</span
+                                    >
+                                </div>
+                                <div class="m-0 p-0 show_pobreza_max align-content-center align-items-center"></div>
+                            </div>
+                            <div class="row m-0 p-0 w-100 show_clase_baja">
+                                <div
+                                    class="m-0 p-0 show_clase_baja_min justify-content-center align-content-center align-items-center"
+                                ></div>
+                                <div
+                                    class="col m-0 p-0 py-1 d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_baja"
+                                >
+                                    <span class="pe-0 h-100 align-content-center mayor_menor">≤</span>Clase Baja<span
+                                        class="text-center h-100 align-content-center mayor_menor"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="m-0 p-0 show_pobreza_max show_indigencia_max bg-secondary-subtle align-content-center align-items-center"
+                                    class="m-0 p-0 show_clase_baja_max justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 p-0 w-100">
+                            <div class="row m-0 p-0 w-100 show_clase_media_fragil">
                                 <div
-                                    class="m-0 p-0 show_clase_baja_min bg-body justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_media_fragil_min justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col m-0 p-0 py-1 bg-body d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_baja"
+                                    class="col m-0 p-0 py-1 d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_media_fragil"
                                 >
-                                    <span class="bg-body pe-0 h-100 align-content-center mayor_menor">≤</span>Clase
-                                    Baja<span class="bg-body text-center h-100 align-content-center mayor_menor"
+                                    <span class="pe-0 h-100 align-content-center mayor_menor">≤</span>Media fragil<span
+                                        class="text-center h-100 align-content-center mayor_menor"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="m-0 p-0 show_clase_baja_max bg-body justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_media_fragil_max justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 p-0 w-100">
+                            <div class="row m-0 p-0 w-100 show_clase_media">
                                 <div
-                                    class="m-0 p-0 suma_clase_media_fragil_min bg-secondary-subtle justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_media_min justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col m-0 p-0 py-1 bg-secondary-subtle d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_media_fragil"
+                                    class="col m-0 p-0 py-1 d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_media"
                                 >
-                                    <span class="bg-secondary-subtle pe-0 h-100 align-content-center mayor_menor"
-                                        >≤</span
-                                    >Media fragil<span
-                                        class="bg-secondary-subtle text-center h-100 align-content-center mayor_menor"
+                                    <span class="pe-0 h-100 align-content-center mayor_menor">≤</span>Media<span
+                                        class="text-center h-100 align-content-center mayor_menor"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="m-0 p-0 suma_clase_media_fragil_max bg-secondary-subtle justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_media_max justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 p-0 w-100">
+                            <div class="row m-0 p-0 w-100 show_clase_media_alta">
                                 <div
-                                    class="m-0 p-0 suma_clase_media_min bg-body justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_media_alta_min justify-content-center align-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col m-0 p-0 py-1 bg-body d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_media"
+                                    class="col m-0 p-0 py-1 d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_media_alta"
                                 >
-                                    <span class="bg-body pe-0 h-100 align-content-center mayor_menor">≤</span>Media<span
-                                        class="bg-body text-center h-100 align-content-center mayor_menor"
+                                    <span class="pe-0 h-100 align-content-center mayor_menor">≤</span>
+                                    Media alta<span class="text-center h-100 align-content-center mayor_menor"
                                         >&lt;</span
                                     >
                                 </div>
                                 <div
-                                    class="m-0 p-0 suma_clase_media_max bg-body justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_media_alta_max justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
-                            <div class="row m-0 p-0 w-100">
+                            <div class="row m-0 p-0 w-100 show_clase_alta">
                                 <div
-                                    class="m-0 p-0 suma_clase_media_alta_min bg-secondary-subtle justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_alta_min justify-content-center align-items-center"
                                 ></div>
                                 <div
-                                    class="col m-0 p-0 py-1 bg-secondary-subtle d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_media_alta"
-                                >
-                                    <span class="bg-secondary-subtle pe-0 h-100 align-content-center mayor_menor"
-                                        >≤</span
-                                    >
-                                    Media alta<span
-                                        class="bg-secondary-subtle text-center h-100 align-content-center mayor_menor"
-                                        >&lt;</span
-                                    >
-                                </div>
-                                <div
-                                    class="m-0 p-0 suma_clase_media_alta_max bg-secondary-subtle justify-content-center align-content-center align-items-center"
-                                ></div>
-                            </div>
-                            <div class="row m-0 p-0 w-100">
-                                <div
-                                    class="m-0 p-0 suma_clase_alta_min bg-body justify-content-center align-items-center"
-                                ></div>
-                                <div
-                                    class="col m-0 p-0 py-1 bg-body d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_alta"
+                                    class="col m-0 p-0 py-1 d-flex justify-content-between align-content-center align-items-center text-shadow all_canasta_alta"
                                 >
                                     <span
-                                        class="bg-body pe-0 h-100 d-flex justify-content-center align-items-center align-content-center text-center mayor_menor"
+                                        class="pe-0 h-100 d-flex justify-content-center align-items-center align-content-center text-center mayor_menor"
                                         >≤</span
-                                    >Alta<span class="bg-body text-center h-100 align-content-center mayor_menor"
-                                        >&lt;</span
-                                    >
+                                    >Alta<span class="text-center h-100 align-content-center mayor_menor">&lt;</span>
                                 </div>
                                 <div
-                                    class="m-0 p-0 suma_clase_alta_max bg-body justify-content-center align-content-center align-items-center"
+                                    class="m-0 p-0 suma_clase_alta_max justify-content-center align-content-center align-items-center"
                                 ></div>
                             </div>
 
@@ -677,7 +666,7 @@
                                             data-bs-toggle="tooltip"
                                             data-bs-placement="top"
                                             data-bs-custom-class="custom-tooltip"
-                                            data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                            data-bs-title="Cada fila indica en el medio el nombre del sector socioeconómico, adelante el ingreso mínimo y al final el ingreso máximo en pesos para encontrarse en ese sector socioeconómico."
                                         >
                                             ?
                                         </button>
@@ -723,7 +712,7 @@
                                     data-bs-toggle="tooltip"
                                     data-bs-placement="top"
                                     data-bs-custom-class="custom-tooltip"
-                                    data-bs-title=" top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                    data-bs-title="Acá ingresá el dinero mensual del que disponen en tu hogar, y resaltará en un color notorio tu sector socioeconómico."
                                 >
                                     i
                                 </button>
@@ -739,10 +728,25 @@
             <!-- Card 2 Pesos Dolares +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
             <div class="card rounded-4 bg-dark card_cbta">
                 <div class="card-header rounded-4">
-                    <span class="fs-6 py-1 pb-0"> • Pesos </span>
-                    <span class="fs-6 py-1 pb-0"> • Dolar </span>
-                    <span class="fs-6 py-1 pb-0"> • MEP </span>
-                    <span class="fs-6 py-1 pb-0"> • CCL </span>
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input
+                            type="radio"
+                            class="btn-check"
+                            name="btnradio"
+                            id="btnradio1"
+                            autocomplete="off"
+                            checked
+                        />
+                        <label class="btn btn-outline-primary" for="btnradio1">• Pesos</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+                        <label class="btn btn-outline-primary" for="btnradio2">• Dolar</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" />
+                        <label class="btn btn-outline-primary" for="btnradio3">• MEP</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" />
+                        <label class="btn btn-outline-primary" for="btnradio4">• CCL</label>
+                    </div>
                 </div>
             </div>
 
@@ -759,7 +763,7 @@
                                 data-bs-toggle="tooltip"
                                 data-bs-placement="top"
                                 data-bs-custom-class="custom-tooltip"
-                                data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                data-bs-title="CBA es la Canasta Básica Alimentaria, es el valor de la Linea de indigencia. Este valor de aquí es para un hogar de 4 miembros modelo del indec. La Canasta real de tu hogar la podes calcular acá."
                             >
                                 i
                             </button></span
@@ -841,7 +845,7 @@
                                 data-bs-toggle="tooltip"
                                 data-bs-placement="top"
                                 data-bs-custom-class="custom-tooltip"
-                                data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                data-bs-title="CBT es la Canasta Básica Total, es el umbral de la Linea de pobreza. Este valor de aquí es para un hogar de 4 miembros modelo del indec. La Canasta real de tu hogar la podes calcular acá."
                             >
                                 i
                             </button></span
@@ -923,7 +927,7 @@
                                 data-bs-toggle="tooltip"
                                 data-bs-placement="top"
                                 data-bs-custom-class="custom-tooltip"
-                                data-bs-title="This top tooltip is themed via CSS variables sasas sassa sassas asasas asasasas asasasas asasasas sasasas asasasas ."
+                                data-bs-title="CBT+A es la Canasta Básica Total mas un alquiler promedio de 3 ambientes en CABA, marca el umbral de la Linea de pobreza alquilando. Este valor de aquí es para un hogar de 4 miembros modelo del indec. La Canasta real de tu hogar la podes calcular acá."
                             >
                                 i
                             </button></span
