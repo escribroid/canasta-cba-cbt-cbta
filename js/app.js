@@ -851,6 +851,14 @@ function ingresos_input_in(ingresos) {
         document.querySelector(".show_clase_media_fragil").style.removeProperty("background-color");
         document.querySelector(".show_clase_media").style.removeProperty("background-color");
         document.querySelector(".show_clase_media_alta").style.removeProperty("background-color");
+    } else if (ingresos > suma_clase_alta_baja_alquilando) {
+        document.querySelector(".show_clase_alta").style.removeProperty("background-color");
+        document.querySelector(".show_indigencia").style.removeProperty("background-color");
+        document.querySelector(".show_pobreza").style.removeProperty("background-color");
+        document.querySelector(".show_clase_baja").style.removeProperty("background-color");
+        document.querySelector(".show_clase_media_fragil").style.removeProperty("background-color");
+        document.querySelector(".show_clase_media").style.removeProperty("background-color");
+        document.querySelector(".show_clase_media_alta").style.removeProperty("background-color");
     }
 
     if (ingresos === "" || !ingresos) {
