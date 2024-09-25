@@ -220,20 +220,20 @@ header {
 }
 
 .card_titulo_canastas_generic {
-    box-shadow: 0 0 0.1rem 0.05rem #ff3366;
+    box-shadow: 0 0 0.01rem 0.05rem #ff3366;
 }
 
 .card_cba {
-    box-shadow: 0 0 0.1rem 0.05rem #ff3366;
+    box-shadow: 0 0 0.01rem 0.05rem #ff3366;
 }
 .card_cbt {
     /* box-shadow: 0 0 0.1rem 0.05rem #ff5500; */
-    box-shadow: 0 0 0.1rem 0.05rem #ff3366;
+    box-shadow: 0 0 0.01rem 0.05rem #ff3366;
 }
 
 .card_cbta {
     /* box-shadow: 0 0 0.1rem 0.05rem #4caf50; */
-    box-shadow: 0 0 0.1rem 0.05rem #ff3366;
+    box-shadow: 0 0 0.01rem 0.05rem #ff3366;
 }
 
 .card_cba_value {
