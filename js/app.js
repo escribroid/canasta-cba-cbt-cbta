@@ -369,7 +369,7 @@ function subsPersonToTable(array_cba_individual, array_cbt_individual, array_cou
 
     if (array_cba_individual.length === 0 && (vivienda.value == "vivienda_slc" || vivienda.value == "noAlquilo")) {
         document.querySelector(".icon-svg-reset").style.transition = "transform 0.3s ease-in-out";
-        document.querySelector(".icon-svg-reset").style.transform = "translatex(4rem)";
+        document.querySelector(".icon-svg-reset").style.transform = "translatex(100%)";
         setTimeout(() => {
             document.querySelector(".icon-svg-reset").style.opacity = "0";
             document.querySelector(".icon-svg-reset").style.display = "none";
@@ -492,7 +492,7 @@ vivienda.addEventListener("input", function () {
         document.querySelector(".icon-svg-reset").style.display = "flex";
         setTimeout(() => {
             document.querySelector(".icon-svg-reset").style.transition = "transform 0.3s ease-in-out";
-            document.querySelector(".icon-svg-reset").style.transform = "translatex(0rem)";
+            document.querySelector(".icon-svg-reset").style.transform = "translatex(0)";
             document.querySelector(".icon-svg-reset").style.opacity = "1";
         }, 400);
     }
@@ -621,7 +621,7 @@ document.getElementById("person-form").addEventListener("submit", function (e) {
         document.querySelector(".icon-svg-reset").style.display = "flex";
 
         setTimeout(() => {
-            document.querySelector(".icon-svg-reset").style.transform = "translatex(0rem)";
+            document.querySelector(".icon-svg-reset").style.transform = "translatex(0)";
             document.querySelector(".icon-svg-reset").style.transition = "transform .3s ease-in-out";
             document.querySelector(".icon-svg-reset").style.opacity = "1";
 
@@ -731,7 +731,7 @@ function input_alquiler_in() {
             document.querySelector(".icon-svg-reset").style.display = "flex";
             setTimeout(() => {
                 document.querySelector(".icon-svg-reset").style.transition = "transform 0.3s ease-in-out";
-                document.querySelector(".icon-svg-reset").style.transform = "translatex(0rem)";
+                document.querySelector(".icon-svg-reset").style.transform = "translatex(0)";
                 document.querySelector(".icon-svg-reset").style.opacity = "1";
             }, 400);
         }
@@ -744,7 +744,7 @@ document.getElementById("btn-reset-person").addEventListener("click", () => {
     personas_de_local = [];
     localStorage.setItem("personas_de_local", JSON.stringify(personas_de_local));
     document.querySelector(".icon-svg-reset").style.transition = "transform 0.3s ease-in-out";
-    document.querySelector(".icon-svg-reset").style.transform = "translatex(4rem)";
+    document.querySelector(".icon-svg-reset").style.transform = "translatex(100%)";
     setTimeout(() => {
         document.querySelector(".icon-svg-reset").style.opacity = "0";
         document.querySelector(".icon-svg-reset").style.display = "none";

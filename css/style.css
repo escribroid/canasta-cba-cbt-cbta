@@ -18,6 +18,8 @@ footer {
     font-size: var(--font-size-16_1rem);
     background-color: #141419 !important;
     box-shadow: 0 0 0.2rem 0.3rem #040409;
+    box-shadow: 0 0 0.2rem 0.2rem rgba(150, 150, 150, 0.3);
+
     border: 1px solid #1b1f24;
     width: 100%;
 }
@@ -201,6 +203,12 @@ header {
     background-color: #141419 !important;
     --bs-card-border-width: none;
     box-shadow: 0 0 0.2rem 0.3rem #040409;
+    box-shadow: 0 0 0.2rem 0.3rem rgba(0, 0, 50, 0.2);
+    box-shadow: 0 0 0.2rem 0.3rem rgba(50, 25, 0, 0.2);
+    box-shadow: 0 0 0.2rem 0.3rem rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0.2rem 0.3rem rgba(100, 100, 100, 0.4);
+    box-shadow: 0 0 0.2rem 0.2rem rgba(150, 150, 150, 0.3);
+
     border: 1px solid #1b1f24;
 }
 
@@ -209,14 +217,14 @@ header {
 }
 
 .card_cba {
-    box-shadow: 0 0 0.3rem 0.05rem #ff3366;
+    box-shadow: 0 0 0.1rem 0.05rem #ff3366;
 }
 .card_cbt {
-    box-shadow: 0 0 0.3rem 0.05rem #ff5500;
+    box-shadow: 0 0 0.1rem 0.05rem #ff5500;
 }
 
 .card_cbta {
-    box-shadow: 0 0 0.3rem 0.05rem #4caf50;
+    box-shadow: 0 0 0.1rem 0.05rem #4caf50;
 }
 
 .card_cba_value {
@@ -430,6 +438,8 @@ header {
     color: gainsboro;
     margin-bottom: 1rem;
     box-shadow: 0 0 0.2rem 0.3rem #040409;
+    box-shadow: 0 0 0.2rem 0.2rem rgba(150, 150, 150, 0.3);
+
     border: 1px solid #1b1f24;
 }
 .indices_short_ipc_percent,
@@ -524,6 +534,8 @@ header {
     box-shadow: 0 0 0.3rem var(--spacing-4_0-25) #2c2f33;
     background: #141419 !important;
     box-shadow: 0 0 0.2rem 0.3rem #040409;
+    box-shadow: 0 0 0.2rem 0.2rem rgba(150, 150, 150, 0.3);
+
     border: 1px solid #1b1f24;
 }
 
@@ -701,7 +713,8 @@ tfoot {
     right: -1px;
     bottom: -1px;
     left: -1px;
-    border: 2px solid #ff5500; /* Color y grosor del borde externo */
+    border-radius: 1rem;
+    border: 1.5px solid #ff5500; /* Color y grosor del borde externo */
     pointer-events: none; /* Evita interferencias con la interacción del usuario */
 }
 
@@ -711,8 +724,8 @@ tfoot {
     border: 1px solid #ff880055;
     width: 99.5%;
     margin: 0 auto;
-    background-color: #ff880055;
-    background-color: #2a0e0055;
+    background-color: #ff880033;
+    /* background-color: #2a0e00; */
 }
 
 .table-header {
@@ -729,7 +742,7 @@ tfoot {
 }
 
 .table-responsive {
-    border-radius: 5px;
+    border-radius: 0.9rem;
     margin: 0 auto;
     width: 99%;
 }
