@@ -216,15 +216,21 @@ header {
     color: #f2f4f7;
 }
 
+.card_titulo_canastas_generic {
+    box-shadow: 0 0 0.1rem 0.05rem #ff3366;
+}
+
 .card_cba {
     box-shadow: 0 0 0.1rem 0.05rem #ff3366;
 }
 .card_cbt {
-    box-shadow: 0 0 0.1rem 0.05rem #ff5500;
+    /* box-shadow: 0 0 0.1rem 0.05rem #ff5500; */
+    box-shadow: 0 0 0.1rem 0.05rem #ff3366;
 }
 
 .card_cbta {
-    box-shadow: 0 0 0.1rem 0.05rem #4caf50;
+    /* box-shadow: 0 0 0.1rem 0.05rem #4caf50; */
+    box-shadow: 0 0 0.1rem 0.05rem #ff3366;
 }
 
 .card_cba_value {
@@ -244,7 +250,7 @@ header {
 }
 
 .card-header h2 {
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .card_header_sub {
@@ -260,6 +266,10 @@ header {
 .card_header_title {
     margin-bottom: 1rem;
     margin-top: 0.5rem;
+}
+
+.card_header_title_generic {
+    font-weight: bold !important;
 }
 
 .card_subtitle {
@@ -412,19 +422,19 @@ header {
 }
 
 .icon-svg-hause:hover {
-    box-shadow: 0 0 var(--spacing-5_0-3125) 0.2rem #4caf50aa;
+    /* box-shadow: 0 0 var(--spacing-5_0-3125) 0.2rem #4caf50aa; */
     border-color: #4caf5033;
     border-radius: var(--spacing-5_0-3125);
-    transform: scale(1.1);
+    transform: scale(1.2);
     padding: 0;
     background: #141419;
 }
 
 .icon-svg-person:hover {
-    box-shadow: 0 0 var(--spacing-5_0-3125) 0.2rem #ff5500;
+    /* box-shadow: 0 0 var(--spacing-5_0-3125) 0.2rem #ff5500; */
     border-color: #ff550066;
     border-radius: var(--spacing-5_0-3125);
-    transform: scale(1.1);
+    transform: scale(1.2);
     padding: 0;
     background: #141419;
 }
