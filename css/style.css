@@ -19,7 +19,7 @@ footer {
     background-color: #141419 !important;
     box-shadow: 0 0 0.2rem 0.3rem #040409;
     box-shadow: 0 0 0.2rem 0.2rem rgba(150, 150, 150, 0.3);
-
+    margin-top: 1rem;
     border: 1px solid #1b1f24;
     width: 100%;
 }
@@ -38,7 +38,7 @@ header {
     position: static;
     margin: 0;
     margin-top: 0.625rem;
-    margin-bottom: var(--spacing-24_1-5);
+    margin-bottom: 1rem;
 }
 
 #person-form {
@@ -199,7 +199,7 @@ header {
 
 .card {
     justify-content: center;
-    margin-bottom: var(--spacing-24_1-5);
+    margin-bottom: 0;
     background-color: #141419 !important;
     --bs-card-border-width: none;
     box-shadow: 0 0 0.2rem 0.3rem #040409;
@@ -208,12 +208,15 @@ header {
     box-shadow: 0 0 0.2rem 0.3rem rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 0.2rem 0.3rem rgba(100, 100, 100, 0.4);
     box-shadow: 0 0 0.2rem 0.2rem rgba(150, 150, 150, 0.3);
-
     border: 1px solid #1b1f24;
 }
 
 .card p {
     color: #f2f4f7;
+}
+
+.card_main {
+    margin-bottom: 1rem;
 }
 
 .card_titulo_canastas_generic {
@@ -270,6 +273,7 @@ header {
 
 .card_header_title_generic {
     font-weight: bold !important;
+    text-align: center;
 }
 
 .card_subtitle {
