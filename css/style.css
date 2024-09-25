@@ -7,7 +7,7 @@ body {
     max-width: 37.5rem;
     padding: 0 0.5rem !important;
     overflow: auto !important;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"> <filter id="noiseFilter"> <feTurbulence type="fractalNoise" baseFrequency="10" numOctaves="4" stitchTiles="stitch"  /> <feColorMatrix type="saturate" values="0"/> </filter><rect width="100%" height="100%" fill="rgb(40, 40, 45)"/> <rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.1"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"> <filter id="noiseFilter"> <feTurbulence type="fractalNoise" baseFrequency="20" numOctaves="4" stitchTiles="stitch"  /> <feColorMatrix type="saturate" values="0"/> </filter><rect width="100%" height="100%" fill="rgb(40, 40, 45)"/> <rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.1"/></svg>');
     background-size: cover;
 }
 
@@ -16,8 +16,9 @@ footer {
     margin-bottom: 0.625rem;
     text-align: center;
     font-size: var(--font-size-16_1rem);
-    box-shadow: 0 0 0.4rem 0.3rem #040409;
     background-color: #141419 !important;
+    box-shadow: 0 0 0.2rem 0.3rem #040409;
+    border: 1px solid #1b1f24;
     width: 100%;
 }
 
@@ -197,9 +198,10 @@ header {
 .card {
     justify-content: center;
     margin-bottom: var(--spacing-24_1-5);
-    box-shadow: 0 0 0.3rem var(--spacing-4_0-25) #2c2f33;
+    background-color: #141419 !important;
     --bs-card-border-width: none;
-    box-shadow: 0 0 0.4rem 0.3rem #040409;
+    box-shadow: 0 0 0.2rem 0.3rem #040409;
+    border: 1px solid #1b1f24;
 }
 
 .card p {
@@ -311,11 +313,9 @@ header {
 
 .detalle_personal_select {
     display: flex;
-    width: 95%;
+    width: 100%;
     height: 35px;
     font-size: 1.125rem;
-    margin: 0 auto;
-    border-radius: 10px;
     background-color: #ff880055;
     border: 2px solid #673118;
 }
@@ -323,8 +323,8 @@ header {
 .detalle_personal_select:focus-visible {
     outline: none;
     font-size: 1.125rem;
-    border-radius: 10px;
     border: 1px solid #ff5500;
+    background-color: #ff880022;
 }
 
 .detalle_personal_option {
@@ -426,13 +426,11 @@ header {
     justify-content: space-around;
     align-items: center;
     background-color: #161620;
-    position: relative;
-    box-shadow: 0 0px 0.5rem 0.1rem #000;
-    box-shadow: 0 0 0.4rem 0.1rem #040409;
-    z-index: -1;
     border-radius: 0 0 10px 10px;
     color: gainsboro;
     margin-bottom: 1rem;
+    box-shadow: 0 0 0.2rem 0.3rem #040409;
+    border: 1px solid #1b1f24;
 }
 .indices_short_ipc_percent,
 .indices_short_cba,
@@ -480,6 +478,11 @@ header {
     padding: var(--spacing-10_0-625);
 }
 
+.lineas_info_title,
+.lineas_info_txt {
+    font-size: 0.8rem;
+}
+
 .list-group-item {
     position: relative;
     padding: var(--bs-list-group-item-padding-y) 0.01rem;
@@ -520,8 +523,8 @@ header {
 .navbar {
     box-shadow: 0 0 0.3rem var(--spacing-4_0-25) #2c2f33;
     background: #141419 !important;
-    box-shadow: 0 0 0.5rem var(--spacing-1_0-0625) rgba(240, 240, 240, 0.8);
-    box-shadow: 0 0 0.4rem 0.3rem #040409;
+    box-shadow: 0 0 0.2rem 0.3rem #040409;
+    border: 1px solid #1b1f24;
 }
 
 .navbar-nav {
@@ -590,7 +593,7 @@ header {
 .offcanvas-header .btn-close {
     position: relative;
     padding: var(--spacing-8_0-5) 0;
-    margin-top: calc(-0.6 * var(--bs-offcanvas-padding-y));
+    margin-top: calc(-0.1 * var(--bs-offcanvas-padding-y));
     margin-right: calc(-1.1 * var(--bs-offcanvas-padding-x));
     margin-bottom: calc(-0.5 * var(--bs-offcanvas-padding-y));
     box-shadow: 0 0 0.3rem var(--spacing-1_0-0625) rgba(0, 0, 0, 0.8);
@@ -621,6 +624,14 @@ header {
 .show_clase_media,
 .show_clase_alta {
     background-color: #090910;
+}
+
+.show_indigencia {
+    border-top: 1px solid #2c2f33;
+}
+
+.show_clase_alta {
+    border-bottom: 1px solid #2c2f33;
 }
 
 .show_pobreza,
@@ -662,11 +673,36 @@ header {
     margin: 0;
 }
 
-.table {
+.table_detalles {
     font-size: var(--font-size-16_1rem);
     margin: 0 auto;
-    width: 99%;
+    width: 100%;
     text-align: center;
+    border-collapse: collapse;
+}
+
+.table_detalles td,
+th,
+tbody,
+thead,
+tfoot {
+    border: 1px solid #2c2f33;
+}
+
+.table_detalles {
+    position: relative;
+    border: none;
+}
+
+.table_detalles::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border: 2px solid #ff5500; /* Color y grosor del borde externo */
+    pointer-events: none; /* Evita interferencias con la interacción del usuario */
 }
 
 .table-all-canastas {
@@ -677,11 +713,6 @@ header {
     margin: 0 auto;
     background-color: #ff880055;
     background-color: #2a0e0055;
-}
-
-.table-bordered > :not(caption) > * > * {
-    border-width: 0 var(--bs-border-width);
-    background: #040409;
 }
 
 .table-header {
@@ -698,8 +729,7 @@ header {
 }
 
 .table-responsive {
-    border-radius: 10px;
-    outline: 1px solid #ff880033;
+    border-radius: 5px;
     margin: 0 auto;
     width: 99%;
 }
@@ -718,7 +748,7 @@ header {
 }
 
 .tooltip-arrow {
-    display: none !important;
+    visibility: hidden !important;
 }
 
 .custom-tooltip {
@@ -735,10 +765,6 @@ header {
     font-size: 1rem;
     border-radius: 1rem;
     max-width: var(--spacing-250);
-}
-
-.tooltip .tooltip-arrow::before {
-    border-top-color: #141419;
 }
 
 .version {
