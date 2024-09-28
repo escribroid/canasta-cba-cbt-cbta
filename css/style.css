@@ -174,15 +174,20 @@ header {
     opacity: var(--bs-btn-close-opacity);
 }
 
+.canasta_container_person {
+    padding: 0 0.5rem;
+}
+
 .canasta-custom-person-add-title {
-    padding: 0.25rem var(--spacing-10_0-625) var(--spacing-16_1rem) var(--spacing-10_0-625);
+    padding: 0.25rem var(--spacing-10_0-625) 1rem var(--spacing-10_0-625);
+    margin-bottom: 0.5rem;
     border-bottom: var(--spacing-2_0-125) solid #2c2f33;
     color: #fffaf0;
 }
 
 .canasta_txt_vivienda_container {
     display: flex;
-    margin-top: 0.65rem;
+    margin-top: 1rem;
     margin-bottom: 0.5rem;
 }
 
@@ -202,6 +207,7 @@ header {
 .canasta_vivienda_container {
     padding: 0 0.5rem;
     border-bottom: var(--spacing-2_0-125) solid #2c2f33;
+    margin-bottom: 0.5rem;
 }
 
 .card {
@@ -229,24 +235,24 @@ header {
 }
 
 .card_titulo_canastas_generic {
-    outline: 1px solid #ff3366;
+    outline: 1px solid #aa3366;
     box-shadow: none;
     width: 100%;
 }
 
 .card_cba {
-    outline: 1px solid #ff3366;
+    outline: 1px solid #aa3366;
     box-shadow: none;
     width: 100%;
 }
 .card_cbt {
-    outline: 1px solid #ff3366;
+    outline: 1px solid #aa3366;
     box-shadow: none;
     width: 100%;
 }
 
 .card_cbta {
-    outline: 1px solid #ff3366;
+    outline: 1px solid #aa3366;
     box-shadow: none;
     width: 100%;
 }
@@ -264,11 +270,12 @@ header {
 .card-header {
     padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
     color: var(--bs-card-cap-color);
-    background-color: #141419 !important;
+    background-color: #201419 !important;
 }
 
 .card-header h2 {
-    font-weight: 500;
+    font-weight: 400;
+    font-family: var(--font-primary);
 }
 
 .card_header_sub {
@@ -292,13 +299,16 @@ header {
 }
 
 .card_header_title_generic {
-    /* font-weight: bold !important; */
     text-align: center;
     font-weight: 500;
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .card_header_sub_generic {
     text-align: center;
+    padding-bottom: 0.5rem;
+
 }
 
 .card_subtitle {
@@ -335,15 +345,15 @@ header {
     z-index: 4;
     transition: transform 0.5s ease, box-shadow 0.3s ease;
     transform: translate3d(0, 0, 0);
+    background: #201419 !important;
+    
 }
 
 .card-solapada-1:hover {
     transform: translate3d(0px, -5px, 0px) rotateX(-10deg) rotateY(0deg);
     transform: translate3d(0px, -5px, 0px) rotate(-1deg);
-
-    /* transform: rotate(-1deg); */
     box-shadow: 0px 0px 4px 1px #ff3366;
-    z-index: 4; /* Eleva la card sobre las demás */
+    z-index: 4; 
 }
 
 .card-solapada-2 {
@@ -356,9 +366,8 @@ header {
 .card-solapada-2:hover {
     transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg);
     transform: translate3d(0px, -5px, 0px) rotate(-1deg);
-
     box-shadow: 0px 0px 4px 1px #ff3366;
-    z-index: 3; /* Eleva la card sobre las demás */
+    z-index: 3; 
 }
 
 .card-solapada-3 {
@@ -806,6 +815,7 @@ tfoot {
 .table_detalles {
     position: relative;
     border: none;
+    border-radius: 1rem;
 }
 
 .table_detalles::before {
@@ -827,7 +837,6 @@ tfoot {
     width: 99.5%;
     margin: 0 auto;
     background-color: #ff880033;
-    /* background-color: #2a0e00; */
 }
 
 .table-header {
@@ -843,9 +852,9 @@ tfoot {
 }
 
 .table-responsive {
-    border-radius: 0.9rem;
-    margin: 0 auto;
-    width: 99%;
+    border-radius: 1rem;
+    width: 100%;
+    padding: 0 0.5rem;
 }
 
 .text-shadow {
