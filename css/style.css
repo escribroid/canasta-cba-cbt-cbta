@@ -220,20 +220,23 @@ header {
 }
 
 .card_titulo_canastas_generic {
-    box-shadow: 0 0 0.01rem 0.05rem #ff3366;
+    border: 0.5px solid #ff3366;
+    box-shadow: none;
 }
 
 .card_cba {
-    box-shadow: 0 0 0.01rem 0.05rem #ff3366;
+    border: 0.5px solid #ff3366;
+    box-shadow: none;
+
 }
 .card_cbt {
-    /* box-shadow: 0 0 0.1rem 0.05rem #ff5500; */
-    box-shadow: 0 0 0.01rem 0.05rem #ff3366;
+    border: 0.5px solid #ff3366;
+    box-shadow: none;
 }
 
 .card_cbta {
-    /* box-shadow: 0 0 0.1rem 0.05rem #4caf50; */
-    box-shadow: 0 0 0.01rem 0.05rem #ff3366;
+    border: 0.5px solid #ff3366;
+    box-shadow: none;
 }
 
 .card_cba_value {
@@ -264,6 +267,11 @@ header {
     margin-left: 0.5rem;
     gap: var(--spacing-10_0-625);
     align-items: center;
+}
+
+.card_header_generic_txt {
+    text-align: center;
+    font-size: var(--font-size-14_0-875);
 }
 
 .card_header_title {
@@ -317,8 +325,11 @@ header {
 }
 
 .card-solapada-1:hover {
-    transform: translate3d(0px, -5px, 0px) rotateX(-10deg) rotateY(0deg); /* Efecto de desplazamiento y rotación 3D */
-    box-shadow: 0px 0px 8px 4px #ff3366;
+    transform: translate3d(0px, -5px, 0px) rotateX(-10deg) rotateY(0deg); 
+    transform: translate3d(0px, -5px, 0px) rotate(-1deg) ; 
+
+    /* transform: rotate(-1deg); */
+    box-shadow: 0px 0px 4px 1px #ff3366;
     z-index: 4; /* Eleva la card sobre las demás */
 }
 
@@ -330,9 +341,11 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .card-solapada-2:hover {
-    transform: translate3d(0px, -5px, 0px) rotateX(-10deg) rotateY(0deg); /* Efecto de desplazamiento y rotación 3D */
-    box-shadow: 0px 0px 8px 4px #ff3366;
-    z-index: 5; /* Eleva la card sobre las demás */
+    transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg); 
+    transform: translate3d(0px, -5px, 0px) rotate(-1deg) ; 
+
+    box-shadow: 0px 0px 4px 1px #ff3366;
+    z-index: 3; /* Eleva la card sobre las demás */
 }
 
 .card-solapada-3 {
@@ -343,9 +356,11 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .card-solapada-3:hover {
-    transform: translate3d(0px, -5px, 0px) rotateX(-10deg) rotateY(0deg); /* Efecto de desplazamiento y rotación 3D */
-    box-shadow: 0px 0px 8px 4px #ff3366;
-    z-index: 3; /* Eleva la card sobre las demás */
+    transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg); 
+    transform: translate3d(0px, -5px, 0px) rotate(-1deg) ; 
+
+    box-shadow: 0px 0px 4px 1px #ff3366;
+    z-index: 2; /* Eleva la card sobre las demás */
 }
 
 .card-solapada-4 {
@@ -356,9 +371,11 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .card-solapada-4:hover {
-    transform: translate3d(0px, -5px, 0px) rotateX(-10deg) rotateY(0deg); /* Efecto de desplazamiento y rotación 3D */
-    box-shadow: 0px 0px 8px 4px #ff3366;
-    z-index: 2; /* Eleva la card sobre las demás */
+    transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg); 
+    transform: translate3d(0px, -5px, 0px) rotate(-1deg) ; 
+
+    box-shadow: 0px 0px 4px 1px #ff3366;
+    z-index: 1;
 }
 
 [data-bs-theme="dark"] .carousel .carousel-control-next-icon,
@@ -677,7 +694,7 @@ header {
 .offcanvas-header .btn-close {
     position: relative;
     padding: var(--spacing-8_0-5) 0;
-    margin-top: calc(-0.1 * var(--bs-offcanvas-padding-y));
+    margin-top: calc(0 * var(--bs-offcanvas-padding-y));
     margin-right: calc(-1.1 * var(--bs-offcanvas-padding-x));
     margin-bottom: calc(-0.5 * var(--bs-offcanvas-padding-y));
     box-shadow: 0 0 0.3rem var(--spacing-1_0-0625) rgba(0, 0, 0, 0.8);
