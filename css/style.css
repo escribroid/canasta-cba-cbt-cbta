@@ -42,9 +42,10 @@ header {
 }
 
 #person-form {
-    border-radius: var(--spacing-10_0-625);
     margin: 0;
     padding: 0;
+    padding-bottom: 1rem;
+    border-bottom: var(--spacing-2_0-125) solid #2c2f33;
 }
 
 .accordion {
@@ -174,7 +175,7 @@ header {
 }
 
 .canasta-custom-person-add-title {
-    padding: 0 var(--spacing-10_0-625) var(--spacing-10_0-625) var(--spacing-10_0-625);
+    padding: 0.25rem var(--spacing-10_0-625) var(--spacing-16_1rem) var(--spacing-10_0-625);
     border-bottom: var(--spacing-2_0-125) solid #2c2f33;
     color: #fffaf0;
 }
@@ -182,6 +183,7 @@ header {
 .canasta_txt_vivienda_container {
     display: flex;
     margin-top: 0.65rem;
+    margin-bottom: 0.5rem;
 }
 
 .canasta_txt_vivienda,
@@ -197,6 +199,11 @@ header {
     border-left: 0.2rem solid #ff5500aa;
 }
 
+.canasta_vivienda_container {
+    padding: 0 0.5rem;
+    border-bottom: var(--spacing-2_0-125) solid #2c2f33;
+}
+
 .card {
     justify-content: center;
     margin-bottom: 0;
@@ -208,7 +215,7 @@ header {
     box-shadow: 0 0 0.2rem 0.3rem rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 0.2rem 0.3rem rgba(100, 100, 100, 0.4);
     box-shadow: 0 0 0.2rem 0.2rem rgba(150, 150, 150, 0.3);
-    border: 1px solid #1b1f24;
+    border: 0;
 }
 
 .card p {
@@ -217,26 +224,31 @@ header {
 
 .card_main {
     margin-bottom: 1.5rem;
+    width: 100%;
+    border: 1px solid #1b1f24;
 }
 
 .card_titulo_canastas_generic {
-    border: 0.5px solid #ff3366;
+    outline: 1px solid #ff3366;
     box-shadow: none;
+    width: 100%;
 }
 
 .card_cba {
-    border: 0.5px solid #ff3366;
+    outline: 1px solid #ff3366;
     box-shadow: none;
-
+    width: 100%;
 }
 .card_cbt {
-    border: 0.5px solid #ff3366;
+    outline: 1px solid #ff3366;
     box-shadow: none;
+    width: 100%;
 }
 
 .card_cbta {
-    border: 0.5px solid #ff3366;
+    outline: 1px solid #ff3366;
     box-shadow: none;
+    width: 100%;
 }
 
 .card_cba_value {
@@ -280,8 +292,9 @@ header {
 }
 
 .card_header_title_generic {
-    font-weight: bold !important;
+    /* font-weight: bold !important; */
     text-align: center;
+    font-weight: 500;
 }
 
 .card_header_sub_generic {
@@ -325,8 +338,8 @@ header {
 }
 
 .card-solapada-1:hover {
-    transform: translate3d(0px, -5px, 0px) rotateX(-10deg) rotateY(0deg); 
-    transform: translate3d(0px, -5px, 0px) rotate(-1deg) ; 
+    transform: translate3d(0px, -5px, 0px) rotateX(-10deg) rotateY(0deg);
+    transform: translate3d(0px, -5px, 0px) rotate(-1deg);
 
     /* transform: rotate(-1deg); */
     box-shadow: 0px 0px 4px 1px #ff3366;
@@ -341,8 +354,8 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .card-solapada-2:hover {
-    transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg); 
-    transform: translate3d(0px, -5px, 0px) rotate(-1deg) ; 
+    transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg);
+    transform: translate3d(0px, -5px, 0px) rotate(-1deg);
 
     box-shadow: 0px 0px 4px 1px #ff3366;
     z-index: 3; /* Eleva la card sobre las demás */
@@ -356,8 +369,8 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .card-solapada-3:hover {
-    transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg); 
-    transform: translate3d(0px, -5px, 0px) rotate(-1deg) ; 
+    transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg);
+    transform: translate3d(0px, -5px, 0px) rotate(-1deg);
 
     box-shadow: 0px 0px 4px 1px #ff3366;
     z-index: 2; /* Eleva la card sobre las demás */
@@ -371,8 +384,8 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .card-solapada-4:hover {
-    transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg); 
-    transform: translate3d(0px, -5px, 0px) rotate(-1deg) ; 
+    transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg);
+    transform: translate3d(0px, -5px, 0px) rotate(-1deg);
 
     box-shadow: 0px 0px 4px 1px #ff3366;
     z-index: 1;
@@ -826,8 +839,7 @@ tfoot {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0 1rem 0;
-    border-bottom: var(--spacing-2_0-125) solid #2c2f33;
+    padding: 0 0 0.5rem 0;
 }
 
 .table-responsive {
