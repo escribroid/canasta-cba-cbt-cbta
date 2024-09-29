@@ -44,3 +44,14 @@ const indices_manuales = {
 };
 
 export default indices_manuales;
+
+
+/* CT(clase baja) = CBT*1.2
+# Indigencia: En situación de indigencia: Menor a la Canasta Básica Alimentaria (CBA - Línea de indigencia).
+# Pobreza: entre CBA y  la Canasta Básica Total (CBT – Línea de pobreza).
+# Baja(CT): No pobres vulnerables: hogares cuyo ingreso total mensual es de al menos la CBT y no alcanza la Canasta Total (CT) del Sistema de Canastas de Consumo.
+# Medio frágil: hogares cuyo ingreso total mensual es de al menos la CT y no alcanza 1,25 veces la CT del Sistema de Canastas de Consumo. (1.2*1.25 = 1.5) 
+# Medio "clase media": hogares cuyo ingreso total mensual es de al menos 1,25 veces la CT y no alcanza 4 veces la CT del Sistema de Canastas de Consumo. (1.2*4.5 = 5.4)
+# Media Alta, Sector acomodado: hogares cuyo ingreso mensual es de 4 veces o más la CT del Sistema de Canastas de Consumo. 
+
+*/

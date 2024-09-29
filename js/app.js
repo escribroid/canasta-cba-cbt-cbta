@@ -109,6 +109,7 @@ let suma_clase_media_fragil_alquilando = 0;
 let suma_clase_media_alquilando = 0;
 let suma_clase_media_alta_alquilando = 0;
 let suma_clase_alta_baja_alquilando = 0;
+let suma_CT_clase_baja = 0;
 let vivienda;
 let show_indigencia_max = document.querySelector(".show_indigencia_max");
 let ingresos = document.getElementById("ingresos_input").value;
@@ -382,14 +383,17 @@ function suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in
         suma_CBA_Personas = 0;
         suma_CBT_Personas = 0;
     }
+
+    suma_CT_clase_baja = suma_CBT_Personas*1.2;
+
     suma_indigencia_alquilando = alquiler_in_value + Math.trunc(suma_CBA_Personas);
     suma_pobreza_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas);
     suma_clase_baja_fragil_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 1.2);
     suma_clase_baja_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 1.5);
     suma_clase_media_fragil_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 2);
-    suma_clase_media_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 4.5);
-    suma_clase_media_alta_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 6.5);
-    suma_clase_alta_baja_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 10);
+    suma_clase_media_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 5);
+    suma_clase_media_alta_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 8);
+    suma_clase_alta_baja_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 12);
 
     document.querySelector(".show_indigencia_min").textContent = 0;
     document.querySelector(".show_indigencia_max").textContent = suma_indigencia_alquilando;
