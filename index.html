@@ -49,7 +49,7 @@
             <!-- NAVBAR +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
             <nav class="navbar navbar-dark rounded-4 w-100 bg-black">
                 <div class="container-fluid">
-                    <a class="navbar-brand logo" href="#"
+                    <a class="navbar-brand logo" href="./index.html"
                         ><img class="logo-img" src="img/iso_logo.svg" alt="" />CANASTAS</a
                     >
                     <button
@@ -80,10 +80,7 @@
                         <div class="offcanvas-body rounded-4">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">inicio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Canasta básica alimentaria</a>
+                                    <a class="nav-link" href="#canasta_custom">Canasta personalizada</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a
@@ -105,7 +102,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Canasta básica total</a>
+                                    <a class="nav-link" href="#canasta_cbt">Canasta básica total</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Contacto</a>
@@ -124,7 +121,7 @@
         </header>
 
         <!-- MAIN +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-        <main>
+        <main id="canasta_custom">
             <!-- Card 1 Canasta persolalizada +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
             <div class="card w-100 rounded-4 card_main">
                 <ul class="list-group list-group-flush rounded-4">
@@ -194,18 +191,18 @@
                                         class="form-select select_canasta_alquiler"
                                     >
                                         <option class="option_alquiler" value="siAlquilo">• Alquilada</option>
-                                        <option class="option_alquiler" value="noAlquilo">• No Alquilo</option>
+                                        <option class="option_alquiler" value="noAlquilo">• No Alquilada</option>
                                         <option class="option_alquiler" value="" disabled>
                                             == Datos Promedio CABA ▼▼
                                         </option>
                                         <option class="option_alquiler" value="AlquilerProm3amb">
-                                            • CABA 3 Amb Alquiler
+                                            CABA Alquiler promedio 3 Amb
                                         </option>
                                         <option class="option_alquiler" value="AlquilerProm2amb">
-                                            • CABA 2 Amb Alquiler
+                                            CABA Alquiler promedio 2 Amb
                                         </option>
                                         <option class="option_alquiler" value="AlquilerProm1amb">
-                                            • CABA 1 Amb Alquiler
+                                            CABA Alquiler promedio 1 Amb
                                         </option>
                                         <option class="option_alquiler" value="" disabled>
                                             == Datos Promedio GBA Norte ▼▼
@@ -527,7 +524,6 @@
                                             <th class="table-header col-1" scope="col"></th>
                                             <th id="alquiler_out" class="table-header" scope="col"></th>
                                             <th class="table-header col-1" scope="col"></th>
-                                            <th class="table-header col-1" scope="col"></th>
                                         </tr>
                                         <tr class="table-group-divider">
                                             <th class="table-header" scope="col">Total</th>
@@ -648,7 +644,9 @@
                                     <span
                                         class="pe-0 h-100 d-flex justify-content-center align-items-center align-content-center text-center mayor_menor"
                                         >≤</span
-                                    >Alta baja<span class="text-center h-100 align-content-center mayor_menor">&lt;</span>
+                                    >Alta baja<span class="text-center h-100 align-content-center mayor_menor"
+                                        >&lt;</span
+                                    >
                                 </div>
                                 <div
                                     class="m-0 p-0 suma_clase_alta_max justify-content-center align-content-center align-items-center"
@@ -771,7 +769,8 @@
                                 data-bs-toggle="tooltip"
                                 data-bs-placement="top"
                                 data-bs-custom-class="custom-tooltip"
-                                data-bs-title="CBA es la Canasta Básica Alimentaria, es el valor de la Linea de indigencia. Este valor de aquí es para un hogar de 4 miembros modelo del indec. La Canasta real de tu hogar la podes calcular acá."
+                                data-bs-html="true"
+                                data-bs-title="CBA es la Canasta Básica Alimentaria, es el valor de la Linea de indigencia. Este valor de aquí es para un hogar de 4 miembros modelo del indec. La Canasta real de tu hogar la podes calcular <a href='#canasta_custom'>acá</a> ."
                             >
                                 i
                             </button></span
@@ -789,7 +788,7 @@
             </div>
 
             <!-- Card 4 Canasta Básica Total +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-            <div class="card rounded-4 card_cbt card-solapada-3">
+            <div id="canasta_cbt" class="card rounded-4 card_cbt card-solapada-3">
                 <div class="card-header rounded-4">
                     <h2 class="card_header_title">Canasta Básica Total</h2>
                     <h3 class="card_header_sub">
@@ -801,7 +800,8 @@
                                 data-bs-toggle="tooltip"
                                 data-bs-placement="top"
                                 data-bs-custom-class="custom-tooltip"
-                                data-bs-title="CBT es la Canasta Básica Total, es el umbral de la Linea de pobreza. Este valor de aquí es para un hogar de 4 miembros modelo del indec. La Canasta real de tu hogar la podes calcular acá."
+                                data-bs-html="true"
+                                data-bs-title="CBT es la Canasta Básica Total, es el umbral de la Linea de pobreza. Este valor de aquí es para un hogar de 4 miembros modelo del indec. La Canasta real de tu hogar la podes calcular <a href='#canasta_custom'>acá</a>."
                             >
                                 i
                             </button></span
@@ -831,7 +831,8 @@
                                 data-bs-toggle="tooltip"
                                 data-bs-placement="top"
                                 data-bs-custom-class="custom-tooltip"
-                                data-bs-title="CBT+A es la Canasta Básica Total mas un alquiler promedio de 3 ambientes en CABA, marca el umbral de la Linea de pobreza alquilando. Este valor de aquí es para un hogar de 4 miembros modelo del indec. La Canasta real de tu hogar la podes calcular acá."
+                                data-bs-html="true"
+                                data-bs-title="CBT+A es la Canasta Básica Total mas un alquiler promedio de 3 ambientes en CABA, marca el umbral de la Linea de pobreza alquilando. Este valor de aquí es para un hogar de 4 miembros modelo del indec. La Canasta real de tu hogar la podes calcular <a href='#canasta_custom'>acá</a>."
                             >
                                 i
                             </button></span
@@ -852,7 +853,7 @@
         <!-- FOOTER +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
         <footer class="rounded-4 p-0">
             <div class="container-fluid rounded-4 p-2">
-                <span class="m-1 text-center fs-6 foo_indices_date">Indices AGOSTO 2024</span>
+                <span class="m-1 text-center fs-6 indices_date"></span>
                 <span>|</span>
                 <span class="version"></span>
             </div>

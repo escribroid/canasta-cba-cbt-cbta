@@ -5,18 +5,18 @@ const cbt_manual = 304170;
 const mesAlquilerManual = 8;
 const alquilerProm2amb = 485881;
 
-const linea_indigencia = Math.trunc(cba_manual);
-const linea_pobreza = Math.trunc(cbt_manual);
-const linea_clase_baja_fragil = Math.trunc(cbt_manual * 1.2);
-const linea_clase_baja = Math.trunc(cbt_manual * 1.5);
-const linea_clase_media_fragil = Math.trunc(cbt_manual * 2);
-const linea_clase_media_media = Math.trunc(cbt_manual * 4.5);
-const linea_clase_media_alta = Math.trunc(cbt_manual * 6.5);
-const linea_clase_alta_baja = Math.trunc(cbt_manual * 10);
+const linea_indigencia = Math.round(cba_manual);
+const linea_pobreza = Math.round(cbt_manual);
+const linea_clase_baja_fragil = Math.round(cbt_manual * 1.2);
+const linea_clase_baja = Math.round(cbt_manual * 1.5);
+const linea_clase_media_fragil = Math.round(cbt_manual * 2);
+const linea_clase_media_media = Math.round(cbt_manual * 4.5);
+const linea_clase_media_alta = Math.round(cbt_manual * 6.5);
+const linea_clase_alta_baja = Math.round(cbt_manual * 10);
 
 // Alquiler medio: 1amb 40m2, 2amb 50m2, 3amb 70m2
-const alquilerProm3amb = Math.trunc(alquilerProm2amb * (7 / 5) * 0.965);
-const alquilerProm1amb = Math.trunc((alquilerProm2amb * (4 / 5)) / 0.955);
+const alquilerProm3amb = Math.round(alquilerProm2amb * (7 / 5) * 0.965);
+const alquilerProm1amb = Math.round((alquilerProm2amb * (4 / 5)) / 0.955);
 const ipc_manual = 4.03;
 
 const days = [
@@ -44,7 +44,6 @@ const indices_manuales = {
 };
 
 export default indices_manuales;
-
 
 /* CT(clase baja) = CBT*1.2
 # Indigencia: En situación de indigencia: Menor a la Canasta Básica Alimentaria (CBA - Línea de indigencia).

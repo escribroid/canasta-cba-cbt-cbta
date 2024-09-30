@@ -9,8 +9,8 @@ const cbt_equivalente = indices_manuales.cbt_manual;
 //console.log("cba_equivalente", cba_equivalente);
 //console.log("cbt_equivalente", cbt_equivalente);
 
-const cba_unformat = Math.trunc(indices_manuales.cba_manual * 3.09);
-const cbt_unformat = Math.trunc(indices_manuales.cbt_manual * 3.09);
+const cba_unformat = Math.round(indices_manuales.cba_manual * 3.09);
+const cbt_unformat = Math.round(indices_manuales.cbt_manual * 3.09);
 const mes = indices_manuales.mes_cba_cbt_manual;
 const cbt_alquiler_1amb_unformat = cbt_unformat + indices_manuales.alquilerProm1amb;
 const cbt_alquiler_2amb_unformat = cbt_unformat + indices_manuales.alquilerProm2amb;
@@ -45,16 +45,16 @@ function linea_indigencia() {
     const linea_indigencia = document.querySelector(".linea_indigencia");
     linea_indigencia.innerHTML = `<div class="cards_nota"><span class="cards_nota_txt">» Indigencia con Casa Propia: ingreso mensual menor a $${cba}</span></div>`;
 
-    const cba_top_short = document.querySelector(".indices_short_cba");
-    cba_top_short.innerHTML = "$" + cba;
+    // const cba_top_short = document.querySelector(".indices_short_cba");
+    // cba_top_short.innerHTML = "$" + cba;
 }
 
 function linea_pobreza() {
     const linea_pobreza = document.querySelector(".linea_pobreza");
     linea_pobreza.innerHTML = `<div class="cards_nota"><span class="cards_nota_txt">» Pobreza con Casa Propia: ingreso mensual menor a $${cbt}</span></div>`;
 
-    const cbt_top_short = document.querySelector(".indices_short_cbt");
-    cbt_top_short.innerHTML = "$" + cbt;
+    // const cbt_top_short = document.querySelector(".indices_short_cbt");
+    // cbt_top_short.innerHTML = "$" + cbt;
 }
 
 function linea_pobreza_alquilando() {
@@ -185,7 +185,7 @@ document.getElementById("detalle_personal").addEventListener("change", function 
             table_rows[i][2] = array_cba_individual[i];
             let existingRow = tableBody.rows[i];
             let existingCell = existingRow.cells[2];
-            existingCell.textContent = Math.trunc(array_cba_individual[i]);
+            existingCell.textContent = Math.round(array_cba_individual[i]);
         }
         document.getElementById("total-canasta").innerHTML = suma_indigencia_alquilando;
 
@@ -198,7 +198,7 @@ document.getElementById("detalle_personal").addEventListener("change", function 
             table_rows[i][2] = array_cbt_individual[i];
             let existingRow = tableBody.rows[i];
             let existingCell = existingRow.cells[2];
-            existingCell.textContent = Math.trunc(array_cbt_individual[i]);
+            existingCell.textContent = Math.round(array_cbt_individual[i]);
         }
         document.getElementById("total-canasta").innerHTML = suma_pobreza_alquilando;
     } else if (select_canastas == "clase_baja") {
@@ -208,7 +208,7 @@ document.getElementById("detalle_personal").addEventListener("change", function 
             table_rows[i][2] = array_clase_baja[i];
             let existingRow = tableBody.rows[i];
             let existingCell = existingRow.cells[2];
-            existingCell.textContent = Math.trunc(array_clase_baja[i]);
+            existingCell.textContent = Math.round(array_clase_baja[i]);
         }
         document.getElementById("total-canasta").innerHTML = suma_clase_baja_alquilando;
     } else if (select_canastas == "clase_media_fragil") {
@@ -218,7 +218,7 @@ document.getElementById("detalle_personal").addEventListener("change", function 
             table_rows[i][2] = array_clase_media_fragil[i];
             let existingRow = tableBody.rows[i];
             let existingCell = existingRow.cells[2];
-            existingCell.textContent = Math.trunc(array_clase_media_fragil[i]);
+            existingCell.textContent = Math.round(array_clase_media_fragil[i]);
         }
         document.getElementById("total-canasta").innerHTML = suma_clase_media_fragil_alquilando;
     } else if (select_canastas == "clase_media") {
@@ -228,7 +228,7 @@ document.getElementById("detalle_personal").addEventListener("change", function 
             table_rows[i][2] = array_clase_media[i];
             let existingRow = tableBody.rows[i];
             let existingCell = existingRow.cells[2];
-            existingCell.textContent = Math.trunc(array_clase_media[i]);
+            existingCell.textContent = Math.round(array_clase_media[i]);
         }
         document.getElementById("total-canasta").innerHTML = suma_clase_media_alquilando;
     } else if (select_canastas == "clase_media_alta") {
@@ -238,7 +238,7 @@ document.getElementById("detalle_personal").addEventListener("change", function 
             table_rows[i][2] = array_clase_media_alta[i];
             let existingRow = tableBody.rows[i];
             let existingCell = existingRow.cells[2];
-            existingCell.textContent = Math.trunc(array_clase_media_alta[i]);
+            existingCell.textContent = Math.round(array_clase_media_alta[i]);
         }
         document.getElementById("total-canasta").innerHTML = suma_clase_media_alta_alquilando;
     } else if (select_canastas == "clase_alta") {
@@ -248,7 +248,7 @@ document.getElementById("detalle_personal").addEventListener("change", function 
             table_rows[i][2] = array_clase_alta[i];
             let existingRow = tableBody.rows[i];
             let existingCell = existingRow.cells[2];
-            existingCell.textContent = Math.trunc(array_clase_alta[i]);
+            existingCell.textContent = Math.round(array_clase_alta[i]);
         }
         document.getElementById("total-canasta").innerHTML = suma_clase_alta_baja_alquilando;
     }
@@ -384,16 +384,16 @@ function suma_tabla_indigencia(suma_CBA_Personas, suma_CBT_Personas, alquiler_in
         suma_CBT_Personas = 0;
     }
 
-    suma_CT_clase_baja = suma_CBT_Personas*1.2;
+    suma_CT_clase_baja = suma_CBT_Personas * 1.2;
 
-    suma_indigencia_alquilando = alquiler_in_value + Math.trunc(suma_CBA_Personas);
-    suma_pobreza_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas);
-    suma_clase_baja_fragil_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 1.2);
-    suma_clase_baja_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 1.5);
-    suma_clase_media_fragil_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 2);
-    suma_clase_media_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 5);
-    suma_clase_media_alta_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 8);
-    suma_clase_alta_baja_alquilando = alquiler_in_value + Math.trunc(suma_CBT_Personas * 12);
+    suma_indigencia_alquilando = alquiler_in_value + Math.round(suma_CBA_Personas);
+    suma_pobreza_alquilando = alquiler_in_value + Math.round(suma_CBT_Personas);
+    suma_clase_baja_fragil_alquilando = alquiler_in_value + Math.round(suma_CBT_Personas * 1.2);
+    suma_clase_baja_alquilando = alquiler_in_value + Math.round(suma_CBT_Personas * 1.5);
+    suma_clase_media_fragil_alquilando = alquiler_in_value + Math.round(suma_CBT_Personas * 2);
+    suma_clase_media_alquilando = alquiler_in_value + Math.round(suma_CBT_Personas * 5);
+    suma_clase_media_alta_alquilando = alquiler_in_value + Math.round(suma_CBT_Personas * 8);
+    suma_clase_alta_baja_alquilando = alquiler_in_value + Math.round(suma_CBT_Personas * 12);
 
     document.querySelector(".show_indigencia_min").textContent = 0;
     document.querySelector(".show_indigencia_max").textContent = suma_indigencia_alquilando;
@@ -847,4 +847,23 @@ ingresos_input_in(ingresos);
 document.getElementById("ingresos_input").addEventListener("input", (e) => {
     const ingresosEvent = parseInt(e.target.value);
     ingresos_input_in(ingresosEvent);
+});
+
+// Cerrar el offcanvas al hacer clic en cualquier enlace dentro de él
+document.addEventListener("click", function (e) {
+    if (e.target.tagName === "A" && e.target.closest(".offcanvas")) {
+        e.preventDefault(); // Previene el comportamiento de scroll por defecto
+        const targetId = e.target.getAttribute("href"); // Obtiene el destino del enlace
+        const targetElement = document.querySelector(targetId); // Selecciona la sección objetivo
+
+        const offcanvas = e.target.closest(".offcanvas"); // Encuentra el offcanvas actual
+
+        // Cierra el offcanvas
+        const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvas);
+        offcanvasInstance.hide();
+
+        setTimeout(() => {
+            targetElement.scrollIntoView({ behavior: "smooth" }); // Desplazamiento suave a la sección
+        }, 300); // 300 ms para asegurarse de que el offcanvas se cierra primero
+    }
 });

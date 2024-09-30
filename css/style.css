@@ -308,7 +308,6 @@ header {
 .card_header_sub_generic {
     text-align: center;
     padding-bottom: 0.5rem;
-
 }
 
 .card_subtitle {
@@ -346,14 +345,13 @@ header {
     transition: transform 0.5s ease, box-shadow 0.3s ease;
     transform: translate3d(0, 0, 0);
     background: #201419 !important;
-    
 }
 
 .card-solapada-1:hover {
     transform: translate3d(0px, -5px, 0px) rotateX(-10deg) rotateY(0deg);
     transform: translate3d(0px, -5px, 0px) rotate(-1deg);
     box-shadow: 0px 0px 4px 1px #ff3366;
-    z-index: 4; 
+    z-index: 4;
 }
 
 .card-solapada-2 {
@@ -367,7 +365,7 @@ header {
     transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg);
     transform: translate3d(0px, -5px, 0px) rotate(-1deg);
     box-shadow: 0px 0px 4px 1px #ff3366;
-    z-index: 3; 
+    z-index: 3;
 }
 
 .card-solapada-3 {
@@ -475,7 +473,7 @@ header {
     width: 100%;
 }
 
-.foo_indices_date {
+.indices_date {
     color: #ff5500;
     text-shadow: var(--spacing-1_0-0625) var(--spacing-1_0-0625) var(--spacing-1_0-0625) #000;
 }
