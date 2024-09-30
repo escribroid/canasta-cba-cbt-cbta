@@ -864,6 +864,6 @@ document.addEventListener("click", function (e) {
 
         setTimeout(() => {
             targetElement.scrollIntoView({ behavior: "smooth" }); // Desplazamiento suave a la sección
-        }, 300); // 300 ms para asegurarse de que el offcanvas se cierra primero
+        }, 200); // 300 ms para asegurarse de que el offcanvas se cierra primero
     }
 });

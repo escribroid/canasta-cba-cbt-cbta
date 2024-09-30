@@ -1,0 +1,53 @@
+Date : 2024-09-30 05:07:54
+Directory : c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec
+Total : 21 files,  4090 codes, 179 comments, 352 blanks, all 4621 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| CSS        |         10 |      1,536 |         25 |        175 |      1,736 |
+| JSON       |          2 |        876 |          0 |          2 |        878 |
+| HTML       |          1 |        802 |         53 |         20 |        875 |
+| JavaScript |          7 |        789 |        100 |        153 |      1,042 |
+| XML        |          1 |         87 |          1 |          2 |         90 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                        | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                           |         21 |      4,090 |        179 |        352 |      4,621 |
+| . (Files)                                                                                                                   |          3 |      1,678 |         53 |         22 |      1,753 |
+| css                                                                                                                         |         10 |      1,536 |         25 |        175 |      1,736 |
+| img                                                                                                                         |          1 |         87 |          1 |          2 |         90 |
+| js                                                                                                                          |          7 |        789 |        100 |        153 |      1,042 |
++-----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                    | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\dark-hc.css          | CSS        |         51 |          0 |          1 |         52 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\dark-mc.css          | CSS        |         51 |          0 |          1 |         52 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\dark.css             | CSS        |         51 |          0 |          1 |         52 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\design-system.css    | CSS        |        142 |         14 |         19 |        175 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\light-hc.css         | CSS        |         51 |          0 |          1 |         52 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\light-mc.css         | CSS        |         51 |          0 |          1 |         52 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\light.css            | CSS        |         51 |          0 |          1 |         52 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\media-desktop.css    | CSS        |         17 |          0 |          2 |         19 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\reset.css            | CSS        |        195 |          3 |          2 |        200 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\style.css            | CSS        |        876 |          8 |        146 |      1,030 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\img\iso_logo.svg         | XML        |         87 |          1 |          2 |         90 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\index.html               | HTML       |        802 |         53 |         20 |        875 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\app.js                | JavaScript |        674 |         74 |        122 |        870 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\fetch-data.js         | JavaScript |         30 |          8 |         10 |         48 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\main.js               | JavaScript |         12 |          4 |          3 |         19 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\mod-canasta-custom.js | JavaScript |         32 |          3 |         10 |         45 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\mod-date.js           | JavaScript |          1 |          0 |          0 |          1 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\mod-indices.js        | JavaScript |         39 |         11 |          7 |         57 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\mod-version.js        | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\package-lock.json        | JSON       |        859 |          0 |          1 |        860 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\package.json             | JSON       |         17 |          0 |          1 |         18 |
+| Total                                                                                                                       |            |      4,090 |        179 |        352 |      4,621 |
++-----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
