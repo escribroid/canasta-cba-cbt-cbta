@@ -107,7 +107,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Contacto</a>
                                 </li>
-                                <br /><br />
                                 <li class="nav-item">
                                     <!-- <p class="info_site">Sitio hecho con ... una Pc</p>
                                     <p class="info_site">Sitio hecho por ... chatGPT</p>
@@ -127,7 +126,7 @@
                 <ul class="list-group list-group-flush rounded-4">
                     <li class="list-group-item d-flex flex-column">
                         <h2 class="canasta-custom-person-add-title text-center fs-5">
-                            Calcule la Canasta de su Hogar y su Sector Socioeconómico
+                            Calculá la Canasta de tu Hogar y tu Sector Socioeconómico
                         </h2>
                         <div class="canasta_vivienda_container">
                             <div class="canasta_txt_vivienda_container">
@@ -139,7 +138,7 @@
                                         data-bs-placement="top"
                                         aria-label="aclaracion_icons"
                                         data-bs-custom-class="custom-tooltip"
-                                        data-bs-title="Ingrese en el recuadro verde si Alquila o No. Si alquila ingrese el monto de alquiler al lado. O elija entre los valores promedio de alquiler suministrados."
+                                        data-bs-title="Elegí en el recuadro verde si Alquilas o No. Si alquilas ingresá el monto de alquiler en la caja de al lado. O elegí entre los valores promedio de alquiler suministrados."
                                     >
                                         <div>
                                             <!-- SVG CASA -->
@@ -187,7 +186,7 @@
                                         aria-label="canasta_alquiler"
                                         name="canasta_alquiler"
                                         id="select_canasta_alquiler"
-                                        title="¿Alquilas?"
+                                        title="Seleccioná si ALquilas o No ALquilas."
                                         class="form-select select_canasta_alquiler"
                                     >
                                         <option class="option_alquiler" value="siAlquilo">• Alquilada</option>
@@ -231,7 +230,8 @@
                                             id="alquiler_in"
                                             class="partial_sumable alquiler_in form-control"
                                             value=""
-                                            placeholder="$ valor alquiler"
+                                            placeholder="$ valor Alquiler"
+                                            title="Si alquilas, ingresá el monto del alquiler."
                                         />
                                     </label>
                                 </div>
@@ -249,7 +249,7 @@
                                             data-bs-placement="top"
                                             aria-label="aclaracion_icons"
                                             data-bs-custom-class="custom-tooltip"
-                                            data-bs-title="Ingrese presionando el botón más (+), de color naranja, a cada miembro de su hogar, género y edad, para calcular su Canasta real. El valor de la canasta varia sustancialmente de acuerdo a la edad y el género."
+                                            data-bs-title="Ingresá presionando el botón más (+), de color naranja, a cada miembro de tu hogar, su género y edad, para calcular tu Canasta Real. El valor de la canasta varia sustancialmente de acuerdo a la edad y el género de las personas."
                                         >
                                             <span>
                                                 <!-- SVG PERSON -->
@@ -268,7 +268,7 @@
                                             </span>
                                         </button>
                                     </span>
-                                    <p class="canasta_txt_familia">Ingrese miembros del hogar</p>
+                                    <p class="canasta_txt_familia">Ingresá los miembros del hogar</p>
                                 </div>
                                 <div class="fieldset">
                                     <div class="gender-form-group">
@@ -279,6 +279,7 @@
                                                 name="selected-gender"
                                                 id="selected-gender"
                                                 class="form-select selected-gender"
+                                                title="Ingresá el género de la persona"
                                             >
                                                 <!-- <option value="" class="gender-option" selected disabled>
                                                     • Persona
@@ -300,6 +301,8 @@
                                                     name="selected-age"
                                                     id="selected-age"
                                                     class="form-select selected-age rounded"
+                                                    title="Ingresá la edad de la persona"
+
                                                 >
                                                     <option value="" class="age-option-selected" selected disabled>
                                                         Edad
@@ -457,7 +460,7 @@
                                                     class="detalle_personal_select"
                                                 >
                                                     <option class="detalle_personal_option" value="" disabled>
-                                                        Detalle de cada Clase ▼▼
+                                                        Detalle individual ▼▼
                                                     </option>
                                                     <option class="detalle_personal_option" value="indigencia">
                                                         • CBA - Linea de indigencia
@@ -465,24 +468,15 @@
                                                     <option class="detalle_personal_option" value="pobreza" selected>
                                                         • CBT - Linea de pobreza
                                                     </option>
-                                                    <option class="detalle_personal_option" value="" disabled>
-                                                        == Clase ▼▼
-                                                    </option>
 
                                                     <option class="detalle_personal_option" value="clase_baja">
-                                                        • Baja
+                                                        • Clase Baja
                                                     </option>
                                                     <option class="detalle_personal_option" value="clase_media_fragil">
-                                                        • Media Fragil
+                                                        • Clase Media Fragil
                                                     </option>
                                                     <option class="detalle_personal_option" value="clase_media">
-                                                        • Media
-                                                    </option>
-                                                    <option class="detalle_personal_option" value="clase_media_alta">
-                                                        • Media Alta
-                                                    </option>
-                                                    <option class="detalle_personal_option" value="clase_alta">
-                                                        • Alta baja
+                                                        • Clase Media
                                                     </option>
                                                 </select>
                                             </th>
@@ -703,6 +697,7 @@
                                         type="number"
                                         pattern="\d+"
                                         placeholder="$ ingreso total $"
+                                        title="Ingresa tu salario mensual familiar"
                                     />
                                 </label>
                                 <button
@@ -711,13 +706,13 @@
                                     data-bs-toggle="tooltip"
                                     data-bs-placement="top"
                                     data-bs-custom-class="custom-tooltip"
-                                    data-bs-title="Aquí ingrese el dinero mensual del que disponen en su hogar, y se coloreará su sector socioeconómico."
+                                    data-bs-title="Ingresá el dinero mensual del que disponen en tu hogar, y se coloreará tu sector socioeconómico."
                                 >
                                     i
                                 </button>
                             </div>
                             <span class="pt-2 text-center"
-                                >Ingrese el Salario de su hogar. Se remarcará su Clase Socioeconómico</span
+                                >Ingresá el Salario de tu hogar. Se remarcará su Clase Socioeconómico</span
                             >
                         </div>
                     </li>
@@ -749,6 +744,28 @@
                 </div>
             </div> -->
 
+            <!-- Card 2 Pesos Dolares +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+            <div class="card rounded-4 mb-3">
+                <div class="card-header rounded-4">
+                    <ul class="list-group list-group-flush rounded-4">
+                        <li class="list-group-item d-flex flex-column">
+                            <h2 class="canasta-custom-person-add-title text-center fs-5">Compará con el pasado</h2>
+                        </li>
+                        <li class="list-group-item d-flex flex-column">
+                            <input
+                                type="date"
+                                class="form-control mb-3 w-50"
+                                id="fecha_pasada"
+                                name="fecha_pasada"
+                                placeholder="Fecha pasada"
+                                title="Ingresa la fecha en la que deseas comparar"
+                            />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card titulo Canastas +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
             <div class="card rounded-4 card_titulo_canastas_generic card-solapada-1">
                 <div class="card-header rounded-4">
                     <h2 class="card_header_title_generic">Canastas para Hogar "Tipo":</h2>
