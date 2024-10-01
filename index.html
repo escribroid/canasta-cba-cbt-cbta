@@ -302,7 +302,6 @@
                                                     id="selected-age"
                                                     class="form-select selected-age rounded"
                                                     title="Ingresá la edad de la persona"
-
                                                 >
                                                     <option value="" class="age-option-selected" selected disabled>
                                                         Edad
@@ -745,24 +744,61 @@
             </div> -->
 
             <!-- Card 2 Pesos Dolares +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-            <div class="card rounded-4 mb-3">
-                <div class="card-header rounded-4">
-                    <ul class="list-group list-group-flush rounded-4">
-                        <li class="list-group-item d-flex flex-column">
-                            <h2 class="canasta-custom-person-add-title text-center fs-5">Compará con el pasado</h2>
-                        </li>
-                        <li class="list-group-item d-flex flex-column">
-                            <input
-                                type="date"
-                                class="form-control mb-3 w-50"
-                                id="fecha_pasada"
-                                name="fecha_pasada"
-                                placeholder="Fecha pasada"
-                                title="Ingresa la fecha en la que deseas comparar"
-                            />
-                        </li>
-                    </ul>
-                </div>
+            <div class="card rounded-4 card_main_compare">
+                <ul class="list-group list-group-flush rounded-4">
+                    <li class="list-group-item d-flex justify-content-center">
+                        <h2 class="canasta-custom-compare-title text-center fs-5">Compará con el pasado</h2>
+                    </li>
+                    <li class="list-group-item canasta_compare_date">
+                        <input
+                            type="month"
+                            class="form-control canasta_compare_input_month"
+                            id="fecha_pasada"
+                            name="fecha_pasada"
+                            title="Ingresa la fecha en la que deseas consultar"
+                            min="2016-04"
+                            max="2025-12"
+                        />
+
+                        <span class="canasta_compare_info"
+                            ><button
+                                type="button"
+                                class="btn btn-secondary aclaracion_edades"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                data-bs-custom-class="custom-tooltip"
+                                data-bs-html="true"
+                                data-bs-title="Tu situación hace un año, o dos, ¿estabas mejor? ¿En la misma Clase social? Desde abril de 2016 podes revisar. Tenes que recordar tu salario en la esa fecha solamente."
+                            >
+                                i
+                            </button></span
+                        >
+                    </li>
+                    <li class="list-group-item canasta_compare_date">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <label>
+                                <input
+                                    id="canasta_compare_ingresos_input"
+                                    class="canasta_compare_ingresos_input form-control me-2 text-center"
+                                    type="number"
+                                    pattern="\d+"
+                                    placeholder="$ ingreso total $"
+                                    title="Ingresa tu salario en ese mes y año."
+                                />
+                            </label>
+                            <button
+                                type="button"
+                                class="btn btn-secondary aclaracion_ingresos"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                data-bs-custom-class="custom-tooltip"
+                                data-bs-title="Ingresá tu Ingreso mensual del hogar en ese mes y año para comparar con tu Canasta en esa fecha."
+                            >
+                                i
+                            </button>
+                        </div>
+                    </li>
+                </ul>
             </div>
 
             <!-- Card titulo Canastas +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
