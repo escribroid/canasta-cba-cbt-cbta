@@ -193,7 +193,7 @@ header {
     font-size: 16px;
     border: 1px solid #ff5500; /* Color del borde */
     border-radius: 5px;
-    background-color: #ff550022; /* Color de fondo */
+    /* background-color: #ff550022;  */
     color: #f2f4f7; /* Color del texto */
 }
 
