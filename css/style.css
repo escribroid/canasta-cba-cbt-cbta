@@ -192,6 +192,7 @@ header {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ff5500; /* Color del borde */
+    color: #fff;
     border-radius: 0.5rem;
     /* background-color: #ff550022;  */
     /* color: #f2f4f7;  */
