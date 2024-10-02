@@ -188,7 +188,7 @@ header {
 }
 
 .canasta_compare_input_month {
-    max-width: 220px;
+    width: 220px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ff5500; /* Color del borde */
