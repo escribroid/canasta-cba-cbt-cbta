@@ -221,6 +221,18 @@ header {
     color: #fffaf0;
 }
 
+.canasta_date_container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+.canasta_date_month,
+.canasta_date_year {
+    width: 40%;
+}
+
 .canasta_txt_vivienda_container {
     display: flex;
     margin-top: 1rem;

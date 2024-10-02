@@ -750,17 +750,6 @@
                         <h2 class="canasta-custom-compare-title text-center fs-5">Compará con el pasado</h2>
                     </li>
                     <li class="list-group-item canasta_compare_date">
-                        <input
-                            type="month"
-                            class=" canasta_compare_input_month"
-                            id="fecha_pasada"
-                            name="fecha_pasada"
-                            title="Ingresa la fecha en la que deseas consultar"
-                            placeholder = "Selecciona una fecha"
-                            min="2016-04"
-                            max="2025-12"
-                        />
-
                         <span class="canasta_compare_info"
                             ><button
                                 type="button"
@@ -775,6 +764,27 @@
                             </button></span
                         >
                     </li>
+                    <div class="canasta_date_container">
+                        <select id="canasta_date_month" class="canasta_date_month" aria-label="Month">
+                            <option value="mes" selected disabled>• Mes •</option>
+                            <option class="canasta_month_option" value="01">Enero</option>
+                            <option class="canasta_month_option" value="02">Febrero</option>
+                            <option class="canasta_month_option" value="03">Marzo</option>
+                            <option class="canasta_month_option" value="04">Abril</option>
+                            <option class="canasta_month_option" value="05">Mayo</option>
+                            <option class="canasta_month_option" value="06">Junio</option>
+                            <option class="canasta_month_option" value="07">Julio</option>
+                            <option class="canasta_month_option" value="08">Agosto</option>
+                            <option class="canasta_month_option" value="09">Septiembre</option>
+                            <option class="canasta_month_option" value="10">Octubre</option>
+                            <option class="canasta_month_option" value="11">Noviembre</option>
+                            <option class="canasta_month_option" value="12">Diciembre</option>
+                        </select>
+
+                        <label for="canasta_date_year"></label>
+                        <select id="canasta_date_year" class="canasta_date_year" aria-label="Year"></select>
+                    </div>
+
                     <li class="list-group-item canasta_compare_date">
                         <div class="d-flex justify-content-center align-items-center">
                             <label>
@@ -924,6 +934,7 @@
         <script type="module" src="./js/main.js"></script>
         <script type="module" src="./js/app.js"></script>
         <script type="module" src="./js/fetch-data.js"></script>
+        <!-- <script type="module" src="./js/mod-date.js"></script> -->
         <!-- <script type="module" src="./js/mod-canasta-custom.js"></script> -->
     </body>
 </html>
