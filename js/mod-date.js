@@ -10,44 +10,50 @@ for (let i = 0; i <= year; i++) {
 }
 
 let str_years = array_years.join("");
+let canasta_year_select = document.getElementById("canasta_date_year");
+let canasta_month_select = document.getElementById("canasta_date_month");
+let selectedMonth;
 
-document.getElementById("canasta_date_year").innerHTML =
+canasta_year_select.innerHTML =
     '<option value="anio" class="canasta_date_month_anio" selected disabled>• Año •</option>' + str_years;
 
-const option01 = document.querySelector(".canasta_month_option[value='01']").cloneNode(true);
-const option02 = document.querySelector(".canasta_month_option[value='02']").cloneNode(true);
-const option03 = document.querySelector(".canasta_month_option[value='03']").cloneNode(true);
+const option01_month = document.querySelector(".canasta_month_option[value='01']").cloneNode(true);
+const option02_month = document.querySelector(".canasta_month_option[value='02']").cloneNode(true);
+const option03_month = document.querySelector(".canasta_month_option[value='03']").cloneNode(true);
 
 // Guardar los options en un array
-const removedOptions = [option01, option02, option03];
+const removedOptions = [option01_month, option02_month, option03_month];
 
-const yearSelect = document.getElementById("canasta_date_year");
-
-yearSelect.addEventListener("change", function () {
-    selectedYear = yearSelect.value;
+canasta_year_select.addEventListener("change", function () {
+    selectedYear = canasta_year_select.value;
     console.log("selectedYear:", selectedYear);
+    console.log("Mes seleccionado:", selectedMonth);
 
     if (selectedYear == "2016") {
         console.log("Año seleccionado es 2016");
-        document.querySelector(".canasta_month_option[value='01']").remove();
-        document.querySelector(".canasta_month_option[value='02']").remove();
-        document.querySelector(".canasta_month_option[value='03']").remove();
+        document.querySelector(".canasta_month_option[value='01']").setAttribute("disabled", true);
+        document.querySelector(".canasta_month_option[value='02']").setAttribute("disabled", true);
+        document.querySelector(".canasta_month_option[value='03']").setAttribute("disabled", true);
+        canasta_month_select.value = "04";
+        selectedMonth = canasta_month_select.value;
+
+        console.log("Mes seleccionado:", selectedMonth);
     } else {
         console.log("Año NOO 2016");
 
-        const selectMonth = document.querySelector("#canasta_date_month");
+        if (canasta_month_select.querySelector(".canasta_month_option[value='01']").hasAttribute("disabled")) {
+            document.querySelector(".canasta_month_option[value='01']").removeAttribute("disabled");
+            document.querySelector(".canasta_month_option[value='02']").removeAttribute("disabled");
+            document.querySelector(".canasta_month_option[value='03']").removeAttribute("disabled");
 
-        if (!selectMonth.querySelector(".canasta_month_option[value='01']")) {
-            selectMonth.insertBefore(option01, selectMonth.children[1]);
-            selectMonth.insertBefore(option02, selectMonth.children[2]);
-            selectMonth.insertBefore(option03, selectMonth.children[3]);
+            //canasta_month_select.insertBefore(option01_month, canasta_month_select.children[1]);
+            //canasta_month_select.insertBefore(option02_month, canasta_month_select.children[2]);
+            //canasta_month_select.insertBefore(option03_month, canasta_month_select.children[3]);
         }
     }
 });
 
-const monthSelect = document.getElementById("canasta_date_month");
-
-monthSelect.addEventListener("change", function () {
-    const selectedMonth = monthSelect.value;
+canasta_month_select.addEventListener("change", function () {
+    selectedMonth = canasta_month_select.value;
     console.log("Mes seleccionado:", selectedMonth);
 });

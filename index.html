@@ -752,8 +752,7 @@
                     <li class="list-group-item canasta_compare_date"></li>
                     <div class="canasta_date_container">
                         <select id="canasta_date_month" class="form-select canasta_date_month" aria-label="Month">
-                            <option value="mes" selected disabled>• Mes •</option>
-                            <option class="canasta_month_option" value="01">Enero</option>
+                            <option class="canasta_month_option" value="01" selected>Enero</option>
                             <option class="canasta_month_option" value="02">Febrero</option>
                             <option class="canasta_month_option" value="03">Marzo</option>
                             <option class="canasta_month_option" value="04">Abril</option>
@@ -768,9 +767,7 @@
                         </select>
 
                         <label for="canasta_date_year"></label>
-                        <select id="canasta_date_year" class="form-select canasta_date_year" aria-label="Year">
-                            
-                        </select>
+                        <select id="canasta_date_year" class="form-select canasta_date_year" aria-label="Year"></select>
                         <span class="canasta_compare_info"
                             ><button
                                 type="button"
@@ -794,7 +791,7 @@
                                     class="canasta_compare_ingresos_input form-control me-2 text-center"
                                     type="number"
                                     pattern="\d+"
-                                    placeholder="$ ingreso total $"
+                                    placeholder="$ ingresos $"
                                     title="Ingresa tu salario en ese mes y año."
                                 />
                             </label>
