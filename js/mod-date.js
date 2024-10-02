@@ -12,7 +12,7 @@ for (let i = 0; i <= year; i++) {
 let str_years = array_years.join("");
 
 document.getElementById("canasta_date_year").innerHTML =
-    "<option value='anio' selected disabled>• Año •</option>" + str_years;
+    '<option value="anio" class="canasta_date_month_anio" selected disabled>• Año •</option>' + str_years;
 
 const option01 = document.querySelector(".canasta_month_option[value='01']").cloneNode(true);
 const option02 = document.querySelector(".canasta_month_option[value='02']").cloneNode(true);

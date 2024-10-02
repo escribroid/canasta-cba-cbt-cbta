@@ -86,7 +86,8 @@ header {
 
 .aclaracion_edades,
 .aclaracion_ingresos,
-.aclaracion_table_sectores {
+.aclaracion_table_sectores,
+.aclaracion_date_month {
     display: inline-flex;
     position: relative;
     align-items: center;
@@ -105,7 +106,8 @@ header {
 
 .aclaracion_edades:hover,
 .aclaracion_ingresos:hover,
-.aclaracion_table_sectores:hover {
+.aclaracion_table_sectores:hover,
+.aclaracion_date_month:hover {
     transform: scale(1.1);
     border-radius: var(--spacing-10_0-625);
     background-color: #ff4f00bb;
@@ -127,6 +129,11 @@ header {
     position: absolute;
     right: calc(50% - 143px);
 }
+
+/* .aclaracion_date_month {
+    position: absolute;
+    right: 10%;
+} */
 
 .btn-add-person {
     background-color: #1b1f24;
@@ -184,7 +191,7 @@ header {
 
 .canasta_compare_info {
     position: absolute;
-    right: calc(50% - 143px);
+    right: calc(50% - 48%);
 }
 
 .canasta_compare_input_month {
@@ -226,11 +233,59 @@ header {
     justify-content: center;
     gap: 0.5rem;
     padding: 1rem 0;
+    align-items: center;
 }
 
 .canasta_date_month,
 .canasta_date_year {
-    width: 40%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 35%;
+    font-size: var(--font-size-18_1-125);
+    cursor: pointer;
+    height: 2.75rem;
+    background-color: #331c16;
+    border-color: #ff550066 !important;
+    border-radius: var(--bs-border-radius);
+}
+
+.canasta_date_year {
+    background-color: #ff8800;
+}
+
+.canasta_date_month:focus,
+.canasta_date_year:focus {
+    box-shadow: 0 0 0.3125rem 0.2rem #ff5500;
+    border-color: #ff550066;
+    outline: 0;
+}
+
+.canasta_month_option:enabled,
+.canasta_date_year:enabled {
+    background-color: #331c16;
+    border-color: #ff550066;
+}
+
+.canasta_month_option:disabled,
+.canasta_date_year:disabled {
+    display: block;
+    margin-right: var(--spacing-50_3-125);
+    background-color: #000;
+}
+
+.canasta_compare_ingresos_input {
+    background-color: #ff880022;
+    font-weight: bold;
+    cursor: pointer;
+    max-width: var(--spacing-220);
+    margin-right: var(--spacing-5_0-3125);
+    border: var(--spacing-1_0-0625) solid #ff550066;
+}
+
+.canasta_compare_ingresos_input:focus {
+    box-shadow: 0 0 var(--spacing-5_0-3125) 0.2rem #ff5500;
+    border-color: #ff550066;
 }
 
 .canasta_txt_vivienda_container {
@@ -402,8 +457,7 @@ header {
 }
 
 .card-solapada-1:hover {
-    transform: translate3d(0px, -5px, 0px) rotateX(-10deg) rotateY(0deg);
-    transform: translate3d(0px, -5px, 0px) rotate(-1deg);
+    transform: translate3d(0px, 5px, 0px) rotate(2deg) scale(1.01);
     box-shadow: 0px 0px 4px 1px #ff3366;
     z-index: 4;
 }
@@ -416,8 +470,7 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .card-solapada-2:hover {
-    transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg);
-    transform: translate3d(0px, -5px, 0px) rotate(-1deg);
+    transform: translate3d(0px, -5px, 0px) rotate(-1deg) scale(1.01);
     box-shadow: 0px 0px 4px 1px #ff3366;
     z-index: 3;
 }
@@ -430,8 +483,7 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .card-solapada-3:hover {
-    transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg);
-    transform: translate3d(0px, -5px, 0px) rotate(-1deg);
+    transform: translate3d(0px, 5px, 0px) rotate(2deg) scale(1.01);
 
     box-shadow: 0px 0px 4px 1px #ff3366;
     z-index: 2; /* Eleva la card sobre las demás */
@@ -445,9 +497,7 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .card-solapada-4:hover {
-    transform: translate3d(0px, -10px, 0px) rotateX(-10deg) rotateY(0deg);
-    transform: translate3d(0px, -5px, 0px) rotate(-1deg);
-
+    transform: translate3d(0px, -5px, 0px) rotate(-1deg) scale(1.01);
     box-shadow: 0px 0px 4px 1px #ff3366;
     z-index: 1;
 }
@@ -1011,7 +1061,8 @@ option:disabled {
 
 .select_canasta_alquiler,
 .alquiler_in {
-    background-color: #4caf5033;
+    background-color: #4caf5022;
+    border-color: #4caf5055;
 }
 
 .select_canasta_alquiler,
@@ -1027,7 +1078,8 @@ option:disabled {
 
 .selected-age,
 .selected-gender {
-    background-color: #ff550055;
+    background-color: #ff550022;
+    border-color: #ff550055;
 }
 
 .selected-age:focus,

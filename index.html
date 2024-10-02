@@ -749,23 +749,9 @@
                     <li class="list-group-item d-flex justify-content-center">
                         <h2 class="canasta-custom-compare-title text-center fs-5">Compará con el pasado</h2>
                     </li>
-                    <li class="list-group-item canasta_compare_date">
-                        <span class="canasta_compare_info"
-                            ><button
-                                type="button"
-                                class="btn btn-secondary aclaracion_edades"
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="top"
-                                data-bs-custom-class="custom-tooltip"
-                                data-bs-html="true"
-                                data-bs-title="Tu situación hace un año, o dos, ¿estabas mejor? ¿En la misma Clase social? Desde abril de 2016 podes revisar. Tenes que recordar tu salario en la esa fecha solamente."
-                            >
-                                i
-                            </button></span
-                        >
-                    </li>
+                    <li class="list-group-item canasta_compare_date"></li>
                     <div class="canasta_date_container">
-                        <select id="canasta_date_month" class="canasta_date_month" aria-label="Month">
+                        <select id="canasta_date_month" class="form-select canasta_date_month" aria-label="Month">
                             <option value="mes" selected disabled>• Mes •</option>
                             <option class="canasta_month_option" value="01">Enero</option>
                             <option class="canasta_month_option" value="02">Febrero</option>
@@ -782,7 +768,22 @@
                         </select>
 
                         <label for="canasta_date_year"></label>
-                        <select id="canasta_date_year" class="canasta_date_year" aria-label="Year"></select>
+                        <select id="canasta_date_year" class="form-select canasta_date_year" aria-label="Year">
+                            
+                        </select>
+                        <span class="canasta_compare_info"
+                            ><button
+                                type="button"
+                                class="btn btn-secondary aclaracion_date_month"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                data-bs-custom-class="custom-tooltip"
+                                data-bs-html="true"
+                                data-bs-title="Tu situación hace un año, o dos, ¿estabas mejor? ¿En la misma Clase social? Desde abril de 2016 podes revisar. Tenes que recordar tu salario en la esa fecha solamente."
+                            >
+                                i
+                            </button></span
+                        >
                     </div>
 
                     <li class="list-group-item canasta_compare_date">
