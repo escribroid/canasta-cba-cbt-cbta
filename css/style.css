@@ -192,14 +192,14 @@ header {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ff5500; /* Color del borde */
-    border-radius: 5px;
+    border-radius: 0.5rem;
     /* background-color: #ff550022;  */
-    color: #f2f4f7; /* Color del texto */
+    /* color: #f2f4f7;  */
 }
 
 .canasta_compare_input_month:focus {
     border-color: #ff5733;
-    background-color: #ff550022;
+    /* background-color: #ff550022; */
     outline: none;
     box-shadow: 0 0 var(--spacing-10_0-625) #ff5500;
 }
