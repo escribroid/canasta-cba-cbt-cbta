@@ -454,7 +454,7 @@ header {
 }
 
 .card-solapada-1:hover {
-    transform: translate3d(0px, 5px, 0px) rotate(2deg) scale(1.01);
+    transform: translate3d(0px, 5px, 0px) rotate(2deg);
     box-shadow: 0px 0px 4px 1px #ff3366;
     z-index: 4;
 }
@@ -467,7 +467,7 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .card-solapada-2:hover {
-    transform: translate3d(0px, -5px, 0px) rotate(-1deg) scale(1.01);
+    transform: translate3d(0px, -5px, 0px) rotate(-1deg);
     box-shadow: 0px 0px 4px 1px #ff3366;
     z-index: 3;
 }
@@ -480,7 +480,7 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .card-solapada-3:hover {
-    transform: translate3d(0px, 5px, 0px) rotate(2deg) scale(1.01);
+    transform: translate3d(0px, 5px, 0px) rotate(2deg);
 
     box-shadow: 0px 0px 4px 1px #ff3366;
     z-index: 2; /* Eleva la card sobre las demás */
@@ -494,7 +494,7 @@ header {
     transform: translate3d(0, 0, 0);
 }
 .card-solapada-4:hover {
-    transform: translate3d(0px, -5px, 0px) rotate(-1deg) scale(1.01);
+    transform: translate3d(0px, -5px, 0px) rotate(-1deg);
     box-shadow: 0px 0px 4px 1px #ff3366;
     z-index: 1;
 }

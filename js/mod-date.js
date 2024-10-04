@@ -54,40 +54,48 @@ function datesMain() {
     let url_cba_cbt =
         "https://apis.datos.gob.ar/series/api/series/?ids=150.1_CSTA_BARIA_0_D_26,150.1_CSTA_BATAL_0_D_20&collapse=month&start_date=2016-01-01&limit=1000&format=json";
 
-    async function getCbaCbtData() {
-        try {
-            const response = await fetch(url_cba_cbt);
-            const data_cba_cbt = await response.json();
-            const cba_cbt = data_cba_cbt.data;
+    // Función centralizada para hacer fetch
+    function fetchDataFromAPI(onSuccess, onError) {
+        const url =
+            "https://apis.datos.gob.ar/series/api/series/?ids=150.1_CSTA_BARIA_0_D_26,150.1_CSTA_BATAL_0_D_20&collapse=month&start_date=2016-01-01&limit=1000&format=json"; // Centralizamos la URL
 
-            // Data en TOP short cba cbt +++++++++++++++++++++++++++
-            cba = Math.round(cba_cbt[cba_cbt.length - 1][1] * 3.09);
+        fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => onSuccess(data)) // Ejecuta el callback de éxito
+            .catch((error) => (onError ? onError(error) : console.error("Error:", error))); // Callback de error opcional
+    }
+
+    fetchDataFromAPI(
+        (data) => {
+            // Data en TOP short cba cbt ++++++++++++++++++++++++
+            cba = Math.round(data.data[data.data.length - 1][1] * 3.09);
             const cba_top_short = document.querySelector(".indices_short_cba");
             cba_top_short.innerHTML = `$${cba}`;
 
-            let cbt = Math.round(cba_cbt[cba_cbt.length - 1][2] * 3.09);
+            let cbt = Math.round(data.data[data.data.length - 1][2] * 3.09);
             const cbt_top_short = document.querySelector(".indices_short_cbt");
             cbt_top_short.innerHTML = `$${cbt}`;
-            //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-            //console.log("cba_cbt", cba_cbt[2][0]);
+            //console.log("cba_cbt", data.data[2][0]);
 
             selectedYear = canasta_year_select.value;
             console.log("selectedYear2:", selectedYear);
 
-            for (let i = 0; i < cba_cbt.length; i++) {
-                if (cba_cbt[i][0] == "2022-05-01") {
-                    // console.log("date[i][0]", cba_cbt[i][0]);
-                    // console.log("date[i][0]", cba_cbt[i][0]);
-                    // console.log("cba_cbt[i][1]", cba_cbt[i][2]);
+            for (let i = 0; i < data.data.length; i++) {
+                if (data.data[i][0] == "2022-05-01") {
+                    console.log("date[i][0]", data.data[i][0]);
+                    console.log("date[i][0]", data.data[i][1]);
+                    console.log("cba_cbt[i][1]", data.data[i][2]);
                 }
             }
-        } catch (error) {
-            console.log("ERROR", error);
-        }
-    }
-
-    getCbaCbtData();
+        },
+        (error) => console.log("ERROR", error)
+    );
 }
 
 datesMain();
