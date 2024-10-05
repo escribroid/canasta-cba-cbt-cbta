@@ -1,5 +1,7 @@
 export const year = new Date().getFullYear();
 
+//console.log("year", year);
+
 // function datesMain() {
 let selectedYear = "2024";
 let array_years = [];
@@ -45,7 +47,7 @@ fetchDataFromAPI(
 
         //console.log("cba_cbt", data.data[2][0]);
 
-        selectedYear = canasta_year_select.value;
+        //selectedYear = canasta_year_select.value;
         //console.log("selectedYear2:", selectedYear);
 
         for (let i = 0; i < data.data.length; i++) {
@@ -126,12 +128,12 @@ canasta_year_select.innerHTML = `
 // Función de callback que se ejecutará cuando cambie el valor
 function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
     canasta_month_select.addEventListener("change", function () {
-        //console.log("Mes seleccionado dentro del evento:", selectedMonth);
+        selectedMonth = canasta_month_select.value;
+        selectedYear = canasta_year_select.value;
+        console.log("Mes seleccionado dentro del evento:", selectedMonth);
 
         fetchDataFromAPI(
             (data) => {
-                selectedMonth = canasta_month_select.value;
-
                 // Data en TOP short cba cbt ++++++++++++++++++++++++
                 cba = Math.round(data.data[data.data.length - 1][1] * 3.09);
                 console.log("cba", cba);
@@ -145,10 +147,13 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
                 //console.log("selectedYear2:", selectedYear);
 
                 for (let i = 0; i < data.data.length; i++) {
-                    if (data.data[i][0] == "2022-05-01") {
-                        // console.log("date[i][0]", data.data[i][0]);
-                        // console.log("date[i][0]", data.data[i][1]);
-                        // console.log("cba_cbt[i][1]", data.data[i][2]);
+                    if (data.data[i][0] == `${selectedYear}-${selectedMonth}-01`) {
+                        console.log("date[i][0]", data.data[i][0]);
+                        console.log("date[i][0]", data.data[i][1]);
+                        console.log("cba_cbt[i][1]", data.data[i][2]);
+                        canasta_compare_cba.innerHTML = `${data.data[i][1]}`;
+                        canasta_compare_cbt.innerHTML = `${data.data[i][2]}`;
+
                     }
                 }
             },
@@ -166,9 +171,15 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
     });
 
     canasta_year_select.addEventListener("change", function () {
+        selectedYear = canasta_year_select.value;
+        selectedMonth = canasta_month_select.value;
+
+        console.log("Año seleccionado dentro del evento:", selectedYear);
+        
+
         fetchDataFromAPI(
             (data) => {
-                selectedYear = canasta_year_select.value;
+                //selectedYear = canasta_year_select.value;
 
                 // Data en TOP short cba cbt ++++++++++++++++++++++++
                 cba = Math.round(data.data[data.data.length - 1][1] * 3.09);
@@ -179,7 +190,7 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
 
                 //console.log("cba_cbt", data.data[2][0]);
 
-                // selectedYear = canasta_year_select.value;
+                //selectedYear = canasta_year_select.value;
                 // console.log("selectedYear2:", selectedYear);
 
                 for (let i = 0; i < data.data.length; i++) {
@@ -207,19 +218,17 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
 function doCallCba(month, cba) {
     console.log("cba-22", cba);
     console.log("Mes seleccionado 22:", month);
-    canasta_compare_cba.innerHTML = `${cba * month}`;
 }
 
 function doCallCbt(years, cbt) {
     console.log("cbt-22", cbt);
     console.log("Año seleccionado 22:", years);
-    canasta_compare_cbt.innerHTML = `${cbt * years}`;
 }
 
 // Función que devuelve el valor actualizado
 function doSomethingWithSelectedYear(years) {
     //canasta_compare_cba.innerHTML = `${years}`;
-    //console.log("Año seleccionado fuera del evento, usando callback:", years);
+    console.log("Año seleccionado fuera del evento, usando callback:", years);
     // Aquí haces lo que necesites con el año seleccionado
 }
 
@@ -228,7 +237,7 @@ function doSomethingWithSelectedYear(years) {
 
 // Función que usa el valor actualizado
 function doSomethingWithSelectedMonth(month) {
-    //console.log("Mes seleccionado fuera del evento, usando callback:", month);
+    console.log("Mes seleccionado fuera del evento, usando callback:", month);
     // Aquí haces lo que necesites con el mes seleccionado
 }
 
