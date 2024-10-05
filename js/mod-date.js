@@ -6,6 +6,7 @@ let array_years = [];
 let canasta_year_select = document.getElementById("canasta_date_year");
 let canasta_month_select = document.getElementById("canasta_date_month");
 let selectedMonth = "01";
+
 let cba;
 let cbt;
 let canasta_compare_cba = document.querySelector(".canasta_compare_cba");
@@ -38,7 +39,7 @@ fetchDataFromAPI(
         const cba_top_short = document.querySelector(".indices_short_cba");
         cba_top_short.innerHTML = `$${cba}`;
 
-        let cbt = Math.round(data.data[data.data.length - 1][2] * 3.09);
+        cbt = Math.round(data.data[data.data.length - 1][2] * 3.09);
         const cbt_top_short = document.querySelector(".indices_short_cbt");
         cbt_top_short.innerHTML = `$${cbt}`;
 
@@ -70,75 +71,77 @@ canasta_year_select.innerHTML = `
             <option class="canasta_date_option" value="year">Año</option> + ${str_years}`;
 
 // EVENT change select year ++++++++++++++++++++++++++++++++++++++++++
-canasta_year_select.addEventListener("change", function () {
-    fetchDataFromAPI(
-        (data) => {
-            // Data en TOP short cba cbt ++++++++++++++++++++++++
-            cba = Math.round(data.data[data.data.length - 1][1] * 3.09);
+// canasta_year_select.addEventListener("change", function () {
+//     fetchDataFromAPI(
+//         (data) => {
+//             // Data en TOP short cba cbt ++++++++++++++++++++++++
+//             cba = Math.round(data.data[data.data.length - 1][1] * 3.09);
 
-            cbt = Math.round(data.data[data.data.length - 1][2] * 3.09);
+//             cbt = Math.round(data.data[data.data.length - 1][2] * 3.09);
 
-            //console.log("cba_cbt", data.data[2][0]);
+//             //console.log("cba_cbt", data.data[2][0]);
 
-            selectedYear = canasta_year_select.value;
+//             selectedYear = canasta_year_select.value;
 
-            for (let i = 0; i < data.data.length; i++) {
-                if (data.data[i][0] == "2022-06-01") {
-                    // console.log("date[i][0]", data.data[i][0]);
-                    // console.log("date[i][0]", data.data[i][1]);
-                    // console.log("cba_cbt[i][1]", data.data[i][2]);
-                }
-            }
+//             for (let i = 0; i < data.data.length; i++) {
+//                 if (data.data[i][0] == "2022-06-01") {
+//                     // console.log("date[i][0]", data.data[i][0]);
+//                     // console.log("date[i][0]", data.data[i][1]);
+//                     // console.log("cba_cbt[i][1]", data.data[i][2]);
+//                 }
+//             }
 
-            selectedYear = canasta_year_select.value;
-            //console.log("selectedYear:", selectedYear);
-            ///console.log("Mes seleccionado:", selectedMonth);
-            canasta_compare_cbt.innerHTML = `${selectedYear}`;
+//             selectedYear = canasta_year_select.value;
+//             //console.log("selectedYear:", selectedYear);
+//             ///console.log("Mes seleccionado:", selectedMonth);
+//             canasta_compare_cbt.innerHTML = `${selectedYear}`;
 
-            if (selectedYear == "2016") {
-                //console.log("Año seleccionado es 2016");
-                document.querySelector(".canasta_month_option[value='01']").setAttribute("disabled", true);
-                document.querySelector(".canasta_month_option[value='02']").setAttribute("disabled", true);
-                document.querySelector(".canasta_month_option[value='03']").setAttribute("disabled", true);
-                canasta_month_select.value = "04";
-                selectedMonth = canasta_month_select.value;
-                canasta_compare_cba.innerHTML = `${selectedMonth}`;
+//             if (selectedYear == "2016") {
+//                 //console.log("Año seleccionado es 2016");
+//                 document.querySelector(".canasta_month_option[value='01']").setAttribute("disabled", true);
+//                 document.querySelector(".canasta_month_option[value='02']").setAttribute("disabled", true);
+//                 document.querySelector(".canasta_month_option[value='03']").setAttribute("disabled", true);
+//                 canasta_month_select.value = "04";
+//                 selectedMonth = canasta_month_select.value;
+//                 canasta_compare_cba.innerHTML = `${selectedMonth}`;
 
-                //console.log("Mes seleccionado:", selectedMonth);
-            } else {
-                document.querySelector(".canasta_month_option[value='01']").removeAttribute("disabled");
-                document.querySelector(".canasta_month_option[value='02']").removeAttribute("disabled");
-                document.querySelector(".canasta_month_option[value='03']").removeAttribute("disabled");
-            }
-            //console.log("Mes seleccionado 3:", selectedMonth);
-        },
-        (error) => console.log("ERROR", error)
-    );
+//                 //console.log("Mes seleccionado:", selectedMonth);
+//             } else {
+//                 document.querySelector(".canasta_month_option[value='01']").removeAttribute("disabled");
+//                 document.querySelector(".canasta_month_option[value='02']").removeAttribute("disabled");
+//                 document.querySelector(".canasta_month_option[value='03']").removeAttribute("disabled");
+//             }
+//             //console.log("Mes seleccionado 3:", selectedMonth);
+//         },
+//         (error) => console.log("ERROR", error)
+//     );
 
-    // canasta_month_select.addEventListener("change", function () {
-    //     selectedMonth = canasta_month_select.value;
-    //     console.log("Mes seleccionado 2:", selectedMonth);
-    //     canasta_compare_cba.innerHTML = `${selectedMonth}`;
-    // });
-});
+//     // canasta_month_select.addEventListener("change", function () {
+//     //     selectedMonth = canasta_month_select.value;
+//     //     console.log("Mes seleccionado 2:", selectedMonth);
+//     //     canasta_compare_cba.innerHTML = `${selectedMonth}`;
+//     // });
+// });
 
 // Función de callback que se ejecutará cuando cambie el valor
-function handleMonthChange(callbackMonth, callbackYear) {
+function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
     canasta_month_select.addEventListener("change", function () {
-        selectedMonth = canasta_month_select.value;
         //console.log("Mes seleccionado dentro del evento:", selectedMonth);
 
         fetchDataFromAPI(
             (data) => {
+                selectedMonth = canasta_month_select.value;
+
                 // Data en TOP short cba cbt ++++++++++++++++++++++++
                 cba = Math.round(data.data[data.data.length - 1][1] * 3.09);
                 console.log("cba", cba);
 
                 cbt = Math.round(data.data[data.data.length - 1][2] * 3.09);
+                console.log("cbt", cbt);
 
                 //console.log("cba_cbt", data.data[2][0]);
 
-                selectedYear = canasta_year_select.value;
+                //selectedYear = canasta_year_select.value;
                 //console.log("selectedYear2:", selectedYear);
 
                 for (let i = 0; i < data.data.length; i++) {
@@ -156,23 +159,28 @@ function handleMonthChange(callbackMonth, callbackYear) {
         if (callbackMonth) {
             callbackMonth(selectedMonth);
         }
+
+        if (callCba) {
+            callCba(selectedMonth, cba);
+        }
     });
 
     canasta_year_select.addEventListener("change", function () {
-        selectedYear = canasta_year_select.value;
-        //console.log("Año seleccionado dentro del evento:", selectedYear);
-
         fetchDataFromAPI(
             (data) => {
+                selectedYear = canasta_year_select.value;
+
                 // Data en TOP short cba cbt ++++++++++++++++++++++++
                 cba = Math.round(data.data[data.data.length - 1][1] * 3.09);
+                console.log("cba 2", cba);
 
                 cbt = Math.round(data.data[data.data.length - 1][2] * 3.09);
+                console.log("cbt 2", cbt);
 
                 //console.log("cba_cbt", data.data[2][0]);
 
-                selectedYear = canasta_year_select.value;
-                console.log("selectedYear2:", selectedYear);
+                // selectedYear = canasta_year_select.value;
+                // console.log("selectedYear2:", selectedYear);
 
                 for (let i = 0; i < data.data.length; i++) {
                     if (data.data[i][0] == "2022-05-01") {
@@ -186,23 +194,37 @@ function handleMonthChange(callbackMonth, callbackYear) {
         );
 
         // Ejecuta el callback con el valor actualizado
-        if (callbackYear && cbt) {
-            callbackYear(selectedYear, cbt);
+        if (callbackYear) {
+            callbackYear(selectedYear);
+        }
+
+        if (callCbt) {
+            callCbt(selectedYear, cbt);
         }
     });
 }
 
-// Función que devuelve el valor actualizado
-function doSomethingWithSelectedYear(year, cbz) {
-    console.log("cbt", cbz);
-    canasta_compare_cba.innerHTML = `${cbz * year}`;
+function doCallCba(month, cba) {
+    console.log("cba-22", cba);
+    console.log("Mes seleccionado 22:", month);
+    canasta_compare_cba.innerHTML = `${cba * month}`;
+}
 
-    console.log("Año seleccionado fuera del evento, usando callback:", year);
+function doCallCbt(years, cbt) {
+    console.log("cbt-22", cbt);
+    console.log("Año seleccionado 22:", years);
+    canasta_compare_cbt.innerHTML = `${cbt * years}`;
+}
+
+// Función que devuelve el valor actualizado
+function doSomethingWithSelectedYear(years) {
+    //canasta_compare_cba.innerHTML = `${years}`;
+    //console.log("Año seleccionado fuera del evento, usando callback:", years);
     // Aquí haces lo que necesites con el año seleccionado
 }
 
 // Configurar el listener y pasarle una función de callback
-handleMonthChange(doSomethingWithSelectedMonth, doSomethingWithSelectedYear);
+//handleMonthChange(doSomethingWithSelectedMonth, doSomethingWithSelectedYear);
 
 // Función que usa el valor actualizado
 function doSomethingWithSelectedMonth(month) {
@@ -210,8 +232,10 @@ function doSomethingWithSelectedMonth(month) {
     // Aquí haces lo que necesites con el mes seleccionado
 }
 
+handleMonthChange(doSomethingWithSelectedMonth, doSomethingWithSelectedYear, doCallCba, doCallCbt);
+
 // Configurar el listener y pasarle una función de callback
-handleMonthChange(doSomethingWithSelectedMonth, doSomethingWithSelectedYear);
+//handleMonthChange(doSomethingWithSelectedMonth, doSomethingWithSelectedYear);
 
 //console.log("Mes seleccionado 4:", getSelectedMonth());
 
