@@ -379,7 +379,7 @@ header {
 .card-header {
     padding: var(--bs-card-cap-padding-y) 0.5rem;
     color: var(--bs-card-cap-color);
-    background-color: #201419 !important;
+    background-color: #201419aa !important;
 }
 
 .card-header h2 {
@@ -450,7 +450,6 @@ header {
     z-index: 4;
     transition: transform 0.5s ease, box-shadow 0.3s ease;
     transform: translate3d(0, 0, 0);
-    background: #201419 !important;
 }
 
 .card-solapada-1:hover {

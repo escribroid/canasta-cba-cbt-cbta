@@ -3,11 +3,11 @@ export const year = new Date().getFullYear();
 //console.log("year", year);
 
 // function datesMain() {
-let selectedYear = "2024";
+let selectedYear = null;
+let selectedMonth = null;
 let array_years = [];
 let canasta_year_select = document.getElementById("canasta_date_year");
 let canasta_month_select = document.getElementById("canasta_date_month");
-let selectedMonth = "01";
 
 let cba;
 let cbt;
@@ -51,11 +51,11 @@ fetchDataFromAPI(
         //console.log("selectedYear2:", selectedYear);
 
         for (let i = 0; i < data.data.length; i++) {
-            if (data.data[i][0] == "2022-05-01") {
-                // console.log("date[i][0]", data.data[i][0]);
-                // console.log("date[i][0]", data.data[i][1]);
-                // console.log("cba_cbt[i][1]", data.data[i][2]);
-            }
+            // if (data.data[i][0] == "2022-05-01") {
+            //     // console.log("date[i][0]", data.data[i][0]);
+            //     // console.log("date[i][0]", data.data[i][1]);
+            //     // console.log("cba_cbt[i][1]", data.data[i][2]);
+            // }
         }
     },
     (error) => console.log("ERROR", error)
@@ -70,7 +70,7 @@ for (let i = 0; i <= year; i++) {
 
 let str_years = array_years.join("");
 canasta_year_select.innerHTML = `
-            <option class="canasta_date_option" value="year">Año</option> + ${str_years}`;
+            <option class="canasta_date_option" value="year" selected disabled>Año</option> + ${str_years}`;
 
 // EVENT change select year ++++++++++++++++++++++++++++++++++++++++++
 // canasta_year_select.addEventListener("change", function () {
@@ -125,6 +125,8 @@ canasta_year_select.innerHTML = `
 //     // });
 // });
 
+console.log("año seleccionado:", selectedYear);
+
 // Función de callback que se ejecutará cuando cambie el valor
 function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
     canasta_month_select.addEventListener("change", function () {
@@ -148,12 +150,11 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
 
                 for (let i = 0; i < data.data.length; i++) {
                     if (data.data[i][0] == `${selectedYear}-${selectedMonth}-01`) {
-                        console.log("date[i][0]", data.data[i][0]);
-                        console.log("date[i][0]", data.data[i][1]);
-                        console.log("cba_cbt[i][1]", data.data[i][2]);
+                        // console.log("date[i][0]", data.data[i][0]);
+                        // console.log("date[i][0]", data.data[i][1]);
+                        // console.log("cba_cbt[i][1]", data.data[i][2]);
                         canasta_compare_cba.innerHTML = `${data.data[i][1]}`;
                         canasta_compare_cbt.innerHTML = `${data.data[i][2]}`;
-
                     }
                 }
             },
@@ -175,7 +176,6 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
         selectedMonth = canasta_month_select.value;
 
         console.log("Año seleccionado dentro del evento:", selectedYear);
-        
 
         fetchDataFromAPI(
             (data) => {
@@ -194,10 +194,12 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
                 // console.log("selectedYear2:", selectedYear);
 
                 for (let i = 0; i < data.data.length; i++) {
-                    if (data.data[i][0] == "2022-05-01") {
+                    if (data.data[i][0] == `${selectedYear}-${selectedMonth}-01`) {
                         // console.log("date[i][0]", data.data[i][0]);
                         // console.log("date[i][0]", data.data[i][1]);
                         // console.log("cba_cbt[i][1]", data.data[i][2]);
+                        canasta_compare_cba.innerHTML = `${data.data[i][1]}`;
+                        canasta_compare_cbt.innerHTML = `${data.data[i][2]}`;
                     }
                 }
             },
