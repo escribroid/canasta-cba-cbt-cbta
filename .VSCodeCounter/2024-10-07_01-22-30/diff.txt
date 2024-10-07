@@ -1,0 +1,35 @@
+Date : 2024-10-07 01:22:30
+Directory : c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec
+Total : 6 files,  266 codes, 126 comments, 72 blanks, all 464 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |          3 |        120 |        112 |         54 |        286 |
+| CSS        |          2 |         81 |         11 |         14 |        106 |
+| HTML       |          1 |         65 |          3 |          4 |         72 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                     | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                        |          6 |        266 |        126 |         72 |        464 |
+| . (Files)                                                                                                                |          1 |         65 |          3 |          4 |         72 |
+| css                                                                                                                      |          2 |         81 |         11 |         14 |        106 |
+| js                                                                                                                       |          3 |        120 |        112 |         54 |        286 |
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                 | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\media-desktop.css | CSS        |          4 |          0 |          1 |          5 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\css\style.css         | CSS        |         77 |         11 |         13 |        101 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\index.html            | HTML       |         65 |          3 |          4 |         72 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\app.js             | JavaScript |          3 |          0 |          1 |          4 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\fetch-data.js      | JavaScript |        -27 |          7 |         -5 |        -25 |
+| c:\Users\smsua\OneDrive\Code-Codigo_Practic\Webs-desarrolladas\canastas-cba-cbt-mas-alquiler-indec\js\mod-date.js        | JavaScript |        144 |        105 |         58 |        307 |
+| Total                                                                                                                    |            |        266 |        126 |         72 |        464 |
++--------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
