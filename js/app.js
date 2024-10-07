@@ -867,3 +867,7 @@ document.addEventListener("click", function (e) {
         }, 200); // 300 ms para asegurarse de que el offcanvas se cierra primero
     }
 });
+
+document.getElementById("nav-link-cbt").addEventListener("click", () => {
+    document.querySelector(".card-solapada-3").style.boxShadow = "0px 0px 6px 4px #ff3366";
+});

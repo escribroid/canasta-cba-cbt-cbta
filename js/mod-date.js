@@ -1,6 +1,9 @@
-export const year = new Date().getFullYear();
+export const yearGet = new Date().getFullYear();
+const monthGet = new Date().getMonth() + 1;
 
-//console.log("year", year);
+//console.log("yearGet", yearGet);
+
+//console.log("monthGet", monthGet);
 
 // function datesMain() {
 let selectedYear = null;
@@ -61,10 +64,10 @@ fetchDataFromAPI(
     (error) => console.log("ERROR", error)
 );
 
-for (let i = 0; i <= year; i++) {
-    if (year - i >= 2016) {
+for (let i = 0; i <= yearGet; i++) {
+    if (yearGet - i >= 2016) {
         array_years.push(`
-            <option class="canasta_date_option" value="${year - i}"> ${year - i} </option>`);
+            <option class="canasta_date_option" value="${yearGet - i}"> ${yearGet - i} </option>`);
     }
 }
 
@@ -125,23 +128,30 @@ canasta_year_select.innerHTML = `
 //     // });
 // });
 
-console.log("año seleccionado:", selectedYear);
+//console.log("año seleccionado:", selectedYear);
 
 // Función de callback que se ejecutará cuando cambie el valor
 function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
     canasta_month_select.addEventListener("change", function () {
         selectedMonth = canasta_month_select.value;
         selectedYear = canasta_year_select.value;
-        console.log("Mes seleccionado dentro del evento:", selectedMonth);
+        console.log("AÑO seleccionado en evento Month:", selectedYear);
+        console.log("Mes seleccionado en evento Month:", selectedMonth);
+
+        if (parseInt(selectedMonth) > monthGet) {
+            if (parseInt(selectedYear) == yearGet) {
+                console.log("No existe aun");
+            }
+        }
 
         fetchDataFromAPI(
             (data) => {
                 // Data en TOP short cba cbt ++++++++++++++++++++++++
                 cba = Math.round(data.data[data.data.length - 1][1] * 3.09);
-                console.log("cba", cba);
+                //console.log("cba", cba);
 
                 cbt = Math.round(data.data[data.data.length - 1][2] * 3.09);
-                console.log("cbt", cbt);
+                //console.log("cbt", cbt);
 
                 //console.log("cba_cbt", data.data[2][0]);
 
@@ -175,7 +185,39 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
         selectedYear = canasta_year_select.value;
         selectedMonth = canasta_month_select.value;
 
-        console.log("Año seleccionado dentro del evento:", selectedYear);
+        if (parseInt(selectedYear) == yearGet) {
+            if (parseInt(selectedMonth) > monthGet) {
+                console.log("No existe aun");
+            }
+        }
+
+        if (selectedYear == "2016") {
+            //console.log("Año seleccionado es 2016");
+            document.querySelector(".canasta_month_option[value='01']").setAttribute("disabled", true);
+            document.querySelector(".canasta_month_option[value='02']").setAttribute("disabled", true);
+            document.querySelector(".canasta_month_option[value='03']").setAttribute("disabled", true);
+            canasta_month_select.value = "04";
+            selectedMonth = canasta_month_select.value;
+            canasta_compare_cba.innerHTML = `${selectedMonth}`;
+
+            //console.log("Mes seleccionado:", selectedMonth);
+        } else {
+            document.querySelector(".canasta_month_option[value='01']").removeAttribute("disabled");
+            document.querySelector(".canasta_month_option[value='02']").removeAttribute("disabled");
+            document.querySelector(".canasta_month_option[value='03']").removeAttribute("disabled");
+        }
+
+        if (selectedYear == yearGet.toString()) {
+            for (let i = monthGet; i <= 12; i++) {
+                document.querySelector(`.canasta_month_option[value='${i}']`).setAttribute("disabled", true);
+            }
+        } else {
+            for (let i = monthGet; i <= 12; i++) {
+                document.querySelector(`.canasta_month_option[value='${i}']`).removeAttribute("disabled");
+            }
+        }
+
+        //console.log("Año seleccionado dentro del evento:", selectedYear);
 
         fetchDataFromAPI(
             (data) => {
@@ -183,10 +225,10 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
 
                 // Data en TOP short cba cbt ++++++++++++++++++++++++
                 cba = Math.round(data.data[data.data.length - 1][1] * 3.09);
-                console.log("cba 2", cba);
+                //console.log("cba 2", cba);
 
                 cbt = Math.round(data.data[data.data.length - 1][2] * 3.09);
-                console.log("cbt 2", cbt);
+                //console.log("cbt 2", cbt);
 
                 //console.log("cba_cbt", data.data[2][0]);
 

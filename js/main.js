@@ -1,10 +1,10 @@
 // main.js
-import { year } from "./mod-date.js";
+import { yearGet } from "./mod-date.js";
 import { version } from "./mod-version.js";
 import indices_manuales from "./mod-indices.js";
 
 // yearUpdated
-//const yearUpdated = document.querySelector(".copyleftYear").innerHTML = year;
+//const yearUpdated = document.querySelector(".copyleftYear").innerHTML = yearGet;
 // version
 const versionUpdated = (document.querySelector(".version").innerHTML = version);
 
