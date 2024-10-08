@@ -1,13 +1,9 @@
 export const yearGet = new Date().getFullYear();
-const monthGet = new Date().getMonth() + 1;
-
-//console.log("yearGet", yearGet);
-
-//console.log("monthGet", monthGet);
+let monthGet = new Date().getMonth() + 1;
 
 // function datesMain() {
-let selectedYear = null;
-let selectedMonth = null;
+let selectedYear;
+let selectedMonth;
 let array_years = [];
 let canasta_year_select = document.getElementById("canasta_date_year");
 let canasta_month_select = document.getElementById("canasta_date_month");
@@ -140,7 +136,7 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
 
         if (parseInt(selectedMonth) > monthGet) {
             if (parseInt(selectedYear) == yearGet) {
-                console.log("No existe aun");
+                //console.log("No existe aun");
             }
         }
 
@@ -158,13 +154,17 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
                 //selectedYear = canasta_year_select.value;
                 //console.log("selectedYear2:", selectedYear);
 
-                for (let i = 0; i < data.data.length; i++) {
-                    if (data.data[i][0] == `${selectedYear}-${selectedMonth}-01`) {
-                        // console.log("date[i][0]", data.data[i][0]);
-                        // console.log("date[i][0]", data.data[i][1]);
-                        // console.log("cba_cbt[i][1]", data.data[i][2]);
-                        canasta_compare_cba.innerHTML = `${data.data[i][1]}`;
-                        canasta_compare_cbt.innerHTML = `${data.data[i][2]}`;
+                if (selectedMonth < 10) {
+                    selectedMonth = "0" + selectedMonth;
+                }
+
+                for (let inn = 0; inn < data.data.length; inn++) {
+                    if (data.data[inn][0] == `${selectedYear}-${selectedMonth}-01`) {
+                        console.log("date[i][0]", data.data[inn][0]);
+                        console.log("date[i][0]", data.data[inn][1]);
+                        console.log("cba_cbt[i][1]", data.data[inn][2]);
+                        canasta_compare_cba.innerHTML = `${data.data[inn][1]}`;
+                        canasta_compare_cbt.innerHTML = `${data.data[inn][2]}`;
                     }
                 }
             },
@@ -181,33 +181,67 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
         }
     });
 
-    canasta_year_select.addEventListener("change", function () {
+    canasta_year_select.addEventListener("change", function (data) {
         selectedYear = canasta_year_select.value;
         selectedMonth = canasta_month_select.value;
 
         if (parseInt(selectedYear) == yearGet) {
             if (parseInt(selectedMonth) > monthGet) {
-                console.log("No existe aun");
+                //console.log("No existe aun");
             }
         }
 
         if (selectedYear == "2016") {
             //console.log("Año seleccionado es 2016");
-            document.querySelector(".canasta_month_option[value='01']").setAttribute("disabled", true);
-            document.querySelector(".canasta_month_option[value='02']").setAttribute("disabled", true);
-            document.querySelector(".canasta_month_option[value='03']").setAttribute("disabled", true);
-            canasta_month_select.value = "04";
+            document.querySelector(".canasta_month_option[value='1']").setAttribute("disabled", true);
+            document.querySelector(".canasta_month_option[value='2']").setAttribute("disabled", true);
+            document.querySelector(".canasta_month_option[value='3']").setAttribute("disabled", true);
+            canasta_month_select.value = "4";
             selectedMonth = canasta_month_select.value;
             canasta_compare_cba.innerHTML = `${selectedMonth}`;
 
             //console.log("Mes seleccionado:", selectedMonth);
         } else {
-            document.querySelector(".canasta_month_option[value='01']").removeAttribute("disabled");
-            document.querySelector(".canasta_month_option[value='02']").removeAttribute("disabled");
-            document.querySelector(".canasta_month_option[value='03']").removeAttribute("disabled");
+            document.querySelector(".canasta_month_option[value='1']").removeAttribute("disabled");
+            document.querySelector(".canasta_month_option[value='2']").removeAttribute("disabled");
+            document.querySelector(".canasta_month_option[value='3']").removeAttribute("disabled");
         }
 
-        if (selectedYear == yearGet.toString()) {
+        // if año actual, deshabilita los meses que no existen
+        if (selectedYear == yearGet) {
+            //console.log("Año seleccionado es el actual", selectedMonth);
+            if (parseInt(selectedMonth) >= monthGet) {
+                let month_actual = (monthGet - 2).toString();
+                selectedMonth = canasta_month_select.value;
+                canasta_month_select.value = month_actual.toString();
+                selectedMonth = canasta_month_select.value;
+
+                //console.log("canasta_month_Value 22", canasta_month_select.value);
+                //console.log("Mes seleccionado 22:", selectedMonth);
+
+                canasta_compare_cba.innerHTML = `${cba}`;
+                canasta_compare_cbt.innerHTML = `${cbt}`;
+
+                // fetchDataFromAPI(
+                //     (data) => {
+                //         if (selectedMonth < 10) {
+                //             selectedMonth = "0" + selectedMonth;
+                //         }
+
+                //         for (let inn = 0; inn < data.data.length; inn++) {
+                //             if (data.data[inn][0] == `${selectedYear}-${selectedMonth}-01`) {
+                //                 console.log("date[i][0]", data.data[inn][0]);
+                //                 console.log("date[i][0]", data.data[inn][1]);
+                //                 console.log("cba_cbt[i][1]", data.data[inn][2]);
+                //                 canasta_compare_cba.innerHTML = `${data.data[inn][1]}`;
+                //                 canasta_compare_cbt.innerHTML = `${data.data[inn][2]}`;
+                //             }
+                //         }
+                //     },
+                //     (error) => console.log("ERROR", error)
+                // );
+            }
+
             for (let i = monthGet; i <= 12; i++) {
                 document.querySelector(`.canasta_month_option[value='${i}']`).setAttribute("disabled", true);
             }
@@ -233,13 +267,18 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
                 //console.log("cba_cbt", data.data[2][0]);
 
                 //selectedYear = canasta_year_select.value;
-                // console.log("selectedYear2:", selectedYear);
+                console.log("selectedYear2:", selectedYear);
+                console.log("SSselectedMonth", selectedMonth);
+
+                if (selectedMonth < 10) {
+                    selectedMonth = "0" + selectedMonth;
+                }
 
                 for (let i = 0; i < data.data.length; i++) {
                     if (data.data[i][0] == `${selectedYear}-${selectedMonth}-01`) {
-                        // console.log("date[i][0]", data.data[i][0]);
-                        // console.log("date[i][0]", data.data[i][1]);
-                        // console.log("cba_cbt[i][1]", data.data[i][2]);
+                        console.log("date[i][0]", data.data[i][0]);
+                        console.log("date[i][0]", data.data[i][1]);
+                        console.log("cba_cbt[i][1]", data.data[i][2]);
                         canasta_compare_cba.innerHTML = `${data.data[i][1]}`;
                         canasta_compare_cbt.innerHTML = `${data.data[i][2]}`;
                     }
@@ -260,19 +299,19 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
 }
 
 function doCallCba(month, cba) {
-    console.log("cba-22", cba);
-    console.log("Mes seleccionado 22:", month);
+    //console.log("cba-22", cba);
+    //console.log("Mes seleccionado 22:", month);
 }
 
 function doCallCbt(years, cbt) {
-    console.log("cbt-22", cbt);
-    console.log("Año seleccionado 22:", years);
+    //console.log("cbt-22", cbt);
+    //console.log("Año seleccionado 22:", years);
 }
 
 // Función que devuelve el valor actualizado
 function doSomethingWithSelectedYear(years) {
     //canasta_compare_cba.innerHTML = `${years}`;
-    console.log("Año seleccionado fuera del evento, usando callback:", years);
+    //console.log("Año seleccionado fuera del evento, usando callback:", years);
     // Aquí haces lo que necesites con el año seleccionado
 }
 
@@ -281,7 +320,7 @@ function doSomethingWithSelectedYear(years) {
 
 // Función que usa el valor actualizado
 function doSomethingWithSelectedMonth(month) {
-    console.log("Mes seleccionado fuera del evento, usando callback:", month);
+    //console.log("Mes seleccionado fuera del evento, usando callback:", month);
     // Aquí haces lo que necesites con el mes seleccionado
 }
 
