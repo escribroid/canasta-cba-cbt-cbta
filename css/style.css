@@ -886,6 +886,10 @@ tfoot {
     background-color: #ff880033;
 }
 
+.table-all-canastas-past {
+    display: none;
+}
+
 .table-header {
     text-align: center;
 }

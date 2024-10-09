@@ -2,8 +2,8 @@ export const yearGet = new Date().getFullYear();
 let monthGet = new Date().getMonth() + 1;
 
 // function datesMain() {
-let selectedYear;
-let selectedMonth;
+let selectedYear = null;
+let selectedMonth = null;
 let array_years = [];
 let canasta_year_select = document.getElementById("canasta_date_year");
 let canasta_month_select = document.getElementById("canasta_date_month");
@@ -184,6 +184,7 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
     canasta_year_select.addEventListener("change", function (data) {
         selectedYear = canasta_year_select.value;
         selectedMonth = canasta_month_select.value;
+        document.querySelector(".table-all-canastas-past").style.display = "block";
 
         if (parseInt(selectedYear) == yearGet) {
             if (parseInt(selectedMonth) > monthGet) {

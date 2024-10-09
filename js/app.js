@@ -127,6 +127,15 @@ let array_count_person = [];
 let table_matrix = [];
 let table_rows = [];
 
+export let dataso = {
+    gender,
+    age_mostrar_table,
+    canasta_basica_alimentaria_ind_indigencia,
+    canasta_basica_total_ind_pobreza,
+    array_count_person,
+    count_person,
+};
+
 const form = document.getElementById("person-form");
 const tableBody = document.getElementById("person-list");
 let personas_de_local = JSON.parse(localStorage.getItem("personas_de_local")) || [];
@@ -255,7 +264,7 @@ document.getElementById("detalle_personal").addEventListener("change", function 
 });
 
 // Función para agregar persona a la tabla y al array de personas +++++++++++++++++++++++++++++++
-function addPersonToTable(
+export function addPersonToTable(
     gender,
     age_mostrar_table,
     canasta_basica_alimentaria_ind_indigencia,
