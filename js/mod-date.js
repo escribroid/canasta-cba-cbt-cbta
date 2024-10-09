@@ -2,8 +2,8 @@ export const yearGet = new Date().getFullYear();
 let monthGet = new Date().getMonth() + 1;
 
 // function datesMain() {
-let selectedYear = null;
-let selectedMonth = null;
+let selectedYear;
+let selectedMonth;
 let array_years = [];
 let canasta_year_select = document.getElementById("canasta_date_year");
 let canasta_month_select = document.getElementById("canasta_date_month");
@@ -126,13 +126,33 @@ canasta_year_select.innerHTML = `
 
 //console.log("año seleccionado:", selectedYear);
 
+let monthSelected = false;
+let yearSelected = false;
+
+// Función para verificar si ambos selectores han disparado su evento
+function checkBothSelected() {
+    if (monthSelected && yearSelected) {
+        document.querySelector(".table-all-canastas-past").style.display = "block";
+    } else {
+        document.querySelector(".table-all-canastas-past").style.display = "none";
+    }
+}
+
 // Función de callback que se ejecutará cuando cambie el valor
 function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
     canasta_month_select.addEventListener("change", function () {
+        
         selectedMonth = canasta_month_select.value;
         selectedYear = canasta_year_select.value;
         console.log("AÑO seleccionado en evento Month:", selectedYear);
         console.log("Mes seleccionado en evento Month:", selectedMonth);
+
+        if (selectedMonth !== "") {
+            monthSelected = true;
+        } else {
+            monthSelected = false;
+        }
+        checkBothSelected();
 
         if (parseInt(selectedMonth) > monthGet) {
             if (parseInt(selectedYear) == yearGet) {
@@ -184,7 +204,13 @@ function handleMonthChange(callbackMonth, callbackYear, callCba, callCbt) {
     canasta_year_select.addEventListener("change", function (data) {
         selectedYear = canasta_year_select.value;
         selectedMonth = canasta_month_select.value;
-        document.querySelector(".table-all-canastas-past").style.display = "block";
+
+        if (selectedYear !== "") {
+            yearSelected = true;
+        } else {
+            yearSelected = false;
+        }
+        checkBothSelected();
 
         if (parseInt(selectedYear) == yearGet) {
             if (parseInt(selectedMonth) > monthGet) {
