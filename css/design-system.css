@@ -100,9 +100,9 @@
     /* Line-heights */
 
     /* Font-colors */
-    --font-color-light: rgb(255, 255, 255);
-    --font-color-medium: rgb(182, 182, 182);
-    --font-color-dark: rgb(24, 24, 24);
+    --font-color-light: #ffffff;
+    --font-color-medium: #b6b6b6;
+    --font-color-dark: #181818;
 
     /* Spacings */
     --spacing-250: 15.625rem;
